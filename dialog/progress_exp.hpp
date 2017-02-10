@@ -30,7 +30,7 @@ class life_progress_exp {
             idc = 382020;
 			sizeEx = 0.03;
             text = "test";
-			style = 2;
+			style = 2; 
             x = 0.010 * safezoneW + safezoneX;
             y = 0.495 * safezoneH + safezoneY;
             w = 0.3;
