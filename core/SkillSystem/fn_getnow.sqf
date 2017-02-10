@@ -2,7 +2,6 @@
 _level = [_this,0,0,[0]] call BIS_fnc_param;
 _type = [_this,1,"",[""]] call BIS_fnc_param;
 
-//_side = switch(playerSide) do {case west: {"cop"}; case civilian: {"civ"}; case independent: {"med"}; case east: {"tac"};};
 _side = "";
 SIDEOFPLAYER(_side);
 _professions = [];

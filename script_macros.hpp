@@ -65,5 +65,5 @@
 
 #define SKILLSYSTEM_VARNAME(varName,flag) format ["profession_%1_%2",flag,M_CONFIG(getText,"profession",varName,"variable")]
 #define SKILLSYSTEM_VALUE(varName,flag) missionNamespace getVariable [SKILLSYSTEM_VARNAME(varName,flag),false]
-#define SIDEOFPLAYER(varName) varName = switch(playerSide) do {case west: {"cop"}; case civilian: {"civ"}; case independent: {"med"}; case east: {"tac"};};
+#define SIDEOFPLAYER(varName) varName = switch(playerSide) do {case west: {"cop"}; case civilian: {"civ"}; case independent: {"med"}; case east: {"adac"};};
 #define CONSTPROF(var1,var2) var1 = compile (if (var2 isEqualType "") then {var2} else {str(var2)})
