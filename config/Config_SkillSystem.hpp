@@ -18,7 +18,7 @@ class profession {
 	class Ernten {
 		displayName = "STR_PRO_Ernten";
 		variable = "Ernten";
-		baseEXPgain = 20;
+		baseEXPgain = 20; 
 		icon = "icons\skillsystem\ico_ernten.paa";
 		side = "civ";
 		Resource = "Resources";
