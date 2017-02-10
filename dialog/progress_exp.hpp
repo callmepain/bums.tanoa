@@ -2,7 +2,7 @@ class life_progress_exp {
     name = "life_progress_exp";
     idd = 382000;
     fadein=1;
-    duration = 10;
+    duration = 90;
     fadeout=3;
     movingEnable = 0;
     onLoad="uiNamespace setVariable ['life_progress_exp',_this select 0]";
@@ -52,7 +52,7 @@ class life_timer_exp {
     name = "life_timer";
     idd = 383000;
     fadeIn = 1;
-    duration = 10;
+    duration = 90;
     fadeout = 1;
     movingEnable = 0;
     onLoad = "uiNamespace setVariable ['life_timer',_this select 0]";

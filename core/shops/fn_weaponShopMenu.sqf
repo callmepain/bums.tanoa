@@ -33,17 +33,32 @@ if (!isClass(missionConfigFile >> "WeaponShops" >> (_this select 3))) exitWith {
 
 disableSerialization;
 
-ctrlSetText[38401,_shopTitle];
+
+_display = findDisplay 38400;
+_Titel = _display displayCtrl 1100;
+_itemTitel = _display displayCtrl 1101;
+_MagsTitel = _display displayCtrl 1102;
+_AccsTitel = _display displayCtrl 1103;
+_BuyButton= _display displayCtrl 38406;
+
+_Titel ctrlSetStructuredText parseText format["<t align='center'>Ausrüstungshändler</t>"];
+_itemTitel ctrlSetStructuredText parseText format["<t align='center'>Ausrüstung</t>"];
+_MagsTitel ctrlSetStructuredText parseText format["<t align='center'>Magazine</t>"];
+_AccsTitel ctrlSetStructuredText parseText format["<t align='center'>Zubehör</t>"];
+_BuyButton ctrlSetStructuredText parseText format["<t align='center'>Ausrüstung kaufen</t>"];
+
 
 private _filters = ((findDisplay 38400) displayCtrl 38402);
 lbClear _filters;
 
-ctrlShow [38406,true];
-ctrlEnable [38406,false];
-ctrlShow [38407,true];
-ctrlEnable [38407,false];
+((findDisplay 38400) displayCtrl 1102) ctrlShow false;
+((findDisplay 38400) displayCtrl 1103) ctrlShow false;
+
+((findDisplay 38400) displayCtrl 38404) ctrlShow false;
+((findDisplay 38400) displayCtrl 38405) ctrlShow false;
 
 _filters lbAdd localize "STR_Shop_Weapon_ShopInv";
 _filters lbAdd localize "STR_Shop_Weapon_YourInv";
 
 _filters lbSetCurSel 0;
+// ((findDisplay 38400) displayCtrl 38403) lbSetCurSel -1;
