@@ -10,8 +10,10 @@ private ["_option","_state"];
 _option = _this select 0;
 _state = _this select 1;
 
-switch (_option) do {
-    case "tags": {
+switch (_option) do 
+{
+    /*
+	case "tags": {
         if (_state isEqualTo 1) then {
             life_settings_tagson = true;
             profileNamespace setVariable ["life_settings_tagson",true];
@@ -22,7 +24,8 @@ switch (_option) do {
             [LIFE_ID_PlayerTags,"onEachFrame"] call BIS_fnc_removeStackedEventHandler;
         };
     };
-
+	*/
+	
     case "objects": {
         if (_state isEqualTo 1) then {
             life_settings_revealObjects = true;

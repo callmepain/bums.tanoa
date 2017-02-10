@@ -3,7 +3,7 @@
 class playerSettings {
 
  idd = playersys_DIALOG;
- movingEnable = true;
+ movingEnable = 0;
  enableSimulation = 1;
  class controlsBackground 
  {
@@ -141,7 +141,7 @@ class playerSettings {
 					 h = 0.297 * safezoneH;
 				 };
 			 };
-		 }
+		 };
 		 class itemList: life_RscListbox
 		 {
 			 idc = item_list;

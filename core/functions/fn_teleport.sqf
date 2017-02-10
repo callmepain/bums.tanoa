@@ -10,4 +10,4 @@ _pos = [_this select 0, _this select 1, _this select 2];
 (vehicle player) setPos [_pos select 0, _pos select 1, 0];
 onMapSingleClick "";
 openMap [false, false];
-[(format [localize "STR_NOTF_Teleport"]),"Hinweis","Green"] call MSG_fnc_handle;
+hint localize "STR_NOTF_Teleport";
