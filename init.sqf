@@ -13,4 +13,5 @@ if (hasInterface) then {
 [] execVM "KRON_Strings.sqf";
 [] execvm "core\functions\fn_hudCrew.sqf";
 [] execvm "core\functions\fn_effects.sqf";
+[] execVM "core\mapmarker.sqf"; 
 StartProgress = true;

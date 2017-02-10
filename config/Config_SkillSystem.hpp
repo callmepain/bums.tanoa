@@ -44,8 +44,8 @@ class profession {
 
 	class FahrenLKW {
 		displayName = "STR_PRO_Fahren_LKW";
-		variable = "FahrenLKW";
-		baseEXPgain = 100;
+		variable = "FahrenLKW"; 
+		baseEXPgain = 20;
 		icon = "icons\skillsystem\ico_lkw.paa";
 		side = "civ";
 		time = 30;

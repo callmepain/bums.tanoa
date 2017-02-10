@@ -29,8 +29,9 @@ class life_progress_exp {
         class ProgressText: Life_RscText {
             idc = 382020;
 			sizeEx = 0.03;
-            text = "Fickdich";
-            x = 0.055 * safezoneW + safezoneX;
+            text = "test";
+			style = 2; 
+            x = 0.010 * safezoneW + safezoneX;
             y = 0.495 * safezoneH + safezoneY;
             w = 0.3;
             h = (1 / 25);
