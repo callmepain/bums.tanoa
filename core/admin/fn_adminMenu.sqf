@@ -27,7 +27,8 @@ switch (FETCH_CONST(life_adminlevel)) do
 lbClear _list;
 
 {
-    _side = switch (side _x) do {case west: {"Cop"}; case civilian: {"Civ"}; case independent: {"Medic"}; default {"Unknown"};};
+_side = "";
+SIDEOFPLAYER(_side);
     _list lbAdd format ["%1 - %2", _x getVariable ["realname",name _x],_side];
     _list lbSetdata [(lbSize _list)-1,str(_x)];
 } forEach playableUnits;
