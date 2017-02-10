@@ -36,7 +36,7 @@ class profession {
 	class FahrenPKW {
 		displayName = "STR_PRO_Fahren_PKW";
 		variable = "FahrenPKW";
-		baseEXPgain = 100;
+		baseEXPgain = 20;
 		icon = "icons\skillsystem\ico_auto.paa";
 		side = "civ";
 		time = 30;
