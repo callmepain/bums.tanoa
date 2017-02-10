@@ -12,7 +12,6 @@ _type = [_this,0,"",[""]] call BIS_fnc_param;
 _amount = [_this,1,0,[0]] call BIS_fnc_param;
 //_zone = [_this,2,"",[""]] call BIS_fnc_param;
 _speed = [_this,2,0,[0]] call BIS_fnc_param;
-//_side = switch(playerSide) do {case west: {"cop"}; case civilian: {"civ"}; case independent: {"med"}; case east: {"tac"};};
 _side = "";
 SIDEOFPLAYER(_side);
 _profData = SKILLSYSTEM_VALUE(_type,_side);

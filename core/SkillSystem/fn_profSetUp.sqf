@@ -14,7 +14,8 @@ _Titel = _dialog displayCtrl 1100;
 _Titel ctrlSetStructuredText parseText "Fahigkeiten";
 
 lbClear _Names;
-_side = switch(playerSide) do {case west: {"cop"}; case civilian: {"civ"}; case independent: {"med"}; case east: {"tac"};};
+_side = "";
+SIDEOFPLAYER(_side);
 _SkillConfigs = "getText(_x >> 'side') isEqualTo _side" configClasses (missionConfigFile >> "profession");
 {
 	if(_side == "civ") then {
