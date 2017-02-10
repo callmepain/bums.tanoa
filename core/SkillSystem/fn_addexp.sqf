@@ -22,7 +22,13 @@ _level = (_profData select 0);
 _exp = (_profData select 1);
 _nextLevel = 0;
 NextLevel(_level,_nextLevel);
-_amount = (_amount * (_level^1.2)/3.2);
+
+if(_speed == 0) then { 
+	_amount = floor(_amount * (_level^1.2)/3.2);
+} else {
+	_amount =floor((_amount * (_level^1.2)) * (_speed^3/_speed^2.75));
+};
+
 _exp = _exp + _amount;
 _prozent = _exp / _nextLevel;
 if( _exp >= _nextLevel ) then {

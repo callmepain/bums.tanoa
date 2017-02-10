@@ -12,7 +12,7 @@ Private ["_name","_vehicle","_vehname","_weapname","_weap","_target","_picture",
 	   
 disableSerialization;
 
-
+ 
 [] spawn 
 {
 	for "_i" from 0 to 1 step 0 do 
