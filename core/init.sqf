@@ -114,7 +114,7 @@ player addRating 99999999;
 [] call life_fnc_hudSetup;
 
 /* Set up frame-by-frame handlers */
-LIFE_ID_PlayerTags = ["LIFE_PlayerTags","onEachFrame","life_fnc_playerTags"] call BIS_fnc_addStackedEventHandler;
+// LIFE_ID_PlayerTags = ["LIFE_PlayerTags","onEachFrame","life_fnc_playerTags"] call BIS_fnc_addStackedEventHandler;
 LIFE_ID_RevealObjects = ["LIFE_RevealObjects","onEachFrame","life_fnc_revealObjects"] call BIS_fnc_addStackedEventHandler;
 
 player setVariable ["steam64ID",getPlayerUID player];
@@ -171,7 +171,7 @@ life_hideoutBuildings = [];
     private _building = nearestBuilding getMarkerPos _x;
     life_hideoutBuildings pushBack _building;
     false
-} count ["gang_area_1","gang_area_2","gang_area_3","gang_area_4","gang_area_5"];
+} count ["gang_area_1","gang_area_2","gang_area_3"];
 [] execVM "core\initacemenu.sqf";
 diag_log "----------------------------------------------------------------------------------------------------";
 diag_log format ["               End of Altis Life Client Init :: Total Execution Time %1 seconds ",(diag_tickTime) - _timeStamp];

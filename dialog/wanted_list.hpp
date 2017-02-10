@@ -1,7 +1,7 @@
 class life_wanted_menu {
 	idd = 2400;
 	name= "life_wanted_menu";
-	movingEnable = false;
+	movingEnable = 0;
 	enableSimulation = 1;
 	onLoad = "ctrlShow[2405,false];ctrlShow[2406,false];";
 	

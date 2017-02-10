@@ -17,8 +17,6 @@
 #include "craft.hpp"
 #include "crew.hpp"
 #include "deathScreen.hpp"
-#include "economy.hpp"
-#include "economymenu.hpp"
 #include "federalReserve.hpp"
 #include "gang.hpp"
 #include "impound.hpp"

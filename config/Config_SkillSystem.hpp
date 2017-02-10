@@ -18,7 +18,7 @@ class profession {
 	class Ernten {
 		displayName = "STR_PRO_Ernten";
 		variable = "Ernten";
-		baseEXPgain = 20;
+		baseEXPgain = 20; 
 		icon = "icons\skillsystem\ico_ernten.paa";
 		side = "civ";
 		Resource = "Resources";
@@ -36,7 +36,7 @@ class profession {
 	class FahrenPKW {
 		displayName = "STR_PRO_Fahren_PKW";
 		variable = "FahrenPKW";
-		baseEXPgain = 10;
+		baseEXPgain = 100;
 		icon = "icons\skillsystem\ico_auto.paa";
 		side = "civ";
 		time = 30;
@@ -45,7 +45,7 @@ class profession {
 	class FahrenLKW {
 		displayName = "STR_PRO_Fahren_LKW";
 		variable = "FahrenLKW";
-		baseEXPgain = 20;
+		baseEXPgain = 100;
 		icon = "icons\skillsystem\ico_lkw.paa";
 		side = "civ";
 		time = 30;
@@ -54,7 +54,7 @@ class profession {
 	class Fliegen {
 		displayName = "STR_PRO_Fliegen";
 		variable = "Fliegen";
-		baseEXPgain = 10;
+		baseEXPgain = 30;
 		icon = "icons\skillsystem\ico_fliegen.paa";
 		side = "civ";
 		time = 30;
