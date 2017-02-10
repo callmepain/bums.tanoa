@@ -215,12 +215,17 @@ class CarShops {
         side = "cop";
         conditions = "";
         vehicles[] = {
-            { "charger_pd", "call life_coplevel >= 1" },
-            { "Urbanized_G65_UC3", "call life_coplevel >= 1" },
-            { "Urbanized_CTSV_UC1", "call life_coplevel >= 1" },
-			{ "bv_the_crowner_cop_sher", "call life_coplevel >= 2" },
-			{ "GeK_S60_Police_ST", "call life_coplevel >= 2" }
+            // { "charger_pd", "call life_coplevel >= 1" },
+            // { "Urbanized_G65_UC3", "call life_coplevel >= 1" },
+            // { "Urbanized_CTSV_UC1", "call life_coplevel >= 1" },
+			// { "bv_the_crowner_cop_sher", "call life_coplevel >= 2" },
+			// { "GeK_S60_Police_ST", "call life_coplevel >= 2" }
 //			{ "VPC", "call life_coplevel >= 2" }
+			{ "C_Offroad_01_F", "" },
+            { "C_SUV_01_F", "" },
+            { "C_Hatchback_01_sport_F", "call life_coplevel >= 1" },
+            { "B_MRAP_01_F", "call life_coplevel >= 2" },
+            { "B_MRAP_01_hmg_F", "call life_coplevel >= 3" }
         };
     };
 

@@ -1,8 +1,8 @@
 class Life_my_smartphone {
 	idd = 88888;
 	name = "life_my_telephone_menu";
-	movingEnable = false;
-	enableSimulation = true;
+	movingEnable = 0;
+	enableSimulation = 1;
 	onLoad = "[] spawn life_fnc_smartphone;";
 	class controlsBackground 
 	{
@@ -166,8 +166,8 @@ class Life_smartphone_schreiben
 {
 	idd = 88883;
 	name = "life_my_smartphone_schreiben";
-	movingEnable = false;
-	enableSimulation = true;
+	movingEnable = 0;
+	enableSimulation = 1;
 	onLoad = "[] spawn life_fnc_newMsgInit;";
 	class controlsBackground 
 	{
@@ -321,8 +321,8 @@ class Life_smartphone_notruf
 {
 	idd = 88885;
 	name= "life_my_smartphone_notruf";
-	movingEnable = false;
-	enableSimulation = true;
+	movingEnable = 0;
+	enableSimulation = 1;
 	onLoad = "[6] spawn life_fnc_newMsgInit;";
 	class controlsBackground 
 	{

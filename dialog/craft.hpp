@@ -7,7 +7,7 @@
 class Life_craft {
  idd = 666;
  name= "life_craft";
- movingEnable = false;
+ movingEnable = 0;
  enableSimulation = 1;
  onLoad = "[] spawn life_fnc_craft";
  class controlsBackground {

@@ -6,7 +6,9 @@
     Description:
     Sets skins for players by their side and uniform.
 */
-private ["_skinName"];
+private ["_skinName","_bag"];
+_bag = unitBackpack player;
+
 
 switch (playerSide) do {
     case civilian: {

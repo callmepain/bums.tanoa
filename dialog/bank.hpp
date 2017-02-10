@@ -13,7 +13,7 @@
 class life_atm_menu {
 	idd = 2700;
 	name= "life_atm_menu";
-	movingEnable = false;
+	movingEnable = 0;
 	enableSimulation = 1;
 	
 	class controlsBackground 
@@ -150,7 +150,7 @@ class life_atm_menu {
 class Life_atm_management {
 	idd = 2750;
 	name= "life_atm";
-	movingEnable = false;
+	movingEnable = 0;
 	enableSimulation = 1;
 	
 	class controlsBackground 

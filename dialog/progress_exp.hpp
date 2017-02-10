@@ -2,7 +2,7 @@ class life_progress_exp {
     name = "life_progress_exp";
     idd = 382000;
     fadein=1;
-    duration = 10;
+    duration = 90;
     fadeout=3;
     movingEnable = 0;
     onLoad="uiNamespace setVariable ['life_progress_exp',_this select 0]";
@@ -29,9 +29,8 @@ class life_progress_exp {
         class ProgressText: Life_RscText {
             idc = 382020;
 			sizeEx = 0.03;
-            text = "test";
-			style = 2;
-            x = 0.010 * safezoneW + safezoneX;
+            text = "Fickdich";
+            x = 0.055 * safezoneW + safezoneX;
             y = 0.495 * safezoneH + safezoneY;
             w = 0.3;
             h = (1 / 25);
@@ -52,7 +51,7 @@ class life_timer_exp {
     name = "life_timer";
     idd = 383000;
     fadeIn = 1;
-    duration = 10;
+    duration = 90;
     fadeout = 1;
     movingEnable = 0;
     onLoad = "uiNamespace setVariable ['life_timer',_this select 0]";

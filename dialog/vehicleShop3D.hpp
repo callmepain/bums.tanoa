@@ -139,10 +139,11 @@ class Life_Vehicle_Shop_v2_3D {
 			idc = 2304;
 			onLBSelChanged = "[] call life_fnc_vehicleColor3DRefresh;";
 
-			x = -26.27 * GUI_GRID_W + GUI_GRID_X;
-			y = 17.2 * GUI_GRID_H + GUI_GRID_Y;
-			h = 0.999805 * GUI_GRID_H;
-			w = 14.4268 * GUI_GRID_W;
+			x = 0.0232205 * safezoneW + safezoneX;
+			// y = 17.2 * GUI_GRID_H + GUI_GRID_Y;
+			y = 0.604 * safezoneH + safezoneY;
+			w = 0.145107 * safezoneW;
+			h = 0.022 * safezoneH;
 			colorBackground[] = {0.1,0.1,0.1,1};
 		};
 		class vehicleInfomationList: Life_RscStructuredText

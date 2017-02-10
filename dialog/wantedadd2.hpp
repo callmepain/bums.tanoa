@@ -1,7 +1,7 @@
 ﻿class life_wantedadd2 {
 	idd = 9900;
 	name= "life_wantedadd2";
-	movingEnable = false;
+	movingEnable = 0;
 	enableSimulation = 1;
 	onLoad = "[] spawn life_fnc_wantedadd2;";
 	
