@@ -73,12 +73,10 @@ life_position = _this select 13;
 if(count (_this select 14) > 0) then 
 {
 	{
-		diag_log(_this select 14);
 		missionNamespace setVariable [SKILLSYSTEM_VARNAME(_x select 0,_x select 3),[parseNumber (_x select 1), parseNumber (_x select 2)]];
-	//	missionNamespace setVariable [(_x select 0),[parseNumber (_x select 1), parseNumber (_x select 2)]];
 	} foreach (_this select 14);
-	CONSTPROF(life_civpkw_level ,(SKILLSYSTEM_VALUE("FahrenPKW","civ") select 0));
-	CONSTPROF(life_civlkw_level ,(SKILLSYSTEM_VALUE("FahrenLKW","civ") select 0));
+	CONSTPROF(life_civpkw_level ,(SKILLSYSTEM_VALUE("PKW","civ") select 0));
+	CONSTPROF(life_civlkw_level ,(SKILLSYSTEM_VALUE("LKW","civ") select 0));
 	CONSTPROF(life_civair_level ,(SKILLSYSTEM_VALUE("Fliegen","civ") select 0));
 	CONSTPROF(life_civabbau_level ,(SKILLSYSTEM_VALUE("Rohstoffabbau","civ") select 0));
 };

@@ -3582,10 +3582,10 @@
             <Original>Rohstoffabbau</Original>
         </Key>
 		<Key ID="STR_PRO_Fahren_PKW">
-            <Original>FahrenPKW</Original>
+            <Original>PKW</Original>
         </Key>
 		<Key ID="STR_PRO_Fahren_LKW">
-            <Original>FahrenLKW</Original>
+            <Original>LKW</Original>
         </Key>
 		<Key ID="STR_PRO_Fliegen">
             <Original>Fliegen</Original>
