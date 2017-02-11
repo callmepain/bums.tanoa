@@ -33,18 +33,18 @@ class profession {
 		Resource = "Minerals";
 	};
 
-	class FahrenPKW {
+	class PKW {
 		displayName = "STR_PRO_Fahren_PKW";
-		variable = "FahrenPKW";
+		variable = "PKW";
 		baseEXPgain = 20;
 		icon = "icons\skillsystem\ico_auto.paa";
 		side = "civ";
 		time = 30;
 	};
 
-	class FahrenLKW {
+	class LKW {
 		displayName = "STR_PRO_Fahren_LKW";
-		variable = "FahrenLKW"; 
+		variable = "LKW"; 
 		baseEXPgain = 20;
 		icon = "icons\skillsystem\ico_lkw.paa";
 		side = "civ";

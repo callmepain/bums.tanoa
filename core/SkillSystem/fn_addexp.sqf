@@ -43,8 +43,8 @@ if( _exp >= _nextLevel ) then {
 	_now = [_level,_type] call life_fnc_getnow;
 	_next = [_level,_type] call life_fnc_getnext;
 	missionNamespace setVariable [SKILLSYSTEM_VARNAME(_type,_side),[(_profData select 0) + 1,(_exp)]];
-	CONSTPROF(life_civpkw_level ,(SKILLSYSTEM_VALUE("FahrenPKW","civ") select 0));
-	CONSTPROF(life_civlkw_level ,(SKILLSYSTEM_VALUE("FahrenLKW","civ") select 0));
+	CONSTPROF(life_civpkw_level ,(SKILLSYSTEM_VALUE("PKW","civ") select 0));
+	CONSTPROF(life_civlkw_level ,(SKILLSYSTEM_VALUE("LKW","civ") select 0));
 	CONSTPROF(life_civair_level ,(SKILLSYSTEM_VALUE("Fliegen","civ") select 0));
 	CONSTPROF(life_civabbau_level ,(SKILLSYSTEM_VALUE("Rohstoffabbau","civ") select 0));
 	

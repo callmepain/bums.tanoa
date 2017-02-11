@@ -19,9 +19,9 @@ Private ["_name","_vehicle","_vehname","_weapname","_weap","_target","_picture",
 	{
 		if (isEngineOn vehicle player  && ((driver vehicle player ) isEqualTo player) && ((typeOf vehicle player) in life_FahrenPKW) && (vehicle player  != player) && (speed vehicle player > 10)) then
 		{
-			_exp = M_CONFIG(getNumber,"profession","FahrenPKW","baseEXPgain");
+			_exp = M_CONFIG(getNumber,"profession","PKW","baseEXPgain");
 		if (floor (random 20) == 3) then {
-				["FahrenPKW",_exp,floor(speed vehicle player)] call life_fnc_addExp;
+				["PKW",_exp,floor(speed vehicle player)] call life_fnc_addExp;
 			};
 		};  
 		sleep 1;
@@ -33,9 +33,9 @@ Private ["_name","_vehicle","_vehname","_weapname","_weap","_target","_picture",
 	{
 		if (isEngineOn vehicle player  && ((driver vehicle player ) isEqualTo player) && ((typeOf vehicle player) in life_FahrenLKW) && (vehicle player  != player) && (speed vehicle player > 10)) then
 		{
-			_exp = M_CONFIG(getNumber,"profession","FahrenLKW","baseEXPgain");
+			_exp = M_CONFIG(getNumber,"profession","LKW","baseEXPgain");
 		if (floor (random 20) == 3) then {
-				["FahrenLKW",_exp,floor(speed vehicle player)] call life_fnc_addExp;
+				["LKW",_exp,floor(speed vehicle player)] call life_fnc_addExp;
 			};
 		};  
 		sleep 1;
