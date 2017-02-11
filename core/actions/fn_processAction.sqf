@@ -152,18 +152,8 @@ _cpUp = 0.01;
 
 _data  = SKILLSYSTEM_VALUE(_prof,"civ");
 if( _prof != "" ) then {
-	switch ( _data select 0 ) do {
-		case 1: { _time = 0.4; _cpUp = 0.01; };
-		case 2: { _time = 0.35; _cpUp = 0.011; };
-		case 3: { _time = 0.33; _cpUp = 0.012; };
-		case 4: { _time = 0.3; _cpUp = 0.013; };
-		case 5: { _time = 0.29; _cpUp = 0.014; };
-		case 6: { _time = 0.28; _cpUp = 0.015; };
-		case 7: { _time = 0.27; _cpUp = 0.016; };
-		case 8: { _time = 0.26; _cpUp = 0.017; };
-		case 9: { _time = 0.25; _cpUp = 0.018; };
-		case 10: { _time = 0.24; _cpUp = 0.019; };
-	};
+	MININGTIME(_time,(_data select 0));
+	PROCESSCP(_cpUp,(_data select 0));
 };
 
 //substract items 
