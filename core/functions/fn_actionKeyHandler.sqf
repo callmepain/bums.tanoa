@@ -81,14 +81,14 @@ life_action_inUse = true;
 };
 
 //Check if it's a dead body.
-if (_curObject isKindOf "Man" && !(_curObject isKindOf "Animal") && {!alive _curObject} && !(_curObject getVariable ["Revive",false])) exitWith {
+/*if (_curObject isKindOf "Man" && !(_curObject isKindOf "Animal") && {!alive _curObject} && !(_curObject getVariable ["Revive",false])) exitWith {
     //Hotfix code by ins0
     if ((playerSide isEqualTo west && {(LIFE_SETTINGS(getNumber,"revive_cops") isEqualTo 1)}) || {(playerSide isEqualTo civilian && {(LIFE_SETTINGS(getNumber,"revive_civ") isEqualTo 1)})} || {(playerSide isEqualTo east && {(LIFE_SETTINGS(getNumber,"revive_east") isEqualTo 1)})} || {playerSide isEqualTo independent}) then {
         if (life_inv_defibrillator > 0) then {
             [_curObject] call life_fnc_revivePlayer;
         };
     };
-};
+};*/
 
 //If target is a player then check if we can use the cop menu.
 if (isPlayer _curObject && _curObject isKindOf "Man") then {
@@ -104,7 +104,7 @@ if (isPlayer _curObject && _curObject isKindOf "Man") then {
     _miscItems = ["Land_BottlePlastic_V1_F","Land_TacticalBacon_F","Land_Can_V3_F","Land_CanisterFuel_F","Land_Suitcase_F"];
 
     //It's a vehicle! open the vehicle interaction key!
-    if (_isVehicle) then {
+   /* if (_isVehicle) then {
         if (!dialog) then {
             if (player distance _curObject < ((boundingBox _curObject select 1) select 0)+2 && (!(player getVariable ["restrained",false])) && (!(player getVariable ["playerSurrender",false])) && !life_isknocked && !life_istazed) then {
                 [_curObject] call life_fnc_vInteractionMenu;
@@ -120,5 +120,5 @@ if (isPlayer _curObject && _curObject isKindOf "Man") then {
                 [_curObject,player,true] remoteExecCall ["TON_fnc_pickupAction",RSERV];
             };
         };
-    };
+    };*/
 };
