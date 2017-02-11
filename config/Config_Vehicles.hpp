@@ -16,7 +16,9 @@ class CarShops {
     *   Independent Vehicle classnames can be found here: https://community.bistudio.com/wiki/Arma_3_CfgVehicles_GUER
     *   Civilian Vehicle classnames can be found here: https://community.bistudio.com/wiki/Arma_3_CfgVehicles_CIV
     */
-    class civ_car_oldtimer {
+	
+    class civ_car_oldtimer 
+	{
         side = "civ";
         conditions = "";
         vehicles[] = {
@@ -29,7 +31,9 @@ class CarShops {
 			{ "ivory_gt500", "call life_civpkw_level >= 7" }
         };
     };
-	class civ_car_gebrauchtwagen {
+	
+	class civ_car_gebrauchtwagen 
+	{
         side = "civ";
         conditions = "";
         vehicles[] = {
@@ -57,15 +61,17 @@ class CarShops {
             // { "Mrshounka_jeep_blinde_noir", "call life_civpkw_level >= 8" }//
         };
     };
-	class civ_car_sportwagen {
+	
+	class civ_car_sportwagen 
+	{
         side = "civ";
         conditions = "";
         vehicles[] = {
 
-            { "red_charger_15_aqua", "call life_civpkw_level >= 4" },
- 	        // { "red_genesis_16_aqua", "call life_civpkw_level >= 4" },//
- 	        { "red_xkrs_12_aqua", "call life_civpkw_level >= 5" },
- 	        { "red_s65_12_aqua", "call life_civpkw_level >= 5" },
+            { "red_charger_15_civ", "call life_civpkw_level >= 4" },
+ 	        // { "red_genesis_16_civ", "call life_civpkw_level >= 4" },//
+ 	        { "red_xkrs_12_civ", "call life_civpkw_level >= 5" },
+ 	        { "red_s65_12_civ", "call life_civpkw_level >= 5" },
  	        { "zorak_audi_rs3", "call life_civpkw_level >= 5" },
  	        { "Mrshounka_rs4_civ", "call life_civpkw_level >= 5" },
  	        // { "Mrshounka_bmwm1_civ_orange", "call life_civpkw_level >= 5" },		//	
@@ -84,7 +90,9 @@ class CarShops {
  	        { "Mrshounka_c63_2015_civ", "call life_civpkw_level >= 7" }
         };
     };
-	class civ_car_neuwagen {
+	
+	class civ_car_neuwagen 
+	{
         side = "civ";
         conditions = "";
         vehicles[] = {
@@ -101,7 +109,7 @@ class CarShops {
  	        { "ivory_isf", "call life_civpkw_level >= 4" },
  	        { "ivory_evox", "call life_civpkw_level >= 4" },
  	        { "Mrshounka_subaru08_civ", "call life_civpkw_level >= 5" },
- 	        { "red_ram_06_aqua", "call life_civpkw_level >= 5" },
+ 	        { "red_ram_06_civ", "call life_civpkw_level >= 5" },
  	        // { "ivory_m3", "call life_civpkw_level >= 5" },//
  	        { "Mrshounka_mustang_civ", "call life_civpkw_level >= 5" },
  	        { "Mrshounka_hummer_civ", "call life_civpkw_level >= 5" },
@@ -117,7 +125,9 @@ class CarShops {
 			{ "GeK_GTR", "call life_civpkw_level >= 6" }
         };
     };
-	class civ_car_supersport {
+	
+	class civ_car_supersport 
+	{
         side = "civ";
         conditions = "";
         vehicles[] = {
@@ -138,7 +148,9 @@ class CarShops {
 			{ "Mrshounka_lykan_c", "call life_civpkw_level >= 10" }
         };
     };
-	class civ_container	{
+	
+	class civ_container	
+	{
 		side = "civ";
 		conditions = "";
 		vehicles[] = {
@@ -160,7 +172,9 @@ class CarShops {
 			{"Land_Cargo20_yellow_F", ""}
 		};
 	};
-    class kart_shop {
+	
+    class kart_shop 
+	{
         side = "civ";
         conditions = "";
         vehicles[] = {
@@ -171,7 +185,8 @@ class CarShops {
         };
     };
 
-    class civ_truck {
+    class civ_truck 
+	{
         side = "civ";
         conditions = "";
         vehicles[] = {
@@ -192,7 +207,8 @@ class CarShops {
         };
     };
 
-     class civ_air {
+     class civ_air 
+	 {
 		side = "civ";
          conditions = "";
          vehicles[] = {
@@ -208,7 +224,8 @@ class CarShops {
          };
      };
 
-      class civ_ship {
+      class civ_ship 
+	  {
          side = "civ";
          conditions = "";
          vehicles[] = {
@@ -685,7 +702,7 @@ class LifeCfgVehicles {
         price = 22570;
         textures[] = { };
     };
-	class red_ram_06_aqua {
+	class red_ram_06_civ {
         vItemSpace = 65;
         conditions = "";
         price = 27990;
@@ -828,26 +845,26 @@ class LifeCfgVehicles {
 	///////////autos sportwagen//////////////
 	
 	
-	class red_charger_15_aqua {
+	class red_charger_15_civ {
         vItemSpace = 35;
         conditions = "";
         price = 39900;
         textures[] = { };
     };
 
-	class red_genesis_16_aqua {
+	class red_genesis_16_civ {
         vItemSpace = 35;
         conditions = "";
         price = 34700;
         textures[] = { };
     };
-	class red_xkrs_12_aqua {
+	class red_xkrs_12_civ {
         vItemSpace = 35;
         conditions = "";
         price = 24900;
         textures[] = { };
     };
-	class red_s65_12_aqua {
+	class red_s65_12_civ {
         vItemSpace = 35;
         conditions = "";
         price = 43700;

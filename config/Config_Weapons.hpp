@@ -19,7 +19,8 @@
 *    Item classnames can be found here: https://community.bistudio.com/wiki/Arma_3_CfgWeapons_Items
 *
 */
-class WeaponShops {
+class WeaponShops 
+{
     //Armory Shops civs und so ein kack kram
     class gun 
 	{
