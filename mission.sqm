@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={8941.6514,451.49887,11967.938};
-		dir[]={-0.48274356,-0.8755272,-0.020599226};
-		up[]={-0.87473226,0.4831695,-0.03732593};
-		aside[]={-0.042632911,-5.0262315e-008,0.99909735};
+		pos[]={11167.159,366.27817,4158.6353};
+		dir[]={-0.72355282,-0.64672112,0.24134094};
+		up[]={-0.61353832,0.7626887,0.20464659};
+		aside[]={0.31641778,-7.9508754e-007,0.94863564};
 	};
 };
 binarizationWanted=0;
@@ -516,24 +516,6 @@ class CustomAttributes
 		name="Multiplayer";
 		class Attribute0
 		{
-			property="RespawnTemplates";
-			expression="true";
-			class Value
-			{
-				class data
-				{
-					class type
-					{
-						type[]=
-						{
-							"ARRAY"
-						};
-					};
-				};
-			};
-		};
-		class Attribute1
-		{
 			property="RespawnButton";
 			expression="true";
 			class Value
@@ -548,6 +530,24 @@ class CustomAttributes
 						};
 					};
 					value=1;
+				};
+			};
+		};
+		class Attribute1
+		{
+			property="RespawnTemplates";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"ARRAY"
+						};
+					};
 				};
 			};
 		};
@@ -6599,8 +6599,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1462.1049,4.4093852,1011.423};
-						angles[]={0.02666023,4.2133698,0.0053265258};
+						position[]={1462.105,4.4093862,1011.423};
+						angles[]={0.026668631,4.2133646,0.0053232545};
 					};
 					side="West";
 					flags=6;
@@ -6668,11 +6668,49 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0;
+									value=-1;
 								};
 							};
 						};
 						class Attribute3
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male01GRE";
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute5
 						{
 							property="ace_isSurrendered";
 							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
@@ -6691,7 +6729,7 @@ class Mission
 								};
 							};
 						};
-						nAttributes=4;
+						nAttributes=6;
 					};
 				};
 				class Item1
@@ -6699,8 +6737,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1465.3081,4.3314857,1013.6386};
-						angles[]={0,4.2052188,6.272521};
+						position[]={1465.308,4.3314867,1013.639};
+						angles[]={0,4.2052135,6.2725215};
 					};
 					side="West";
 					flags=4;
@@ -6768,11 +6806,49 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0;
+									value=-1;
 								};
 							};
 						};
 						class Attribute3
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male01GRE";
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute5
 						{
 							property="ace_isSurrendered";
 							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
@@ -6791,7 +6867,7 @@ class Mission
 								};
 							};
 						};
-						nAttributes=4;
+						nAttributes=6;
 					};
 				};
 				class Item2
@@ -6799,8 +6875,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1471.1052,4.1726656,1011.5695};
-						angles[]={6.272521,4.087811,6.2485328};
+						position[]={1471.105,4.1726785,1011.57};
+						angles[]={6.2725215,4.0878053,6.2485409};
 					};
 					side="West";
 					flags=4;
@@ -6812,106 +6888,6 @@ class Mission
 						isPlayable=1;
 					};
 					id=771;
-					type="B_RangeMaster_F";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=-1;
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="ace_isHandcuffed";
-							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						class Attribute2
-						{
-							property="ace_isEngineer";
-							expression="if (_value != -1) then {_this setVariable ['ace_isEngineer',_value, true];}";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						class Attribute3
-						{
-							property="ace_isSurrendered";
-							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						nAttributes=4;
-					};
-				};
-				class Item3
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={1459.3336,4.290966,1017.3657};
-						angles[]={0.010664274,4.2052188,0.018663859};
-					};
-					side="West";
-					flags=4;
-					class Attributes
-					{
-						skill=0.60000002;
-						name="cop_4";
-						description="Public Slot - Cop 4";
-						isPlayable=1;
-					};
-					id=772;
 					type="B_RangeMaster_F";
 					atlOffset=4.7683716e-007;
 					class CustomAttributes
@@ -6969,11 +6945,49 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0;
+									value=-1;
 								};
 							};
 						};
 						class Attribute3
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male01GRE";
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.95999998;
+								};
+							};
+						};
+						class Attribute5
 						{
 							property="ace_isSurrendered";
 							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
@@ -6992,28 +7006,29 @@ class Mission
 								};
 							};
 						};
-						nAttributes=4;
+						nAttributes=6;
 					};
 				};
-				class Item4
+				class Item3
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1466.0771,4.4561429,1005.4171};
-						angles[]={0.031988446,4.2052188,6.2458706};
+						position[]={1459.334,4.2909718,1017.366};
+						angles[]={0.010663962,4.2052135,0.018657569};
 					};
 					side="West";
 					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
-						name="cop_5";
-						description="WhiteListed - Cop 5";
+						name="cop_4";
+						description="Public Slot - Cop 4";
 						isPlayable=1;
 					};
-					id=773;
+					id=772;
 					type="B_RangeMaster_F";
+					atlOffset=1.9073486e-006;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -7069,11 +7084,49 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0;
+									value=-1;
 								};
 							};
 						};
 						class Attribute3
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male01GRE";
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.97000003;
+								};
+							};
+						};
+						class Attribute5
 						{
 							property="ace_isSurrendered";
 							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
@@ -7092,7 +7145,146 @@ class Mission
 								};
 							};
 						};
-						nAttributes=4;
+						nAttributes=6;
+					};
+				};
+				class Item4
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1466.077,4.456151,1005.417};
+						angles[]={0.031991884,4.2052135,6.2458701};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						skill=0.60000002;
+						name="cop_5";
+						description="WhiteListed - Cop 5";
+						isPlayable=1;
+					};
+					id=773;
+					type="B_RangeMaster_F";
+					atlOffset=9.5367432e-007;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isMedic";
+							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=-1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isEngineer";
+							expression="if (_value != -1) then {_this setVariable ['ace_isEngineer',_value, true];}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=-1;
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male01GRE";
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.04;
+								};
+							};
+						};
+						class Attribute5
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=6;
 					};
 				};
 				class Item5
@@ -7100,8 +7292,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1462.4688,4.3366342,1019.3176};
-						angles[]={0.0080009829,4.2052188,0.021328852};
+						position[]={1462.469,4.3366361,1019.318};
+						angles[]={0.0079936078,4.2052135,0.021327924};
 					};
 					side="West";
 					flags=4;
@@ -7170,11 +7362,49 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0;
+									value=-1;
 								};
 							};
 						};
 						class Attribute3
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male01GRE";
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.98000002;
+								};
+							};
+						};
+						class Attribute5
 						{
 							property="ace_isSurrendered";
 							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
@@ -7193,7 +7423,7 @@ class Mission
 								};
 							};
 						};
-						nAttributes=4;
+						nAttributes=6;
 					};
 				};
 				class Item6
@@ -7201,8 +7431,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1472.4066,4.1031861,1008.5519};
-						angles[]={6.2751846,4.2052188,6.2432079};
+						position[]={1472.407,4.1031737,1008.552};
+						angles[]={6.2751913,4.2052135,6.2431998};
 					};
 					side="West";
 					flags=4;
@@ -7215,6 +7445,7 @@ class Mission
 					};
 					id=775;
 					type="B_RangeMaster_F";
+					atlOffset=-9.5367432e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -7270,11 +7501,49 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0;
+									value=-1;
 								};
 							};
 						};
 						class Attribute3
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male02GRE";
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.02;
+								};
+							};
+						};
+						class Attribute5
 						{
 							property="ace_isSurrendered";
 							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
@@ -7293,7 +7562,7 @@ class Mission
 								};
 							};
 						};
-						nAttributes=4;
+						nAttributes=6;
 					};
 				};
 				class Item7
@@ -7301,8 +7570,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1473.8262,4.0890002,1013.699};
-						angles[]={0,4.2052188,6.2511969};
+						position[]={1473.826,4.0890036,1013.699};
+						angles[]={0,4.2052135,6.251193};
 					};
 					side="West";
 					flags=4;
@@ -7315,7 +7584,6 @@ class Mission
 					};
 					id=776;
 					type="B_RangeMaster_F";
-					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -7371,11 +7639,49 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0;
+									value=-1;
 								};
 							};
 						};
 						class Attribute3
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male02GRE";
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute5
 						{
 							property="ace_isSurrendered";
 							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
@@ -7394,7 +7700,7 @@ class Mission
 								};
 							};
 						};
-						nAttributes=4;
+						nAttributes=6;
 					};
 				};
 				class Item8
@@ -7402,8 +7708,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1468.6799,4.2566381,1015.3543};
-						angles[]={0,4.2052188,6.256525};
+						position[]={1468.6801,4.2566342,1015.354};
+						angles[]={0,4.2052135,6.2565165};
 					};
 					side="West";
 					flags=4;
@@ -7416,7 +7722,7 @@ class Mission
 					};
 					id=777;
 					type="B_RangeMaster_F";
-					atlOffset=4.7683716e-007;
+					atlOffset=-4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -7472,11 +7778,49 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0;
+									value=-1;
 								};
 							};
 						};
 						class Attribute3
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male01GRE";
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.05;
+								};
+							};
+						};
+						class Attribute5
 						{
 							property="ace_isSurrendered";
 							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
@@ -7495,7 +7839,7 @@ class Mission
 								};
 							};
 						};
-						nAttributes=4;
+						nAttributes=6;
 					};
 				};
 				class Item9
@@ -7503,8 +7847,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1460.8717,4.338613,1014.8809};
-						angles[]={0.0053377044,4.2052188,0.018663859};
+						position[]={1460.8719,4.3386192,1014.881};
+						angles[]={0.0053407075,4.2052135,0.018657569};
 					};
 					side="West";
 					flags=4;
@@ -7572,11 +7916,49 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0;
+									value=-1;
 								};
 							};
 						};
 						class Attribute3
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male01GRE";
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute5
 						{
 							property="ace_isSurrendered";
 							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
@@ -7595,7 +7977,7 @@ class Mission
 								};
 							};
 						};
-						nAttributes=4;
+						nAttributes=6;
 					};
 				};
 				class Item10
@@ -7603,8 +7985,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1471.6376,4.1632457,1016.8328};
-						angles[]={0.0026520467,4.2052188,6.2485328};
+						position[]={1471.6379,4.1632333,1016.833};
+						angles[]={0.0026529003,4.2052135,6.2485409};
 					};
 					side="West";
 					flags=4;
@@ -7616,106 +7998,6 @@ class Mission
 						isPlayable=1;
 					};
 					id=779;
-					type="B_RangeMaster_F";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=-1;
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="ace_isHandcuffed";
-							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						class Attribute2
-						{
-							property="ace_isEngineer";
-							expression="if (_value != -1) then {_this setVariable ['ace_isEngineer',_value, true];}";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						class Attribute3
-						{
-							property="ace_isSurrendered";
-							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						nAttributes=4;
-					};
-				};
-				class Item11
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={1463.8885,4.3442535,1016.5966};
-						angles[]={0.0080009829,4.2052188,6.272521};
-					};
-					side="West";
-					flags=4;
-					class Attributes
-					{
-						skill=0.60000002;
-						name="cop_12";
-						description="WhiteListed - Cop 12";
-						isPlayable=1;
-					};
-					id=780;
 					type="B_RangeMaster_F";
 					atlOffset=-4.7683716e-007;
 					class CustomAttributes
@@ -7773,11 +8055,49 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0;
+									value=-1;
 								};
 							};
 						};
 						class Attribute3
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male01GRE";
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.97000003;
+								};
+							};
+						};
+						class Attribute5
 						{
 							property="ace_isSurrendered";
 							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
@@ -7796,7 +8116,146 @@ class Mission
 								};
 							};
 						};
-						nAttributes=4;
+						nAttributes=6;
+					};
+				};
+				class Item11
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1463.889,4.3442459,1016.597};
+						angles[]={0.0079936078,4.2052135,6.2725215};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						skill=0.60000002;
+						name="cop_12";
+						description="WhiteListed - Cop 12";
+						isPlayable=1;
+					};
+					id=780;
+					type="B_RangeMaster_F";
+					atlOffset=4.7683716e-007;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isMedic";
+							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=-1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isEngineer";
+							expression="if (_value != -1) then {_this setVariable ['ace_isEngineer',_value, true];}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=-1;
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male01GRE";
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.02;
+								};
+							};
+						};
+						class Attribute5
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=6;
 					};
 				};
 				class Item12
@@ -7804,8 +8263,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1464.8942,4.4283838,1007.6647};
-						angles[]={0.031988446,4.2052188,6.2458706};
+						position[]={1464.894,4.4283767,1007.665};
+						angles[]={0.031991884,4.2052135,6.2458701};
 					};
 					side="West";
 					flags=4;
@@ -7874,11 +8333,49 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0;
+									value=-1;
 								};
 							};
 						};
 						class Attribute3
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male02GRE";
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.02;
+								};
+							};
+						};
+						class Attribute5
 						{
 							property="ace_isSurrendered";
 							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
@@ -7897,7 +8394,7 @@ class Mission
 								};
 							};
 						};
-						nAttributes=4;
+						nAttributes=6;
 					};
 				};
 				class Item13
@@ -7905,8 +8402,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1467.0828,4.2900758,1018.0167};
-						angles[]={0.0053265258,4.4053559,6.256525};
+						position[]={1467.083,4.2900643,1018.017};
+						angles[]={0.0053232545,4.4053507,6.2565165};
 					};
 					side="West";
 					flags=4;
@@ -7919,7 +8416,6 @@ class Mission
 					};
 					id=782;
 					type="B_RangeMaster_F";
-					atlOffset=1.4305115e-006;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -7975,11 +8471,49 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0;
+									value=-1;
 								};
 							};
 						};
 						class Attribute3
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male02GRE";
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.99000001;
+								};
+							};
+						};
+						class Attribute5
 						{
 							property="ace_isSurrendered";
 							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
@@ -7998,7 +8532,7 @@ class Mission
 								};
 							};
 						};
-						nAttributes=4;
+						nAttributes=6;
 					};
 				};
 				class Item14
@@ -8006,8 +8540,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1467.9701,4.274446,1009.32};
-						angles[]={0.0053265258,4.2052188,6.2458706};
+						position[]={1467.97,4.2744508,1009.32};
+						angles[]={0.0053232545,4.2052135,6.2458701};
 					};
 					side="West";
 					flags=4;
@@ -8019,107 +8553,6 @@ class Mission
 						isPlayable=1;
 					};
 					id=783;
-					type="B_RangeMaster_F";
-					atlOffset=-4.7683716e-007;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=-1;
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="ace_isHandcuffed";
-							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						class Attribute2
-						{
-							property="ace_isEngineer";
-							expression="if (_value != -1) then {_this setVariable ['ace_isEngineer',_value, true];}";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						class Attribute3
-						{
-							property="ace_isSurrendered";
-							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						nAttributes=4;
-					};
-				};
-				class Item15
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={1465.4857,4.3083043,1019.9091};
-						angles[]={0.0053265258,4.2052135,6.2751846};
-					};
-					side="West";
-					flags=4;
-					class Attributes
-					{
-						skill=0.60000002;
-						name="cop_16";
-						description="WhiteListed - Cop 16";
-						isPlayable=1;
-					};
-					id=784;
 					type="B_RangeMaster_F";
 					atlOffset=4.7683716e-007;
 					class CustomAttributes
@@ -8177,11 +8610,169 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0;
+									value=-1;
 								};
 							};
 						};
 						class Attribute3
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male01GRE";
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.97000003;
+								};
+							};
+						};
+						class Attribute5
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=6;
+					};
+				};
+				class Item15
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1465.486,4.3083029,1019.909};
+						angles[]={0.0053232545,4.2052135,6.2751913};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						skill=0.60000002;
+						name="cop_16";
+						description="WhiteListed - Cop 16";
+						isPlayable=1;
+					};
+					id=784;
+					type="B_RangeMaster_F";
+					atlOffset=-4.7683716e-007;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isMedic";
+							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=-1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isEngineer";
+							expression="if (_value != -1) then {_this setVariable ['ace_isEngineer',_value, true];}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=-1;
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male01GRE";
+								};
+							};
+						};
+						class Attribute4
 						{
 							property="pitch";
 							expression="_this setpitch _value;";
@@ -8200,7 +8791,7 @@ class Mission
 								};
 							};
 						};
-						class Attribute4
+						class Attribute5
 						{
 							property="ace_isSurrendered";
 							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
@@ -8219,7 +8810,7 @@ class Mission
 								};
 							};
 						};
-						nAttributes=5;
+						nAttributes=6;
 					};
 				};
 				class Item16
@@ -8227,8 +8818,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1469.5082,4.2250342,1006.8362};
-						angles[]={0.0026520467,4.2052188,6.2458706};
+						position[]={1469.5081,4.225039,1006.836};
+						angles[]={0.0026529003,4.2052135,6.2458701};
 					};
 					side="West";
 					flags=4;
@@ -8241,7 +8832,6 @@ class Mission
 					};
 					id=785;
 					type="B_RangeMaster_F";
-					atlOffset=-4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -8297,11 +8887,49 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0;
+									value=-1;
 								};
 							};
 						};
 						class Attribute3
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male02GRE";
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.98000002;
+								};
+							};
+						};
+						class Attribute5
 						{
 							property="ace_isSurrendered";
 							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
@@ -8320,7 +8948,7 @@ class Mission
 								};
 							};
 						};
-						nAttributes=4;
+						nAttributes=6;
 					};
 				};
 				class Item17
@@ -8328,8 +8956,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1470.8094,4.1870627,1018.6666};
-						angles[]={0.0026520467,4.2052188,6.2485328};
+						position[]={1470.809,4.1870823,1018.667};
+						angles[]={0.0026529003,4.2052135,6.2485409};
 					};
 					side="West";
 					flags=4;
@@ -8342,6 +8970,145 @@ class Mission
 					};
 					id=786;
 					type="B_RangeMaster_F";
+					atlOffset=4.7683716e-007;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isMedic";
+							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=-1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isEngineer";
+							expression="if (_value != -1) then {_this setVariable ['ace_isEngineer',_value, true];}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=-1;
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male01GRE";
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.04;
+								};
+							};
+						};
+						class Attribute5
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=6;
+					};
+				};
+				class Item18
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1469.804,4.2033515,1021.151};
+						angles[]={0.010663962,4.2052135,6.2645278};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						skill=0.60000002;
+						name="cop_19";
+						description="WhiteListed - Cop 19";
+						isPlayable=1;
+					};
+					id=787;
+					type="B_RangeMaster_F";
 					atlOffset=-4.7683716e-007;
 					class CustomAttributes
 					{
@@ -8398,77 +9165,14 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0;
-								};
-							};
-						};
-						class Attribute3
-						{
-							property="ace_isSurrendered";
-							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						nAttributes=4;
-					};
-				};
-				class Item18
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={1469.8038,4.2033505,1021.1514};
-						angles[]={0.010664274,4.2052188,6.2645216};
-					};
-					side="West";
-					flags=4;
-					class Attributes
-					{
-						skill=0.60000002;
-						name="cop_19";
-						description="WhiteListed - Cop 19";
-						isPlayable=1;
-					};
-					id=787;
-					type="B_RangeMaster_F";
-					atlOffset=1.9073486e-006;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
 									value=-1;
 								};
 							};
 						};
-						class Attribute1
+						class Attribute3
 						{
-							property="ace_isHandcuffed";
-							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							property="speaker";
+							expression="_this setspeaker _value;";
 							class Value
 							{
 								class data
@@ -8477,17 +9181,17 @@ class Mission
 									{
 										type[]=
 										{
-											"BOOL"
+											"STRING"
 										};
 									};
-									value=0;
+									value="Male01GRE";
 								};
 							};
 						};
-						class Attribute2
+						class Attribute4
 						{
-							property="ace_isEngineer";
-							expression="if (_value != -1) then {_this setVariable ['ace_isEngineer',_value, true];}";
+							property="pitch";
+							expression="_this setpitch _value;";
 							class Value
 							{
 								class data
@@ -8499,11 +9203,11 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0;
+									value=0.94999999;
 								};
 							};
 						};
-						class Attribute3
+						class Attribute5
 						{
 							property="ace_isSurrendered";
 							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
@@ -8522,7 +9226,7 @@ class Mission
 								};
 							};
 						};
-						nAttributes=4;
+						nAttributes=6;
 					};
 				};
 			};
@@ -28149,6 +28853,25 @@ class Mission
 						};
 						class Attribute2
 						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male01GRE";
+								};
+							};
+						};
+						class Attribute3
+						{
 							property="pitch";
 							expression="_this setpitch _value;";
 							class Value
@@ -28166,7 +28889,7 @@ class Mission
 								};
 							};
 						};
-						nAttributes=3;
+						nAttributes=4;
 					};
 				};
 				class Item1
@@ -28231,6 +28954,25 @@ class Mission
 						};
 						class Attribute2
 						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male01GRE";
+								};
+							};
+						};
+						class Attribute3
+						{
 							property="pitch";
 							expression="_this setpitch _value;";
 							class Value
@@ -28248,7 +28990,7 @@ class Mission
 								};
 							};
 						};
-						nAttributes=3;
+						nAttributes=4;
 					};
 				};
 				class Item2
@@ -28314,6 +29056,25 @@ class Mission
 						};
 						class Attribute2
 						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male02GRE";
+								};
+							};
+						};
+						class Attribute3
+						{
 							property="pitch";
 							expression="_this setpitch _value;";
 							class Value
@@ -28331,7 +29092,7 @@ class Mission
 								};
 							};
 						};
-						nAttributes=3;
+						nAttributes=4;
 					};
 				};
 				class Item3
@@ -28397,6 +29158,25 @@ class Mission
 						};
 						class Attribute2
 						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male01GRE";
+								};
+							};
+						};
+						class Attribute3
+						{
 							property="pitch";
 							expression="_this setpitch _value;";
 							class Value
@@ -28414,7 +29194,7 @@ class Mission
 								};
 							};
 						};
-						nAttributes=3;
+						nAttributes=4;
 					};
 				};
 				class Item4
@@ -28480,6 +29260,25 @@ class Mission
 						};
 						class Attribute2
 						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male02GRE";
+								};
+							};
+						};
+						class Attribute3
+						{
 							property="pitch";
 							expression="_this setpitch _value;";
 							class Value
@@ -28497,7 +29296,7 @@ class Mission
 								};
 							};
 						};
-						nAttributes=3;
+						nAttributes=4;
 					};
 				};
 				class Item5
@@ -28562,6 +29361,25 @@ class Mission
 						};
 						class Attribute2
 						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male02GRE";
+								};
+							};
+						};
+						class Attribute3
+						{
 							property="pitch";
 							expression="_this setpitch _value;";
 							class Value
@@ -28579,7 +29397,7 @@ class Mission
 								};
 							};
 						};
-						nAttributes=3;
+						nAttributes=4;
 					};
 				};
 			};
@@ -58268,7 +59086,7 @@ class Mission
 		class Item1192
 		{
 			dataType="Marker";
-			position[]={6009.5088,8.8235874,10166.609};
+			position[]={6009.5947,8.8235283,10166.841};
 			name="car1_2_1_2";
 			text="@STR_MAR_CarNeu_Shop";
 			type="c_car";

@@ -1965,9 +1965,6 @@
         <Key ID="STR_Item_IronIngot">
             <Original>Eisenbarren</Original>
         </Key>
-		<Key ID="STR_Item_Salt">
-            <Original>Salz</Original>
-        </Key>
 		<Key ID="STR_Item_Steinsalt">
             <Original>Steinsalz</Original>
         </Key>
