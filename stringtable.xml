@@ -3587,6 +3587,9 @@
 		<Key ID="STR_PRO_Fliegen">
             <Original>Fliegen</Original>
         </Key>
+		<Key ID="STR_PRO_Repair">
+            <Original>Reparieren</Original>
+        </Key>
 		<Key ID="STR_PRO_Beschlagnahmen">
             <Original>Beschlagnahmen</Original>
         </Key>

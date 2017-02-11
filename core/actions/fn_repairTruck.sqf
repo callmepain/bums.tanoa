@@ -8,6 +8,7 @@
 */
 private ["_veh","_upp","_ui","_progress","_pgText","_cP","_displayName","_test","_sideRepairArray"];
 _veh = cursorObject;
+_prof = "reparieren";
 life_interrupted = false;
 if (isNull _veh) exitWith {};
 if ((_veh isKindOf "Car") || (_veh isKindOf "Ship") || (_veh isKindOf "Air")) then {
@@ -25,7 +26,13 @@ if ((_veh isKindOf "Car") || (_veh isKindOf "Ship") || (_veh isKindOf "Air")) th
         _pgText ctrlSetText format ["%2 (1%1)...","%",_upp];
         _progress progressSetPosition 0.01;
         _cP = 0.01;
-
+		_cpUp = 0.01;
+		_time = 0.3;
+		_data  = SKILLSYSTEM_VALUE(_prof,"civ");
+		if( _prof != "" ) then {
+			MININGTIME(_time,(_data select 0));
+			PROCESSCP(_cpUp,(_data select 0));
+		};
         for "_i" from 0 to 1 step 0 do {
             if (animationState player != "AinvPknlMstpSnonWnonDnon_medic_1") then {
                 [player,"AinvPknlMstpSnonWnonDnon_medic_1",true] remoteExecCall ["life_fnc_animSync",RCLIENT];
@@ -33,8 +40,8 @@ if ((_veh isKindOf "Car") || (_veh isKindOf "Ship") || (_veh isKindOf "Air")) th
                 player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_1";
             };
 
-            sleep 0.27;
-            _cP = _cP + 0.01;
+            sleep _time;
+            _cP = _cP + _cpUp;
             _progress progressSetPosition _cP;
             _pgText ctrlSetText format ["%3 (%1%2)...",round(_cP * 100),"%",_upp];
             if (_cP >= 1) exitWith {};
@@ -67,5 +74,9 @@ if ((_veh isKindOf "Car") || (_veh isKindOf "Ship") || (_veh isKindOf "Air")) th
 
         _veh setDamage 0;
         titleText[localize "STR_NOTF_RepairedVehicle","PLAIN"];
+		if( _prof != "" ) then 
+		{ 
+			[_prof,M_CONFIG(getNumber,"profession",_prof,"baseEXPgain")] call life_fnc_addExp;
+		};
     };
 };
