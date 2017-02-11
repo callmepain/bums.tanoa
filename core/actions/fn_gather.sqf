@@ -42,22 +42,12 @@ for "_i" from 0 to count(_resourceCfg)-1 do {
 
 if (_zone isEqualTo "") exitWith {life_action_inUse = false;};
 
-_time = 0.3;
+_time = 0.5;
 _mining = 1;
 _data  = SKILLSYSTEM_VALUE(_prof,"civ");
 if( _prof != "" ) then {
-	switch ( _data select 0 ) do {
-		case 1: { _time = 0.4; _mining = 1; };
-		case 2: { _time = 0.35; _mining = 1.7; };
-		case 3: { _time = 0.33; _mining = 2.3; };
-		case 4: { _time = 0.3; _mining = 2.7; };
-		case 5: { _time = 0.29; _mining = 3; };
-		case 6: { _time = 0.28; _mining = 3.3; };
-		case 7: { _time = 0.27; _mining = 3.7; };
-		case 8: { _time = 0.26; _mining = 4; };
-		case 9: { _time = 0.25; _mining = 4.3; };
-		case 10: { _time = 0.24; _mining = 4.5; };
-	};
+	MININGMULTI(_mining,(_data select 0));
+	MININGTIME(_time,(_data select 0));
 }; 
 _levelreg = missionConfigFile >> "CfgGather" >> "Resources" >> _zonename;
 _levelneed = getNumber(_levelreg >> "level");
@@ -70,6 +60,7 @@ if (_exit) exitWith {life_action_inUse = false;};
 
 _amount = floor((random(_maxGather)+1)*_mining);
 _diff = [_resource,_amount,life_carryWeight,life_maxWeight] call life_fnc_calWeightDiff;
+
 if (_diff isEqualTo 0) exitWith {
     [localize "STR_NOTF_InvFull","Hinweis","Yellow"] call MSG_fnc_handle;
 
@@ -84,7 +75,7 @@ switch (_requiredItem) do {
 for "_i" from 0 to 4 do {
     player playMoveNow "AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon";
     waitUntil{animationState player != "AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon";};
-    sleep 0.5;
+    sleep _time;
 };
 
 if ([true,_resource,_diff] call life_fnc_handleInv) then {

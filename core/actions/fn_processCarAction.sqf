@@ -281,19 +281,9 @@ _cpUp = 0.01;
 // _profName = [_type] call life_fnc_profType;
 _data  = SKILLSYSTEM_VALUE(_prof,"civ");
 if( _prof != "" ) then {
-	switch ( _data select 0 ) do {
-		case 1: { _time = 0.4; _cpUp = 1.5; };
-		case 2: { _time = 0.35; _cpUp = 1.5; };
-		case 3: { _time = 0.33; _cpUp = 1.5; };
-		case 4: { _time = 0.3; _cpUp = 1.5; };
-		case 5: { _time = 0.29; _cpUp = 1.5; };
-		case 6: { _time = 0.28; _cpUp = 1.4; };
-		case 7: { _time = 0.27; _cpUp = 1.3; };
-		case 8: { _time = 0.26; _cpUp = 1.2; };
-		case 9: { _time = 0.25; _cpUp = 1.1; };
-		case 10: { _time = 0.24; _cpUp = 1; };
-	};
-}; 
+	MININGTIME(_time,(_data select 0));
+	PROCESSCARCP(_cpUp,(_data select 0));
+};
 //progress bar. taken from tonic.
 if (count _inputItems == 1) then {  
     while{true} do {
