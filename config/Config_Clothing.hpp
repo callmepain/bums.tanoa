@@ -33,7 +33,16 @@ class Clothing {
             { "U_OrestesBody", "Surfing On Land", 1100, "" },
             { "U_IG_Guerilla2_3", "The Outback Rangler", 1200, "" },
             { "U_C_HunterBody_grn", "The Hunters Look", 1500, "" },
+			{ "U_C_Man_casual_1_F", "Casual Clothes (Navy)", 1500, "" },
+			{ "U_C_Man_casual_2_F", "Casual Clothes (Blue)", 1500, "" },
+			{ "U_C_Man_casual_3_F", "Casual Clothes (Green)", 1500, "" },
+			{ "U_C_Man_casual_4_F", "Summer Clothes (Sky)", 1500, "" },
+			{ "U_C_Man_casual_5_F", "Summer Clothes (Yellow)", 1500, "" },
+			{ "U_C_Man_casual_6_F", "Summer Clothes (Red)", 1500, "" },
             { "U_C_WorkerCoveralls", "Mechanic Coveralls", 2500, "" },
+			{ "U_C_man_sport_1_F", "Sport Clothes (Beach)", 3500, "" },
+			{ "U_C_man_sport_2_F", "Sport Clothes (Orange)", 3500, "" },
+			{ "U_C_man_sport_3_F", "Sport Clothes (Blue)", 3500, "" },
             { "U_NikosAgedBody", "Casual Wears", 5000, "" }
         };
         headgear[] = {
@@ -57,6 +66,7 @@ class Clothing {
             { "H_BandMask_blk", "Hat & Bandanna", 300, "" },
             { "H_Hat_blue", "", 310, "" },
             { "H_Hat_checker", "", 340, "" },
+			{ "H_Helmet_Skate", "", 390, "" },
             { "H_Booniehat_tan", "", 425, "" }
         };
         goggles[] = {

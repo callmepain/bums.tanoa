@@ -112,7 +112,7 @@ switch (_code) do {
     };
 
     //Interaction key (default is Left Windows, can be mapped via Controls -> Custom -> User Action 10)
-    /*case _interactionKey: {
+    case _interactionKey: {
         if (!life_action_inUse) then {
             [] spawn  {
                 private "_handle";
@@ -121,7 +121,7 @@ switch (_code) do {
                 life_action_inUse = false;
             };
         };
-    };*/
+    };
 
     //Restraining (Shift + R)
     case 19: {

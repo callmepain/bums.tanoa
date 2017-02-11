@@ -58,9 +58,9 @@ class profession {
 	};
 	
 	class Reparieren {
-		displayName = "STR_PRO_Fliegen";
+		displayName = "STR_PRO_Repair";
 		variable = "Reparieren";
-		baseEXPgain = 300;
+		baseEXPgain = 1000;
 		icon = "icons\acemenu\ico_repair.paa";
 		side = "civ";
 	};
