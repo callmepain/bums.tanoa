@@ -13,9 +13,9 @@ if (life_action_inUse) exitWith {}; //Action is in use, exit to prevent spamming
 if (life_interrupted) exitWith {life_interrupted = false;};
 _isWater = surfaceIsWater (visiblePositionASL player);
 
-if (playerSide isEqualTo west && {player getVariable ["isEscorting",false]}) exitWith {
+/*if (playerSide isEqualTo west && {player getVariable ["isEscorting",false]}) exitWith {
     [] call life_fnc_copInteractionMenu;
-};
+};*/
 
 if (LIFE_SETTINGS(getNumber,"global_ATM") isEqualTo 1) then{
     //Check if the player is near an ATM.
@@ -104,12 +104,12 @@ if (isPlayer _curObject && _curObject isKindOf "Man") then {
     _miscItems = ["Land_BottlePlastic_V1_F","Land_TacticalBacon_F","Land_Can_V3_F","Land_CanisterFuel_F","Land_Suitcase_F"];
 
     //It's a vehicle! open the vehicle interaction key!
-   /* if (_isVehicle) then {
-        if (!dialog) then {
+    if (_isVehicle) then {
+       /* if (!dialog) then {
             if (player distance _curObject < ((boundingBox _curObject select 1) select 0)+2 && (!(player getVariable ["restrained",false])) && (!(player getVariable ["playerSurrender",false])) && !life_isknocked && !life_istazed) then {
                 [_curObject] call life_fnc_vInteractionMenu;
             };
-        };
+        };*/
     } else {
         //OK, it wasn't a vehicle so let's see what else it could be?
         if ((typeOf _curObject) in _miscItems) then {
@@ -120,5 +120,5 @@ if (isPlayer _curObject && _curObject isKindOf "Man") then {
                 [_curObject,player,true] remoteExecCall ["TON_fnc_pickupAction",RSERV];
             };
         };
-    };*/
+    };
 };
