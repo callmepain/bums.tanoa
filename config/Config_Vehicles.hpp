@@ -1,4 +1,5 @@
-class CarShops {
+class CarShops 
+{
     /*
     *    ARRAY FORMAT:
     *        0: STRING (Classname)
@@ -68,7 +69,8 @@ class CarShops {
         conditions = "";
         vehicles[] = {
 
-            { "red_charger_15_civ", "call life_civpkw_level >= 4" },
+
+          { "red_charger_15_civ", "call life_civpkw_level >= 4" },
  	        // { "red_genesis_16_civ", "call life_civpkw_level >= 4" },//
  	        { "red_xkrs_12_civ", "call life_civpkw_level >= 5" },
  	        { "red_s65_12_civ", "call life_civpkw_level >= 5" },
@@ -858,12 +860,14 @@ class LifeCfgVehicles {
         price = 34700;
         textures[] = { };
     };
+
 	class red_xkrs_12_civ {
         vItemSpace = 35;
         conditions = "";
         price = 24900;
         textures[] = { };
     };
+
 	class red_s65_12_civ {
         vItemSpace = 35;
         conditions = "";
@@ -877,6 +881,7 @@ class LifeCfgVehicles {
         textures[] = { };
     };
 	class Mrshounka_rs4_civ {
+
         vItemSpace = 35;
         conditions = "";
         price = 48900;
