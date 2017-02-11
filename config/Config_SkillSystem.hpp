@@ -35,11 +35,10 @@ class profession {
 
 	class PKW {
 		displayName = "STR_PRO_Fahren_PKW";
-		variable = "PKW";
+		variable = "PKW"; 
 		baseEXPgain = 20;
 		icon = "icons\skillsystem\ico_auto.paa";
 		side = "civ";
-		time = 30;
 	};
 
 	class LKW {
@@ -48,7 +47,6 @@ class profession {
 		baseEXPgain = 20;
 		icon = "icons\skillsystem\ico_lkw.paa";
 		side = "civ";
-		time = 30;
 	};
 
 	class Fliegen {
@@ -57,8 +55,16 @@ class profession {
 		baseEXPgain = 30;
 		icon = "icons\skillsystem\ico_fliegen.paa";
 		side = "civ";
-		time = 30;
 	};
+	
+	class Reparieren {
+		displayName = "STR_PRO_Fliegen";
+		variable = "Reparieren";
+		baseEXPgain = 300;
+		icon = "icons\acemenu\ico_repair.paa";
+		side = "civ";
+	};
+	
 	class Beschlagnahmen {
 		displayName = "STR_PRO_Beschlagnahmen";
 		variable = "Beschlagnahmen";
