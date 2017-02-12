@@ -54,8 +54,11 @@ lbClear _filters;
 ((findDisplay 38400) displayCtrl 1102) ctrlShow false;
 ((findDisplay 38400) displayCtrl 1103) ctrlShow false;
 
+((findDisplay 38400) displayCtrl 38401) ctrlShow false;
 ((findDisplay 38400) displayCtrl 38404) ctrlShow false;
 ((findDisplay 38400) displayCtrl 38405) ctrlShow false;
+((findDisplay 38400) displayCtrl 38406) ctrlShow false;
+((findDisplay 38400) displayCtrl 38407) ctrlShow false;	
 
 _filters lbAdd localize "STR_Shop_Weapon_ShopInv";
 _filters lbAdd localize "STR_Shop_Weapon_YourInv";

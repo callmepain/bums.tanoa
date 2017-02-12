@@ -18,16 +18,7 @@
 			h = 0.854001 * safezoneH;
 			// colorText[] = {1,1,1,0.5};
 		};
-		class Titel: RscStructuredText
-		{
-			idc = 1100;
-
-			x = 0.308235 * safezoneW + safezoneX;
-			y = 0.266898 * safezoneH + safezoneY;
-			w = 0.383497 * safezoneW;
-			h = 0.022 * safezoneH;
-			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])","(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
-		};
+		
 		class Hintergrund: IGUIBack
 		{
 			idc = 2200;
@@ -38,25 +29,38 @@
 			h = 0.4994 * safezoneH;
 			colorBackground[] = {0,0,0,0.7};
 		};
-		class vasText: Life_RscStructuredText
+			
+		class Titel: RscStructuredText
 		{
-			idc = -1;
+			idc = 1100;
+
+			x = 0.308235 * safezoneW + safezoneX;
+			y = 0.266898 * safezoneH + safezoneY;
+			w = 0.384743 * safezoneW;
+			h = 0.022 * safezoneH;
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.75};
+		};		
+		
+		class ShopTitel: Life_RscStructuredText
+		{
+			idc = 1101;
 
 			x = 0.307628 * safezoneW + safezoneX;
-			y = 0.297686 * safezoneH + safezoneY;
+			y = 0.295332 * safezoneH + safezoneY;
 			w = 0.18731 * safezoneW;
 			h = 0.0219907 * safezoneH;
-			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.5};
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.75};
 		};
-		class vasgText: Life_RscStructuredText
+		
+		class PlayerTitel: Life_RscStructuredText
 		{
-			idc = -1;
+			idc = 1102;
 
-			x = 0.505062 * safezoneW + safezoneX;
-			y = 0.295487 * safezoneH + safezoneY;
-			w = 0.18731 * safezoneW;
-			h = 0.0219907 * safezoneH;
-			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.5};
+			x = 0.5 * safezoneW + safezoneX;
+			y = 0.295332 * safezoneH + safezoneY;
+			w = 0.192372 * safezoneW;
+			h = 0.0220074 * safezoneH;
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.75};
 		};
 	};
 	
@@ -98,16 +102,7 @@
 			colorBackground[] = {0,0,0,0.3};
 			sizeEx = 0.04;
 		};
-		class Title: Life_RscTitle
-		{
-			idc = 2403;
 
-			x = 0.307628 * safezoneW + safezoneX;
-			y = 0.269097 * safezoneH + safezoneY;
-			w = 0.323996 * safezoneW;
-			h = 0.0219907 * safezoneH;
-			colorText[] = {0.95,0.95,0.95,1};
-		};
 		class buyEdit: Life_RscEdit
 		{
 			idc = 2404;
@@ -119,28 +114,7 @@
 			h = 0.0219907 * safezoneH;
 			colorBackground[] = {0,0,0,0.3};
 		};
-		class Cash: Life_RscStructuredText
-		{
-			idc = 601;
-			style = 1;
 
-			x = 0.368377 * safezoneW + safezoneX;
-			y = 0.269097 * safezoneH + safezoneY;
-			w = 0.323996 * safezoneW;
-			h = 0.0175926 * safezoneH;
-		};
-		class ButtonAddG: Life_ButtonMenu
-		{
-			onButtonClick = "[] spawn life_fnc_virt_buy;";
-			idc = 1009;
-
-			x = 0.307628 * safezoneW + safezoneX;
-			y = 0.697916 * safezoneH + safezoneY;
-			w = 0.18731 * safezoneW;
-			h = 0.0219907 * safezoneH;
-			colorText[] = {1,1,1,1};
-			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.5};
-		};
 		class sellEdit: Life_RscEdit
 		{
 			idc = 2405;
@@ -152,29 +126,43 @@
 			h = 0.0219907 * safezoneH;
 			colorBackground[] = {0,0,0,0.3};
 		};
+		
+		class ButtonAddG: Life_ButtonMenu
+		{
+			onButtonClick = "[] spawn life_fnc_virt_buy;";
+			idc = 2406;
+
+			x = 0.307628 * safezoneW + safezoneX;
+			y = 0.697916 * safezoneH + safezoneY;
+			w = 0.18731 * safezoneW;
+			h = 0.0219907 * safezoneH;
+			colorText[] = {1,1,1,1};
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.75};
+		};	
+		
 		class ButtonRemoveG: Life_ButtonMenu
 		{
 			onButtonClick = "[false] call life_fnc_virt_sell";
-			idc = 1011;
+			idc = 2407;
 
 			x = 0.5 * safezoneW + safezoneX;
 			y = 0.686921 * safezoneH + safezoneY;
 			w = 0.192372 * safezoneW;
 			h = 0.0219907 * safezoneH;
 			colorText[] = {1,1,1,1};
-			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.5};
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.75};
 		};
 		class ButtonRemoveA: Life_ButtonMenu
 		{
 			onButtonClick = "[true] call life_fnc_virt_sell";
-			idc = 1013;
+			idc = 2408;
 
 			x = 0.5 * safezoneW + safezoneX;
 			y = 0.719907 * safezoneH + safezoneY;
 			w = 0.192372 * safezoneW;
 			h = 0.0219907 * safezoneH;
 			colorText[] = {1,1,1,1};
-			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.5};
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.75};
 		};
 	};
 };

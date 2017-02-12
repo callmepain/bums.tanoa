@@ -48,7 +48,7 @@ class Life_Vehicle_Shop_v2_3D {
 			y = 0.06 * safezoneH + safezoneY;
 			w = 0.149531 * safezoneW;
 			h = 0.033 * safezoneH;
-			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])","(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.75};
 		};
 		class VehicleInfoHeader: Life_RscText
 		{
@@ -59,7 +59,7 @@ class Life_Vehicle_Shop_v2_3D {
 			y = 0.05802 * safezoneH + safezoneY;
 			w = 0.190781 * safezoneW;
 			h = 0.022 * safezoneH;
-			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])","(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.75};
 		};
 		class CloseBtn: Life_RscButtonMenu
 		{

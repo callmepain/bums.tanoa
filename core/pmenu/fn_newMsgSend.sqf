@@ -85,7 +85,7 @@ switch(_type) do
 	{ 
 		if(({side _x == west} count playableUnits) == 0) exitWith 
 		{
-			["Zur Zeit sind keine Cops verfügbar.<br/>Bitte versuche es später erneut.","Hinweiß","yellow"] call MSG_fnc_handle;
+			["Zur Zeit sind keine Cops verfügbar.<br/>Bitte versuche es später erneut.","Hinweis","yellow"] call MSG_fnc_handle;
 		};
 				
 		_to = "den Cops";
@@ -100,7 +100,7 @@ switch(_type) do
 	{ 
 		if(({side _x == independent} count playableUnits) == 0) exitWith 
 		{			
-			["Zur Zeit sind keine Medics verfügbar.<br/>Bitte versuche es später erneut.","Hinweiß","yellow"] call MSG_fnc_handle;
+			["Zur Zeit sind keine Medics verfügbar.<br/>Bitte versuche es später erneut.","Hinweis","yellow"] call MSG_fnc_handle;
 		};
 		_to = "den Medics";
 		
@@ -115,7 +115,7 @@ switch(_type) do
 		if(({side _x == east} count playableUnits) == 0) exitWith 
 		{
 			
-			["Zur Zeit ist kein ADAC verfügbar.<br/>Bitte versuche es später erneut.","Hinweiß","yellow"] call MSG_fnc_handle;
+			["Zur Zeit ist kein ADAC verfügbar.<br/>Bitte versuche es später erneut.","Hinweis","yellow"] call MSG_fnc_handle;
 		};
 		_to = "dem ADAC";
 	

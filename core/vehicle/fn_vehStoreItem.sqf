@@ -29,8 +29,8 @@ _isFluid = false;
 } forEach ["oilu","oilp"];
 
 //check
-if (_isTanker && (!_isFluid)) exitWith {["In dem Tanklaster kannst du nur Gefahrstoffe lagern !!!","Hinweiß","yellow"] call MSG_fnc_handle};
-if ((!_isTanker) && (_isFluid)) exitWith {["Du kannst Gefahrstoffe nur in einem Tanklaster lagern !!!","Hinweiß","yellow"] call MSG_fnc_handle};
+if (_isTanker && (!_isFluid)) exitWith {["In dem Tanklaster kannst du nur Gefahrstoffe lagern !!!","Hinweis","yellow"] call MSG_fnc_handle};
+if ((!_isTanker) && (_isFluid)) exitWith {["Du kannst Gefahrstoffe nur in einem Tanklaster lagern !!!","Hinweis","yellow"] call MSG_fnc_handle};
 
 
 
@@ -46,7 +46,7 @@ _veh_data = life_trunk_vehicle getVariable ["Trunk",[[],0]];
 
 _inv = _veh_data select 0;
 
-if(_ctrl == "goldbar" && {!(life_trunk_vehicle isKindOf "LandVehicle" OR life_trunk_vehicle isKindOf "House_F" OR typeOf life_trunk_vehicle in life_Container)}) exitWith {["Du kannst das hier nicht einlagern!","Hinweiß","yellow"] call MSG_fnc_handle};
+if(_ctrl == "goldbar" && {!(life_trunk_vehicle isKindOf "LandVehicle" OR life_trunk_vehicle isKindOf "House_F" OR typeOf life_trunk_vehicle in life_Container)}) exitWith {["Du kannst das hier nicht einlagern!","Hinweis","yellow"] call MSG_fnc_handle};
 
 if(_state) then
 {
@@ -93,12 +93,12 @@ else
 {
 
 	_num = ctrlText 3506;
-	if(!([_num] call fnc_isnumber)) exitWith {["Du musst eine Zahl eingeben.","Hinweiß","yellow"] call MSG_fnc_handle};
+	if(!([_num] call fnc_isnumber)) exitWith {["Du musst eine Zahl eingeben.","Hinweis","yellow"] call MSG_fnc_handle};
 	_num = parseNumber(_num);
-	if(_num < 1) exitWith {["Der Wert kann nicht 0 sein!","Hinweiß","yellow"] call MSG_fnc_handle};
+	if(_num < 1) exitWith {["Der Wert kann nicht 0 sein!","Hinweis","yellow"] call MSG_fnc_handle};
 	
 	_itemWeight = ([_ctrl] call life_fnc_itemWeight) * _num;
-	if(((_totalWeight select 1) + _itemWeight) > (_totalWeight select 0)) exitWith {["Nicht genug Platz vorhanden!","Hinweiß","yellow"] call MSG_fnc_handle};
+	if(((_totalWeight select 1) + _itemWeight) > (_totalWeight select 0)) exitWith {["Nicht genug Platz vorhanden!","Hinweis","yellow"] call MSG_fnc_handle};
 
 	if(!([false,_ctrl,_num] call life_fnc_handleInv)) exitWith {["Es ist ein Fehler aufgetreten, du kannst den Gegenstand nicht aus deinem Inventar entfernen.","Fehler","red"] call MSG_fnc_handle};
 	_index = [_ctrl,_inv] call TON_fnc_index;

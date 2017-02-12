@@ -38,7 +38,7 @@ class TrunkMenu
 			y = 0.2668 * safezoneH + safezoneY;
 			w = 0.383497 * safezoneW;
 			h = 0.022 * safezoneH;
-			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])","(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.75};
 		};
 		class VehicleWeight: RscStructuredText
 		{
@@ -61,8 +61,8 @@ class TrunkMenu
 			y = 0.302 * safezoneH + safezoneY;
 			w = 0.176201 * safezoneW;
 			h = 0.022 * safezoneH;
-			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.5};
-			sizeEx = 1.0 * 	(0.04) * GUI_GRID_H;
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.75};
+			sizeEx = 0.04;
 		};
 		class RscPlayerText: RscStructuredText
 		{
@@ -73,8 +73,8 @@ class TrunkMenu
 			y = 0.302 * safezoneH + safezoneY;
 			w = 0.181384 * safezoneW;
 			h = 0.022 * safezoneH;
-			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.5};
-			sizeEx = 1.0 * 	(0.04) * GUI_GRID_H;
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.75};
+			sizeEx = 0.04;
 		};
 	};
 	
@@ -148,7 +148,7 @@ class TrunkMenu
 			w = 0.176201 * safezoneW;
 			h = 0.022 * safezoneH;
 			colorText[] = {1,1,1,1};
-			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.5};
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.75};
 		};
 		class StoreItem: Life_RscButtonMenu
 		{
@@ -161,7 +161,7 @@ class TrunkMenu
 			w = 0.181384 * safezoneW;
 			h = 0.022 * safezoneH;
 			colorText[] = {1,1,1,1};
-			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.5};
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.75};
 		};
 		class TakeAllItem: Life_RscButtonMenu
 		{
@@ -174,7 +174,7 @@ class TrunkMenu
 			w = 0.176201 * safezoneW;
 			h = 0.022 * safezoneH;
 			colorText[] = {1,1,1,1};
-			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.5};
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.75};
 		};
 		class StoreAllItem: Life_RscButtonMenu
 		{
@@ -187,7 +187,7 @@ class TrunkMenu
 			w = 0.181384 * safezoneW;
 			h = 0.022 * safezoneH;
 			colorText[] = {1,1,1,1};
-			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.5};
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.75};
 		};
 	};
 };
