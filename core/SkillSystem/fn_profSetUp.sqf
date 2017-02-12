@@ -16,7 +16,7 @@ _Titel ctrlSetStructuredText parseText "Fahigkeiten";
 lbClear _Names;
 _side = "";
 SIDEOFPLAYER(_side);
-_SkillConfigs = "getText(_x >> 'side') isEqualTo _side" configClasses (missionConfigFile >> "profession");
+_SkillConfigs = "_side in getArray(_x >> 'side') "configClasses (missionConfigFile >> "profession");
 {
 	if(_side == "civ") then {
 		//_Skills = _Skills + localize getText(_x >> "displayName") + "<br/>";

@@ -33,11 +33,11 @@ _packet pushBack life_gear;
 _packet pushBack life_is_arrested;
 _packet pushBack life_is_alive;
 _packet pushBack (getPosATL player);
-
+_SkillConfigs = "_flag in getArray(_x >> 'side') "configClasses (missionConfigFile >> "profession");
 {
 		_data = SKILLSYSTEM_VALUE(configName _x,_flag);
 		_profs pushBack [configName _x,_data select 0,_data select 1,_flag];
-} forEach (format ["getText(_x >> 'side') isEqualTo '%1'",_flag] configClasses (missionConfigFile >> "profession"));
+} forEach _SkillConfigs;
 
 _packet pushback _profs;
 
