@@ -10,8 +10,6 @@
    
 Private ["_name","_vehicle","_vehname","_weapname","_weap","_target","_picture","_vehtarget","_azimuth","_wepdir","_hudnames","_ui"];   
 	   
-
-
  
 [] spawn 
 {
