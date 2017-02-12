@@ -20,7 +20,7 @@ class profession {
 		variable = "Ernten";
 		baseEXPgain = 20; 
 		icon = "icons\skillsystem\ico_ernten.paa";
-		side = "civ";
+		side[] = {"civ"};
 		Resource = "Resources";
 	};
 
@@ -29,7 +29,7 @@ class profession {
 		variable = "Rohstoffabbau";
 		baseEXPgain = 10;
 		icon = "icons\skillsystem\ico_rohstoff.paa";
-		side = "civ";
+		side[] = {"civ"};
 		Resource = "Minerals";
 	};
 
@@ -38,7 +38,7 @@ class profession {
 		variable = "PKW"; 
 		baseEXPgain = 20;
 		icon = "icons\skillsystem\ico_auto.paa";
-		side = "civ";
+		side[] = {"civ"};
 	};
 
 	class LKW {
@@ -46,7 +46,7 @@ class profession {
 		variable = "LKW"; 
 		baseEXPgain = 20;
 		icon = "icons\skillsystem\ico_lkw.paa";
-		side = "civ";
+		side[] = {"civ"};
 	};
 
 	class Fliegen {
@@ -54,15 +54,15 @@ class profession {
 		variable = "Fliegen";
 		baseEXPgain = 30;
 		icon = "icons\skillsystem\ico_fliegen.paa";
-		side = "civ";
+		side[] = {"civ"};
 	};
 	
 	class Reparieren {
 		displayName = "STR_PRO_Repair";
 		variable = "Reparieren";
-		baseEXPgain = 1000;
+		baseEXPgain = 500;
 		icon = "icons\acemenu\ico_repair.paa";
-		side = "civ";
+		side[] = {"civ","cop","med"};
 	};
 	
 	class Beschlagnahmen {
@@ -70,20 +70,20 @@ class profession {
 		variable = "Beschlagnahmen";
 		baseEXPgain = 200;
 		icon = "icons\items\ico_pickaxe.paa";
-		side = "cop";
+		side[] = {"cop"};
 	};
 	class Durchsuchen {
 		displayName = "STR_PRO_Durchsuchen";
 		variable = "Durchsuchen";
 		baseEXPgain = 10;
 		icon = "icons\items\ico_pickaxe.paa";
-		side = "cop";
+		side[] = {"cop"};
 	};
 	class Blut {
 		displayName = "STR_PRO_Blut";
 		variable = "Blut";
 		baseEXPgain = 10;
 		icon = "icons\items\ico_pickaxe.paa";
-		side = "med";
+		side[] = {"med"};
 	};
 };

@@ -11,6 +11,7 @@ _veh = cursorObject;
 _prof = "reparieren";
 _cardmgbefore = [];
 _cardmgafter = [];
+_carmotordmg = 0;
 _carrep = 0.85;
 life_interrupted = false;
 if (isNull _veh) exitWith {};
@@ -24,6 +25,7 @@ if ((_veh isKindOf "Car") || (_veh isKindOf "Ship") || (_veh isKindOf "Air")) th
 				_cardmgbefore pushback [_veh GetHitIndex _i]; 
 			};
 		};
+		_carmotordmg = _veh getHitPointDamage "hitEngine";
         //Setup our progress bar.
         disableSerialization;
         "progressBar" cutRsc ["life_progress","PLAIN"];
@@ -39,6 +41,7 @@ if ((_veh isKindOf "Car") || (_veh isKindOf "Ship") || (_veh isKindOf "Air")) th
 		if( _prof != "" ) then {
 			MININGTIME(_time,(_data select 0));
 			PROCESSCP(_cpUp,(_data select 0));
+			CARREP(_carrep,(_data select 0));
 		};
         for "_i" from 0 to 1 step 0 do {
             if (animationState player != "AinvPknlMstpSnonWnonDnon_medic_1") then {
@@ -56,7 +59,6 @@ if ((_veh isKindOf "Car") || (_veh isKindOf "Ship") || (_veh isKindOf "Air")) th
             if !(isNull objectParent player) exitWith {};
             if (life_interrupted) exitWith {};
         };
-		CARREP(_carrep,(_data select 0));
 		{  
 			if ((_x select 0) > _carrep) then {  
 				_cardmgafter pushback [_carrep]; 
@@ -74,7 +76,7 @@ if ((_veh isKindOf "Car") || (_veh isKindOf "Ship") || (_veh isKindOf "Air")) th
 		_ran = floor(70/(_data select 0));
         //Check if playerSide has infinite repair enabled
         if (playerSide isEqualTo civilian && (_sideRepairArray select 0) isEqualTo 0) then {
-			if (floor(random(_ran)) == 1) then {
+			if (floor(random(_ran)) != 1) then {
 				[false,"toolkit",1] call life_fnc_handleInv;
 			};
         };
@@ -87,11 +89,17 @@ if ((_veh isKindOf "Car") || (_veh isKindOf "Ship") || (_veh isKindOf "Air")) th
         if (playerSide isEqualTo east && (_sideRepairArray select 3) isEqualTo 0) then {
             [false,"toolkit",1] call life_fnc_handleInv;
         };
-		_indexcount = count _cardmgafter;
-		for "_i" from 0 to _indexcount do {  
-			_veh SetHitIndex [_i,(_cardmgafter select _i select 0)];  
+		if !(playerSide isEqualTo east)  then {
+			_indexcount = count _cardmgafter;
+			for "_i" from 0 to _indexcount-1 do {  
+				_veh SetHitIndex [_i,(_cardmgafter select _i select 0)];  
+			};
+			if ((east countSide playableUnits) > 0) then {
+				_veh setHitPointDamage ["hitEngine",_carmotordmg];
+			};
+		} else {
+			_veh setDamage 0;
 		};
-        //_veh setDamage 0;
         titleText[localize "STR_NOTF_RepairedVehicle","PLAIN"];
 		if( _prof != "" ) then 
 		{ 

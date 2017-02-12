@@ -94,13 +94,14 @@ switch (_mode) do {
 	////////level
 	case 11: {
 		_profs = [];
-		_SkillConfigs = "getText(_x >> 'side') isEqualTo _flag" configClasses (missionConfigFile >> "profession");
+		_SkillConfigs = "_flag in getArray(_x >> 'side')" configClasses (missionConfigFile >> "profession");
 		{
 				_data = SKILLSYSTEM_VALUE(configName _x,_flag);
 				_profs pushBack [configName _x,_data select 0,_data select 1,_flag];
 		} foreach _SkillConfigs;
 		
 		_packet pushback _profs;
+		diag_log format["skill gelöt:%1",_packet]
 	}; 
 	// platzhalter
 	case 12: 
