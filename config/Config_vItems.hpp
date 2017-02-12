@@ -62,7 +62,7 @@ class VirtualShops {
         name = "STR_Shops_DrugDealer";
         side = "civ";
         conditions = "";
-        items[] = { "cocaine_processed", "heroin_processed", "marijuana" };
+        items[] = { "cocaine_processed", "heroin_processed", "marijuana","pilze_processed","lsd_processed" };
     };
 
     class oil {
@@ -732,7 +732,7 @@ class VirtualItems {
         variable = "cocaineProcessed";
         displayName = "STR_Item_CocaineP";
         weight = 4;
-        buyPrice = -1;
+        buyPrice = 5900;
         sellPrice = 3900;
         illegal = true;
         edible = -1;
@@ -755,7 +755,7 @@ class VirtualItems {
         variable = "lsdProcessed";
         displayName = "STR_Item_LSDP";
         weight = 4;
-        buyPrice = -1;
+        buyPrice = 4900;
         sellPrice = 3900;
         illegal = true;
         edible = -1;
@@ -766,7 +766,7 @@ class VirtualItems {
         variable = "pilze_processed";
         displayName = "STR_Item_zauberpilze";
         weight = 4;
-        buyPrice = -1;
+        buyPrice = 4900;
         sellPrice = 3900;
         illegal = true;
         edible = -1;

@@ -8,7 +8,7 @@ class EditorData
 	toggles=521;
 	class ItemIDProvider
 	{
-		nextID=7537;
+		nextID=7543;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={11348.955,332.33527,13089.44};
-		dir[]={-0.77465004,-0.53043008,-0.34436318};
-		up[]={-0.48469606,0.84772927,-0.2154671};
-		aside[]={-0.4062162,-4.1478779e-007,0.91378969};
+		pos[]={5524.6157,210.37546,9993.9141};
+		dir[]={0.53089178,-0.7914086,0.30303258};
+		up[]={0.68732351,0.61128449,0.39232352};
+		aside[]={0.49572721,2.2968743e-007,-0.86848021};
 	};
 };
 binarizationWanted=0;
@@ -613,7 +613,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=1826;
+		items=1830;
 		class Item0
 		{
 			dataType="Marker";
@@ -18376,7 +18376,7 @@ class Mission
 			side="Civilian";
 			class Entities
 			{
-				items=158;
+				items=159;
 				class Item0
 				{
 					dataType="Object";
@@ -26776,6 +26776,7 @@ class Mission
 					};
 					id=6129;
 					type="C_man_1";
+					atlOffset=0.15860271;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -26889,7 +26890,6 @@ class Mission
 						angles[]={0.002633519,4.982235,0.00030444475};
 					};
 					side="Civilian";
-					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -26898,6 +26898,7 @@ class Mission
 					};
 					id=6174;
 					type="C_man_1";
+					atlOffset=0.60547066;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -27001,7 +27002,7 @@ class Mission
 					};
 					id=6330;
 					type="C_man_p_fugitive_F_asia";
-					atlOffset=0.28530693;
+					atlOffset=0.55799961;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -27082,6 +27083,7 @@ class Mission
 					};
 					id=6331;
 					type="C_man_1";
+					atlOffset=0.071907997;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -28717,6 +28719,47 @@ class Mission
 							};
 						};
 						nAttributes=2;
+					};
+				};
+				class Item158
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={5442.1099,2.2114389,10071.056};
+						angles[]={0,4.710731,0};
+					};
+					side="Civilian";
+					flags=5;
+					class Attributes
+					{
+						init="this enableSimulation false;this allowDamage false;  this addAction[""<t color='#FFFF00'>Containerverleihstation</t>"",life_fnc_vehicleShopMenu,[""civ_container"",civilian,""container_1"",""civ"",""Altis Containerverleih Station"",true],0,false,true,"""",'playerSide == civilian && _this distance _target < 6 && vehicle player == player'];  ";
+						name="conti";
+					};
+					id=7542;
+					type="C_man_sport_1_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.94999999;
+								};
+							};
+						};
+						nAttributes=1;
 					};
 				};
 			};
@@ -33931,7 +33974,7 @@ class Mission
 			colorName="ColorGreen";
 			angle=272.67981;
 			id=1435;
-			atlOffset=0.098413467;
+			atlOffset=0.29624653;
 		};
 		class Item409
 		{
@@ -33950,6 +33993,7 @@ class Mission
 			};
 			id=1436;
 			type="Land_Atm_02_F";
+			atlOffset=0.20450211;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -35032,7 +35076,7 @@ class Mission
 			colorName="ColorGreen";
 			angle=257.53326;
 			id=2000;
-			atlOffset=0.004250288;
+			atlOffset=0.11424375;
 		};
 		class Item469
 		{
@@ -35051,7 +35095,7 @@ class Mission
 			};
 			id=2001;
 			type="Land_Atm_02_F";
-			atlOffset=2.1457672e-005;
+			atlOffset=0.11001492;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -59165,13 +59209,12 @@ class Mission
 		class Item1202
 		{
 			dataType="Marker";
-			position[]={5383.5801,-5.969759e-016,11215.29};
+			position[]={5381.5669,3.5599999,11215.549};
 			name="baustoffe_trader";
 			text="@STR_Shops_baustoffe";
 			type="Empty";
 			angle=131.84;
 			id=6502;
-			atlOffset=-3.5599999;
 		};
 		class Item1203
 		{
@@ -73342,6 +73385,87 @@ class Mission
 			id=7536;
 			type="Land_PierLadder_F";
 			atlOffset=4.2130332;
+		};
+		class Item1826
+		{
+			dataType="Marker";
+			position[]={5430.8047,2.2099609,10071.089};
+			name="container_1";
+			type="Empty";
+			angle=96.790413;
+			id=7537;
+			atlOffset=-3.9100647e-005;
+		};
+		class Item1827
+		{
+			dataType="Marker";
+			position[]={5442.1094,2.2099609,10071.079};
+			name="container_3";
+			text="Containerverleihstation";
+			type="c_car";
+			colorName="ColorBlue";
+			id=7538;
+			atlOffset=-3.9100647e-005;
+		};
+		class Item1828
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5430.8276,2.2099056,10071.086};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				skill=0.60000002;
+			};
+			id=7539;
+			type="Land_HelipadCircle_F";
+			atlOffset=-9.4413757e-005;
+		};
+		class Item1829
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5448.3979,2.2099609,10076.514};
+				angles[]={0,1.3962634,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				skill=0.60000002;
+				init="this enableSimulation false;this allowDamage false;  this addAction[""<t color='#FFFF00'>Containerverleihstation</t>"",life_fnc_vehicleShopMenu,[""civ_container"",civilian,""container_1"",""civ"",""Altis Containerverleih Station"",true],0,false,true,"""",'playerSide == civilian && _this distance _target < 6 && vehicle player == player'];  this addAction[""<t color='#FFFF00'>Containerverleihstation</t>"",life_fnc_vehicleShopMenu,[""civ_container"",independent,""container_1"",""civ"",""Altis Containerverleih Station"",true],0,false,true,"""",'playerSide == independent && _this distance _target < 6 && vehicle player == player'];  this addAction[""<t color='#FFFF00'>Containerverleihstation</t>"",life_fnc_vehicleShopMenu,[""civ_container"",east,""container_1"",""civ"",""Altis Containerverleih Station"",true],0,false,true,"""",'playerSide == east && _this distance _target < 6 && vehicle player == player'];  this setVariable[""realname"", ""Containerverleihstation""];";
+				name="carshop1_1_1_1";
+			};
+			id=7540;
+			type="Land_CashDesk_F";
+			atlOffset=-3.9100647e-005;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ace_isMedicalFacility";
+					expression="_this setVariable [""ace_medical_isMedicalFacility"",_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 	};
 	class Connections
