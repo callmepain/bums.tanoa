@@ -201,7 +201,7 @@
 						};
 						if ((_obj_type in IL_Supported_Vehicles_OFFROAD) && (_doors == "B")) then
 						{
-							[_v, _x, [_x_cargo_offset,-4.5,_zload], [_x_cargo_offset,_counter + 0.25 - _cargo_offset,_zload], 1, _turn] call IL_Move_Attach;
+							[_v, _x, [_x_cargo_offset,-4.5,_zload], [_x_cargo_offset,_counter + 0.25 - _cargo_offset-0.3,_zload+1.03], 1, _turn] call IL_Move_Attach;
 						};
 						if ((_obj_type in IL_Supported_Vehicles_Motorboat) && (_doors == "B")) then
 						{

@@ -1,5 +1,5 @@
 //if true then show debug globalChat (TODO add more hints)
-IL_DevMod = false;
+IL_DevMod = true;
 
 if (isnil "IL_Variables") then
 {
@@ -24,6 +24,7 @@ if (isnil "IL_Variables") then
 	IL_Num_Slots_MOTORBOAT = -2;
 	IL_Num_Slots_OFFROAD = -2;
 	IL_Num_Slots_VAN = -3;
+	IL_Num_Slots_RAPTOR = -2;
 	IL_Num_Slots_MOHAWK = -7;
 	IL_Num_Slots_KAMAZ = -4;
 	IL_Num_Slots_TEMPEST = -5;
@@ -79,7 +80,7 @@ if (isnil "IL_Variables") then
 	
 	// Supported vehicles
 	IL_Supported_Vehicles_Motorboat = ["C_Boat_Civil_01_F", "C_Boat_Civil_01_rescue_F", "C_Boat_Civil_01_police_F"];
-	IL_Supported_Vehicles_OFFROAD = ["C_Offroad_01_F", "B_G_Offroad_01_F", "B_mas_mar_Offroad_01_F"];
+	IL_Supported_Vehicles_OFFROAD = ["Mrshounka_raptor_civ"];
 	IL_Supported_Vehicles_VAN = ["C_Van_01_box_F", "B_G_Van_01_transport_F", "C_Van_01_transport_F"];
 	IL_Supported_Vehicles_HEMTT = ["B_Truck_01_transport_F"];
 	IL_Supported_Vehicles_HEMTT_Transporter = ["B_Truck_01_covered_F"];
@@ -104,7 +105,7 @@ if (isnil "IL_Variables") then
 	IL_Supported_Hunter = ["B_MRAP_01_F", "B_MRAP_01_gmg_F", "B_MRAP_01_hmg_F", "Marinir_B_MRAP_01_FG" , "Marinir_MRAP_01_gmg_FG", "Marinir_MRAP_01_hmg_FG", "B_mas_mar_MRAP_01_med_F", "B_mas_mar_MRAP_01_F", "B_mas_mar_MRAP_01_gmg_F", "B_mas_mar_MRAP_01_hmg_F"];
 	IL_Supported_Ifrit = ["O_MRAP_02_F", "O_MRAP_02_gmg_F", "O_MRAP_02_hmg_F"];
 	IL_Supported_VAN = ["C_Van_01_box_F", "B_G_Van_01_transport_F", "C_Van_01_transport_F"];
-	IL_Supported_OFFROAD = ["C_Offroad_01_F", "B_G_Offroad_01_F", "B_G_Offroad_01_armed_F", "JTF2_Offroad_armed_01", "B_mas_mar_Offroad_01_F", "B_mas_mar_Offroad_01_armed_F"];
+	IL_Supported_OFFROAD = ["Mrshounka_raptor_civ"];
 	IL_Supported_SUV = ["C_SUV_01_F"];
 	IL_Supported_Motorboat = ["C_Boat_Civil_01_F", "C_Boat_Civil_01_rescue_F", "C_Boat_Civil_01_police_F"];
     IL_Supported_Speedboot = ["B_Boat_Armed_01_minigun_F", "I_Boat_Armed_01_minigun_F", "O_Boat_Armed_01_hmg_F"];
@@ -128,6 +129,7 @@ if (isnil "IL_Variables") then
 	IL_Supported_Cargo_Veh_VAN = IL_Supported_Cargo_ALL + IL_Supported_Cargo_Veh_Offroad;
 	IL_Supported_Cargo_NonVeh_VAN = IL_Supported_Cargo_NonVeh_Offroad;
 	IL_Supported_Cargo_VAN = IL_Supported_Cargo_Veh_VAN + IL_Supported_Cargo_NonVeh_VAN;
+	
 	
 	IL_Supported_Cargo_Veh_Kamaz = [];
 	IL_Supported_Cargo_Veh_Kamaz_Transporter = [];

@@ -9,6 +9,9 @@
 private ["_veh","_upp","_ui","_progress","_pgText","_cP","_displayName","_test","_sideRepairArray"];
 _veh = cursorObject;
 _prof = "reparieren";
+_cardmgbefore = [];
+_cardmgafter = [];
+_carrep = 0.85;
 life_interrupted = false;
 if (isNull _veh) exitWith {};
 if ((_veh isKindOf "Car") || (_veh isKindOf "Ship") || (_veh isKindOf "Air")) then {
@@ -16,7 +19,11 @@ if ((_veh isKindOf "Car") || (_veh isKindOf "Ship") || (_veh isKindOf "Air")) th
         life_action_inUse = true;
         _displayName = FETCH_CONFIG2(getText,"CfgVehicles",(typeOf _veh),"displayName");
         _upp = format [localize "STR_NOTF_Repairing",_displayName];
-
+		for "_i" from 0 to 22 do { 
+			if(!isnil {_veh GetHitIndex _i} ) then {
+				_cardmgbefore pushback [_veh GetHitIndex _i]; 
+			};
+		};
         //Setup our progress bar.
         disableSerialization;
         "progressBar" cutRsc ["life_progress","PLAIN"];
@@ -49,7 +56,14 @@ if ((_veh isKindOf "Car") || (_veh isKindOf "Ship") || (_veh isKindOf "Air")) th
             if !(isNull objectParent player) exitWith {};
             if (life_interrupted) exitWith {};
         };
-
+		CARREP(_carrep,(_data select 0));
+		{  
+			if ((_x select 0) > _carrep) then {  
+				_cardmgafter pushback [_carrep]; 
+			} else { 
+				_cardmgafter pushback _x 
+			};  
+		}foreach _cardmgbefore;
         life_action_inUse = false;
         "progressBar" cutText ["","PLAIN"];
         player playActionNow "stop";
@@ -73,8 +87,11 @@ if ((_veh isKindOf "Car") || (_veh isKindOf "Ship") || (_veh isKindOf "Air")) th
         if (playerSide isEqualTo east && (_sideRepairArray select 3) isEqualTo 0) then {
             [false,"toolkit",1] call life_fnc_handleInv;
         };
-
-        _veh setDamage 0;
+		_indexcount = count _cardmgafter;
+		for "_i" from 0 to _indexcount do {  
+			_veh SetHitIndex [_i,(_cardmgafter select _i select 0)];  
+		};
+        //_veh setDamage 0;
         titleText[localize "STR_NOTF_RepairedVehicle","PLAIN"];
 		if( _prof != "" ) then 
 		{ 
