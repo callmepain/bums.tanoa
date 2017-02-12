@@ -2,7 +2,8 @@
 /*
     File: fn_weaponShopBuySell.sqf
     Author: Bryan "Tonic" Boardwine
-
+	Edit by H4uklotz
+	
     Description:
     Master handling of the weapon shop for buying / selling an item.
 */
@@ -11,46 +12,60 @@ private ["_price","_item","_itemInfo","_bad"];
 params [
 	"_price",
 	"_item",
-	"_anzahl"
+	"_anzahlIst"
 ];
+
+_anzahl = ctrlText 38407;
+
+if (!([_anzahl] call TON_fnc_isnumber)) exitWith 
+{
+	[(format [localize "STR_Shop_Virt_NoNum"]),"Hinweis","Yellow"] call MSG_fnc_handle;
+};
+_anzahl = parseNumber(_anzahl);
 
 _itemInfo = [_item] call life_fnc_fetchCfgDetails;
 if (isNil "_item") exitWith {hint localize "STR_Shop_Weapon_NoSelect"};
-if (isNil "_price") then {_price = 0;};
-_bad = "";
+if (isNil "_price") then {_price = 1;};
+if (_anzahl isEqualTo 0) exitWith 
+{
+	[(format["Wie du möchtest nichts kaufen ?! <br/> Ich glaub du bist nich ganz dicht!"]),"Fehler","red"] call MSG_fnc_handle;
+};
 
-if ((_itemInfo select 6) != "CfgVehicles") then 
+_exit = false;
+
+
+if (((_itemInfo select 6) != "CfgVehicles") && (uiNamespace getVariable ["Weapon_Shop_Filter",0]) != 1) then 
 {
     if (((_itemInfo select 4) in [4096,131072]) OR ((_itemInfo select 6) isEqualTo "CfgMagazines")) then 
 	{
-        if (!(player canAdd [_item,_anzahl]) && (uiNamespace getVariable ["Weapon_Shop_Filter",0]) != 1) then 
+        if (!(player canAdd [_item,(_anzahl)])) then 
 		{
-			if ((_itemInfo select 6) isEqualTo "CfgMagazines") then 
-			{
-				for "_i" from 0 to (_anzahl)-1 do 
-				{
-					if (!(player canAdd [_item,_i]) AND ((_itemInfo select 6) isEqualTo "CfgMagazines")) exitWith
-					{
-						_bad = parseText format["Du hast nicht soviel Platz.<br/>Du kannst nur %1x - %2 kaufen",_i,if(_i isEqualTo 1) then {"Magazin"}else{"Magazine"}];
-					};
-				};
-			}
-			else
-			{
-				_bad = (localize "STR_NOTF_NoRoom");
-			};
+			_exit = true;
 		};
     };
 };
 
-if (_bad != "") exitWith {hint _bad};
+if (_exit) exitWith 
+{
+	[format[localize "STR_NOTF_NoRoom"],"Hinweis","yellow"] call MSG_fnc_handle;
+};
 
 if ((uiNamespace getVariable ["Weapon_Shop_Filter",0]) isEqualTo 1) then 
 {
+	if (_anzahl > _anzahlIst) exitWith
+	{
+		["Du hast nicht soviele Gegenstände, wie du verkaufen möchtest!","Fehler","red"] call MSG_fnc_handle;
+	};
+	
+	for "_i" from 0 to (_anzahl)-1 do 
+	{
+		[_item,false] spawn life_fnc_handleItem;
+	};
+	
     CASH = CASH + (_price * _anzahl);
-    [_item,false] call life_fnc_handleItem;
-    hint parseText format [localize "STR_Shop_Weapon_Sold",_itemInfo select 1,[_price] call life_fnc_numberText];
-    [nil,(uiNamespace getVariable ["Weapon_Shop_Filter",0])] call life_fnc_weaponShopFilter; //Update the menu.
+	
+	[(format["Du hast<br/><t color='#8cff9b'>%1x  - %2</t><br/>für<br/><t color='#8cff9b'>$%3</t><br/>verkauft.",_anzahl,_itemInfo select 1,[(_price * _anzahl)] call life_fnc_numberText]),"Ausrüstung verkauft","green"] call MSG_fnc_handle;
+	[nil,(uiNamespace getVariable ["Weapon_Shop_Filter",0])] call life_fnc_weaponShopFilter; //Update the menu.	
 } 
 else 
 {
@@ -71,15 +86,33 @@ else
         ] call BIS_fnc_guiMessage;
         if (_action) then 
 		{
-            hint parseText format [localize "STR_Shop_Weapon_BoughtGang",_itemInfo select 1,[_price] call life_fnc_numberText];
             _funds = group player getVariable "gang_bank";
             _funds = _funds - _price;
             group player setVariable ["gang_bank",_funds,true];
-            [_item,true,false,false,true] spawn life_fnc_handleItem;
-
-            if (life_HC_isActive) then 
-			{
 			
+			if ((_itemInfo select 6) isEqualTo "CfgMagazines") then 
+			{		
+				[(format["Du hast<br/><t color='#8cff9b'>%1x  - %2</t><br/>für<br/><t color='#8cff9b'>$%3</t><br/>gekauft.",_anzahl,_itemInfo select 1,[(_price * _anzahl)] call life_fnc_numberText]),"Ausrüstung gekauft","green"] call MSG_fnc_handle;   
+				for "_i" from 0 to (_anzahl)-1 do 
+				{
+					[_item,true] spawn life_fnc_handleItem;
+				};
+			}
+			else
+			{			
+				if ((_itemInfo select 4) in [4096,131072]) then 
+				{	
+					[(format["Du hast<br/><t color='#8cff9b'>%1x  - %2</t><br/>für<br/><t color='#8cff9b'>$%3</t><br/>gekauft.",_anzahl,_itemInfo select 1,[(_price * _anzahl)] call life_fnc_numberText]),"Ausrüstung gekauft","green"] call MSG_fnc_handle;
+					[_item,true,false,false,true] spawn life_fnc_handleItem;
+				}
+				else
+				{
+					[(format["Du hast<br/><t color='#8cff9b'>%1x  - %2</t><br/>für<br/><t color='#8cff9b'>$%3</t><br/>gekauft.",_anzahl,_itemInfo select 1,[(_price * _anzahl)] call life_fnc_numberText]),"Ausrüstung gekauft","green"] call MSG_fnc_handle;
+					[_item,true] spawn life_fnc_handleItem;		
+				};
+			};
+            if (life_HC_isActive) then 
+			{			
                 [1,group player] remoteExecCall ["HC_fnc_updateGang",HC_Life];
             } else {
                 [1,group player] remoteExecCall ["TON_fnc_updateGang",RSERV];
@@ -88,11 +121,46 @@ else
 
         } 
 		else 
-		{
-            if (_price > CASH) exitWith {hint localize "STR_NOTF_NotEnoughMoney"};
-            hint parseText format [localize "STR_Shop_Weapon_BoughtItem",_itemInfo select 1,[_price] call life_fnc_numberText];
-            CASH = CASH - _price;
-           [_item,true,false,false,true] spawn life_fnc_handleItem;
+		{	   
+		   if ((_itemInfo select 6) isEqualTo "CfgMagazines") then 
+			{		
+				if ((_price * _anzahl) > CASH) exitWith 
+				{
+					[(format["Du hast nicht genug Geld dabei!<br/>Dir fehlen: <t color='#ff0000'>$%1</t></t>",[((_price* _anzahl) - CASH)] call life_fnc_numberText]),"Hinweis","yellow"] call MSG_fnc_handle;
+				};
+				[(format["Du hast<br/><t color='#8cff9b'>%1x  - %2</t><br/>für<br/><t color='#8cff9b'>$%3</t><br/>gekauft.",_anzahl,_itemInfo select 1,[(_price * _anzahl)] call life_fnc_numberText]),"Ausrüstung gekauft","green"] call MSG_fnc_handle;
+				
+				CASH = CASH - (_price * _anzahl);
+			   
+				for "_i" from 0 to (_anzahl)-1 do 
+				{
+					[_item,true] spawn life_fnc_handleItem;
+				};
+			}
+			else
+			{			
+				if ((_itemInfo select 4) in [4096,131072]) then 
+				{		
+					if ((_price ) > CASH) exitWith 
+					{
+						[(format["Du hast nicht genug Geld dabei!<br/>Dir fehlen: <t color='#ff0000'>$%1</t></t>",[((_price* _anzahl) - CASH)] call life_fnc_numberText]),"Hinweis","yellow"] call MSG_fnc_handle;			
+					};
+					[(format["Du hast<br/><t color='#8cff9b'>%1x  - %2</t><br/>für<br/><t color='#8cff9b'>$%3</t><br/>gekauft.",_anzahl,_itemInfo select 1,[(_price * _anzahl)] call life_fnc_numberText]),"Ausrüstung gekauft","green"] call MSG_fnc_handle;
+					
+					CASH = CASH - (_price);
+					[_item,true,false,false,true] spawn life_fnc_handleItem;
+				}
+				else
+				{
+					if ((_price ) > CASH) exitWith 
+					{
+						[(format["Du hast nicht genug Geld dabei!<br/>Dir fehlen: <t color='#ff0000'>$%1</t></t>",[((_price* _anzahl) - CASH)] call life_fnc_numberText]),"Hinweis","yellow"] call MSG_fnc_handle;
+					};
+					[(format["Du hast<br/><t color='#8cff9b'>%1x  - %2</t><br/>für<br/><t color='#8cff9b'>$%3</t><br/>gekauft.",_anzahl,_itemInfo select 1,[(_price * _anzahl)] call life_fnc_numberText]),"Ausrüstung gekauft","green"] call MSG_fnc_handle;
+					CASH = CASH - (_price);
+					[_item,true] spawn life_fnc_handleItem;		
+				};
+			};		   
         };
     } 
 	else 
@@ -100,8 +168,12 @@ else
 	
 		if ((_itemInfo select 6) isEqualTo "CfgMagazines") then 
 		{		
-			if ((_price * _anzahl) > CASH) exitWith {hint localize "STR_NOTF_NotEnoughMoney"};
-			hint parseText format [localize "STR_Shop_Weapon_BoughtItem",_itemInfo select 1,[(_price * _anzahl)] call life_fnc_numberText];
+			if ((_price * _anzahl) > CASH) exitWith 
+			{
+				[(format["Du hast nicht genug Geld dabei!<br/>Dir fehlen: <t color='#ff0000'>$%1</t></t>",[((_price* _anzahl) - CASH)] call life_fnc_numberText]),"Hinweis","yellow"] call MSG_fnc_handle;
+			};
+			[(format["Du hast<br/><t color='#8cff9b'>%1x  - %2</t><br/>für<br/><t color='#8cff9b'>$%3</t><br/>gekauft.",_anzahl,_itemInfo select 1,[(_price * _anzahl)] call life_fnc_numberText]),"Ausrüstung gekauft","green"] call MSG_fnc_handle;
+			
 			CASH = CASH - (_price * _anzahl);
 		   
 			for "_i" from 0 to (_anzahl)-1 do 
@@ -110,32 +182,31 @@ else
 			};
 		}
 		else
-		{
-		
-			// if ((_itemInfo select 6) isEqualTo "CfgWeapons") then 
-			// {		
-				// if ((_price ) > CASH) exitWith {hint localize "STR_NOTF_NotEnoughMoney"};
-				// hint parseText format [localize "STR_Shop_Weapon_BoughtItem",_itemInfo select 1,[(_price )] call life_fnc_numberText];
-				// CASH = CASH - (_price);
-				// [_item,true] spawn life_fnc_handleItem;
-			// };
-			
+		{			
 			if ((_itemInfo select 4) in [4096,131072]) then 
 			{		
-				if ((_price ) > CASH) exitWith {hint localize "STR_NOTF_NotEnoughMoney"};
-				hint parseText format [localize "STR_Shop_Weapon_BoughtItem",_itemInfo select 1,[(_price )] call life_fnc_numberText];
+				if ((_price ) > CASH) exitWith 
+				{
+					[(format["Du hast nicht genug Geld dabei!<br/>Dir fehlen: <t color='#ff0000'>$%1</t></t>",[((_price* _anzahl) - CASH)] call life_fnc_numberText]),"Hinweis","yellow"] call MSG_fnc_handle;			
+				};
+				[(format["Du hast<br/><t color='#8cff9b'>%1x  - %2</t><br/>für<br/><t color='#8cff9b'>$%3</t><br/>gekauft.",_anzahl,_itemInfo select 1,[(_price * _anzahl)] call life_fnc_numberText]),"Ausrüstung gekauft","green"] call MSG_fnc_handle;
+				
 				CASH = CASH - (_price);
 				[_item,true,false,false,true] spawn life_fnc_handleItem;
 			}
 			else
 			{
-				if ((_price ) > CASH) exitWith {hint localize "STR_NOTF_NotEnoughMoney"};
-				hint parseText format [localize "STR_Shop_Weapon_BoughtItem",_itemInfo select 1,[(_price )] call life_fnc_numberText];
+				if ((_price ) > CASH) exitWith 
+				{
+					[(format["Du hast nicht genug Geld dabei!<br/>Dir fehlen: <t color='#ff0000'>$%1</t></t>",[((_price* _anzahl) - CASH)] call life_fnc_numberText]),"Hinweis","yellow"] call MSG_fnc_handle;
+				};
+				[(format["Du hast<br/><t color='#8cff9b'>%1x  - %2</t><br/>für<br/><t color='#8cff9b'>$%3</t><br/>gekauft.",_anzahl,_itemInfo select 1,[(_price * _anzahl)] call life_fnc_numberText]),"Ausrüstung gekauft","green"] call MSG_fnc_handle;
 				CASH = CASH - (_price);
 				[_item,true] spawn life_fnc_handleItem;		
 			};
 		};
 	};			
 };
+
+[] call life_fnc_saveGear;
 [10] call SOCK_fnc_updatePartial;
-// [] call life_fnc_saveGear;

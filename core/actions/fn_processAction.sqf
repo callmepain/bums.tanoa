@@ -19,7 +19,7 @@ sleep (random 1.00000);
 
 if (life_is_processing) exitWith 
 {
-	["Der Kollege ist beschäftigt.<br/> Bitte nicht stressen!","Hinweiß","yellow"] call MSG_fnc_handle;
+	["Der Kollege ist beschäftigt.<br/> Bitte nicht stressen!","Hinweis","yellow"] call MSG_fnc_handle;
 };    
 
 //parameter
@@ -34,7 +34,7 @@ diag_log format ["_prof %1",_prof];
 if(isNull _processor OR _type == "" OR (player distance _processor > 5)) exitWith {};
 if(vehicle player != player) exitwith 
 {
-	["Du darfst nicht im Fahrzeug sitzen!","Hinweiß","yellow"] call MSG_fnc_handle;
+	["Du darfst nicht im Fahrzeug sitzen!","Hinweis","yellow"] call MSG_fnc_handle;
 };
 
 life_is_processing = true;
@@ -101,7 +101,7 @@ for "_x" from 0 to ((count _inputItems) - 1) do
 
 //exit if the player doenst have the required items for one process
 if (_productionAmount < 1) exitWith {
-	["Du hast nicht genug Materialien dabei","Hinweiß","yellow"] call MSG_fnc_handle;
+	["Du hast nicht genug Materialien dabei","Hinweis","yellow"] call MSG_fnc_handle;
 	life_is_processing = false;
 };
 
@@ -134,7 +134,7 @@ if(!_action) exitWith
 
 //exit if the player doenst have the required money for one process
 if (_productionAmount < 1) exitWith {
-	["Du hast nicht genug Geld dabei","Hinweiß","yellow"] call MSG_fnc_handle;
+	["Du hast nicht genug Geld dabei","Hinweis","yellow"] call MSG_fnc_handle;
 	life_is_processing = false;
 };
 
@@ -179,7 +179,7 @@ if(player distance _processor > 10) exitWith
 {
 	
 	life_is_processing = false;
-	["Du hast dich zu weit entfernt!<br/>Bleib dichter dran","Hinweiß","yellow"] call MSG_fnc_handle;
+	["Du hast dich zu weit entfernt!<br/>Bleib dichter dran","Hinweis","yellow"] call MSG_fnc_handle;
 	for "_x" from 0 to ((count _inputItems) - 1) do {
 	//readd 
 		([true,(_inputItems select _x),((_inputItemsNeeded select _x) * _productionAmount)] call life_fnc_handleInv); 

@@ -19,7 +19,7 @@ sleep (random 1.00000);
 
 if (life_is_processing) exitWith 
 {
-	["Der Kollege ist beschäftigt.<br/> Bitte nicht stressen!","Hinweiß","yellow"] call MSG_fnc_handle;
+	["Der Kollege ist beschäftigt.<br/> Bitte nicht stressen!","Hinweis","yellow"] call MSG_fnc_handle;
 };    
 
 if((lbCurSel 39402) == -1) exitWith {[(format [localize "STR_Shop_Veh_DidntPick"]),"Hinweis","Yellow"] call MSG_fnc_handle;};
@@ -32,7 +32,7 @@ if(isNull _vehicle) exitWith {};
 
 if(_vehicle getVariable ["car_processing",false]) exitWith 
 {
-	[format[localize "STR_MISC_VehInvUse"],"Hinweiß","yellow"] call MSG_fnc_handle;
+	[format[localize "STR_MISC_VehInvUse"],"Hinweis","yellow"] call MSG_fnc_handle;
 };
 
 closeDialog 0;
@@ -91,7 +91,7 @@ _car_inventory = (_vehicle getVariable ["Trunk",[]])select 0;
 
 if ((count _car_inventory) == 0) exitWith 
 {
-	["Du hast nicht genug Materialien dabei","Hinweiß","yellow"] call MSG_fnc_handle;
+	["Du hast nicht genug Materialien dabei","Hinweis","yellow"] call MSG_fnc_handle;
 	life_is_processing = false;
 	_vehicle setVariable["car_processing",false,true];
 };
@@ -176,7 +176,7 @@ else
 
 if(_exit1) exitWith 
 {
-	[(format["Du hast nicht genug Materialien dabei.<br/>Dir fehlen %1x %2<br/>um<br/>1x %3 herstellen zu können",(_inputItemsNeeded select 0),localize M_CONFIG(getText,"VirtualItems",( _inputItems select 0),"displayName"),localize M_CONFIG(getText,"VirtualItems",_outputItem,"displayName")]),"Hinweiß","yellow"] call MSG_fnc_handle;
+	[(format["Du hast nicht genug Materialien dabei.<br/>Dir fehlen %1x %2<br/>um<br/>1x %3 herstellen zu können",(_inputItemsNeeded select 0),localize M_CONFIG(getText,"VirtualItems",( _inputItems select 0),"displayName"),localize M_CONFIG(getText,"VirtualItems",_outputItem,"displayName")]),"Hinweis","yellow"] call MSG_fnc_handle;
 	
 	life_is_processing = false;
 	_vehicle setVariable["car_processing",false,true];
@@ -184,7 +184,7 @@ if(_exit1) exitWith
 
 if(_exit2) exitWith 
 {
-	[(format["Du hast nicht genug Materialien dabei.<br/>Dir fehlen %1x %2<br/>um<br/>1x %3 herstellen zu können",(_inputItemsNeeded select 1),localize M_CONFIG(getText,"VirtualItems",( _inputItems select 1),"displayName"),localize M_CONFIG(getText,"VirtualItems",_outputItem,"displayName")]),"Hinweiß","yellow"] call MSG_fnc_handle;
+	[(format["Du hast nicht genug Materialien dabei.<br/>Dir fehlen %1x %2<br/>um<br/>1x %3 herstellen zu können",(_inputItemsNeeded select 1),localize M_CONFIG(getText,"VirtualItems",( _inputItems select 1),"displayName"),localize M_CONFIG(getText,"VirtualItems",_outputItem,"displayName")]),"Hinweis","yellow"] call MSG_fnc_handle;
 	life_is_processing = false;
 	_vehicle setVariable["car_processing",false,true];
 };
@@ -192,7 +192,7 @@ if(_exit2) exitWith
 //exit if the player doenst have the required items for one process
 if (_productionAmount < 1) exitWith 
 {
-	["Du hast nicht genug Materialien dabei","Hinweiß","yellow"] call MSG_fnc_handle;
+	["Du hast nicht genug Materialien dabei","Hinweis","yellow"] call MSG_fnc_handle;
 	life_is_processing = false;
 	_vehicle setVariable["car_processing",false,true];
 };
@@ -228,7 +228,7 @@ if(!_action) exitWith
 //exit if the player doenst have the required money for one process
 if (_productionAmount < 1) exitWith 
 {
-	["Du hast nicht genug Geld dabei","Hinweiß","yellow"] call MSG_fnc_handle;
+	["Du hast nicht genug Geld dabei","Hinweis","yellow"] call MSG_fnc_handle;
 	life_is_processing = false;
 	_vehicle setVariable["car_processing",false,true];
 };
@@ -311,7 +311,7 @@ else {
 
 //errorcheck distance
 if(player distance _processor > 20) exitWith {
-	["Du hast dich zu weit entfernt!<br/>Bleib dichter dran","Hinweiß","yellow"] call MSG_fnc_handle;
+	["Du hast dich zu weit entfernt!<br/>Bleib dichter dran","Hinweis","yellow"] call MSG_fnc_handle;
 	life_is_processing = false;
 	_vehicle setVariable["car_processing",false,true];
 	

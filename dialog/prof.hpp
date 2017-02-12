@@ -37,9 +37,9 @@ class Life_Prof_Dialog
 			text = ""; //--- ToDo: Localize;
 			x = 0.308252 * safezoneW + safezoneX;
 			y = 0.2668 * safezoneH + safezoneY;
-			w = 0.383497 * safezoneW;
+			w = 0.384743 * safezoneW;
 			h = 0.022 * safezoneH;
-			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])","(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.75};
 		};
 		
 		class Prof3Header: Life_RscTitle
@@ -53,7 +53,7 @@ class Life_Prof_Dialog
 			w = 0.114013 * safezoneW;
 			h = 0.022 * safezoneH;
 			colorText[] = {0.95,0.95,0.95,1};
-			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])","(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.75};
 		};
 		class Prof2Header: Life_RscTitle
 		{
@@ -66,7 +66,7 @@ class Life_Prof_Dialog
 			w = 0.114013 * safezoneW;
 			h = 0.022 * safezoneH;
 			colorText[] = {0.95,0.95,0.95,1};
-			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])","(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.75};
 		};
 		class ProfHeader: Life_RscTitle
 		{
@@ -80,7 +80,7 @@ class Life_Prof_Dialog
 			h = 0.022 * safezoneH;
 			sizeEx = 0.04;
 			colorText[] = {0.95,0.95,0.95,1};
-			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])","(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.75};
 			tooltip = "Click on your skill to view your stats. If you see no skills, start playing the game, and they will show up"; //--- ToDo: Localize;
 		};
 		class nextExp: Life_RscTitle
@@ -95,7 +95,7 @@ class Life_Prof_Dialog
 			h = 0.022 * safezoneH;
 			sizeEx = 0.04;
 			colorText[] = {0.95,0.95,0.95,1};
-			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])","(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.75};
 		};
 	};
 	class controls

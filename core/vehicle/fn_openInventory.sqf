@@ -30,10 +30,10 @@ _Btn3 = _display displayCtrl 1013;
 _Btn4 = _display displayCtrl 1014;
 
 
-_Btn1 ctrlSetStructuredText parseText "<t align='center' size='1' font ='PuristaBold'>Nehmen</t>";
-_Btn2 ctrlSetStructuredText parseText "<t align='center' size='1' font ='PuristaBold'>Lagern</t>";
-_Btn3 ctrlSetStructuredText parseText "<t align='center' size='1' font ='PuristaBold'>alles ausgewählte Nehmen</t>";
-_Btn4 ctrlSetStructuredText parseText "<t align='center' size='1' font ='PuristaBold'>alles ausgewählte Lagern</t>";
+_Btn1 ctrlSetStructuredText parseText "Nehmen";
+_Btn2 ctrlSetStructuredText parseText "Lagern";
+_Btn3 ctrlSetStructuredText parseText "alles ausgewählte Nehmen";
+_Btn4 ctrlSetStructuredText parseText "alles ausgewählte Lagern";
 
 //log
 _text = format ["<<<<openInventory>>>>|%1||%2|>>hat das inventar von %3 geöffnet",getPlayerUID player,name player,_vehicle];
