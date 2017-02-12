@@ -5,9 +5,9 @@
 */
 
 private ["_time","_kaution"];
-
+_curTarget = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 // if(playerSide != west) exitWith {};
-if(isNil "life_pInact_curTarget") exitWith {[(format ["Ungültiges Ziel."]),"Hinweis","Yellow"] call MSG_fnc_handle;	};
+if(isNil "_curTarget") exitWith {[(format ["Ungültiges Ziel."]),"Hinweis","Yellow"] call MSG_fnc_handle;	};
 
 //Get minutes
 _time = ctrlText 1400;
@@ -29,4 +29,4 @@ if(_time < 5 || _time > 120) exitWith {[(format ["Du kannst Personen nur zwische
 if(_kaution > 120) exitWith {[(format ["Du kannst die Kautionszeit nur zw. 0 - 120 Minuten festlegen!"]),"Hinweis","Yellow"] call MSG_fnc_handle;	};
 
 closeDialog 0; 
-[life_pInact_curTarget, _time,_kaution] call life_fnc_arrestAction;
+[_curTarget, _time,_kaution] call life_fnc_arrestAction;
