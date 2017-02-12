@@ -14,7 +14,7 @@ _timeStamp = diag_tickTime;
 /*         CIV ACE MENU         */
 _action = ["Vehicle Repair","Repair Vehicle","icons\acemenu\ico_repair.paa",{_target spawn life_fnc_repairTruck},{life_inv_toolkit >= 1 && _target call life_fnc_isDamaged}] call ace_interact_menu_fnc_createAction;
 ["LandVehicle", 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;
-_action = ["Vehicle Flip","Flip Car","icons\acemenu\ico_repair.paa",{_target setPos [getPos _target select 0, getPos _target select 1, (getPos _target select 2)+0.5];},{true}] call ace_interact_menu_fnc_createAction;
+_action = ["Vehicle Flip","Flip Car","icons\acemenu\ico_repair.paa",{_target setPos [(getPos _target select 0)+0.2, (getPos _target select 1)+0.2, (getPos _target select 2)+0.5];},{true}] call ace_interact_menu_fnc_createAction;
 ["LandVehicle", 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;
 
 /*_action = ["PushBoot","Boot Schieben","",{[] spawn life_fnc_pushObject},{(alive cursorTarget && {crew cursorTarget isEqualTo []} && {canMove cursorTarget})}] call ace_interact_menu_fnc_createAction;

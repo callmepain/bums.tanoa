@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={5524.6157,210.37546,9993.9141};
-		dir[]={0.53089178,-0.7914086,0.30303258};
-		up[]={0.68732351,0.61128449,0.39232352};
-		aside[]={0.49572721,2.2968743e-007,-0.86848021};
+		pos[]={5433.5894,20.121756,10060.474};
+		dir[]={0.60535777,-0.70306188,0.37317231};
+		up[]={0.59848756,0.71112376,0.36893666};
+		aside[]={0.52475756,1.4901161e-008,-0.85125804};
 	};
 };
 binarizationWanted=0;
@@ -522,6 +522,24 @@ class CustomAttributes
 		name="Multiplayer";
 		class Attribute0
 		{
+			property="RespawnTemplates";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"ARRAY"
+						};
+					};
+				};
+			};
+		};
+		class Attribute1
+		{
 			property="RespawnButton";
 			expression="true";
 			class Value
@@ -536,24 +554,6 @@ class CustomAttributes
 						};
 					};
 					value=1;
-				};
-			};
-		};
-		class Attribute1
-		{
-			property="RespawnTemplates";
-			expression="true";
-			class Value
-			{
-				class data
-				{
-					class type
-					{
-						type[]=
-						{
-							"ARRAY"
-						};
-					};
 				};
 			};
 		};
@@ -613,7 +613,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=1830;
+		items=1829;
 		class Item0
 		{
 			dataType="Marker";
@@ -1581,21 +1581,21 @@ class Mission
 		class Item93
 		{
 			dataType="Marker";
-			position[]={5789.041,7.6159229,10287.365};
+			position[]={5434.9321,2.2099609,10076.114};
 			name="car_g_3";
 			type="Empty";
 			angle=6.8625154;
 			id=149;
+			atlOffset=-3.9100647e-005;
 		};
 		class Item94
 		{
 			dataType="Marker";
-			position[]={5791.5439,0,10280.098};
+			position[]={5443.5015,2.21,10066.124};
 			name="civ_gar_1_3";
 			text="@STR_MAR_Garage";
 			type="o_service";
 			id=150;
-			atlOffset=-7.5387697;
 		};
 		class Item95
 		{
@@ -22431,8 +22431,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={5791.771,7.6426573,10279.935};
-						angles[]={6.2733765,0.44542548,0.014014993};
+						position[]={5442.3398,2.2114551,10068.879};
+						angles[]={0,0.44542548,0};
 					};
 					side="Civilian";
 					flags=4;
@@ -22444,7 +22444,7 @@ class Mission
 					};
 					id=1027;
 					type="C_man_1";
-					atlOffset=0.00034379959;
+					atlOffset=1.6212463e-005;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -26776,7 +26776,6 @@ class Mission
 					};
 					id=6129;
 					type="C_man_1";
-					atlOffset=0.15860271;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -26890,6 +26889,7 @@ class Mission
 						angles[]={0.002633519,4.982235,0.00030444475};
 					};
 					side="Civilian";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -26898,7 +26898,6 @@ class Mission
 					};
 					id=6174;
 					type="C_man_1";
-					atlOffset=0.60547066;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -27002,7 +27001,7 @@ class Mission
 					};
 					id=6330;
 					type="C_man_p_fugitive_F_asia";
-					atlOffset=0.55799961;
+					atlOffset=0.28530693;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -27083,7 +27082,6 @@ class Mission
 					};
 					id=6331;
 					type="C_man_1";
-					atlOffset=0.071907997;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -33974,7 +33972,7 @@ class Mission
 			colorName="ColorGreen";
 			angle=272.67981;
 			id=1435;
-			atlOffset=0.29624653;
+			atlOffset=0.098413467;
 		};
 		class Item409
 		{
@@ -33993,7 +33991,6 @@ class Mission
 			};
 			id=1436;
 			type="Land_Atm_02_F";
-			atlOffset=0.20450211;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -35076,7 +35073,7 @@ class Mission
 			colorName="ColorGreen";
 			angle=257.53326;
 			id=2000;
-			atlOffset=0.11424375;
+			atlOffset=0.004250288;
 		};
 		class Item469
 		{
@@ -35095,7 +35092,7 @@ class Mission
 			};
 			id=2001;
 			type="Land_Atm_02_F";
-			atlOffset=0.11001492;
+			atlOffset=2.1457672e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -73392,7 +73389,7 @@ class Mission
 			position[]={5430.8047,2.2099609,10071.089};
 			name="container_1";
 			type="Empty";
-			angle=96.790413;
+			angle=96.79039;
 			id=7537;
 			atlOffset=-3.9100647e-005;
 		};
@@ -73423,49 +73420,6 @@ class Mission
 			id=7539;
 			type="Land_HelipadCircle_F";
 			atlOffset=-9.4413757e-005;
-		};
-		class Item1829
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={5448.3979,2.2099609,10076.514};
-				angles[]={0,1.3962634,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				skill=0.60000002;
-				init="this enableSimulation false;this allowDamage false;  this addAction[""<t color='#FFFF00'>Containerverleihstation</t>"",life_fnc_vehicleShopMenu,[""civ_container"",civilian,""container_1"",""civ"",""Altis Containerverleih Station"",true],0,false,true,"""",'playerSide == civilian && _this distance _target < 6 && vehicle player == player'];  this addAction[""<t color='#FFFF00'>Containerverleihstation</t>"",life_fnc_vehicleShopMenu,[""civ_container"",independent,""container_1"",""civ"",""Altis Containerverleih Station"",true],0,false,true,"""",'playerSide == independent && _this distance _target < 6 && vehicle player == player'];  this addAction[""<t color='#FFFF00'>Containerverleihstation</t>"",life_fnc_vehicleShopMenu,[""civ_container"",east,""container_1"",""civ"",""Altis Containerverleih Station"",true],0,false,true,"""",'playerSide == east && _this distance _target < 6 && vehicle player == player'];  this setVariable[""realname"", ""Containerverleihstation""];";
-				name="carshop1_1_1_1";
-			};
-			id=7540;
-			type="Land_CashDesk_F";
-			atlOffset=-3.9100647e-005;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ace_isMedicalFacility";
-					expression="_this setVariable [""ace_medical_isMedicalFacility"",_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				nAttributes=1;
-			};
 		};
 	};
 	class Connections

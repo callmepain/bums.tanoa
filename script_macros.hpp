@@ -71,3 +71,4 @@
 #define MININGTIME(var1,var2) var1 = 0.52-(var2 * 0.02)
 #define PROCESSCP(var1,var2) var1 = 0.009+(var2 * 0.001)
 #define PROCESSCARCP(var1,var2) var1 = 1.6-(var2 * 0.15)
+#define CARREP(var1,var2) var1 = 0.875-(var2 * 0.025)
