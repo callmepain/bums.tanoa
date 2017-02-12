@@ -116,7 +116,6 @@ class Life_Client_Core {
 		class craftCfg {};
         class houseConfig {};
         class itemWeight {};
-        class profType {};
         class vehicleAnimate {};
         class vehicleWeightCfg {};
     };
