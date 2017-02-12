@@ -14,4 +14,5 @@ if (hasInterface) then {
 [] execvm "core\functions\fn_hudCrew.sqf";
 [] execvm "core\functions\fn_effects.sqf";
 [] execVM "core\mapmarker.sqf"; 
+_igiload = execVM "core\functions\IgiLoad\IgiLoadInit.sqf";
 StartProgress = true;

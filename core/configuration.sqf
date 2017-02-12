@@ -115,9 +115,11 @@ for "_i" from 1 to 50 do
 //////SkillSystem/////////
 {
     _varName = getText(_x >> "variable");
-    _sideFlag = getText(_x >> "side");
+    _sideFlag = getArray(_x >> "side");
 
-    missionNamespace setVariable [SKILLSYSTEM_VARNAME(_varName,_sideFlag),[1,0]];
+	for "_i" from 0 to count(_sideFlag)-1 do {
+		missionNamespace setVariable [SKILLSYSTEM_VARNAME(_varName,(_sideFlag select _i)),[1,0]];
+	};
 } forEach ("true" configClasses (missionConfigFile >> "profession"));
 
 

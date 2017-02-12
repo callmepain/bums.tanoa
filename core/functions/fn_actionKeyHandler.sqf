@@ -13,9 +13,9 @@ if (life_action_inUse) exitWith {}; //Action is in use, exit to prevent spamming
 if (life_interrupted) exitWith {life_interrupted = false;};
 _isWater = surfaceIsWater (visiblePositionASL player);
 
-if (playerSide isEqualTo west && {player getVariable ["isEscorting",false]}) exitWith {
+/*if (playerSide isEqualTo west && {player getVariable ["isEscorting",false]}) exitWith {
     [] call life_fnc_copInteractionMenu;
-};
+};*/
 
 if (LIFE_SETTINGS(getNumber,"global_ATM") isEqualTo 1) then{
     //Check if the player is near an ATM.
@@ -81,14 +81,14 @@ life_action_inUse = true;
 };
 
 //Check if it's a dead body.
-if (_curObject isKindOf "Man" && !(_curObject isKindOf "Animal") && {!alive _curObject} && !(_curObject getVariable ["Revive",false])) exitWith {
+/*if (_curObject isKindOf "Man" && !(_curObject isKindOf "Animal") && {!alive _curObject} && !(_curObject getVariable ["Revive",false])) exitWith {
     //Hotfix code by ins0
     if ((playerSide isEqualTo west && {(LIFE_SETTINGS(getNumber,"revive_cops") isEqualTo 1)}) || {(playerSide isEqualTo civilian && {(LIFE_SETTINGS(getNumber,"revive_civ") isEqualTo 1)})} || {(playerSide isEqualTo east && {(LIFE_SETTINGS(getNumber,"revive_east") isEqualTo 1)})} || {playerSide isEqualTo independent}) then {
         if (life_inv_defibrillator > 0) then {
             [_curObject] call life_fnc_revivePlayer;
         };
     };
-};
+};*/
 
 //If target is a player then check if we can use the cop menu.
 if (isPlayer _curObject && _curObject isKindOf "Man") then {
@@ -105,11 +105,11 @@ if (isPlayer _curObject && _curObject isKindOf "Man") then {
 
     //It's a vehicle! open the vehicle interaction key!
     if (_isVehicle) then {
-        if (!dialog) then {
+       /* if (!dialog) then {
             if (player distance _curObject < ((boundingBox _curObject select 1) select 0)+2 && (!(player getVariable ["restrained",false])) && (!(player getVariable ["playerSurrender",false])) && !life_isknocked && !life_istazed) then {
                 [_curObject] call life_fnc_vInteractionMenu;
             };
-        };
+        };*/
     } else {
         //OK, it wasn't a vehicle so let's see what else it could be?
         if ((typeOf _curObject) in _miscItems) then {

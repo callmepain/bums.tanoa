@@ -28,8 +28,6 @@ _argument = [_this,3,[],[[]]] call BIS_fnc_param;
 _type = (_argument select 0);
 _prof = (_argument select 1);
 
-diag_log format ["_prof %1",_prof];
-
 //Error check. taken from tonic.
 if(isNull _processor OR _type == "" OR (player distance _processor > 5)) exitWith {};
 if(vehicle player != player) exitwith 
