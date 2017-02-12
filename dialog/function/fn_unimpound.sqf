@@ -32,7 +32,7 @@ _price = _price * _storageFee;
 if (!(_price isEqualType 0) || _price < 1) then {_price = 500;};
 if (BANK < _price) exitWith 
 {
-	[(format[localize "STR_Garage_CashError",[_price] call life_fnc_numberText]),"Hinweiß","yellow"] call MSG_fnc_handle;
+	[(format[localize "STR_Garage_CashError",[_price] call life_fnc_numberText]),"Hinweis","yellow"] call MSG_fnc_handle;
 };
 
 [(format["Dein Fahrzeug<br/><t color='#FFFF00'>%1<t><t color='#FFFFFF'><br/>wird geholt.<br/><br/>Du hast <t color='#FFFF00'>$%2<t><t color='#FFFFFF'> für den Stellplatz bezahlt.<br/>Bitte warten.<br/>Der zuständige Mitarbeiter such noch den Schlüssel.<t>",_vehicleName,[_price] call life_fnc_numberText]),"Fahrzeuggarage","green"] call MSG_fnc_handle;

@@ -10,6 +10,15 @@ private ["_item_list","_gear_list","_shopItems","_name","_price"];
 disableSerialization;
 
 //Setup control vars.
+_display = findDisplay 2400;
+_Titel = _display displayCtrl 1100;
+_Shop = _display displayCtrl 1101;
+_Player = _display displayCtrl 1102;
+
+_Btn1 = _display displayCtrl 2406;
+_Btn2 = _display displayCtrl 2407;
+_Btn3 = _display displayCtrl 2408;
+
 _item_list = CONTROL(2400,2401);
 _gear_list = CONTROL(2400,2402);
 
@@ -18,8 +27,19 @@ lbClear _item_list;
 lbClear _gear_list;
 
 if (!isClass(missionConfigFile >> "VirtualShops" >> life_shop_type)) exitWith {closeDialog 0; hint localize "STR_NOTF_ConfigDoesNotExist";}; //Make sure the entry exists..
-ctrlSetText[2403,localize (M_CONFIG(getText,"VirtualShops",life_shop_type,"name"))];
+
 _shopItems = M_CONFIG(getArray,"VirtualShops",life_shop_type,"items");
+
+_Titel ctrlSetStructuredText parseText format["<t align='center'>%1</t><t align='right'>Bargeld: $%2</t>",localize (M_CONFIG(getText,"VirtualShops",life_shop_type,"name")),[CASH] call life_fnc_numberText];
+_Shop ctrlSetStructuredText parseText "<t align='center'>Shopangebot</t>";
+_Player ctrlSetStructuredText parseText "<t align='center'>Spielerinventar</t>";
+
+
+_Btn1 ctrlSetStructuredText parseText "Kaufen";
+_Btn2 ctrlSetStructuredText parseText "ausgewählte Verkaufen";
+_Btn3 ctrlSetStructuredText parseText "alles ausgewählte Verkaufen";
+
+
 
 {
     _displayName = M_CONFIG(getText,"VirtualItems",_x,"displayName");
