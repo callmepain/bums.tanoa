@@ -7,7 +7,7 @@
 */
 private ["_unit"];
 _unit = [_this,0,objNull,[objNull]] call BIS_fnc_param;
-
+if (isDedicated) exitWith{};
 if (!isNull(player getVariable ["escortingPlayer",objNull])) exitWith {};
 if (isNil "_unit" || isNull _unit || !isPlayer _unit) exitWith {};
 if (!(side _unit in [civilian,independent])) exitWith {};
