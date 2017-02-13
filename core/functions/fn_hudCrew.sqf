@@ -8,7 +8,7 @@
 */
    
    
-Private ["_name","_vehicle","_vehname","_weapname","_weap","_target","_picture","_vehtarget","_azimuth","_wepdir","_hudnames","_ui"];   
+Private ["_name","_vehicle","_vehname","_weapname","_exp","_weap","_target","_picture","_vehtarget","_azimuth","_wepdir","_hudnames","_ui"];   
 	   
 if (isDedicated) exitWith{};
 [] spawn 
@@ -18,7 +18,7 @@ if (isDedicated) exitWith{};
 		if (isEngineOn vehicle player  && ((driver vehicle player ) isEqualTo player) && ((typeOf vehicle player) in life_FahrenPKW) && (vehicle player  != player) && (speed vehicle player > 10)) then
 		{
 			_exp = M_CONFIG(getNumber,"profession","PKW","baseEXPgain");
-		if (floor (random 20) == 3) then {
+			if (floor (random 20) == 3) then {
 				["PKW",_exp,floor(speed vehicle player)] call life_fnc_addExp;
 			};
 		};  
@@ -32,7 +32,7 @@ if (isDedicated) exitWith{};
 		if (isEngineOn vehicle player  && ((driver vehicle player ) isEqualTo player) && ((typeOf vehicle player) in life_FahrenLKW) && (vehicle player  != player) && (speed vehicle player > 10)) then
 		{
 			_exp = M_CONFIG(getNumber,"profession","LKW","baseEXPgain");
-		if (floor (random 20) == 3) then {
+			if (floor (random 20) == 3) then {
 				["LKW",_exp,floor(speed vehicle player)] call life_fnc_addExp;
 			};
 		};  
@@ -46,7 +46,7 @@ if (isDedicated) exitWith{};
 		if (isEngineOn vehicle player  && ((driver vehicle player ) isEqualTo player) && ((typeOf vehicle player) in life_Fahrenair) && (vehicle player  != player) && (speed vehicle player > 10)) then
 		{
 			_exp = M_CONFIG(getNumber,"profession","Fliegen","baseEXPgain");
-		if (floor (random 20) == 3) then {
+			if (floor (random 20) == 3) then {
 				["Fliegen",_exp,floor(speed vehicle player)] call life_fnc_addExp;
 			};
 		};  
