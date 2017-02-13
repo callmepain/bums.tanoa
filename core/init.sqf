@@ -173,6 +173,7 @@ life_hideoutBuildings = [];
     false
 } count ["gang_area_1","gang_area_2","gang_area_3","gang_area_4","gang_area_5"];
 [] execVM "core\initacemenu.sqf";
+[] execvm "core\functions\fn_hudCrew.sqf";
 diag_log "----------------------------------------------------------------------------------------------------";
 diag_log format ["               End of Tanoa Life Client Init :: Total Execution Time %1 seconds ",(diag_tickTime) - _timeStamp];
 diag_log "----------------------------------------------------------------------------------------------------";

@@ -23,7 +23,7 @@ class CarShops
     class civ_car_oldtimer 
 	{
         side = "civ";
-        conditions = "";
+        conditions = "call life_civpkw_level >= 2 && license_civ_driver";
         vehicles[] = {
 			{ "Mrshounka_Vandura_civ", "call life_civpkw_level >= 2" },
 			{ "shounka_transam", "call life_civpkw_level >= 4" },
@@ -38,7 +38,7 @@ class CarShops
 	class civ_car_gebrauchtwagen 
 	{
         side = "civ";
-        conditions = "";
+        conditions = "call life_civpkw_level >= 1 && license_civ_driver";
         vehicles[] = {
             { "shounka_a3_cliors_civ", "call life_civpkw_level >= 1" },
 	        { "GeK_Yukon", "call life_civpkw_level >= 1" },
@@ -68,7 +68,7 @@ class CarShops
 	class civ_car_sportwagen 
 	{
         side = "civ";
-        conditions = "";
+        conditions = "call life_civpkw_level >= 4 && license_civ_driver";
         vehicles[] = {
 
 
@@ -98,7 +98,7 @@ class CarShops
 	class civ_car_neuwagen 
 	{
         side = "civ";
-        conditions = "";
+        conditions = "call life_civpkw_level >= 3 && license_civ_driver";
         vehicles[] = {
             { "ivory_e36", "call life_civpkw_level >= 3" },
    	        { "shounka_avalanche", "call life_civpkw_level >= 3" },
@@ -133,7 +133,7 @@ class CarShops
 	class civ_car_supersport 
 	{
         side = "civ";
-        conditions = "";
+        conditions = "call life_civpkw_level >= 7 && license_civ_driver";
         vehicles[] = {
             // { "shounka_f430_spider", "call life_civpkw_level >= 6" },//
   	        { "Urbanized_458Ferrari_black", "call life_civpkw_level >= 7" },
@@ -192,7 +192,7 @@ class CarShops
     class civ_truck 
 	{
         side = "civ";
-        conditions = "";
+        conditions = "license_civ_trucking";
         vehicles[] = {
             { "C_Van_01_box_F", "call life_civlkw_level >= 1" },
             { "I_Truck_02_transport_F", "call life_civlkw_level >= 1" },
