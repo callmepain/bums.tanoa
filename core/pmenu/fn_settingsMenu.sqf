@@ -13,7 +13,7 @@ if (isNull (findDisplay 2900)) then {
 
 _display = findDisplay 2900;
 _Titel = _display displayCtrl 1100;
-_Titel ctrlSetStructuredText parseText "<t align='center' size='1' font ='PuristaBold'>Spieleinstellungen</t>";
+_Titel ctrlSetStructuredText parseText "<t align='center' >Spieleinstellungen</t>";
 
 disableSerialization;
 

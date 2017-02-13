@@ -34,7 +34,7 @@ _accsList = ((findDisplay 38400) displayCtrl 38405);
 lbClear _itemList;
 lbClear _magsList;
 lbClear _accsList;
-uiSleep 0.1;
+uiSleep 0.2;
 switch (_index) do 
 {
 

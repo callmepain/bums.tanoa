@@ -13,6 +13,6 @@ player addEventHandler["Fired",{_this call life_fnc_onFired}];
 player addEventHandler["InventoryClosed", {_this call life_fnc_inventoryClosed}];
 player addEventHandler["InventoryOpened", {_this call life_fnc_inventoryOpened}];
 
-// player addEventHandler["GetInMan", {_this call life_fnc_vis_setup}];
-// player addEventHandler["GetOutMan", {vis_saveNow = true}];
-// player addEventHandler["Killed", {vis_saveNow = true}];
+player addEventHandler["GetInMan", {_this spawn life_fnc_autosafe;}];
+player addEventHandler["GetOutMan", {life_autosafe = true}];
+player addEventHandler["Killed", {life_autosafe = true}];

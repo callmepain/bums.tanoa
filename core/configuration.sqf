@@ -51,6 +51,7 @@ life_markers = false;
 life_canpay_bail = true;
 life_unconscious = false;
 life_smartphoneTarget = ObjNull;
+life_autosafe = false;
 
 //Settings
 life_settings_enableNewsBroadcast = profileNamespace getVariable ["life_enableNewsBroadcast",true];
