@@ -10,7 +10,7 @@
    
 Private ["_name","_vehicle","_vehname","_weapname","_weap","_target","_picture","_vehtarget","_azimuth","_wepdir","_hudnames","_ui"];   
 	   
- 
+if (isDedicated) exitWith{};
 [] spawn 
 {
 	for "_i" from 0 to 1 step 0 do 

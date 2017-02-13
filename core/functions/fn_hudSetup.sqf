@@ -8,6 +8,7 @@
     Setups the hud for the player?
 */
 private["_display","_alpha","_version","_p","_pg"];
+if (isDedicated) exitWith{};
 disableSerialization;
 _display = findDisplay 46;
 _alpha = _display displayCtrl 1001;
