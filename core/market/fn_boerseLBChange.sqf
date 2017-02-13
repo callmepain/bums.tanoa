@@ -25,13 +25,6 @@ _item = _control lbData _index;
 
 if(_item != "") then
 {
-	
-	lbClear 1500;
-	lbClear 1501;
-	lbClear 1502;
-	lbClear 1503;
-	[false] spawn life_fnc_boerse;
-
 	ctrlShow [1000,true];
 	ctrlShow [1001,true];
 	ctrlShow [1101,true];
@@ -42,6 +35,33 @@ if(_item != "") then
 	ctrlShow [1004,true];
 	ctrlShow [1005,true];
 	
+	if(_control isEqualTo ((findDisplay 39500) displayCtrl 1500)) then 
+	{
+		((findDisplay 39500) displayCtrl 1501) lbSetCurSel -1;
+		((findDisplay 39500) displayCtrl 1502) lbSetCurSel -1;
+		((findDisplay 39500) displayCtrl 1503) lbSetCurSel -1;
+	};
+	
+	if(_control isEqualTo ((findDisplay 39500) displayCtrl 1501)) then 
+	{
+		((findDisplay 39500) displayCtrl 1500) lbSetCurSel -1;
+		((findDisplay 39500) displayCtrl 1502) lbSetCurSel -1;
+		((findDisplay 39500) displayCtrl 1503) lbSetCurSel -1;
+	};
+	
+	if(_control isEqualTo ((findDisplay 39500) displayCtrl 1502)) then 
+	{
+		((findDisplay 39500) displayCtrl 1500) lbSetCurSel -1;
+		((findDisplay 39500) displayCtrl 1501) lbSetCurSel -1;
+		((findDisplay 39500) displayCtrl 1503) lbSetCurSel -1;
+	};
+	
+	if(_control isEqualTo ((findDisplay 39500) displayCtrl 1503)) then 
+	{
+		((findDisplay 39500) displayCtrl 1500) lbSetCurSel -1;
+		((findDisplay 39500) displayCtrl 1501) lbSetCurSel -1;
+		((findDisplay 39500) displayCtrl 1502) lbSetCurSel -1;
+	};
 
 
 	_index2 = [_item,life_market_prices] call TON_fnc_index;

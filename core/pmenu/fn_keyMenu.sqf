@@ -20,7 +20,7 @@ lbClear _plist;
 _near_units = [];
 
 
-_Titel ctrlSetStructuredText parseText "<t align='center' size='1' font ='PuristaBold'>Schlüsselbund</t>";
+_Titel ctrlSetStructuredText parseText "<t align='center' >Schlüsselbund</t>";
 
 { if (player distance _x < 20) then {_near_units pushBack _x};} forEach playableUnits;
 

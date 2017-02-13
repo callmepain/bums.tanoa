@@ -11,7 +11,7 @@ disableSerialization;
 _dialog = findDisplay 7730;
 _Names = _dialog displayCtrl 7731;
 _Titel = _dialog displayCtrl 1100;
-_Titel ctrlSetStructuredText parseText "Fahigkeiten";
+_Titel ctrlSetStructuredText parseText "<t align='center' >Fahigkeiten</t>";
 
 lbClear _Names;
 _side = "";

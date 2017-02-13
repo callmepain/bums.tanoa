@@ -418,6 +418,7 @@ class Life_Client_Core {
     class Vehicle {
         file = "core\vehicle";
         class addVehicle2Chain {};
+        class autosafe {};
         class colorVehicle {};
         class deviceMine {};
         class FuelRefuelcar {};

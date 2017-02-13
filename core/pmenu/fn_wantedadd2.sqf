@@ -19,7 +19,7 @@ _list2 = _display displayCtrl 9991;
 lbClear _list2;
 
 
-_Titel ctrlSetStructuredText parseText "<t align='center' size='1' font ='PuristaBold'>Person auf die Fahndungsliste setzen</t>";
+_Titel ctrlSetStructuredText parseText "<t align='center' >Person auf die Fahndungsliste setzen</t>";
 
 //_index = lbAdd [_list2, "Name"];
 //lbSetData [_list2, _index, "pfad/zum/bild.paa"];
