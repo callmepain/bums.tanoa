@@ -23,13 +23,13 @@ _action = ["Vehicle Flip","Flip Car","icons\acemenu\ico_repair.paa",{_target set
 /*         COP ACE MENU         */
 _action1 = ["Cop menu", "Cop Menu", "icons\acemenu\ico_abzeichen.paa", {true}, {/*playerSide == west && isPlayer _target*/true}] call ace_interact_menu_fnc_createAction; // add another custom node
 [typeOf player, 0, ["ACE_MainActions"], _action1] call ace_interact_menu_fnc_addActionToClass;
-_action2 = ["CheckLicense","Lizenen Überprüfen","icons\acemenu\ico_license.paa",{[_player] remoteExecCall ["life_fnc_licenseCheck",_target]},{playerSide == west && _target isKindOf "Man"}] call ace_interact_menu_fnc_createAction;
+_action2 = ["CheckLicense","Lizenen Überprüfen","icons\acemenu\ico_license.paa",{[_player] remoteExecCall ["life_fnc_licenseCheck",_target]},{_target isKindOf "Man"}] call ace_interact_menu_fnc_createAction;
 [typeOf player, 0, ["ACE_MainActions","Cop menu"], _action2] call ace_interact_menu_fnc_addActionToClass;
-_action3 = ["Checkplayer","Spieler durchsuchen","icons\acemenu\ico_search.paa",{_target spawn life_fnc_searchAction},{playerSide == west && _target isKindOf "Man"}] call ace_interact_menu_fnc_createAction;
+_action3 = ["Checkplayer","Spieler durchsuchen","icons\acemenu\ico_search.paa",{_target spawn life_fnc_searchAction},{_target isKindOf "Man"}] call ace_interact_menu_fnc_createAction;
 [typeOf player, 0, ["ACE_MainActions","Cop menu"], _action3] call ace_interact_menu_fnc_addActionToClass;
-_action4 = ["giveticket","Ticket ausstellen","icons\acemenu\ico_ticket.paa",{_target call life_fnc_ticketAction},{playerSide == west && _target isKindOf "Man"}] call ace_interact_menu_fnc_createAction;
+_action4 = ["giveticket","Ticket ausstellen","icons\acemenu\ico_ticket.paa",{_target call life_fnc_ticketAction},{_target isKindOf "Man"}] call ace_interact_menu_fnc_createAction;
 [typeOf player, 0, ["ACE_MainActions","Cop menu"], _action4] call ace_interact_menu_fnc_addActionToClass;
-_action5 = ["arrest","Einsperren","icons\acemenu\ico_jail.paa",{createDialog "jail_time"},{playerSide == west && _target isKindOf "Man"}] call ace_interact_menu_fnc_createAction;
+_action5 = ["arrest","Einsperren","icons\acemenu\ico_jail.paa",{createDialog "jail_time"},{_target isKindOf "Man"}] call ace_interact_menu_fnc_createAction;
 [typeOf player, 0, ["ACE_MainActions","Cop menu"], _action5] call ace_interact_menu_fnc_addActionToClass;
 
 /*         COP ACE MENU   car      */
