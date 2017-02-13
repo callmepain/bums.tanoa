@@ -21,7 +21,7 @@ _Titel = _display displayCtrl 1100;
 lbClear _list;
 lbClear _players;
 
-_Titel ctrlSetStructuredText parseText "<t align='center' size='1' font ='PuristaBold'>Fahndungsliste</t>";
+_Titel ctrlSetStructuredText parseText "<t align='center' >Fahndungsliste</t>";
 
 {
     private _side = switch (side _x) do {case west: {"Cop"}; case civilian : {"Civ"}; default {"Unknown"};};

@@ -116,13 +116,17 @@ if ((uiNamespace getVariable ["Weapon_Shop_Filter",0]) isEqualTo 1) then
 	{
 		((findDisplay 38400) displayCtrl 38401) ctrlShow true;
 		((findDisplay 38400) displayCtrl 38406) ctrlShow true;
+		((findDisplay 38400) displayCtrl 38404) lbSetCurSel -1;
+		((findDisplay 38400) displayCtrl 38405) lbSetCurSel -1;
 		_buysell  ctrlSetStructuredText parseText format["<t align='center'>Ausrüstung verkaufen</t>"];
 	};
 	
 	if(_control isEqualTo ((findDisplay 38400) displayCtrl 38404)) then 
 	{	
 		((findDisplay 38400) displayCtrl 38401) ctrlShow true;
-		((findDisplay 38400) displayCtrl 38406) ctrlShow true;
+		((findDisplay 38400) displayCtrl 38406) ctrlShow true;		
+		((findDisplay 38400) displayCtrl 38403) lbSetCurSel -1;
+		((findDisplay 38400) displayCtrl 38405) lbSetCurSel -1;
 		_buysell ctrlSetStructuredText parseText format["<t align='center'>Magazin verkaufen</t>"];
 		_amount = ctrlText 38407;
 		_amount = parseNumber(_amount);
@@ -132,6 +136,8 @@ if ((uiNamespace getVariable ["Weapon_Shop_Filter",0]) isEqualTo 1) then
 	{
 		((findDisplay 38400) displayCtrl 38401) ctrlShow true;		
 		((findDisplay 38400) displayCtrl 38406) ctrlShow true;
+		((findDisplay 38400) displayCtrl 38403) lbSetCurSel -1;
+		((findDisplay 38400) displayCtrl 38404) lbSetCurSel -1;
 		_buysell  ctrlSetStructuredText parseText format["<t align='center'>Zubehör verkaufen</t>"];
 	};	
 } 
@@ -206,7 +212,9 @@ else
 	{
 		((findDisplay 38400) displayCtrl 38401) ctrlShow true;
 		((findDisplay 38400) displayCtrl 38406) ctrlShow true;
-		((findDisplay 38400) displayCtrl 38407) ctrlShow false;		
+		((findDisplay 38400) displayCtrl 38407) ctrlShow true;
+		((findDisplay 38400) displayCtrl 38404) lbSetCurSel -1;
+		((findDisplay 38400) displayCtrl 38405) lbSetCurSel -1;
 		_buysell  ctrlSetStructuredText parseText format["<t align='center'>Ausrüstung kaufen</t>"];
 	};
 	
@@ -214,7 +222,8 @@ else
 	{	
 		((findDisplay 38400) displayCtrl 38401) ctrlShow true;
 		((findDisplay 38400) displayCtrl 38406) ctrlShow true;
-		((findDisplay 38400) displayCtrl 38407) ctrlShow true;		
+		((findDisplay 38400) displayCtrl 38407) ctrlShow true;
+		((findDisplay 38400) displayCtrl 38405) lbSetCurSel -1;
 		_buysell ctrlSetStructuredText parseText format["<t align='center'>Magazin kaufen</t>"];
 		_amount = ctrlText 38407;
 		_amount = parseNumber(_amount);
@@ -224,7 +233,8 @@ else
 	{
 		((findDisplay 38400) displayCtrl 38401) ctrlShow true;
 		((findDisplay 38400) displayCtrl 38406) ctrlShow true;
-		((findDisplay 38400) displayCtrl 38407) ctrlShow false;		
+		((findDisplay 38400) displayCtrl 38407) ctrlShow true;
+		((findDisplay 38400) displayCtrl 38404) lbSetCurSel -1;
 		_buysell  ctrlSetStructuredText parseText format["<t align='center'>Zubehör kaufen</t>"];
 	};	
 	
