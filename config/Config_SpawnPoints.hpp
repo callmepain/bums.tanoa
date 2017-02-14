@@ -100,9 +100,9 @@ class CfgSpawnPoints {
             };
         };
 
-        class Medic {
+        class Med {
 			class GeorgetownHospital {
-                displayName = "Georgetown Hospital";
+                displayName = "Georgetown Feuerwehr";
                 spawnMarker = "medic_spawn_3";
                 icon = "\a3\ui_f\data\map\MapControl\hospital_ca.paa";
                 conditions = "";
@@ -128,26 +128,19 @@ class CfgSpawnPoints {
 
         };
 		
-		class TAC 
+		class adac 
 		{
 
-            class SEHospital {
-                displayName = "South East Hospital";
-                spawnMarker = "medic_spawn_1";
+            class GeorgetownADAC {
+                displayName = "Georgetown";
+                spawnMarker = "adac_spawn_1";
                 icon = "\a3\ui_f\data\map\MapControl\hospital_ca.paa";
                 conditions = "";
             };
 
-            class TanoukaHospital {
-                displayName = "Tanouka Regional";
-                spawnMarker = "medic_spawn_2";
-                icon = "\a3\ui_f\data\map\MapControl\hospital_ca.paa";
-                conditions = "";
-            };
-
-            class NEAirportHospital {
-                displayName = "North East Airport Hospital";
-                spawnMarker = "medic_spawn_3";
+            class LijnhavenADAC {
+                displayName = "Lijnhaven";
+                spawnMarker = "adac_spawn_2";
                 icon = "\a3\ui_f\data\map\MapControl\hospital_ca.paa";
                 conditions = "";
             };

@@ -60,4 +60,13 @@ switch (playerSide) do {
             _bag  setObjectTextureGlobal [0, ""];
         };
     };
+	
+	case east: {
+        if (uniform player isEqualTo "U_Rangemaster") then {
+            player setObjectTextureGlobal [0, "textures\medic_uniform.jpg"];
+        };
+		if (backpack player isEqualTo "tf_anprc155") then {
+            _bag  setObjectTextureGlobal [0, ""];
+        };
+    };
 };

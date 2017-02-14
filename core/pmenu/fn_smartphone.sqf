@@ -46,7 +46,7 @@ switch(_type) do
 				case west: {_type = "Cop"};
 				case civilian: {_type = "Civ"};
 				case independent: {_type = "Med"};
-				case east: {_type = "TAC"};
+				case east: {_type = "Adac"};
 				};
 				_cPlayerList lbAdd format["%1 (%2)",_x getVariable["realname", name _x],_type];
 				_cPlayerList lbSetData [(lbSize _cPlayerList)-1,str(_x)];

@@ -12,12 +12,8 @@
 
 params [["_side",civilian,[civilian]]];
 
-_side = switch (_side) do {
-    case west: {"Cop"};
-    case independent: {"Medic"};
-    case east: {"TAC"};
-    default {"Civilian"};
-};
+_side = "";
+SIDEOFPLAYER(_side);
 
 private _return = [];
 
