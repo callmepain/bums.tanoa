@@ -6,76 +6,82 @@ class car_processing
 	
 	class controlsBackground
 	{
-		class RscTitleBackground: Life_RscText
+		
+		class HintergrundPic: RscPicture
 		{
 			idc = -1;
 
-			x = 0;
-			y = 0.2;
-			w = 0.75;
-			h = 0.04;
-			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.75};
+			text = "images\tablet\tablet.paa";
+			x = 0.258501 * safezoneW + safezoneX;
+			y = 0.07166 * safezoneH + safezoneY;
+			w = 0.485625 * safezoneW;
+			h = 0.854 * safezoneH;
+			// colorText[] = {1,1,1,0.5};
 		};
-		class MainBackGround: Life_RscText
+		
+		class Hintergrund: IGUIBack
 		{
-			idc = -1;
+			idc = 2200;
 
-			x = 0;
-			y = 0.244;
-			w = 0.75;
-			h = 0.52;
+			x = 0.305143 * safezoneW + safezoneX;
+			y = 0.2602 * safezoneH + safezoneY;
+			w = 0.391787 * safezoneW;
+			h = 0.4994 * safezoneH;
 			colorBackground[] = {0,0,0,0.7};
 		};
-		class Title: Life_RscStructuredText
+		
+		class Titel: RscStructuredText
 		{
-			idc = -1;
+			idc = 1100;
 
-			text = "<t align='center'>Fahrzeuge, zu denen du den Schlüssel hast</t>";
-			x = 0;
-			y = 0.2;
-			w = 0.75;
-			h = 0.05;
-			colorText[] = {0.95,0.95,0.95,1};
+			text = ""; //--- ToDo: Localize;
+			x = 0.308252 * safezoneW + safezoneX;
+			y = 0.2668 * safezoneH + safezoneY;
+			w = 0.384743 * safezoneW;
+			h = 0.022 * safezoneH;
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.75};
 		};
 	};
 	
 	class controls
 	{
+		class Close: RscButtonMenu
+		{
+			idc = -1;
+			onButtonClick = "closeDialog 0;";
+
+			x = 0.702113 * safezoneW + safezoneX;
+			y = 0.478 * safezoneH + safezoneY;
+			w = 0.0259119 * safezoneW;
+			h = 0.044 * safezoneH;
+			colorText[] = {1,1,1,1};
+			colorBackground[] = {0,0,0,0.8};
+			tooltip = "Schließt das Fenster"; //--- ToDo: Localize;
+		};
+		
 		class vehicleList: Life_RscListBox
 		{
 			idc = 39402;
 
-			x = 0.01;
-			y = 0.25;
-			w = 0.7375;
-			h = 0.50;
-			sizeEx = 0.035; 
+			x = 0.307627 * safezoneW + safezoneX;
+			y = 0.29533 * safezoneH + safezoneY;
+			w = 0.384745 * safezoneW;
+			h = 0.418141 * safezoneH;
+			sizeEx = 0.04;
+			colorBackground[] = {0,0,0,0.7};
 		};
-		class BtnSell: Life_RscButtonMenu
+		class BtnProcessing: Life_RscButtonMenu
 		{
 			onButtonclick = "[] spawn life_fnc_processCarAction;";
+			idc = 1101;
 
-			idc = 1005;
-			text = "Herstellen";
-			x = 0.164163;
-			y = 0.770999;
-			w = 0.15625;
-			h = 0.04;
+			text = "Herstellen"; //--- ToDo: Localize;
+			x = 0.307628 * safezoneW + safezoneX;
+			y = 0.720074 * safezoneH + safezoneY;
+			w = 0.384745 * safezoneW;
+			h = 0.0220074 * safezoneH;
 			colorText[] = {1,1,1,1};
-			colorBackground[] = {0,0,0,0.8};
-		};
-		class BtnClose: Life_RscButtonMenu
-		{
-			onButtonClick = "closeDialog 0";
-
-			idc = 1006;
-			text = "Schließen";
-			x = 0;
-			y = 0.770801;
-			w = 0.15625;
-			h = 0.04;
-			colorText[] = {1,1,1,1};
-			colorBackground[] = {0,0,0,0.8};
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.75};
 		};
 	};
 };

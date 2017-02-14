@@ -22,18 +22,22 @@ if(!dialog) then
 disableSerialization;
 
 _display = findDisplay 2700;
+_titel = _display displayCtrl 1100;
 _text = _display displayCtrl 2701;
 _units = _display displayCtrl 2703;
 _Btn1 = _display displayCtrl 2705;
 _Btn2 = _display displayCtrl 2706;
 _Btn3 = _display displayCtrl 2707;
 _Btn4 = _display displayCtrl 2708;
+_Btn5 = _display displayCtrl 2709;
 
 
-_Btn1 ctrlSetStructuredText parseText "<t align='center'>Einzahlen in die Gangbank</t>";
-_Btn2 ctrlSetStructuredText parseText "<t align='center'>Geld Einzahlen</t>";
-_Btn3 ctrlSetStructuredText parseText "<t align='center'>Geld Abheben</t>";
-_Btn4 ctrlSetStructuredText parseText "<t align='center'>Geld Überweisen</t>";
+_titel ctrlSetStructuredText parseText "<t align='center'>Tanoa Holdings Inc.</t>";
+_Btn1 ctrlSetStructuredText parseText "einzahlen in die Gangbank";
+_Btn2 ctrlSetStructuredText parseText "abheben von der Gangbank";
+_Btn3 ctrlSetStructuredText parseText "Geld einzahlen";
+_Btn4 ctrlSetStructuredText parseText "Geld abheben";
+_Btn5 ctrlSetStructuredText parseText "Geld überweisen";
 
 
 
@@ -71,4 +75,5 @@ _text ctrlSetStructuredText parseText format
 
 if (isNil {(group player getVariable "gang_bank")}) then {
 	(CONTROL(2700,2705)) ctrlEnable false;
+	(CONTROL(2700,2706)) ctrlEnable false;
 };
