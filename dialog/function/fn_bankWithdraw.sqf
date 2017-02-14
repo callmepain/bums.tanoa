@@ -71,8 +71,10 @@ _gFund = grpPlayer getVariable ["gang_bank",0];
 _text ctrlSetStructuredText parseText format
 [
 	"<t align='center'>
-	<img size='1.7' image='icons\ico_bank.paa'/> %1€ [Bank]<br/>
-	<img size='1.6' image='icons\ico_money.paa'/> %2€ [Tasche]<br/>
+	<img size='1.7' image='icons\ico_bank.paa'/> %1€ [Bank]
+	<br/>
+	<img size='1.6' image='icons\ico_money.paa'/> %2€ [Tasche]
+	<br/>
 	<img size='1.7' image='icons\ico_bank.paa'/> %3€ [Gang]
 	",
 	[BANK] call life_fnc_numberText,
