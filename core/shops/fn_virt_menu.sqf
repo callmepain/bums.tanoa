@@ -25,7 +25,7 @@ life_shop_npc = _shopNPC;
 private _exit = false;
 
 if !(_shopSide isEqualTo "") then {
-    private _flag = switch (playerSide) do {case west: {"cop"}; case independent: {"med"}; east: {"adac"}; default {"civ"};};
+    private _flag = switch (playerSide) do {case west: {"cop"}; case independent: {"med"}; case east: {"adac"}; default {"civ"};};
     if !(_flag isEqualTo _shopSide) then {_exit = true;};
 };
 
