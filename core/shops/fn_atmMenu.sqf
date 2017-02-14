@@ -73,7 +73,7 @@ lbClear _units;
 			case west: {_type = "Cop"};
 			case civilian: {_type = "Civ"};
 			case independent: {_type = "Medic"};
-			case east: {_type = "TAC"};
+			case east: {_type = "Adac"};
 		};
 		_units lbAdd format["%1 (%2)",_x getVariable["realname",name _x],_type];
 		_units lbSetData [(lbSize _units)-1,str(_x)];

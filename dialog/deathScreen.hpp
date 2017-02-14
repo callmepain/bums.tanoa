@@ -39,7 +39,7 @@ class DeathScreen {
             class Attributes {align = "center";};
         };
 
-        class MedicBtn: Life_RscButtonMenu {
+        /*class MedicBtn: Life_RscButtonMenu {
             idc = 7303;
             x = 0.9 * safezoneW + safezoneX;
             y = 0.040 * safezoneH + safezoneY;
@@ -49,7 +49,7 @@ class DeathScreen {
             text = "Request Medic";
             colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.7};
             class Attributes {align = "center";};
-        };
+        };*/
 
         class respawnTime: Life_RscText {
             idc = 7301;

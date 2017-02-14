@@ -33,7 +33,7 @@ if (count _itemArray isEqualTo 0) exitWith {
 		
 		case east: 
 		{
-            [] call life_fnc_medicLoadout;
+            [] call life_fnc_adacLoadout;
         };
     };
 };

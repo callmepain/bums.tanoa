@@ -60,6 +60,21 @@ life_market_resources = [
 		]
 	],
 	
+/////// --------------------------------------- essen 	--------------------------------------- ///////
+
+	
+	["peach", 55, 30, 80, 2, 2,
+		[
+			["apple",1],
+		]
+	],
+	
+	["apple", 50, 25, 75, 2, 3,
+		[
+			["peach",1],
+		]
+	],	
+	
 /////// --------------------------------------- Rohstoffe 	--------------------------------------- ///////
 
 
@@ -263,7 +278,7 @@ life_market_resources = [
 publicVariable "life_market_resources";
 
 
-life_market_resources_nahrung =[];
+life_market_resources_nahrung =["peach","apple"];
 life_market_resources_rohstoffe =["wood_refined","cement","salt_refined","glass","coal_refined","copper_refined","iron_refined","oil_processed","stahlbarren_refined"];
 life_market_resources_drogen =["pilze_processed","marijuana","cocaine_processed","heroin_processed","lsd_processed"];
 life_market_resources_multi =["platinbarren_refined","diamond_cut","silver_refined","golderz_refined","platinbarren_refined","silberschmuck_refined","goldschmuck_refined","brilliantschmuck_refined"];

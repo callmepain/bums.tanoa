@@ -25,7 +25,7 @@ ICE_HUD =
 			_ctrlFps ctrlSetTextColor 	[0,1,0,1];
 			_ctrlHps ctrlSetText format ["%1%2", round((1 - (damage player)) * 100), "%"];
 			_ctrlSta ctrlSetText format ["%1%2", round((1 - (getFatigue player)) * 100), "%"];
-			_ctrlSvr ctrlSetText format["Cops: %1 | Civs: %2 | Medic: %3 | TAC: %4 | ASSI-TS-ADRESSE | powered by Team [ASSI] ", west countSide playableUnits, civilian countSide playableUnits, independent countSide playableUnits, east countSide playableUnits];		
+			_ctrlSvr ctrlSetText format["Cops: %1 | Civs: %2 | Medic: %3 | ADAC: %4 | ASSI-TS-ADRESSE | powered by Team [ASSI] ", west countSide playableUnits, civilian countSide playableUnits, independent countSide playableUnits, east countSide playableUnits];		
 					
 			switch (true) do {
 			
