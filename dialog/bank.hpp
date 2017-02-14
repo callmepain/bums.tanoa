@@ -79,7 +79,7 @@ class life_atm_menu
 		class GangDeposit: Life_RscButtonMenu
 		{
 			idc = 2705;
-			onButtonClick = "createDialog ""Life_atm_management"";[""gang""] call life_fnc_bankMenu";
+			onButtonClick = "createDialog ""Life_atm_management"";[""gangeinzahlen""] call life_fnc_bankMenu";
 
 			x = 0.348127 * safezoneW + safezoneX;
 			y = 0.511004 * safezoneH + safezoneY;
@@ -92,7 +92,7 @@ class life_atm_menu
 		class GangWithdraw: Life_RscButtonMenu
 		{
 			idc = 2706;
-			onButtonClick = "createDialog ""Life_atm_management"";[""gang""] call life_fnc_bankMenu";
+			onButtonClick = "createDialog ""Life_atm_management"";[""gangabheben""] call life_fnc_bankMenu";
 
 			x = 0.348127 * safezoneW + safezoneX;
 			y = 0.555018 * safezoneH + safezoneY;
