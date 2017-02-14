@@ -195,19 +195,19 @@ class CarShops
         conditions = "license_civ_trucking";
         vehicles[] = {
             { "C_Van_01_box_F", "call life_civlkw_level >= 1" },
-            { "I_Truck_02_transport_F", "call life_civlkw_level >= 1" },
-            { "I_Truck_02_covered_F", "call life_civlkw_level >= 2" },
+			{ "C_Van_01_fuel_F", "call life_civlkw_level >= 1" },
+            { "I_Truck_02_transport_F", "call life_civlkw_level >= 2" },
+            { "I_Truck_02_covered_F", "call life_civlkw_level >= 4" },
             { "shounka_a3_spr_civ", "call life_civlkw_level >= 3" },
-            { "O_Truck_03_transport_F", "call life_civlkw_level >= 4" },
-            { "O_Truck_03_covered_F", "call life_civlkw_level >= 4" },
-            { "O_Truck_03_repair_F", "call life_civlkw_level >= 5" },
-            { "B_Truck_01_transport_F", "call life_civlkw_level >= 6" },
-            { "B_Truck_01_covered_F", "call life_civlkw_level >= 6" },
-            { "B_Truck_01_box_F", "call life_civlkw_level >= 7" },
-            { "C_Van_01_fuel_F", "call life_civlkw_level >= 8" },
-            { "I_Truck_02_fuel_F", "call life_civlkw_level >= 8" },
-            { "O_Truck_03_fuel_F", "call life_civlkw_level >= 9" },
-            { "B_Truck_01_fuel_F", "call life_civlkw_level >= 10" }
+            { "O_Truck_03_transport_F", "call life_civlkw_level >= 5" },
+            { "O_Truck_03_covered_F", "call life_civlkw_level >= 6" },
+            { "O_Truck_03_repair_F", "call life_civlkw_level >= 7" },
+            { "B_Truck_01_transport_F", "call life_civlkw_level >= 8" },
+            { "B_Truck_01_covered_F", "call life_civlkw_level >= 9" },
+            { "B_Truck_01_box_F", "call life_civlkw_level >= 10" },
+            { "I_Truck_02_fuel_F", "call life_civlkw_level >= 4" },
+            { "O_Truck_03_fuel_F", "call life_civlkw_level >= 6" },
+            { "B_Truck_01_fuel_F", "call life_civlkw_level >= 8" }
         };
     };
 
@@ -285,7 +285,7 @@ class CarShops
             { "ivory_m3_marked", "call life_coplevel >= 1" },
             { "shounka_a3_brinks", "call life_coplevel >= 1" },
             { "Urbanized_67Mustang_UC1", "call life_coplevel >= 1" },
-            { "Mrshounka_cherokee_noir", "call life_coplevel >= 1" },
+            //{ "Mrshounka_cherokee_noir", "call life_coplevel >= 1" },
             { "ivory_isf_marked", "call life_coplevel >= 1" },
             { "GeK_Mercedes_ML63", "call life_coplevel >= 1" },
             { "Urbanized_G65_UC1", "call life_coplevel >= 1" },
@@ -1163,9 +1163,9 @@ class LifeCfgVehicles {
     };
 
     class O_Truck_03_transport_F {
-        vItemSpace = 285;
+        vItemSpace = 120;
         conditions = "license_civ_trucking";
-        price = 228850;
+        price = 114418;
         textures[] = { };
     };
 	
@@ -1177,20 +1177,20 @@ class LifeCfgVehicles {
     };
 	
 	class O_Truck_03_repair_F {
-        vItemSpace = 110;
+        vItemSpace = 140;
         conditions = "license_civ_trucking";
-        price = 165600;
+        price = 285600;
         textures[] = { };
     };
 	
 	class B_Truck_01_covered_F {
-        vItemSpace = 130;
+        vItemSpace = 160;
         conditions = "license_civ_trucking";
-        price = 402500;
+        price = 460000;
         textures[] = { };
     };
 	class O_Truck_03_fuel_F {
-        vItemSpace = 325;
+        vItemSpace = 475;
         conditions = "license_civ_trucking";
         price = 133343;
         textures[] = { };
@@ -1390,9 +1390,9 @@ class LifeCfgVehicles {
     };
 
     class B_Truck_01_transport_F {
-        vItemSpace = 120;
+        vItemSpace = 150;
         conditions = "license_civ_trucking";
-        price = 460000;
+        price = 402500;
         textures[] = { };
     };
 
@@ -1453,25 +1453,25 @@ will modify the virtual space and the price of the vehicle, but other informatio
 
 
     class I_Truck_02_covered_F {
-        vItemSpace = 80;
+        vItemSpace = 110;
+        conditions = "license_civ_trucking";
+        price = 97231;
+        textures[] = { };
+    };
+
+
+    class I_Truck_02_transport_F {
+        vItemSpace = 90;
         conditions = "license_civ_trucking";
         price = 55775;
         textures[] = { };
     };
 
 
-    class I_Truck_02_transport_F {
-        vItemSpace = 70;
-        conditions = "license_civ_trucking";
-        price = 59800;
-        textures[] = { };
-    };
-
-
     class O_Truck_03_covered_F {
-        vItemSpace = 100;
+        vItemSpace = 130;
         conditions = "license_civ_trucking";
-        price = 114418;
+        price = 228850;
         textures[] = {};
     };
 
@@ -1498,7 +1498,7 @@ will modify the virtual space and the price of the vehicle, but other informatio
     };
 
     class C_Van_01_box_F {
-        vItemSpace = 60;
+        vItemSpace = 80;
         conditions = "license_civ_trucking";
         price = 34500;
         textures[] = { };
@@ -1600,24 +1600,24 @@ will modify the virtual space and the price of the vehicle, but other informatio
     };
 
 	class C_Van_01_fuel_F {
-        vItemSpace = 100;
-        vFuelSpace = 19500;
+        vItemSpace = 150;
+        vFuelSpace = 40250;
         conditions = "license_civ_trucking";
         price = 40250;
         textures[] = { };
     };
 
     class I_Truck_02_fuel_F {
-        vItemSpace = 250;
-        vFuelSpace = 42000;
+        vItemSpace = 300;
+        vFuelSpace = 83567;
         conditions = "license_civ_trucking";
         price = 66700;
           textures[] = { };
     };
 
     class B_Truck_01_fuel_F {
-        vItemSpace = 650;
-        vFuelSpace = 50000;
+        vItemSpace = 700;
+        vFuelSpace = 448500;
         conditions = "license_civ_trucking";
         price = 448500;
         textures[] = {};
