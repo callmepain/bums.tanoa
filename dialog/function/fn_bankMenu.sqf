@@ -35,23 +35,16 @@ _titel ctrlSetStructuredText parseText "<t align='center'>Tanoa Holdings Inc.</t
 
 lbClear _units;
 
-_gFund = grpPlayer getVariable ["gang_bank",0];
 _text ctrlSetStructuredText parseText format
 [
-	"<t align='center'>
-	<img size='1.7' image='icons\ico_bank.paa'/> %1€ [Bank]
-	<br/>
-	<img size='1.6' image='icons\ico_money.paa'/> %2€ [Tasche]
-	<br/>
-	<img size='1.7' image='icons\ico_bank.paa'/> %3€ [Gang]
-	",
+	"<t align='center'><img size='1.7' image='icons\ico_bank.paa'/> $%1 [Bank]<br/><img size='1.6' image='icons\ico_money.paa'/> $%2 [Tasche]<br/><img size='1.7' image='icons\ico_bank.paa'/> $%3 [Gang]",
 	[BANK] call life_fnc_numberText,
 	[CASH] call life_fnc_numberText,
-	[_gFund] call life_fnc_numberText
+	[GANG_FUNDS] call life_fnc_numberText
 ];
 
 {
-	if(alive _x ) then //&& _x != player
+	if(alive _x && _x != player) then //
 	{
 		switch (side _x) do
 		{
@@ -67,7 +60,7 @@ _text ctrlSetStructuredText parseText format
 
 switch (_modus) do
 {
-	case ("gang"):
+	case ("gangeinzahlen"):
 	{
 		_Aktion ctrlSetStructuredText parseText "<t align='center'>Geld in die Gangbank einzahlen</t>";
 
@@ -105,6 +98,48 @@ switch (_modus) do
 		
 		_Btn9 ctrlSetStructuredText parseText "<t align='center'>alles Einzahlen</t>";
 		_Btn9 buttonSetAction "[1] call life_fnc_gangDeposit;";
+		
+		_units ctrlShow false;
+	};
+	
+	case ("gangabheben"):
+	{
+		_Aktion ctrlSetStructuredText parseText "<t align='center'>Geld von Gangbank abheben</t>";
+
+		// Deposit100
+		_Btn1 ctrlSetStructuredText parseText "<t align='center'>$100</t>";
+		_Btn1 buttonSetAction "[100] call life_fnc_gangWithdraw;";
+
+		// Deposit500
+		_Btn2 ctrlSetStructuredText parseText "<t align='center'>$500</t>";
+		_Btn2 buttonSetAction "[500] call life_fnc_gangWithdraw;";
+
+		// Deposit1000
+		_Btn3 ctrlSetStructuredText parseText "<t align='center'>$1000</t>";
+		_Btn3 buttonSetAction "[1000] call life_fnc_gangWithdraw;";
+		
+		// Deposit5000
+		_Btn4 ctrlSetStructuredText parseText "<t align='center'>$5000</t>";
+		_Btn4 buttonSetAction "[5000] call life_fnc_gangWithdraw;";
+
+		// Deposit10000
+		_Btn5 ctrlSetStructuredText parseText "<t align='center'>$10000</t>";
+		_Btn5 buttonSetAction "[10000] call life_fnc_gangWithdraw;";
+
+		// Deposit5000
+		_Btn6 ctrlSetStructuredText parseText "<t align='center'>$50000</t>";
+		_Btn6 buttonSetAction "[50000] call life_fnc_gangWithdraw;";
+
+		// Deposit10000
+		_Btn7 ctrlSetStructuredText parseText "<t align='center'>$100000</t>";
+		_Btn7 buttonSetAction "[100000] call life_fnc_gangWithdraw;";
+
+		// wunsch
+		_Btn8 ctrlSetStructuredText parseText "<t align='center'>Wunschbetrag</t>";
+		_Btn8 buttonSetAction "[-1] call life_fnc_gangWithdraw;";
+		
+		_Btn9 ctrlSetStructuredText parseText "<t align='center'>alles abheben</t>";
+		_Btn9 buttonSetAction "[1] call life_fnc_gangWithdraw;";
 		
 		_units ctrlShow false;
 	};
@@ -237,4 +272,12 @@ switch (_modus) do
 	waitUntil{!isNull (findDisplay 2700)}; //Wait for the spawn selection to be open.
 	waitUntil{isNull (findDisplay 2700)}; //Wait for the spawn selection to be done.
 	[16] call SOCK_fnc_updatePartial;
+	
+	if (!(isNil {(group player getVariable "gang_bank")})) then 
+	{
+		[1,group player] remoteExecCall ["TON_fnc_updateGang",RSERV];
+		group player setVariable ["gbank_in_use_by",ObjNull,true];
+	};
+	
+	
 };

@@ -2,36 +2,62 @@
 /*
     File: fn_gangWithdraw.sqf
     Author: Bryan "Tonic" Boardwine
-
+	Edit by H4uklotz
+	
     Description:
     Withdraws money from the gang bank.
 */
 private ["_value"];
-_value = parseNumber(ctrlText 2702);
+_modus = (_this select 0);
+
+_value = 0;
+
+switch (_modus) do
+{
+	case (-1):
+	{
+		_value = parseNumber(ctrlText 2753);
+	};
+	
+	case (1):
+	{
+		_value = CASH;
+	};
+	
+	default
+	{
+		_value = _modus;
+	};
+};
+
 _gFund = GANG_FUNDS;
-group player setVariable ["gbank_in_use_by",player,true];
 
 //Series of stupid checks
-if (_value > 999999) exitWith {hint localize "STR_ATM_WithdrawMax";};
 if (_value < 0) exitWith {};
-if (!([str(_value)] call TON_fnc_isnumber)) exitWith {hint localize "STR_ATM_notnumeric"};
+if (!([str(_value)] call TON_fnc_isnumber)) exitWith {[(format [localize "STR_ATM_notnumeric"]),"Fehler","red"] call MSG_fnc_handle;};
 if (_value > _gFund) exitWith {hint localize "STR_ATM_NotEnoughFundsG"};
-if (_val < 100 && _gFund > 20000000) exitWith {hint localize "STR_ATM_WithdrawMin"}; //Temp fix for something.
-if ((group player getVariable ["gbank_in_use_by",player]) != player) exitWith {hint localize "STR_ATM_WithdrawInUseG"}; //Check if it's in use.
+if (_val < 1 && _gFund > 200000000) exitWith  {[(format [localize "STR_ATM_WithdrawMin"]),"Hinweis","Yellow"] call MSG_fnc_handle;};
+
+group player setVariable ["gbank_in_use_by",player,true];
+if ((group player getVariable ["gbank_in_use_by",player]) != player) exitWith {[(format [localize "STR_ATM_WithdrawInUseG"]),"Hinweis","Yellow"] call MSG_fnc_handle;};
 
 _gFund = _gFund - _value;
 CASH = CASH + _value;
 group player setVariable ["gang_bank",_gFund,true];
 
-if (life_HC_isActive) then {
-    [1,group player] remoteExec ["HC_fnc_updateGang",HC_Life]; //Update the database.
-} else {
-    [1,group player] remoteExec ["TON_fnc_updateGang",RSERV]; //Update the database.
-};
+[(format [localize "STR_ATM_WithdrawSuccessG",[_value] call life_fnc_numberText]),"Einzahlung","green"] call MSG_fnc_handle;
 
-hint format [localize "STR_ATM_WithdrawSuccessG",[_value] call life_fnc_numberText];
-[] call life_fnc_atmMenu;
-[6] call SOCK_fnc_updatePartial;
+disableSerialization;
+_display = findDisplay 2750;
+_text = _display displayCtrl 2751;
+
+_text ctrlSetStructuredText parseText format
+[
+	"<t align='center'><img size='1.7' image='icons\ico_bank.paa'/> $%1 [Bank]<br/><img size='1.6' image='icons\ico_money.paa'/> $%2 [Tasche]<br/><img size='1.7' image='icons\ico_bank.paa'/> $%3 [Gang]",
+	[BANK] call life_fnc_numberText,
+	[CASH] call life_fnc_numberText,
+	[GANG_FUNDS] call life_fnc_numberText
+];
 
 if (LIFE_SETTINGS(getNumber,"player_moneyLog") isEqualTo 1) then {
     if (LIFE_SETTINGS(getNumber,"battlEye_friendlyLogging") isEqualTo 1) then {

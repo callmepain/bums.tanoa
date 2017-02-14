@@ -8,7 +8,7 @@
 	Opens and manages the bank menu.
 */
 private["_display","_text","_units","_type","_gFund"];
-
+if(isDedicated) exitWith {};
 if(!life_use_atm) exitWith
 {
 	[(format [localize "STR_Shop_ATMRobbed"]),"Hinweis","Yellow"] call MSG_fnc_handle;
@@ -43,18 +43,27 @@ _Btn5 ctrlSetStructuredText parseText "Geld überweisen";
 
 lbClear _units;
 
-_gFund = grpPlayer getVariable ["gang_bank",0];
-_text ctrlSetStructuredText parseText format
-[
-	"<t align='center'>
-	<img size='1.7' image='icons\ico_bank.paa'/> %1€ [Bank]<br/>
-	<img size='1.6' image='icons\ico_money.paa'/> %2€ [Tasche]<br/>
-	<img size='1.7' image='icons\ico_bank.paa'/> %3€ [Gang]
-	",
-	[BANK] call life_fnc_numberText,
-	[CASH] call life_fnc_numberText,
-	[_gFund] call life_fnc_numberText
-];
+
+
+[] spawn 
+{
+	disableSerialization;
+	_display = findDisplay 2700;
+	_text = _display displayCtrl 2701;
+
+	for "_i" from 0 to 1 step 0 do
+	{
+		_text ctrlSetStructuredText parseText format
+		[
+			"<t align='center'><img size='1.7' image='icons\ico_bank.paa'/> $%1 [Bank]<br/><img size='1.6' image='icons\ico_money.paa'/> $%2 [Tasche]<br/><img size='1.7' image='icons\ico_bank.paa'/> $%3 [Gang]",
+			[BANK] call life_fnc_numberText,
+			[CASH] call life_fnc_numberText,
+			[GANG_FUNDS] call life_fnc_numberText
+		];
+		waitUntil{!isNull (findDisplay 2750)}; 
+		waitUntil{isNull (findDisplay 2750)}; 
+	};
+};
 
 {
 	if(alive _x && _x != player) then //&& _x != player
@@ -76,4 +85,10 @@ _text ctrlSetStructuredText parseText format
 if (isNil {(group player getVariable "gang_bank")}) then {
 	(CONTROL(2700,2705)) ctrlEnable false;
 	(CONTROL(2700,2706)) ctrlEnable false;
+};
+
+_ownerID = group player getVariable ["gang_owner",""];
+
+if !(_ownerID isEqualTo getPlayerUID player) then {
+(CONTROL(2700,2706)) ctrlEnable false;
 };
