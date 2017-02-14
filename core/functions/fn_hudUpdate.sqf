@@ -113,5 +113,5 @@ _fatigue ctrlSetText format ["%1%2", round((1 - (getFatigue player)) * 100), "%"
 _fatigue ctrlCommit 0;
 //Update statusbar
 // _status ctrlSetPosition [safezoneX + safezoneW-0.09,safezoneY + safezoneH - 0.08];
-_status ctrlSetText format["Cops: %1 | Civs: %2 | Medic: %3 | TAC: %4 | ASSI-TS-ADRESSE | powered by Team [ASSI] ", west countSide playableUnits, civilian countSide playableUnits, independent countSide playableUnits, east countSide playableUnits];
+_status ctrlSetText format["Cops: %1 | Civs: %2 | Medic: %3 | ADAC: %4 | ASSI-TS-ADRESSE | powered by Team [ASSI] ", west countSide playableUnits, civilian countSide playableUnits, independent countSide playableUnits, east countSide playableUnits];
 _status ctrlCommit 0;

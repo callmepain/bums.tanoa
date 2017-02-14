@@ -32,7 +32,7 @@ class CarShops
 			// { "Mrshounka_lincoln_civ", "call life_civpkw_level >= 6" },//
 			{ "Urbanized_427_black", "call life_civpkw_level >= 6" }, 
 			{ "ivory_gt500", "call life_civpkw_level >= 7" }
-        };
+        };	
     };
 	
 	class civ_car_gebrauchtwagen 
@@ -150,7 +150,7 @@ class CarShops
  	        // { "Mrshounka_veneno_c", "call life_civpkw_level >= 9" },//
  	        { "Mrshounka_agera_p", "call life_civpkw_level >= 10" },
 			{ "Mrshounka_lykan_c", "call life_civpkw_level >= 10" }
-        };
+        };	
     };
 	
 	class civ_container	

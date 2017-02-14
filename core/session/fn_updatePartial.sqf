@@ -101,7 +101,6 @@ switch (_mode) do {
 		} foreach _SkillConfigs;
 		
 		_packet pushback _profs;
-		diag_log format["skill gelöt:%1",_packet]
 	}; 
 	// platzhalter
 	case 12: 

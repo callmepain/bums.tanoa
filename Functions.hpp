@@ -94,7 +94,13 @@ class Life_Client_Core {
         class adminTeleport {};
         class adminTpHere {};
     };
-
+	
+	class Adac {
+        file = "core\adac";
+        class adacLoadout {};
+        class adacMarkers {};
+    };
+	
     class Civilian {
         file = "core\civilian";
         class civLoadout {};

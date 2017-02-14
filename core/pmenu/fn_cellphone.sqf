@@ -26,6 +26,7 @@ if (FETCH_CONST(life_adminlevel) < 1) then {
             case west: {"Cop"};
             case civilian: {"Civ"};
             case independent: {"Med"};
+			case east: {"adac"};
         };
         _units lbAdd format ["%1 (%2)",_x getVariable ["realname",name _x],_type];
         _units lbSetData [(lbSize _units)-1,str(_x)];
