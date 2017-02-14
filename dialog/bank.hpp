@@ -1,16 +1,5 @@
-#define GUI_GRID_X	(0)
-#define GUI_GRID_Y	(0)
-#define GUI_GRID_W	(0.025)
-#define GUI_GRID_H	(0.04)
-#define GUI_GRID_WAbs	(1)
-#define GUI_GRID_HAbs	(1)
-
-
-////////////////////////////////////////////////////////
-// GUI EDITOR OUTPUT START (by OLLI, v1.063, #Wotuqo)
-////////////////////////////////////////////////////////
-
-class life_atm_menu {
+class life_atm_menu 
+{
 	idd = 2700;
 	name= "life_atm_menu";
 	movingEnable = 0;
@@ -18,135 +7,143 @@ class life_atm_menu {
 	
 	class controlsBackground 
 	{
-		class Life_RscTitleBackground: Life_RscText
+		class HintergrundPic: RscPicture
 		{
 			idc = -1;
 
-			x = 11.06 * GUI_GRID_W + GUI_GRID_X;
-			y = 2.84 * GUI_GRID_H + GUI_GRID_Y;
-			w = 20 * GUI_GRID_W;
-			h = 1 * GUI_GRID_H;
-			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.75};
+			text = "images\tablet\tablet.paa";
+			x = 0.258501 * safezoneW + safezoneX;
+			y = 0.07166 * safezoneH + safezoneY;
+			w = 0.485625 * safezoneW;
+			h = 0.854 * safezoneH;
+			// colorText[] = {1,1,1,0.7};
 		};
-		class MainBackground: Life_RscText
+		class Hintergrund: IGUIBack
 		{
-			idc = -1;
+			idc = 2200;
 
-			x = 11 * GUI_GRID_W + GUI_GRID_X;
-			y = 4 * GUI_GRID_H + GUI_GRID_Y;
-			w = 20 * GUI_GRID_W;
-			h = 19 * GUI_GRID_H;
+			x = 0.305143 * safezoneW + safezoneX;
+			y = 0.2602 * safezoneH + safezoneY;
+			w = 0.391787 * safezoneW;
+			h = 0.4994 * safezoneH;
 			colorBackground[] = {0,0,0,0.7};
 		};
-	
-	};
-	
-	class controls 
-	{	
-		class CashTitle: Life_RscStructuredText
+		class Titel: RscStructuredText
 		{
-			idc = 2701;
+			idc = 1100;
 
-			x = 11.5 * GUI_GRID_W + GUI_GRID_X;
-			y = 4.5 * GUI_GRID_H + GUI_GRID_Y;
-			w = 19 * GUI_GRID_W;
-			h = 6 * GUI_GRID_H;
-			colorBackground[] = {0,0,0,0.7};
-		};
-		class Title: Life_RscStructuredText
-		{
-			idc = -1;
-
-			text = "<t align='center'>Bankkonto Verwalten</t>"; //--- ToDo: Localize;
-			x = 11.06 * GUI_GRID_W + GUI_GRID_X;
-			y = 2.79 * GUI_GRID_H + GUI_GRID_Y;
-			w = 20 * GUI_GRID_W;
-			h = 1 * GUI_GRID_H;
-			colorText[] = {0.95,0.95,0.95,1};
-		};
-		class GangDeposit: Life_RscButtonMenu
-		{
-			idc = 2705;
-			onButtonClick = "closeDialog 0;[""gang""] call life_fnc_bankMenu";
-
-			x = 15 * GUI_GRID_W + GUI_GRID_X;
-			y = 12.5 * GUI_GRID_H + GUI_GRID_Y;
-			w = 12 * GUI_GRID_W;
-			h = 1 * GUI_GRID_H;
-			colorText[] = {1,1,1,1};
+			x = 0.308252 * safezoneW + safezoneX;
+			y = 0.2668 * safezoneH + safezoneY;
+			w = 0.384743 * safezoneW;
+			h = 0.022 * safezoneH;
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.75};
-		};
-		class CloseButtonKey: Life_RscButtonMenu
-		{
-			onButtonClick = "closeDialog 0;";
-			idc = 1010;
-
-			text = "Schließen"; //--- ToDo: Localize;
-			x = 11 * GUI_GRID_W + GUI_GRID_X;
-			y = 23.13 * GUI_GRID_H + GUI_GRID_Y;
-			w = 20 * GUI_GRID_W;
-			h = 1 * GUI_GRID_H;
-			colorText[] = {1,1,1,1};
-			colorBackground[] = {0,0,0,0.8};
 		};
 		class MenuTitle: Life_RscStructuredText
 		{
 			idc = -1;
 
 			text = "<t align='center'>Was möchtest du tun?</t>"; //--- ToDo: Localize;
-			x = 11.5 * GUI_GRID_W + GUI_GRID_X;
-			y = 11 * GUI_GRID_H + GUI_GRID_Y;
-			w = 19 * GUI_GRID_W;
-			h = 1 * GUI_GRID_H;
-			colorText[] = {0.95,0.95,0.95,1};
+			x = 0.348127 * safezoneW + safezoneX;
+			y = 0.466989 * safezoneH + safezoneY;
+			w = 0.303746 * safezoneW;
+			h = 0.0220074 * safezoneH;
+			colorBackground[] = {0,0,1,0.75};
+		};
+		class CashTitle: Life_RscStructuredText
+		{
+			idc = 2701;
+
+			x = 0.348127 * safezoneW + safezoneX;
+			y = 0.301933 * safezoneH + safezoneY;
+			w = 0.303746 * safezoneW;
+			h = 0.143048 * safezoneH;
 			colorBackground[] = {0,0,0,0.7};
+		};
+	};
+	
+	class controls 
+	{	
+		class Close: RscButtonMenu
+		{
+			onButtonClick = "closeDialog 0;";
+			idc = 2400;
+
+			x = 0.702113 * safezoneW + safezoneX;
+			y = 0.478 * safezoneH + safezoneY;
+			w = 0.0259119 * safezoneW;
+			h = 0.044 * safezoneH;
+			colorText[] = {1,1,1,1};
+			colorBackground[] = {0,0,0,0.8};
+			tooltip = "Schließt das Fenster"; //--- ToDo: Localize;
+		};
+		class GangDeposit: Life_RscButtonMenu
+		{
+			idc = 2705;
+			onButtonClick = "createDialog ""Life_atm_management"";[""gang""] call life_fnc_bankMenu";
+
+			x = 0.348127 * safezoneW + safezoneX;
+			y = 0.511004 * safezoneH + safezoneY;
+			w = 0.303746 * safezoneW;
+			h = 0.0220074 * safezoneH;
+			colorText[] = {1,1,1,1};
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.75};
+			tooltip = "Geld wird in die Gang-Bank eingezahlt."; //--- ToDo: Localize;
+		};
+		class GangWithdraw: Life_RscButtonMenu
+		{
+			idc = 2706;
+			onButtonClick = "createDialog ""Life_atm_management"";[""gang""] call life_fnc_bankMenu";
+
+			x = 0.348127 * safezoneW + safezoneX;
+			y = 0.555018 * safezoneH + safezoneY;
+			w = 0.303746 * safezoneW;
+			h = 0.0220074 * safezoneH;
+			colorText[] = {1,1,1,1};
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.75};
+			tooltip = "Geld wird von der Gang-Bank abgehoben"; //--- ToDo: Localize;
 		};
 		class Deposit: Life_RscButtonMenu
 		{
-			idc = 2706;
-			onButtonClick = "closeDialog 0;[""einzahlen""] call life_fnc_bankMenu";
+			idc = 2707;
+			onButtonClick = "createDialog ""Life_atm_management"";[""einzahlen""] call life_fnc_bankMenu";
 
-			x = 15 * GUI_GRID_W + GUI_GRID_X;
-			y = 14.5 * GUI_GRID_H + GUI_GRID_Y;
-			w = 12 * GUI_GRID_W;
-			h = 1 * GUI_GRID_H;
+			x = 0.348127 * safezoneW + safezoneX;
+			y = 0.599033 * safezoneH + safezoneY;
+			w = 0.303746 * safezoneW;
+			h = 0.0220074 * safezoneH;
 			colorText[] = {1,1,1,1};
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.75};
+			tooltip = "Geld wir auf deinem Konto eingezahlt."; //--- ToDo: Localize;
 		};
 		class Withdraw: Life_RscButtonMenu
 		{
-			idc = 2707;
-			onButtonClick = "closeDialog 0;[""abheben""] call life_fnc_bankMenu";
+			idc = 2708;
+			onButtonClick = "createDialog ""Life_atm_management"";[""abheben""] call life_fnc_bankMenu";
 
-			x = 15 * GUI_GRID_W + GUI_GRID_X;
-			y = 16.5 * GUI_GRID_H + GUI_GRID_Y;
-			w = 12 * GUI_GRID_W;
-			h = 1 * GUI_GRID_H;
+			x = 0.348127 * safezoneW + safezoneX;
+			y = 0.643048 * safezoneH + safezoneY;
+			w = 0.303746 * safezoneW;
+			h = 0.0220074 * safezoneH;
 			colorText[] = {1,1,1,1};
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.75};
+			tooltip = "Geld wird von deinem Konto abgehoben."; //--- ToDo: Localize;
 		};
 		class Transfer: Life_RscButtonMenu
 		{
-			idc = 2708;
-			onButtonClick = "closeDialog 0;[""transfer""] call life_fnc_bankMenu";
+			idc = 2709;
+			onButtonClick = "createDialog ""Life_atm_management"";[""transfer""] call life_fnc_bankMenu";
 
-			x = 15 * GUI_GRID_W + GUI_GRID_X;
-			y = 18.5 * GUI_GRID_H + GUI_GRID_Y;
-			w = 12 * GUI_GRID_W;
-			h = 1 * GUI_GRID_H;
+			x = 0.348127 * safezoneW + safezoneX;
+			y = 0.687063 * safezoneH + safezoneY;
+			w = 0.303746 * safezoneW;
+			h = 0.0220074 * safezoneH;
 			colorText[] = {1,1,1,1};
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.75};
+			tooltip = "Geld an Spieler überweisen. "; //--- ToDo: Localize;
 		};
 	};
 };
-	
-////////////////////////////////////////////////////////
-// GUI EDITOR OUTPUT END
-////////////////////////////////////////////////////////
 
-////////////////////////////////////////////////////////
-// GUI EDITOR OUTPUT START (by OLLI, v1.063, #Fiqaco)
-////////////////////////////////////////////////////////
 class Life_atm_management {
 	idd = 2750;
 	name= "life_atm";
@@ -155,107 +152,105 @@ class Life_atm_management {
 	
 	class controlsBackground 
 	{
-		class Life_RscTitleBackground: Life_RscText
+		class HintergrundPic: RscPicture
 		{
 			idc = -1;
 
-			x = 11.06 * GUI_GRID_W + GUI_GRID_X;
-			y = 2.84 * GUI_GRID_H + GUI_GRID_Y;
-			w = 20 * GUI_GRID_W;
-			h = 1 * GUI_GRID_H;
-			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.75};
+			text = "images\tablet\tablet.paa";
+			x = 0.258501 * safezoneW + safezoneX;
+			y = 0.07166 * safezoneH + safezoneY;
+			w = 0.485625 * safezoneW;
+			h = 0.854 * safezoneH;
+			// colorText[] = {1,1,1,0.7};
 		};
-		class MainBackground: Life_RscText
+		class Hintergrund: IGUIBack
 		{
-			idc = -1;
+			idc = 2200;
 
-			x = 11 * GUI_GRID_W + GUI_GRID_X;
-			y = 4 * GUI_GRID_H + GUI_GRID_Y;
-			w = 20 * GUI_GRID_W;
-			h = 19 * GUI_GRID_H;
+			x = 0.305143 * safezoneW + safezoneX;
+			y = 0.2602 * safezoneH + safezoneY;
+			w = 0.391787 * safezoneW;
+			h = 0.4994 * safezoneH;
 			colorBackground[] = {0,0,0,0.7};
 		};
-		
-	};
-	
-	class controls 
-	{		
+		class Titel: RscStructuredText
+		{
+			idc = 1100;
+
+			x = 0.308252 * safezoneW + safezoneX;
+			y = 0.2668 * safezoneH + safezoneY;
+			w = 0.384743 * safezoneW;
+			h = 0.022 * safezoneH;
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.75};
+		};
 		class CashTitle: Life_RscStructuredText
 		{
 			idc = 2751;
 
-			x = 11.5 * GUI_GRID_W + GUI_GRID_X;
-			y = 4.5 * GUI_GRID_H + GUI_GRID_Y;
-			w = 19 * GUI_GRID_W;
-			h = 6 * GUI_GRID_H;
+			x = 0.348127 * safezoneW + safezoneX;
+			y = 0.301933 * safezoneH + safezoneY;
+			w = 0.303746 * safezoneW;
+			h = 0.143048 * safezoneH;
 			colorBackground[] = {0,0,0,0.7};
-		};
-		class Title: Life_RscStructuredText
-		{
-			idc = -1;
-
-			text = "<t align='center'>Bankkonto Verwalten</t>"; //--- ToDo: Localize;
-			x = 11.06 * GUI_GRID_W + GUI_GRID_X;
-			y = 2.79 * GUI_GRID_H + GUI_GRID_Y;
-			w = 20 * GUI_GRID_W;
-			h = 1 * GUI_GRID_H;
-			colorText[] = {0.95,0.95,0.95,1};
-		};
-		class CloseButtonKey: Life_RscButtonMenu
-		{
-			onButtonClick = "[] call life_fnc_atmMenu;";
-			idc = 1010;
-
-			text = "Schließen"; //--- ToDo: Localize;
-			x = 11 * GUI_GRID_W + GUI_GRID_X;
-			y = 23.13 * GUI_GRID_H + GUI_GRID_Y;
-			w = 20 * GUI_GRID_W;
-			h = 1 * GUI_GRID_H;
-			colorText[] = {1,1,1,1};
-			colorBackground[] = {0,0,0,0.8};
 		};
 		class MenuTitle: Life_RscStructuredText
 		{
 			idc = 2752;
 
-			x = 11.5 * GUI_GRID_W + GUI_GRID_X;
-			y = 11 * GUI_GRID_H + GUI_GRID_Y;
-			w = 19 * GUI_GRID_W;
-			h = 1 * GUI_GRID_H;
-			colorText[] = {0.95,0.95,0.95,1};
-			colorBackground[] = {0,0,0,0.7};
+			x = 0.348127 * safezoneW + safezoneX;
+			y = 0.455985 * safezoneH + safezoneY;
+			w = 0.303746 * safezoneW;
+			h = 0.0220074 * safezoneH;
+			colorBackground[] = {0,0,1,0.75};
+		};
+	};
+	
+	class controls 
+	{		
+		class Close: RscButtonMenu
+		{
+			onButtonClick = "closeDialog 0;";
+			idc = 2400;
+
+			x = 0.702113 * safezoneW + safezoneX;
+			y = 0.478 * safezoneH + safezoneY;
+			w = 0.0259119 * safezoneW;
+			h = 0.044 * safezoneH;
+			colorText[] = {1,1,1,1};
+			colorBackground[] = {0,0,0,0.8};
+			tooltip = "Schließt das Fenster"; //--- ToDo: Localize;
 		};
 		class moneyEdit: Life_RscEdit
 		{
 			idc = 2753;
 
 			text = "1"; //--- ToDo: Localize;
-			x = 11.5 * GUI_GRID_W + GUI_GRID_X;
-			y = 12.5 * GUI_GRID_H + GUI_GRID_Y;
-			w = 19 * GUI_GRID_W;
-			h = 1 * GUI_GRID_H;
-			sizeEx = 1 * GUI_GRID_H;
+			x = 0.348127 * safezoneW + safezoneX;
+			y = 0.488996 * safezoneH + safezoneY;
+			w = 0.303746 * safezoneW;
+			h = 0.0220074 * safezoneH;
+			sizeEx = 0.04;
 			colorBackground[] = {0,0,0,0.7};
 		};
 		class PlayerList: Life_RscCombo
 		{
 			idc = 2754;
 
-			x = 11.5 * GUI_GRID_W + GUI_GRID_X;
-			y = 14 * GUI_GRID_H + GUI_GRID_Y;
-			w = 19 * GUI_GRID_W;
-			h = 1 * GUI_GRID_H;
+			x = 0.348127 * safezoneW + safezoneX;
+			y = 0.522007 * safezoneH + safezoneY;
+			w = 0.303746 * safezoneW;
+			h = 0.0220074 * safezoneH;
+			sizeEx = 0.04;
 			colorBackground[] = {0,0,0,0.7};
-			sizeEx = 1 * GUI_GRID_H;
 		};
 		class Deposit100: Life_RscButtonMenu
 		{
 			idc = 2760;
 
-			x = 12 * GUI_GRID_W + GUI_GRID_X;
-			y = 15.5 * GUI_GRID_H + GUI_GRID_Y;
-			w = 8.5 * GUI_GRID_W;
-			h = 1 * GUI_GRID_H;
+			x = 0.348127 * safezoneW + safezoneX;
+			y = 0.555018 * safezoneH + safezoneY;
+			w = 0.141748 * safezoneW;
+			h = 0.0220074 * safezoneH;
 			colorText[] = {1,1,1,1};
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.75};
 		};
@@ -263,10 +258,10 @@ class Life_atm_management {
 		{
 			idc = 2761;
 
-			x = 12 * GUI_GRID_W + GUI_GRID_X;
-			y = 17 * GUI_GRID_H + GUI_GRID_Y;
-			w = 8.5 * GUI_GRID_W;
-			h = 1 * GUI_GRID_H;
+			x = 0.348127 * safezoneW + safezoneX;
+			y = 0.599033 * safezoneH + safezoneY;
+			w = 0.141748 * safezoneW;
+			h = 0.0220074 * safezoneH;
 			colorText[] = {1,1,1,1};
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.75};
 		};
@@ -274,10 +269,10 @@ class Life_atm_management {
 		{
 			idc = 2762;
 
-			x = 12 * GUI_GRID_W + GUI_GRID_X;
-			y = 18.5 * GUI_GRID_H + GUI_GRID_Y;
-			w = 8.5 * GUI_GRID_W;
-			h = 1 * GUI_GRID_H;
+			x = 0.348127 * safezoneW + safezoneX;
+			y = 0.643048 * safezoneH + safezoneY;
+			w = 0.141748 * safezoneW;
+			h = 0.0220074 * safezoneH;
 			colorText[] = {1,1,1,1};
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.75};
 		};
@@ -285,10 +280,10 @@ class Life_atm_management {
 		{
 			idc = 2763;
 
-			x = 12 * GUI_GRID_W + GUI_GRID_X;
-			y = 20 * GUI_GRID_H + GUI_GRID_Y;
-			w = 8.5 * GUI_GRID_W;
-			h = 1 * GUI_GRID_H;
+			x = 0.348127 * safezoneW + safezoneX;
+			y = 0.687063 * safezoneH + safezoneY;
+			w = 0.141748 * safezoneW;
+			h = 0.0220074 * safezoneH;
 			colorText[] = {1,1,1,1};
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.75};
 		};
@@ -296,10 +291,10 @@ class Life_atm_management {
 		{
 			idc = 2764;
 
-			x = 21.5 * GUI_GRID_W + GUI_GRID_X;
-			y = 15.5 * GUI_GRID_H + GUI_GRID_Y;
-			w = 8.5 * GUI_GRID_W;
-			h = 1 * GUI_GRID_H;
+			x = 0.510125 * safezoneW + safezoneX;
+			y = 0.555018 * safezoneH + safezoneY;
+			w = 0.141748 * safezoneW;
+			h = 0.0220074 * safezoneH;
 			colorText[] = {1,1,1,1};
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.75};
 		};
@@ -307,10 +302,10 @@ class Life_atm_management {
 		{
 			idc = 2765;
 
-			x = 21.5 * GUI_GRID_W + GUI_GRID_X;
-			y = 17 * GUI_GRID_H + GUI_GRID_Y;
-			w = 8.5 * GUI_GRID_W;
-			h = 1 * GUI_GRID_H;
+			x = 0.510125 * safezoneW + safezoneX;
+			y = 0.599033 * safezoneH + safezoneY;
+			w = 0.141748 * safezoneW;
+			h = 0.0220074 * safezoneH;
 			colorText[] = {1,1,1,1};
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.75};
 		};
@@ -318,10 +313,10 @@ class Life_atm_management {
 		{
 			idc = 2766;
 
-			x = 21.5 * GUI_GRID_W + GUI_GRID_X;
-			y = 18.5 * GUI_GRID_H + GUI_GRID_Y;
-			w = 8.5 * GUI_GRID_W;
-			h = 1 * GUI_GRID_H;
+			x = 0.510125 * safezoneW + safezoneX;
+			y = 0.643048 * safezoneH + safezoneY;
+			w = 0.141748 * safezoneW;
+			h = 0.0220074 * safezoneH;
 			colorText[] = {1,1,1,1};
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.75};
 		};
@@ -329,10 +324,10 @@ class Life_atm_management {
 		{
 			idc = 2767;
 
-			x = 21.5 * GUI_GRID_W + GUI_GRID_X;
-			y = 20 * GUI_GRID_H + GUI_GRID_Y;
-			w = 8.5 * GUI_GRID_W;
-			h = 1 * GUI_GRID_H;
+			x = 0.510125 * safezoneW + safezoneX;
+			y = 0.687063 * safezoneH + safezoneY;
+			w = 0.141748 * safezoneW;
+			h = 0.0220074 * safezoneH;
 			colorText[] = {1,1,1,1};
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.75};
 		};
@@ -340,10 +335,10 @@ class Life_atm_management {
 		{
 			idc = 2768;
 
-			x = 12 * GUI_GRID_W + GUI_GRID_X;
-			y = 21.5 * GUI_GRID_H + GUI_GRID_Y;
-			w = 18 * GUI_GRID_W;
-			h = 1 * GUI_GRID_H;
+			x = 0.348127 * safezoneW + safezoneX;
+			y = 0.720074 * safezoneH + safezoneY;
+			w = 0.303746 * safezoneW;
+			h = 0.0220074 * safezoneH;
 			colorText[] = {1,1,1,1};
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.75};
 		};

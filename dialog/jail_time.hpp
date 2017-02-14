@@ -7,104 +7,103 @@
 	
 	class controlsBackground 
 	{
-		class Life_RscTitleBackground: Life_RscStructuredText
+		class HintergrundPic: RscPicture
 		{
-			idc = 1100;
+			idc = -1;
 
-			text = "<t align='center'>Spieler in den Knast stecken</t>"; //--- ToDo: Localize;
-			x = 0.1375;
-			y = 0.12;
-			w = 0.5375;
-			h = 0.04;
-			colorBackground[] = {0,0,0,0.8};
+			text = "images\tablet\tablet.paa";
+			x = 0.258501 * safezoneW + safezoneX;
+			y = 0.07166 * safezoneH + safezoneY;
+			w = 0.485625 * safezoneW;
+			h = 0.854 * safezoneH;
+			// colorText[] = {1,1,1,0.75};
 		};
-		class MainBackground: Life_RscText
+		class Hintergrund: IGUIBack
 		{
 			idc = 2200;
 
-			x = 0.1375;
-			y = 0.16;
-			w = 0.5375;
-			h = 0.58;
+			x = 0.305143 * safezoneW + safezoneX;
+			y = 0.2602 * safezoneH + safezoneY;
+			w = 0.391787 * safezoneW;
+			h = 0.4994 * safezoneH;
 			colorBackground[] = {0,0,0,0.7};
 		};
-		class Background: Life_RscText
+		class Titel: RscStructuredText
 		{
-			idc = 2201;
+			idc = 1100;
 
-			x = 0.15;
-			y = 0.34;
-			w = 0.5125;
-			h = 0.08;
-			colorBackground[] = {0,0,0,0.7};
+			x = 0.308252 * safezoneW + safezoneX;
+			y = 0.2668 * safezoneH + safezoneY;
+			w = 0.384743 * safezoneW;
+			h = 0.022 * safezoneH;
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.75};
 		};
-		class Background2: Life_RscText
+		class Hintergrund2: IGUIBack
 		{
-			idc = 2201;
-
-			x = 0.15;
-			y = 0.44;
-			w = 0.5125;
-			h = 0.08;
-			colorBackground[] = {0,0,0,0.7};
+			idc = 1600;
+			x = 0.388627 * safezoneW + safezoneX;
+			y = 0.422974 * safezoneH + safezoneY;
+			w = 0.20756 * safezoneW;
+			h = 0.154052 * safezoneH;
+			colorBackground[] = {0,0,0,0.5};
 		};
 	};
 	
 	class controls 
 	{
+		class Close: RscButtonMenu
+		{
+			onButtonClick = "closeDialog 0;";
+			idc = 2400;
+
+			x = 0.702113 * safezoneW + safezoneX;
+			y = 0.478 * safezoneH + safezoneY;
+			w = 0.0259119 * safezoneW;
+			h = 0.044 * safezoneH;
+			colorText[] = {1,1,1,1};
+			colorBackground[] = {0,0,0,0.8};
+			tooltip = "Schließt das Fenster"; //--- ToDo: Localize;
+		};
 		class Info: Life_RscStructuredText
 		{
 			idc = 1000;
 
-			text = "Zeit angeben, wie viele Minuten die Person im Knast bleiben soll. 5 - 120 Minuten möglich."; //--- ToDo: Localize;
-			x = 0.15;
-			y = 0.18;
-			w = 0.5125;
-			h = 0.16;
-			colorBackground[] = {0,0,0,0};
+			text = "Zeit angeben, für wie viele Minuten die Person im Knast bleiben soll. 5 - 120 Minuten möglich."; //--- ToDo: Localize;
+			x = 0.393689 * safezoneW + safezoneX;
+			y = 0.334944 * safezoneH + safezoneY;
+			w = 0.20756 * safezoneW;
+			h = 0.0880296 * safezoneH;
+			colorBackground[] = {0,0,0,0.5};
 		};
 		class Zeit: Life_RscText
 		{
 			idc = 1001;
 
 			text = "Zeit:"; //--- ToDo: Localize;
-			x = 0.15;
-			y = 0.36;
-			w = 0.075;
-			h = 0.04;
+			x = 0.398751 * safezoneW + safezoneX;
+			y = 0.455985 * safezoneH + safezoneY;
+			w = 0.0303746 * safezoneW;
+			h = 0.0220074 * safezoneH;
 		};
 		class Minuten: Life_RscText
 		{
 			idc = 1002;
 
 			text = "Minuten im Knast"; //--- ToDo: Localize;
-			x = 0.3;
-			y = 0.36;
-			w = 0.35;
-			h = 0.04;
-		};
-		class CloseButtonKey: Life_RscButtonMenu
-		{
-			idc = 2400;
-			onButtonClick = "closeDialog 0;";
-
-			text = "Schließen"; //--- ToDo: Localize;
-			x = 0.330061;
-			y = 0.747361;
-			w = 0.1875;
-			h = 0.04;
-			colorText[] = {1,1,1,1};
-			colorBackground[] = {0,0,0,0.8};
+			x = 0.459501 * safezoneW + safezoneX;
+			y = 0.455985 * safezoneH + safezoneY;
+			w = 0.141748 * safezoneW;
+			h = 0.0220074 * safezoneH;
 		};
 		class Time: Life_RscEdit
 		{
 			idc = 1400;
 
 			text = "15"; //--- ToDo: Localize;
-			x = 0.225;
-			y = 0.36;
-			w = 0.075;
-			h = 0.04;
+			x = 0.429126 * safezoneW + safezoneX;
+			y = 0.455985 * safezoneH + safezoneY;
+			w = 0.0303746 * safezoneW;
+			h = 0.0220074 * safezoneH;
 		};
 		class OKButtonKey: Life_RscButtonMenu
 		{
@@ -112,54 +111,53 @@
 			onButtonClick = "[] spawn life_fnc_jail_time;";
 
 			text = "OK"; //--- ToDo: Localize;
-			x = 0.138855;
-			y = 0.747361;
-			w = 0.1875;
-			h = 0.04;
+			x = 0.393689 * safezoneW + safezoneX;
+			y = 0.687063 * safezoneH + safezoneY;
+			w = 0.20756 * safezoneW;
+			h = 0.0220074 * safezoneH;
 			colorText[] = {1,1,1,1};
-			colorBackground[] = {0,0,0,0.8};
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.75};
 		};
-
 		class Kaution: Life_RscText
 		{
 			idc = 1100;
 
 			text = "Zeit:"; //--- ToDo: Localize;
-			x = 0.15;
-			y = 0.46;
-			w = 0.075;
-			h = 0.04;
+			x = 0.398751 * safezoneW + safezoneX;
+			y = 0.522007 * safezoneH + safezoneY;
+			w = 0.0303746 * safezoneW;
+			h = 0.0220074 * safezoneH;
 		};
 		class Kaution_time: Life_RscEdit
 		{
 			idc = 1401;
 
 			text = "0"; //--- ToDo: Localize;
-			x = 0.225;
-			y = 0.46;
-			w = 0.0625;
-			h = 0.04;
+			x = 0.429126 * safezoneW + safezoneX;
+			y = 0.522007 * safezoneH + safezoneY;
+			w = 0.0303746 * safezoneW;
+			h = 0.0220074 * safezoneH;
 		};
 		class KautionMinuten: Life_RscText
 		{
 			idc = 1101;
 
 			text = "Minuten bis Kaution bezahlbar"; //--- ToDo: Localize;
-			x = 0.3;
-			y = 0.46;
-			w = 0.35;
-			h = 0.04;
+			x = 0.459501 * safezoneW + safezoneX;
+			y = 0.522007 * safezoneH + safezoneY;
+			w = 0.141748 * safezoneW;
+			h = 0.0220074 * safezoneH;
 		};
 		class Info2: Life_RscStructuredText
 		{
 			idc = 1102;
 
-			text = "Zeit angeben, ab wann es möglich ist, Kaution zu bezahlen. Hälfte der Knastzeit angeben, 0 deaktviert das Feature."; //--- ToDo: Localize;
-			x = 0.15;
-			y = 0.54;
-			w = 0.5125;
-			h = 0.16;
-			colorBackground[] = {0,0,0,0};
+			text = "Zeit angeben, ab wann es möglich ist, Kaution zu bezahlen. HÃƒÂ¤lfte der Knastzeit angeben, 0 deaktviert das Feature."; //--- ToDo: Localize;
+			x = 0.393689 * safezoneW + safezoneX;
+			y = 0.577026 * safezoneH + safezoneY;
+			w = 0.20756 * safezoneW;
+			h = 0.0880296 * safezoneH;
+			colorBackground[] = {0,0,0,0.5};
 		};
 	};
 };

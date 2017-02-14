@@ -1,14 +1,23 @@
+#include "..\..\script_macros.hpp"
 /*
 	File: fn_carProcessingMenu.sqf
-	Author: Bryan "Tonic" Boardwine
+	Author:H4uklotz
 	
 	Description:
-	Opens & initializes the chop shop menu.
+	Menü für Carprocessing
 */
 
 if(life_action_inUse) exitWith {[(format [localize "STR_NOTF_ActionInProc"]),"Hinweis","Yellow"] call MSG_fnc_handle;};
 disableSerialization;
 private["_nearVehicles","_control"];
+
+_display = findDisplay 39400;
+_Titel = _display displayCtrl 1100;
+_Herstellen = _display displayCtrl 1101;
+
+_Titel ctrlSetStructuredText parseText "<t align='center'>Fahrzeugherstellung</t>";
+_Herstellen ctrlSetStructuredText parseText "Herstellung starten";
+
 
 _processor = (_this select 0);
 _type = (_this select 3);
@@ -23,6 +32,9 @@ if (life_is_processing) exitWith {[(format [localize "Der Kollege ist beschäfti
 life_car_processing = [_processor,_type select 0,_type select 1];
 life_car = [];
 _control = ((findDisplay 39400) displayCtrl 39402);
+
+
+
 
 
 {
