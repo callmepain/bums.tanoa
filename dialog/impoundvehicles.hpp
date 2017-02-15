@@ -23,10 +23,10 @@ class Life_impoundVehicles_menu
 		{
 			idc = 2200;
 
-			x = 0.305143 * safezoneW + safezoneX;
+			x = 0.300306 * safezoneW + safezoneX;
 			y = 0.2602 * safezoneH + safezoneY;
-			w = 0.391787 * safezoneW;
-			h = 0.4994 * safezoneH;
+			w = 0.401645 * safezoneW;
+			h = 0.50617 * safezoneH;
 			colorBackground[] = {0,0,0,0.7};
 		};
 		class Titel: RscStructuredText
@@ -107,7 +107,7 @@ class Life_impoundVehicles_menu
 			w = 0.0881006 * safezoneW;
 			h = 0.022 * safezoneH;
 			colorText[] = {1,1,1,1};
-			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.75};
+			colorBackground[] = {1,0,0,0.75};
 		};
 		
 		class VehicleList : Life_RscListBox

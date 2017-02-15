@@ -96,7 +96,7 @@
 				size=1;
 				font="puristaMedium";
 				colorBackground[] = {0,0,0,0};
-				colorText[] = {1,1,1,0.8};
+				colorText[] = {0.48,0.98,0,1};
 				shadow = 2;
 				fixedWidth = 0;
 				text="";
@@ -116,7 +116,7 @@
 				size=1;
 				font="puristaMedium";
 				colorBackground[] = {0,0,0,0};
-				colorText[] = {1,1,1,0.8};
+				colorText[] = {0.48,0.98,0,1};
 				shadow = 2;
 				fixedWidth = 0;
 				text="";
@@ -135,7 +135,7 @@
 				size=1;
 				font="puristaMedium";
 				colorBackground[] = {0,0,0,0};
-				colorText[] = {1,1,1,0.8};
+				colorText[] = {0.48,0.98,0,1};
 				shadow = 2;
 				fixedWidth = 0;
 				text="";
@@ -173,7 +173,7 @@
 				size=1;
 				font="puristaMedium";
 				colorBackground[] = {0,0,0,0};
-				colorText[] = {0,1,0,1};
+				colorText[] = {0.48,0.98,0,1};
 				shadow = 2;
 				fixedWidth = 0;
 				text="";
@@ -192,7 +192,7 @@
 				size=1;
 				font="puristaMedium";
 				colorBackground[] = {0,0,0,0};
-				colorText[] = {0,1,0,1};
+				colorText[] = {0.48,0.98,0,1};
 				shadow = 2;
 				fixedWidth = 0;
 				text="";
@@ -211,7 +211,7 @@
 				size=1;
 				font="puristaMedium";
 				colorBackground[] = {0,0,0,0};
-				colorText[] = {1,1,1,0.8};
+				colorText[] = {0.48,0.98,0,1};
 				shadow = 2;
 				fixedWidth = 0;
 				text="";
@@ -224,15 +224,15 @@
 				w = 1;
 				h = 0.04;
 				shadow = 2;
-				colorBackground[] = { 0, 0.0, 0, 0.0};  // uncomment and increase 4th number to have a background
 				font = "PuristaSemibold";
 				size = 0.037;
 				type = 13;
 				style = 1;
+				colorBackground[] = {0,0,0,0};
 				text="Serverinfo wird geladen......";
 				class Attributes {
 					align="right";
-					color = "#27F53C";
+					color="#7cfc00";
 				};
 			};
 		};   

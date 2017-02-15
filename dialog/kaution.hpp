@@ -1,12 +1,12 @@
-﻿class life_wantedadd2 {
-	idd = 9900;
-	name= "life_wantedadd2";
-	movingEnable = 0;
+class kaution
+{
+	idd = 55550;
+	movingEnabled = 0;
 	enableSimulation = 1;
-	onLoad = "[] spawn life_fnc_wantedadd2;";
 	
-	class controlsBackground 
+	class controlsBackground
 	{
+		
 		class HintergrundPic: RscPicture
 		{
 			idc = -1;
@@ -16,8 +16,9 @@
 			y = 0.07166 * safezoneH + safezoneY;
 			w = 0.485625 * safezoneW;
 			h = 0.854 * safezoneH;
-			// colorText[] = {1,1,1,0.5};
+			// colorText[] = {1,1,1,0.7};
 		};
+		
 		class Hintergrund: IGUIBack
 		{
 			idc = 2200;
@@ -28,6 +29,7 @@
 			h = 0.50617 * safezoneH;
 			colorBackground[] = {0,0,0,0.7};
 		};
+		
 		class Titel: RscStructuredText
 		{
 			idc = 1100;
@@ -35,18 +37,41 @@
 			text = ""; //--- ToDo: Localize;
 			x = 0.308252 * safezoneW + safezoneX;
 			y = 0.2668 * safezoneH + safezoneY;
-			w = 0.383497 * safezoneW;
+			w = 0.384743 * safezoneW;
 			h = 0.022 * safezoneH;
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.75};
 		};
+		
+		class Kaution: RscStructuredText
+		{
+			idc = 55551;
+
+			x = 0.494979 * safezoneW + safezoneX;
+			y = 0.301933 * safezoneH + safezoneY;
+			w = 0.190781 * safezoneW;
+			h = 0.0550185 * safezoneH;
+			sizeEx = 0.04;
+			colorBackground[] = {0,0,0,0.7};
+		};
+		class Zeit: RscStructuredText
+		{
+			idc = 55552;
+
+			x = 0.494979 * safezoneW + safezoneX;
+			y = 0.378959 * safezoneH + safezoneY;
+			w = 0.190781 * safezoneW;
+			h = 0.143048 * safezoneH;
+			sizeEx = 0.04;
+			colorBackground[] = {0,0,0,0.7};
+		};
 	};
 	
-	class controls 
-	{		
+	class controls
+	{
 		class Close: RscButtonMenu
 		{
 			idc = -1;
-			onButtonClick = "closeDialog 0;[] spawn life_fnc_wantedMenu;";
+			onButtonClick = "closeDialog 0;";
 
 			x = 0.702113 * safezoneW + safezoneX;
 			y = 0.478 * safezoneH + safezoneY;
@@ -56,39 +81,27 @@
 			colorBackground[] = {0,0,0,0.8};
 			tooltip = "Schließt das Fenster"; //--- ToDo: Localize;
 		};
+		
 		class PlayerList: Life_RscListBox
 		{
-			idc = 9902;
-			onLBSelChanged = "[_this] spawn life_fnc_adminQuery";
-
-			x = 0.313434 * safezoneW + safezoneX;
-			y = 0.302 * safezoneH + safezoneY;
-			w = 0.155472 * safezoneW;
-			h = 0.407 * safezoneH;
-			colorBackground[] = {0,0,0,0.3};
+			idc = 55553;
+			onLBSelChanged = "_this call life_fnc_kautionLBChange;";
+			x = 0.314239 * safezoneW + safezoneX;
+			y = 0.301933 * safezoneH + safezoneY;
+			w = 0.170699 * safezoneW;
+			h = 0.440148 * safezoneH;
 			sizeEx = 0.04;
+			colorBackground[] = {0,0,0,0.7};
 		};
-		class RSUCombo_2101: Life_RscListBox
+		class KautionBezahlen: Life_RscButtonMenu
 		{
-			idc = 9991;
+			onButtonclick = "[] call life_fnc_kaution;";
+			idc = 55554;
 
-			x = 0.474088 * safezoneW + safezoneX;
-			y = 0.302 * safezoneH + safezoneY;
-			w = 0.212478 * safezoneW;
-			h = 0.407 * safezoneH;
-			colorBackground[] = {0,0,0,0.3};
-			sizeEx = 0.04;
-		};
-		class WantedAdd: Life_RscButtonMenu
-		{
-			onButtonClick = "[] call life_fnc_wanted2";
-			idc = 9992;
-
-			text = "Hinzufügen"; //--- ToDo: Localize;
-			x = 0.313434 * safezoneW + safezoneX;
-			y = 0.72 * safezoneH + safezoneY;
-			w = 0.373132 * safezoneW;
-			h = 0.022 * safezoneH;
+			x = 0.494979 * safezoneW + safezoneX;
+			y = 0.544015 * safezoneH + safezoneY;
+			w = 0.190781 * safezoneW;
+			h = 0.0220074 * safezoneH;
 			colorText[] = {1,1,1,1};
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.75};
 		};

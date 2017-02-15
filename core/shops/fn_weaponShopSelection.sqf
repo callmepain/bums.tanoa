@@ -108,7 +108,7 @@ if ((uiNamespace getVariable ["Weapon_Shop_Filter",0]) isEqualTo 1) then
     _priceTag ctrlSetStructuredText parseText format ["<t size='0.9' align='left'>Verkaufspreis pro Item:<t color='#8cff9b' align='right'>$%1</t>",[(_price)] call life_fnc_numberText];
 	life_shop_item = _item;
 	life_shop_price = _price;
-	life_shop_count =  _control lbValue _index;;
+	life_shop_count =  _control lbValue _index;
 		
     _buysell buttonSetAction "[life_shop_price,life_shop_item,life_shop_count] spawn life_fnc_weaponShopBuySell;";
 	
