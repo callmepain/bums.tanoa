@@ -22,10 +22,10 @@ class life_weapon_shop {
 		{
 			idc = 2200;
 
-			x = 0.305143 * safezoneW + safezoneX;
+			x = 0.300306 * safezoneW + safezoneX;
 			y = 0.2602 * safezoneH + safezoneY;
-			w = 0.391787 * safezoneW;
-			h = 0.4994 * safezoneH;
+			w = 0.401645 * safezoneW;
+			h = 0.50617 * safezoneH;
 			colorBackground[] = {0,0,0,0.7};
 		};
 		

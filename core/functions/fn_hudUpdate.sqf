@@ -31,7 +31,7 @@ _dir = getDir vehicle player;
 
 switch (true) do 
 {
-	case (life_hunger >= 50): 	{_food ctrlSetTextColor [0,1,0,1];};
+	case (life_hunger >= 50): 	{_food ctrlSetTextColor [0.48,0.98,0,1];};
 	case (life_hunger >= 30): 	{_food ctrlSetTextColor [1,1,0,1];};
 	case (life_hunger >= 20): 	{_food ctrlSetTextColor [1,0.645,0,1];};
 	case (life_hunger <= 10): 	{_food ctrlSetTextColor [1,0,0,1];};
@@ -40,7 +40,7 @@ switch (true) do
 
 switch (true) do 
 {
-	case (life_thirst >= 50): 	{_water ctrlSetTextColor [0,1,0,1];};
+	case (life_thirst >= 50): 	{_water ctrlSetTextColor [0.48,0.98,0,1];};
 	case (life_thirst >= 30): 	{_water ctrlSetTextColor [1,1,0,1];};
 	case (life_thirst >= 20): 	{_water ctrlSetTextColor [1,0.645,0,1];};
 	case (life_thirst <= 10): 	{_water ctrlSetTextColor [1,0,0,1];};
@@ -48,7 +48,7 @@ switch (true) do
 
 // switch (true) do 
 // {
-	// case (life_battery >= 50): 	{_battery ctrlSetTextColor [0,1,0,1];};
+	// case (life_battery >= 50): 	{_battery ctrlSetTextColor [0.48,0.98,0,1];};
 	// case (life_battery >= 30): 	{_battery ctrlSetTextColor [1,1,0,1];};
 	// case (life_battery >= 20): 	{_battery ctrlSetTextColor [1,0.645,0,1];};
 	// case (life_battery <= 10): 	{_battery ctrlSetTextColor [1,0,0,1];};
@@ -59,7 +59,7 @@ switch (true) do {
 	case (damage Player >= 0.75): {_health ctrlSetTextColor [1,0,0,1];};
 	case (damage Player >= 0.5):  {_health ctrlSetTextColor [1,0.645,0,1];};
 	case (damage Player >= 0.25): {_health ctrlSetTextColor [1,1,0,1];};
-    case (damage Player < 0.25):  {_health ctrlSetTextColor [0,1,0,1];}; 
+    case (damage Player < 0.25):  {_health ctrlSetTextColor [0.48,0.98,0,1];}; 
 };
 
 
@@ -68,7 +68,7 @@ switch (true) do {
 	case (getFatigue Player >= 0.75): {_fatigue ctrlSetTextColor [1,0,0,1];};
 	case (getFatigue Player >= 0.50): {_fatigue ctrlSetTextColor [1,0.645,0,1];};
 	case (getFatigue Player >= 0.25): {_fatigue ctrlSetTextColor [1,1,0,1];};  
-	case (getFatigue Player < 0.25):  	{_fatigue ctrlSetTextColor [0,1,0,1];}; 
+	case (getFatigue Player < 0.25):  	{_fatigue ctrlSetTextColor [0.48,0.98,0,1];}; 
 };
 
 switch (true) do {
@@ -113,5 +113,5 @@ _fatigue ctrlSetText format ["%1%2", round((1 - (getFatigue player)) * 100), "%"
 _fatigue ctrlCommit 0;
 //Update statusbar
 // _status ctrlSetPosition [safezoneX + safezoneW-0.09,safezoneY + safezoneH - 0.08];
-_status ctrlSetText format["Cops: %1 | Civs: %2 | Medic: %3 | ADAC: %4 | ASSI-TS-ADRESSE | powered by Team [ASSI] ", west countSide playableUnits, civilian countSide playableUnits, independent countSide playableUnits, east countSide playableUnits];
+_status ctrlSetText format["Cops: %1 | Civs: %2 | Medic: %3 | ADAC: %4 | ts.fastlife-reloaded.de | powered by fastlife-reloaded.de | Team [ASSI] ", west countSide playableUnits, civilian countSide playableUnits, independent countSide playableUnits, east countSide playableUnits];
 _status ctrlCommit 0;

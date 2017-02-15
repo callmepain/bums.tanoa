@@ -23,10 +23,10 @@ class TrunkMenu
 		{
 			idc = 2200;
 
-			x = 0.305143 * safezoneW + safezoneX;
+			x = 0.300306 * safezoneW + safezoneX;
 			y = 0.2602 * safezoneH + safezoneY;
-			w = 0.391787 * safezoneW;
-			h = 0.4994 * safezoneH;
+			w = 0.401645 * safezoneW;
+			h = 0.50617 * safezoneH;
 			colorBackground[] = {0,0,0,0.7};
 		};
 		class Titel: RscStructuredText
@@ -39,18 +39,6 @@ class TrunkMenu
 			w = 0.383497 * safezoneW;
 			h = 0.022 * safezoneH;
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.75};
-		};
-		class VehicleWeight: RscStructuredText
-		{
-			idc = 3504;
-			style = 1;
-
-			x = 0.313434 * safezoneW + safezoneX;
-			y = 0.137 * safezoneH + safezoneY;
-			w = 0.383497 * safezoneW;
-			h = 0.022 * safezoneH;
-			colorText[] = {0.95,0.95,0.95,1};
-			colorBackground[] = {0,0,0,0.3};
 		};
 		class RscTrunkText: RscStructuredText
 		{

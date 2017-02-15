@@ -1,6 +1,6 @@
 class msg {
 	idd = -1;
-	duration = 90;
+	duration = 45;
 	movingEnable = 0;
 	fadein = 1;
 	fadeout = 3;
@@ -49,10 +49,10 @@ class msg {
 };
 class msg_simpl {
 	idd = -1;
-	duration = 90;
+	duration = 45;
 	movingEnable = 0;
-	fadein = 1;
-	fadeout = 3;
+	// fadein = 1;
+	// fadeout = 3;
 	name = "msg_simpl";
 	onLoad="uiNamespace setVariable ['msg_simpl',_this select 0]";
 	objects[] = {};

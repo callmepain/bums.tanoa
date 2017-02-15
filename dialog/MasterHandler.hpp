@@ -22,6 +22,7 @@
 #include "impound.hpp"
 #include "impoundvehicles.hpp"
 #include "jail_time.hpp"
+#include "kaution.hpp"
 #include "key_chain.hpp"
 #include "market.hpp"
 #include "newsStation.hpp"

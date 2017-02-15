@@ -7,33 +7,37 @@
 	Description:
 	Once word is received by the server the rest of the jail execution is completed.
 */
-private["_ret","_bad","_time","_bail","_esc","_countDown","_time","_kaution","_countDown_kaution"];
+private["_ret","_bad","_time","_bail","_esc","_countDown","_time","_kaution_time","_countDown_kaution_time"];
 _ret = [_this,0,[],[[]]] call BIS_fnc_param;
 _bad = [_this,1,false,[false]] call BIS_fnc_param;
-_time = [_this,2,15,[0]] call BIS_fnc_param; //##80
-_kaution = [_this,3,0,[0]] call BIS_fnc_param;
+_time = [_this,2,15,[0]] call BIS_fnc_param; 
+_kaution_time = [_this,3,0,[0]] call BIS_fnc_param;
 life_bail_amount = [_this,4,0,[0]] call BIS_fnc_param;
+
+
+
 
 if(_bad) then
 {
 	_time = _time * 1.5;
 	
-	if(_kaution > 0) then 
+	if(_kaution_time > 0) then 
 	{
-		_kaution = _kaution * 1.5;
+		_kaution_time = _kaution_time * 1.5;
 	};
 };
 
-
-if(_kaution > 0) then 
+if(_kaution_time > 0) then 
 {
-	[_kaution] spawn
+	player setVariable ["kaution",life_bail_amount,true];
+	
+	[_kaution_time] spawn
 	{
 		life_canpay_bail = false;
-		_kaution = (_this select 0) * 60;
-		// diag_log ["_kaution time",_kaution];
-		sleep _kaution;			
+		_kaution_time = (_this select 0) * 60;
+		sleep _kaution_time;			
 		life_canpay_bail = nil;
+		player setVariable ["canpay_bail ",true,true];
 	};
 }
 else
@@ -41,10 +45,8 @@ else
 	life_canpay_bail = false
 };
 
-
-
 _time = time + (_time * 60); //x Minutes
-if(_kaution > 0) then {_kaution = time + (_kaution * 60)};
+if(_kaution_time > 0) then {_kaution_time = time + (_kaution_time * 60)};
 
 _esc = false;
 _bail = false;
@@ -55,56 +57,27 @@ for "_i" from 0 to 1 step 0 do {
 
 	if((round(_time - time)) > 0) then
 	{
-		if(_kaution > 0) then 
+		if(_kaution_time > 0) then 
 		{
 			_countDown = [(_time - time),"MM:SS"] call BIS_fnc_secondsToString;
-			_countDown_kaution = [(_kaution - time),"MM:SS"] call BIS_fnc_secondsToString;
-			
-			hintSilent parseText format[
-				"
-				<t size='1.25'>
-				<t font='PuristaBold'>Restzeit:
-				<br/>
-				<br/>
-				<t color='#FF0000'>%1</t>
-				<br/>
-				<br/>
-				Kaution bezahlbar in:
-				<br/>
-				<br/>
-				<t color='#FF0000'>%3</t>
-				<br/>
-				<br/>
-				Kaution:
-				<br/>
-				<br/>
-				<t color='#FF0000'>$%2</t>
-				</t>
-				</t>
-				",_countDown,[life_bail_amount] call life_fnc_numberText,if(isNil "life_canpay_bail") then {"<t color='#00FF00'>Zeit abgelaufen</t>"} else {_countDown_kaution} 
-			];
+			_countDown_kaution_time = [(_kaution_time - time),"MM:SS"] call BIS_fnc_secondsToString;
+			player setVariable ["arrestZeit",_countDown,true];
+			player setVariable ["kautionZeit",_countDown_kaution_time,true];
+
+			hintSilent parseText format
+			[
+				"<t size='1.25' font='PuristaBold' align='center'>Restzeit:<br/><br/><t color='#FF0000'>%1</t>",
+				_countDown
+			];	
 		}
 		else
 		{
 			_countDown = [(_time - time),"MM:SS"] call BIS_fnc_secondsToString;
-			hintSilent parseText format[
-				"
-				<t size='1.25'>
-				<t font='PuristaBold'>Restzeit:
-				<br/>
-				<br/>
-				<t color='#FF0000'>%1</t>
-				<br/>
-				<br/>
-				Kaution bezahlbar:
-				<br/>
-				<br/>
-				<t color='#FF0000'>NEIN</t>
-				<br/>
-				<br/>
-				</t>
-				</t>
-				",
+			player setVariable ["arrestZeit",_countDown,true];
+			
+			hintSilent parseText format
+			[
+				"<t size='1.25' font='PuristaBold' align='center'>Restzeit:<br/><br/><t color='#FF0000'>%1</t>",
 				_countDown
 			];	
 		};
@@ -120,7 +93,7 @@ for "_i" from 0 to 1 step 0 do {
         _esc = true;
     };
 
-    if (life_bail_paid) exitWith {
+    if !(player getVariable ["arrested",false]) exitWith {
         _bail = true;
     };
 
@@ -136,8 +109,9 @@ switch (true) do
 	case (_bail) :
 	{
 		life_is_arrested = false;
-		life_bail_paid = false;
-		[(format ["Du hast die Kaution bezahlt und bist nun Frei."]),"Hinweis","Green"] call MSG_fnc_handle;
+		player setVariable ["kaution",0,true];
+		hintSilent "";
+		[(format ["Deine Kaution wurde bezahlt und du bist nun wieder frei."]),"Hinweis","Green"] call MSG_fnc_handle;
 		
 		player setPos (getMarkerPos "jail_release");
 		
@@ -151,6 +125,10 @@ switch (true) do
 	case (_esc) :
 	{
 		life_is_arrested = false;
+		player setVariable ["arrested",false,true];
+		player setVariable ["canpay_bail ",false,true];
+		player setVariable ["kaution",0,true];
+		hintSilent "";
 		[(format ["Du bist auf dem Gefängnis geflohen! Du wirst nun zusätlich auch wegen dem Gefängnisausbruch gesucht."]),"Hinweis","Yellow"] call MSG_fnc_handle;
         [0,"STR_Jail_EscapeNOTF",true,[profileName]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
 		[getPlayerUID player,profileName,"901"] remoteExecCall ["life_fnc_wantedAdd",RSERV];
@@ -161,6 +139,10 @@ switch (true) do
 	case (alive player && !_esc && !_bail) :
 	{
 		life_is_arrested = false;
+		player setVariable ["arrested",false,true];
+		player setVariable ["canpay_bail ",false,true];
+		player setVariable ["kaution",0,true];
+		hintSilent "";
 		[(format ["Du hast deine Zeit abgessen und bist nun wieder Frei."]),"Hinweis","Green"] call MSG_fnc_handle;
 		[getPlayerUID player] remoteExecCall ["life_fnc_wantedRemove",RSERV];
         player setPos (getMarkerPos "jail_release");
