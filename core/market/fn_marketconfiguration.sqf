@@ -65,13 +65,13 @@ life_market_resources = [
 	
 	["peach", 55, 30, 80, 2, 2,
 		[
-			["apple",1],
+			["apple",1]
 		]
 	],
 	
 	["apple", 50, 25, 75, 2, 3,
 		[
-			["peach",1],
+			["peach",1]
 		]
 	],	
 	
