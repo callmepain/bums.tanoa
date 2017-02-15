@@ -72,6 +72,7 @@ class Life_Client_Core {
         class serviceChopper {};
         class stopEscorting {};
         class storeVehicle {};
+		class storeContainer {};
         class surrender {};
         class ticketAction {};
         class unrestrain {};
