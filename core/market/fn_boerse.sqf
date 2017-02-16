@@ -67,15 +67,15 @@ _Multi lbSetCurSel -1;
 // _items lbSetCurSel 0;
 
 {
-    _displayName = M_CONFIG(getText,"VirtualItems",(_x select 0),"displayName");
+    _displayName = M_CONFIG(getText,"VirtualItems",(_x),"displayName");
 	
 	_Nahrung lbAdd format ["%1",(localize _displayName)];
-	_Nahrung lbSetData [(lbSize _Nahrung)-1,(_x select 0)];
-	_icon = M_CONFIG(getText,"VirtualItems",(_x select 0),"icon");
+	_Nahrung lbSetData [(lbSize _Nahrung)-1,(_x)];
+	_icon = M_CONFIG(getText,"VirtualItems",(_x),"icon");
 	if (!(_icon isEqualTo "")) then {
 		_Nahrung lbSetPicture [(lbSize _Nahrung)-1,_icon];
     };
-} forEach life_market_resources;
+} forEach life_market_resources_nahrung;
 
 {
     _displayName = M_CONFIG(getText,"VirtualItems",_x,"displayName");

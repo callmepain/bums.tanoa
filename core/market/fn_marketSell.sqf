@@ -15,22 +15,31 @@ _send = [_this, 3, true] call BIS_fnc_param;
 _arr_resource = [_shortname] call life_fnc_marketGetRow;
 _arr_price = [_shortname] call life_fnc_marketGetPriceRow;
 
+_ret = [0,0,0,0];
+
+{
+	if((_x select 0) == _shortname) exitWith
+	{
+		_ret = _x;
+	};
+}
+foreach life_market_prices_fix;
+
 //Calculate the new price of the product
 _price = _arr_price select 1; //current price
+_realprice = _ret select 1;
 _globalprice = _arr_price select 2; //current change rate
 
 _modifier = (_amount * (_arr_resource select 4)); //calculate modifier
 
 _price = _price - _modifier;
 _globalprice = _globalprice - _modifier;
-_min = _arr_resource select 2;
-_max = _arr_resource select 3;
-
+_min = _realprice -((_realprice / 100) * 30);
 
 //Check borders
 if(_price < _min) then {_price = _min;};
 
-_max = _arr_resource select 3;
+_max = _realprice +((_realprice / 100) * 30);
 
 if( _price > _max)then {_price = _max;};
 

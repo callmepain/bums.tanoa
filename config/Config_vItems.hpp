@@ -90,7 +90,7 @@ class VirtualShops {
         name = "STR_Shops_Minerals";
         side = "civ";
         conditions = "";
-        items[] = { "coal_refined,""iron_refined", "copper_refined","stahlbarren_refined","platinbarren_refined","golderz_refined","silver_refined" };
+        items[] = { "coal_refined","iron_refined", "copper_refined","stahlbarren_refined","platinbarren_refined","golderz_refined","silver_refined" };
     };
 
    /* class diamond {
@@ -650,7 +650,7 @@ class VirtualItems {
     class rock {
         variable = "rock";
         displayName = "STR_Item_Rock";
-        weight = 6;
+        weight = 4;
         buyPrice = -1;
         sellPrice = -1;
         illegal = false;
@@ -661,7 +661,7 @@ class VirtualItems {
     class cement {
         variable = "cement";
         displayName = "STR_Item_CementBag";
-        weight = 5;
+        weight = 3;
         buyPrice = -1;
         sellPrice = 3000;
         illegal = false;
@@ -673,7 +673,7 @@ class VirtualItems {
     class heroin_unprocessed {
         variable = "heroinUnprocessed";
         displayName = "STR_Item_HeroinU";
-        weight = 6;
+        weight = 3;
         buyPrice = -1;
         sellPrice = -1;
         illegal = true;
@@ -685,8 +685,8 @@ class VirtualItems {
     class heroin_processed {
         variable = "heroinProcessed";
         displayName = "STR_Item_Heroin";
-        weight = 4;
-        buyPrice = 3500;
+        weight = 2;
+        buyPrice = -1;
         sellPrice = 2503;
         illegal = true;
         edible = -1;
@@ -696,7 +696,7 @@ class VirtualItems {
     class cannabis {
         variable = "cannabis";
         displayName = "STR_Item_Cannabis";
-        weight = 4;
+        weight = 2;
         buyPrice = -1;
         sellPrice = -1;
         illegal = true;
@@ -708,8 +708,8 @@ class VirtualItems {
     class marijuana {
         variable = "marijuana";
         displayName = "STR_Item_Marijuana";
-        weight = 3;
-        buyPrice = 2800;
+        weight = 2;
+        buyPrice = -1;
         sellPrice = 1853;
         illegal = true;
         edible = -1;
@@ -719,7 +719,7 @@ class VirtualItems {
     class cocaine_unprocessed {
         variable = "cocaineUnprocessed";
         displayName = "STR_Item_CocaineU";
-        weight = 6;
+        weight = 4;
         buyPrice = -1;
         sellPrice = -1;
         illegal = true;
@@ -731,8 +731,8 @@ class VirtualItems {
     class cocaine_processed {
         variable = "cocaineProcessed";
         displayName = "STR_Item_CocaineP";
-        weight = 4;
-        buyPrice = 5900;
+        weight = 3;
+        buyPrice = -1;
         sellPrice = 3900;
         illegal = true;
         edible = -1;
@@ -742,7 +742,7 @@ class VirtualItems {
     class lsd_unprocessed {
         variable = "lsdUnprocessed";
         displayName = "STR_Item_LSDU";
-        weight = 6;
+        weight = 4;
         buyPrice = -1;
         sellPrice = -1;
         illegal = true;
@@ -754,8 +754,8 @@ class VirtualItems {
     class lsd_processed {
         variable = "lsdProcessed";
         displayName = "STR_Item_LSDP";
-        weight = 4;
-        buyPrice = 4900;
+        weight = 3;
+        buyPrice = -1;
         sellPrice = 3900;
         illegal = true;
         edible = -1;
@@ -765,8 +765,8 @@ class VirtualItems {
 	class pilze_processed {
         variable = "pilze_processed";
         displayName = "STR_Item_zauberpilze";
-        weight = 4;
-        buyPrice = 4900;
+        weight = 2;
+        buyPrice = -1;
         sellPrice = 3900;
         illegal = true;
         edible = -1;
@@ -845,7 +845,7 @@ class VirtualItems {
         variable = "apple";
         displayName = "STR_Item_Apple";
         weight = 1;
-        buyPrice = 65;
+        buyPrice = -1;
         sellPrice = 50;
         illegal = false;
         edible = 10;
@@ -856,7 +856,7 @@ class VirtualItems {
         variable = "peach";
         displayName = "STR_Item_Peach";
         weight = 1;
-        buyPrice = 68;
+        buyPrice = -1;
         sellPrice = 55;
         illegal = false;
         edible = 10;
