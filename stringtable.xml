@@ -1908,6 +1908,12 @@
         <Key ID="STR_Item_Goat">
             <Original>Gegrilltes Ziegenfleisch</Original>
         </Key>
+		<Key ID="STR_Item_wheat">
+            <Original>Weizen</Original>
+        </Key>
+		<Key ID="STR_Item_wheatseed">
+            <Original>Weizen Samen</Original>
+        </Key>
         <Key ID="STR_Item_SheepRaw">
             <Original>Rohes Schafsfleisch</Original>
         </Key>

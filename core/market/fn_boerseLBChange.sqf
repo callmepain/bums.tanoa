@@ -67,13 +67,16 @@ if(_item != "") then
 	_index2 = [_item,life_market_prices] call TON_fnc_index;
 	_name = (life_market_prices select _index2) select 0;
 	_preis = (life_market_prices select _index2) select 1;
+	_preis = floor(_preis);
 	_change = (life_market_prices select _index2) select 2;
+	_change = floor(_change);
 	_prozent = (life_market_prices select _index2) select 3;
+	_prozent = floor(_prozent );
 	_name = M_CONFIG(getText,"VirtualItems",(_name),"displayName");
 	_preis = [_preis] call life_fnc_numberText;
 
-	_name1 ctrlSetStructuredText parseText format["<t align='center' size='2'>%1</t>",localize _name];
-	_preis1 ctrlSetStructuredText parseText format["<t align='center' size='2' color='#00FF00'>$%1</t>",_preis];
+	_name1 ctrlSetStructuredText parseText format["<t align='center' size='1.5'>%1</t>",localize _name];
+	_preis1 ctrlSetStructuredText parseText format["<t align='center' size='2' color='#00FF00'>$ %1</t>",_preis];
 				
 	// /*Trend Global*/
 	
@@ -82,13 +85,13 @@ if(_item != "") then
 		case (_change < 0):
 		{
 			ctrlSetText [1200, "icons\ico_trenddown.paa"];
-			_preis2 ctrlSetStructuredText parseText format["<t align='center' color='#FF0000'>-$%1</t>",[_change] call life_fnc_numberText];
+			_preis2 ctrlSetStructuredText parseText format["<t align='center' color='#FF0000'>$ %1</t>",[_change] call life_fnc_numberText];
 		};
 		
 		case(_change > 0):
 		{
 			ctrlSetText [1200, "icons\ico_trendup.paa"];
-			_preis2 ctrlSetStructuredText parseText format["<t align='center' color='#00FF00'>+$%1</t>",[_change] call life_fnc_numberText];
+			_preis2 ctrlSetStructuredText parseText format["<t align='center' color='#00FF00'>$ %1</t>",[_change] call life_fnc_numberText];
 		};
 		
 		default
@@ -103,13 +106,13 @@ if(_item != "") then
 		case (_prozent < 0):
 		{
 			ctrlSetText [1201, "icons\ico_trenddown.paa"];
-			_prozent2 ctrlSetStructuredText parseText format["<t align='center' color='#FF0000'>-$%1</t>",[_prozent] call life_fnc_numberText];
+			_prozent2 ctrlSetStructuredText parseText format["<t align='center' color='#FF0000'>$ %1</t>",[_prozent] call life_fnc_numberText];
 		};
 		
 		case(_prozent > 0):
 		{
 			ctrlSetText [1201, "icons\ico_trendup.paa"];
-			_prozent2 ctrlSetStructuredText parseText format["<t align='center' color='#00FF00'>+$%1</t>",[_prozent] call life_fnc_numberText];
+			_prozent2 ctrlSetStructuredText parseText format["<t align='center' color='#00FF00'>$ %1</t>",[_prozent] call life_fnc_numberText];
 		};
 		
 		default
