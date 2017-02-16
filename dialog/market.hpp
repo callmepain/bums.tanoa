@@ -97,7 +97,8 @@ class marketView
 		{
 			idc = 1002;
 
-			text = "Preisänderung seit Serverrestart"; //--- ToDo: Localize;
+			text = "seit Serverrestart"; //--- ToDo: Localize;
+			style = 2; 
 			x = 0.582918 * safezoneW + safezoneX;
 			y = 0.599 * safezoneH + safezoneY;
 			w = 0.10883 * safezoneW;
@@ -108,7 +109,8 @@ class marketView
 		{
 			idc = 1003;
 
-			text = "Preisänderung vor kurzem"; //--- ToDo: Localize;
+			text = "vor kurzem"; //--- ToDo: Localize;
+			style = 2; 
 			x = 0.582918 * safezoneW + safezoneX;
 			y = 0.687 * safezoneH + safezoneY;
 			w = 0.10883 * safezoneW;

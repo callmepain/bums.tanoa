@@ -58,6 +58,7 @@ waitUntil {life_session_completed};
 0 cutText[localize "STR_Init_ClientFinish","BLACK FADED"];
 0 cutFadeOut 9999999;
 
+
 //diag_log "::Life Client:: Group Base Execution";
 [] spawn life_fnc_escInterupt;
 
@@ -87,6 +88,10 @@ switch (playerSide) do
         waitUntil {scriptDone _handle};
     };
 };
+
+
+
+
 
 player setVariable ["restrained",false,true];
 player setVariable ["Escorting",false,true];

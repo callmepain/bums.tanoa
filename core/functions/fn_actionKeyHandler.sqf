@@ -54,7 +54,6 @@ if (isNull _curObject) exitWith {
         };
     };
 };
-
 if ((_curObject isKindOf "B_supplyCrate_F" || _curObject isKindOf "Box_IND_Grenades_F") && {player distance _curObject < 3} ) exitWith {
     if (alive _curObject) then {
         [_curObject] call life_fnc_containerMenu;
@@ -89,7 +88,6 @@ life_action_inUse = true;
         };
     };
 };*/
-
 //If target is a player then check if we can use the cop menu.
 if (isPlayer _curObject && _curObject isKindOf "Man") then {
     if ((_curObject getVariable ["restrained",false]) && !dialog && playerSide isEqualTo west) then {

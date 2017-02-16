@@ -12,7 +12,7 @@ class CfgSpawnPoints {
 
     class Tanoa {
 
-        class Civilian {
+        class Civ {
             class Georgetown {
                 displayName = "Georgetown";
                 spawnMarker = "civ_spawn_1";
