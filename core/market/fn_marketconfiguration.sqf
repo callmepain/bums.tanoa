@@ -559,6 +559,7 @@ publicVariable "life_market_clampprices";
 	foreach life_market_resources;
 	
 	publicVariable "life_market_prices";
+	publicVariable "life_market_prices_fix";
 	
 	systemChat "Market Prices Generated!";
 // };

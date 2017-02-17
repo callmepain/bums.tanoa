@@ -22,7 +22,7 @@ diag_log "----------------------------------------------------------------------
 waitUntil {!isNull player && player == player}; //Wait till the player is ready
 [] call compile preprocessFileLineNumbers "core\clientValidator.sqf";
 enableSentences false;
-
+//BIS_Effects_Burn=compile preprocessFileLineNumbers "\ca\Data\ParticleEffects\SCRIPTS\destruction\burn.sqf";
 //Setup initial client core functions
 diag_log "::Life Client:: Initialization Variables";
 [] call compile preprocessFileLineNumbers "core\configuration.sqf";

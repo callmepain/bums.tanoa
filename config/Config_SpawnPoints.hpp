@@ -71,14 +71,14 @@ class CfgSpawnPoints {
                 conditions = "";
             };
 			
-			class Lijnhaven {
+			class Lijnhavencop {
                 displayName = "Lijnhaven HQ";
                 spawnMarker = "cop_spawn_5";
                 icon = "\a3\ui_f\data\map\GroupIcons\badge_rotate_0_gs.paa";
                 conditions = "";
             };
 			
-			class Tanouka {
+			class Tanoukacop {
                 displayName = "Tanouka HQ";
                 spawnMarker = "cop_spawn_3";
                 icon = "\a3\ui_f\data\map\MapControl\fuelstation_ca.paa";
@@ -92,8 +92,8 @@ class CfgSpawnPoints {
                 conditions = "";
             };
 			
-            class Ba {
-                displayName = "Ba HQ";
+            class Luganvillecop {
+                displayName = "Luganville HQ";
                 spawnMarker = "cop_spawn_1";
                 icon = "\a3\ui_f\data\map\MapControl\watertower_ca.paa";
                 conditions = "";
@@ -108,19 +108,19 @@ class CfgSpawnPoints {
                 conditions = "";
             };
 			class TanoukaHospital {
-                displayName = "Tanouka Hospital";
+                displayName = "Tanouka Feuerwehr";
                 spawnMarker = "medic_spawn_2";
                 icon = "\a3\ui_f\data\map\MapControl\hospital_ca.paa";
                 conditions = "";
             };
-            class Lijnhaven {
-                displayName = "Lijnhaven Hospital";
+            class LijnhavenHospital {
+                displayName = "Lijnhaven Feuerwehr";
                 spawnMarker = "medic_spawn_1";
                 icon = "\a3\ui_f\data\map\MapControl\hospital_ca.paa";
                 conditions = "";
             };
-			class OvauHospital {
-                displayName = "Ovau Hospital";
+			class LarochelleHospital {
+                displayName = "Flughafen La Rochelle Feuerwehr";
                 spawnMarker = "medic_spawn_4";
                 icon = "\a3\ui_f\data\map\MapControl\hospital_ca.paa";
                 conditions = "";

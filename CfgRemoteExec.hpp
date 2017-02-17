@@ -95,6 +95,7 @@ class CfgRemoteExec {
         F(TON_fnc_keyManagement,SERVER)
         F(TON_fnc_manageSC,SERVER)
         F(TON_fnc_pickupAction,SERVER)
+		F(TON_fnc_repairCar_full,SERVER)
         F(TON_fnc_removeGang,SERVER)
         F(TON_fnc_sellHouse,SERVER)
         F(TON_fnc_sellHouseContainer,SERVER)
@@ -179,6 +180,7 @@ class CfgRemoteExec {
         F(life_fnc_setFuel,ANYONE)
         F(life_fnc_simDisable,ANYONE)
         F(SPY_fnc_notifyAdmins,ANYONE)
+		F(TON_fnc_repairCar,ANYONE)
     };
 
     class Commands {

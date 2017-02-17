@@ -39,6 +39,7 @@ class Life_Client_Core {
 
     class Actions {
         file = "core\actions";
+		class car_repair {};
         class arrestAction {};
         class buyLicense {};
         class captureHideout {};
