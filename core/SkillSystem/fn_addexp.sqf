@@ -23,9 +23,9 @@ _exp = (_profData select 1);
 _nextLevel = 0;
 NextLevel(_level,_nextLevel);
 if(_speed == 0) then { 
-	_amount = floor(_amount * (_level^1.2)/3.2);
+	_amount = floor(_amount * (1.2^_level)/1.2);
 } else {
-	_amount =floor((_amount * (_level^1.2)) * (_speed^3/_speed^2.75));
+	_amount =floor((_amount * (1.2^_level)) * (_speed^3/_speed^2.75));
 };
 _exp = _exp + _amount;
 _prozent = _exp / _nextLevel;

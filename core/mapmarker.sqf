@@ -1,6 +1,6 @@
 _markername=[];
 
-for "_i" from 0 to 25 do {  
+for "_i" from 0 to 100 do {  
 	_markername pushback format["del_%1",_i];
 };
 

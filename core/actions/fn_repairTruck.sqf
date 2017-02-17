@@ -90,13 +90,14 @@ if ((_veh isKindOf "Car") || (_veh isKindOf "Ship") || (_veh isKindOf "Air")) th
             [false,"toolkit",1] call life_fnc_handleInv;
         };
 		if !(playerSide isEqualTo east)  then {
-			_indexcount = count _cardmgafter;
+		/*	_indexcount = count _cardmgafter;
 			for "_i" from 0 to _indexcount-1 do {  
 				_veh SetHitIndex [_i,(_cardmgafter select _i select 0)];  
 			};
 			if ((east countSide playableUnits) > 0) then {
 				_veh setHitPointDamage ["hitEngine",_carmotordmg];
-			};
+			};*/
+			[_veh,_carrep] remoteExec ["TON_fnc_repairCar",0];
 		} else {
 			_veh setDamage 0;
 		};
