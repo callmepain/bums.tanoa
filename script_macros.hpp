@@ -61,7 +61,7 @@
 
 //pains
 
-#define NextLevel(var1,var2) var2 = 800 *(2^var1);
+#define NextLevel(var1,var2) var2 = ((var1)*1000)*(var1^0.75)
 
 #define SKILLSYSTEM_VARNAME(varName,flag) format ["profession_%1_%2",flag,M_CONFIG(getText,"profession",varName,"variable")]
 #define SKILLSYSTEM_VALUE(varName,flag) missionNamespace getVariable [SKILLSYSTEM_VARNAME(varName,flag),false]
