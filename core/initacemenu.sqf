@@ -16,12 +16,18 @@ _action = ["Vehicle Repair","Repair Vehicle","icons\acemenu\ico_repair.paa",{_ta
 ["LandVehicle", 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;
 _action = ["Vehicle Flip","Flip Car","icons\acemenu\ico_repair.paa",{_target setPos [(getPos _target select 0)+0.2, (getPos _target select 1)+0.2, (getPos _target select 2)+0.5];},{true}] call ace_interact_menu_fnc_createAction;
 ["LandVehicle", 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;
+_action = ["Tanken","Tanken","icons\items\ico_fuel.paa",{["fuelFB5L",_target] spawn life_fnc_jerryRefuel},{life_inv_fuelFB5L >= 1 && fuel _target < 0.9 && typeof _target in life_FahrenPKW}] call ace_interact_menu_fnc_createAction;
+["LandVehicle", 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;
+_action = ["Tanken","Tanken","icons\items\ico_fuel.paa",{["fuelFD25L",_target] spawn life_fnc_jerryRefuel},{life_inv_fuelFD25L >= 1 && fuel _target < 0.9 && typeof _target in life_FahrenLKW}] call ace_interact_menu_fnc_createAction;
+["LandVehicle", 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;
+_action = ["Tanken","Tanken","icons\items\ico_fuel.paa",{["fuelFK50L",_target] spawn life_fnc_jerryRefuel},{life_inv_fuelFK50L >= 1 && fuel _target < 0.9 && typeof _target in life_Fahrenair}] call ace_interact_menu_fnc_createAction;
+["LandVehicle", 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;
 
 /*_action = ["PushBoot","Boot Schieben","",{[] spawn life_fnc_pushObject},{(alive cursorTarget && {crew cursorTarget isEqualTo []} && {canMove cursorTarget})}] call ace_interact_menu_fnc_createAction;
 ["Ship", 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;*/
 
 /*         COP ACE MENU         */
-_action1 = ["Cop menu", "Cop Menu", "icons\acemenu\ico_abzeichen.paa", {true}, {isPlayer _target}] call ace_interact_menu_fnc_createAction; // add another custom node
+_action1 = ["Cop menu", "Cop Menu", "icons\acemenu\ico_abzeichen.paa", {true}, {playerSide == west && isPlayer _target}] call ace_interact_menu_fnc_createAction; // add another custom node
 [typeOf player, 0, ["ACE_MainActions"], _action1] call ace_interact_menu_fnc_addActionToClass;
 _action2 = ["CheckLicense","Lizenen Überprüfen","icons\acemenu\ico_license.paa",{[_player] remoteExecCall ["life_fnc_licenseCheck",_target]},{_target isKindOf "Man"}] call ace_interact_menu_fnc_createAction;
 [typeOf player, 0, ["ACE_MainActions","Cop menu"], _action2] call ace_interact_menu_fnc_addActionToClass;

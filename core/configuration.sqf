@@ -123,7 +123,10 @@ for "_i" from 1 to 50 do
 	};
 } forEach ("true" configClasses (missionConfigFile >> "profession"));
 
-
+CONSTPROF(life_civpkw_level ,(SKILLSYSTEM_VALUE("PKW","civ") select 0));
+CONSTPROF(life_civlkw_level ,(SKILLSYSTEM_VALUE("LKW","civ") select 0));
+CONSTPROF(life_civair_level ,(SKILLSYSTEM_VALUE("Fliegen","civ") select 0));
+CONSTPROF(life_civabbau_level ,(SKILLSYSTEM_VALUE("Rohstoffabbau","civ") select 0));
 
 life_FahrenPKW = [];
 life_FahrenLKW = [];

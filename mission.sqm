@@ -8,7 +8,7 @@ class EditorData
 	toggles=514;
 	class ItemIDProvider
 	{
-		nextID=13423;
+		nextID=13425;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={8382.2324,132.80005,9572.9111};
-		dir[]={0.17112565,-0.66970325,0.72264516};
-		up[]={0.15432115,0.74262887,0.65168124};
-		aside[]={0.97309005,1.0081567e-007,-0.23043247};
+		pos[]={8309.3076,27.72168,9711.0508};
+		dir[]={0.82812667,-0.5443911,-0.13364299};
+		up[]={0.53744227,0.83882767,-0.08673209};
+		aside[]={-0.15932049,3.1339005e-007,-0.98723876};
 	};
 };
 binarizationWanted=0;
@@ -36,7 +36,6 @@ addons[]=
 	"A3_Structures_F_EPA_Civ_Camping",
 	"A3_Structures_F_Civ_Accessories",
 	"A3_Weapons_F",
-	"ace_realisticnames",
 	"A3_Structures_F_Items_Electronics",
 	"A3_Structures_F_Items_Luggage",
 	"A3_Structures_F_EPB_Items_Military",
@@ -189,15 +188,15 @@ class AddonsMetaData
 		};
 		class Item9
 		{
-			className="A3_Characters_F";
-			name="Arma 3 Alpha - Characters and Clothing";
+			className="A3_Structures_F_EPB";
+			name="Arma 3 Adapt Episode - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="http://www.arma3.com";
 		};
 		class Item10
 		{
-			className="A3_Structures_F_EPB";
-			name="Arma 3 Adapt Episode - Buildings and Structures";
+			className="A3_Characters_F";
+			name="Arma 3 Alpha - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="http://www.arma3.com";
 		};

@@ -10,7 +10,6 @@ private "_item";
 disableSerialization;
 if ((lbCurSel 2005) isEqualTo -1) exitWith {[(format [localize "STR_ISTR_SelectItemFirst"]),"Hinweis","Yellow"] call MSG_fnc_handle;};
 _item = CONTROL_DATA(2005);
-
 switch (true) do {
     case (_item in ["waterBottle","coffee","redgull"]): {
         if ([false,_item,1] call life_fnc_handleInv) then {
@@ -61,9 +60,19 @@ switch (true) do {
         };
     };
 
-    case (_item isEqualTo "fuelFull"): {
+    case (_item isEqualTo "fuelFB5L"): {
         if !(isNull objectParent player) exitWith {[(format [localize "STR_ISTR_RefuelInVehicle"]),"Hinweis","Yellow"] call MSG_fnc_handle;};
-        [] spawn life_fnc_jerryRefuel;
+        [_item,cursorObject] spawn life_fnc_jerryRefuel;
+        closeDialog 0;
+    };
+	case (_item isEqualTo "fuelFD25L"): {
+        if !(isNull objectParent player) exitWith {[(format [localize "STR_ISTR_RefuelInVehicle"]),"Hinweis","Yellow"] call MSG_fnc_handle;};
+        [_item,cursorObject] spawn life_fnc_jerryRefuel;
+        closeDialog 0;
+    };
+	case (_item isEqualTo "fuelFK50L"): {
+        if !(isNull objectParent player) exitWith {[(format [localize "STR_ISTR_RefuelInVehicle"]),"Hinweis","Yellow"] call MSG_fnc_handle;};
+        [_item,cursorObject] spawn life_fnc_jerryRefuel;
         closeDialog 0;
     };
 
