@@ -97,11 +97,11 @@ if (isDedicated) exitWith{};
 								_mass = getMass _vehicleToFuel;
 								_vehiclespeed = speed _vehicleToFuel;
 								_fuel_old = fuel _vehicle;
-								_exp = (_mass / 10000) + exp(_vehiclespeed/45)+(0.5*(cos((_vehiclespeed*(180/3.141))/3)));
+								_exp = (_mass / 10000) + exp(_vehiclespeed/80)+(cos((_vehiclespeed*(180/300))/5));
 								if (_vehiclespeed < 10) then {
-									_fuelConsumption = ((_exp * 0.6) / 10000);
+									_fuelConsumption = ((_exp * 2) / 17000);
 								}else {
-									_fuelConsumption = ((_exp * 1.15) / 10000);
+									_fuelConsumption = ((_exp * 3.5) / 17000);
 								};
 								_vehicleToFuel setFuel (_fuel_old - _fuelConsumption);
 								_fuelConsumption = round(_fuelConsumption * 1000000)/100;
@@ -113,14 +113,14 @@ if (isDedicated) exitWith{};
 								_mass = getMass _vehicleToFuel;
 								_vehiclespeed = speed _vehicleToFuel;
 								_fuel_old = fuel _vehicle;
-								_exp = (_mass / 3000) + (exp(_vehiclespeed/180))+(0.5*(cos((_vehiclespeed*(180/3.141))/8)));
+								_exp = (_mass / 10000) + (exp(_vehiclespeed/200))+((cos((_vehiclespeed*(180/1500)-1.571))/5));
 								if (_vehiclespeed < 10) then {
-									_fuelConsumption = ((_exp * 0.6) / 10000);
+									_fuelConsumption = ((_exp * 2) / 17000);
 								}else {
-									_fuelConsumption = ((_exp * 3.5) / 10000);
+									_fuelConsumption = ((_exp * 3.5) / 17000);
 								};
 								_vehicleToFuel setFuel (_fuel_old - _fuelConsumption);
-								_fuelConsumption = round(_fuelConsumption * 1000000)/100;
+								_fuelConsumption = round(_fuelConsumption * 1000000 * 2.5)/100;
 
 								_name = format ["%1<t size='0.85' color='#ffff00'>Benzinverbrauch: <t/><t color='#ff0000'>%3 Liter</t><br/><t size='1' color='#00ff00'>Insassen:</t><br/><img size='0.7' color='#ff0000' image='a3\ui_f\data\IGUI\Cfg\Actions\getindriver_ca.paa'/><t size='0.85' color='#ffff00'>   %2</t><br/>", _name, (name _x), (_fuelConsumption)]; 
 							};
