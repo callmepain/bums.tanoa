@@ -11,9 +11,12 @@ _check = [];
 {
 	_check pushback _x;
 } forEach(life_Container);
+_delete = false;
 _check pushback "Car";
 _check pushback "Air";
 _check pushback "Ship";
+_nearVehicles = nearestObjects[getPos (_this select 0),life_Container,30];
+if (count _nearVehicles > 0) then {
 _delete =
  [
 	format["Bei Fahrzeugen, die mit Containern beladen sind, werden die Container gelöscht! 		Willst du wirklich dein Fahrzeug in die Garage stellen und den Container löschen?"],
@@ -21,6 +24,9 @@ _delete =
 	"Ok",
 	"Nein Danke"
 ] call BIS_fnc_guiMessage;
+} else {
+	_delete = true;
+};
 if(_delete) then {
 	if !(isNull objectParent player) then {
 		_vehicle = vehicle player;

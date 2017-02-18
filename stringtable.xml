@@ -1938,6 +1938,15 @@
         <Key ID="STR_Item_FuelF">
             <Original>Gefüllter Benzinkanister</Original>
         </Key>
+		<Key ID="STR_Item_fuelFB5L">
+            <Original>Benzin Kanister</Original>
+        </Key>
+		<Key ID="STR_Item_fuelFD25L">
+            <Original>Diesel Kanister</Original>
+        </Key>
+		<Key ID="STR_Item_fuelFK50L">
+            <Original>Kerosin Kanister</Original>
+        </Key>
         <Key ID="STR_Item_Defibrillator">
             <Original>Defibrillator</Original>
         </Key>
