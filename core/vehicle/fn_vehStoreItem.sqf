@@ -16,7 +16,6 @@ _ctrl = ctrlSelData(3503);
 
 
 
-
 //next lines added by preller. fuel storage vehicles only can store fluids
 _isTanker = false;
 {
@@ -26,7 +25,7 @@ _isTanker = false;
 _isFluid = false;
 {
 	if (_ctrl == _x) then {_isFluid = true;};
-} forEach ["oilu","oilp"];
+} forEach ["oil_unprocessed","oil_processed"];
 
 //check
 if (_isTanker && (!_isFluid)) exitWith {["In dem Tanklaster kannst du nur Gefahrstoffe lagern !!!","Hinweis","yellow"] call MSG_fnc_handle};

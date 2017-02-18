@@ -5,7 +5,7 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=642;
+	toggles=514;
 	class ItemIDProvider
 	{
 		nextID=13423;
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={5793.3652,32.682514,10282.316};
-		dir[]={0,-0.70710683,0.70710683};
-		up[]={0,0.70710677,0.70710677};
-		aside[]={0.99999994,0,-0};
+		pos[]={8382.2324,132.80005,9572.9111};
+		dir[]={0.17112565,-0.66970325,0.72264516};
+		up[]={0.15432115,0.74262887,0.65168124};
+		aside[]={0.97309005,1.0081567e-007,-0.23043247};
 	};
 };
 binarizationWanted=0;
@@ -586,24 +586,6 @@ class CustomAttributes
 		name="Multiplayer";
 		class Attribute0
 		{
-			property="RespawnTemplates";
-			expression="true";
-			class Value
-			{
-				class data
-				{
-					class type
-					{
-						type[]=
-						{
-							"ARRAY"
-						};
-					};
-				};
-			};
-		};
-		class Attribute1
-		{
 			property="RespawnButton";
 			expression="true";
 			class Value
@@ -618,6 +600,24 @@ class CustomAttributes
 						};
 					};
 					value=1;
+				};
+			};
+		};
+		class Attribute1
+		{
+			property="RespawnTemplates";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"ARRAY"
+						};
+					};
 				};
 			};
 		};
@@ -2159,13 +2159,12 @@ class Mission
 		class Item141
 		{
 			dataType="Marker";
-			position[]={11588.845,113.03304,12268.652};
+			position[]={2802.6624,45.498138,11816.969};
 			name="hunting_marker";
 			text="@STR_MAR_Hunting_Grounds";
 			type="mil_join";
 			colorName="ColorRed";
 			id=216;
-			atlOffset=7.6293945e-006;
 		};
 		class Item142
 		{
@@ -17587,10 +17586,11 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={7457.9692,15.505439,8498.6895};
+						position[]={7457.9692,7.4914389,8498.6895};
 						angles[]={0,5.4268746,0};
 					};
 					side="Civilian";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -17600,7 +17600,6 @@ class Mission
 					};
 					id=953;
 					type="C_man_1";
-					atlOffset=8.0139999;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -33504,7 +33503,7 @@ class Mission
 		class Item419
 		{
 			dataType="Marker";
-			position[]={11588.354,-203.59917,12271.999};
+			position[]={2802.1711,-271.13406,11820.315};
 			name="hunting_zone";
 			markerType="ELLIPSE";
 			type="Empty";
@@ -33512,7 +33511,7 @@ class Mission
 			a=600;
 			b=600;
 			id=3929;
-			atlOffset=-314.73346;
+			atlOffset=-316.99799;
 		};
 		class Item420
 		{
@@ -80418,7 +80417,7 @@ class Mission
 			text="@STR_MAR_Hospital";
 			type="loc_Hospital";
 			colorName="ColorRed";
-			angle=0.5529232;
+			angle=0.55292296;
 			id=13417;
 			atlOffset=-1.9550323e-005;
 		};
