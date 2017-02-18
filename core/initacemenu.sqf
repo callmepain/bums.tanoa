@@ -21,7 +21,7 @@ _action = ["Vehicle Flip","Flip Car","icons\acemenu\ico_repair.paa",{_target set
 ["Ship", 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;*/
 
 /*         COP ACE MENU         */
-_action1 = ["Cop menu", "Cop Menu", "icons\acemenu\ico_abzeichen.paa", {true}, {/*playerSide == west && isPlayer _target*/true}] call ace_interact_menu_fnc_createAction; // add another custom node
+_action1 = ["Cop menu", "Cop Menu", "icons\acemenu\ico_abzeichen.paa", {true}, {isPlayer _target}] call ace_interact_menu_fnc_createAction; // add another custom node
 [typeOf player, 0, ["ACE_MainActions"], _action1] call ace_interact_menu_fnc_addActionToClass;
 _action2 = ["CheckLicense","Lizenen Überprüfen","icons\acemenu\ico_license.paa",{[_player] remoteExecCall ["life_fnc_licenseCheck",_target]},{_target isKindOf "Man"}] call ace_interact_menu_fnc_createAction;
 [typeOf player, 0, ["ACE_MainActions","Cop menu"], _action2] call ace_interact_menu_fnc_addActionToClass;
