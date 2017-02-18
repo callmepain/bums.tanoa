@@ -195,7 +195,7 @@ class CarShops
         conditions = "license_civ_trucking";
         vehicles[] = {
             { "C_Van_01_box_F", "call life_civlkw_level >= 1" },
-			{ "C_Van_01_fuel_F", "call life_civlkw_level >= 1" },
+			{ "C_Van_01_fuel_F", "call life_civlkw_level >= 4" },
             { "I_Truck_02_transport_F", "call life_civlkw_level >= 2" },
             { "I_Truck_02_covered_F", "call life_civlkw_level >= 4" },
             { "shounka_a3_spr_civ", "call life_civlkw_level >= 3" },
@@ -205,9 +205,9 @@ class CarShops
             { "B_Truck_01_transport_F", "call life_civlkw_level >= 8" },
             { "B_Truck_01_covered_F", "call life_civlkw_level >= 9" },
             { "B_Truck_01_box_F", "call life_civlkw_level >= 10" },
-            { "I_Truck_02_fuel_F", "call life_civlkw_level >= 4" },
+            { "I_Truck_02_fuel_F", "call life_civlkw_level >= 5" },
             { "O_Truck_03_fuel_F", "call life_civlkw_level >= 6" },
-            { "B_Truck_01_fuel_F", "call life_civlkw_level >= 8" }
+            { "B_Truck_01_fuel_F", "call life_civlkw_level >= 10" }
         };
     };
 
@@ -1163,7 +1163,7 @@ class LifeCfgVehicles {
     };
 
     class O_Truck_03_transport_F {
-        vItemSpace = 120;
+        vItemSpace = 100;
         conditions = "license_civ_trucking";
         price = 114418;
         textures[] = { };
@@ -1461,7 +1461,7 @@ will modify the virtual space and the price of the vehicle, but other informatio
 
 
     class I_Truck_02_transport_F {
-        vItemSpace = 90;
+        vItemSpace = 65;
         conditions = "license_civ_trucking";
         price = 55775;
         textures[] = { };
@@ -1616,7 +1616,7 @@ will modify the virtual space and the price of the vehicle, but other informatio
     };
 
     class B_Truck_01_fuel_F {
-        vItemSpace = 700;
+        vItemSpace = 1000;
         vFuelSpace = 448500;
         conditions = "license_civ_trucking";
         price = 448500;

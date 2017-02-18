@@ -18,7 +18,7 @@ class profession {
 	class Ernten {
 		displayName = "STR_PRO_Ernten";
 		variable = "Ernten";
-		baseEXPgain = 1; 
+		baseEXPgain = 5; 
 		icon = "icons\skillsystem\ico_ernten.paa";
 		side[] = {"civ"};
 		Resource = "Resources";
@@ -27,7 +27,7 @@ class profession {
 	class Rohstoffabbau {
 		displayName = "STR_PRO_Rohstoffabbau";
 		variable = "Rohstoffabbau";
-		baseEXPgain = 1;
+		baseEXPgain = 5;
 		icon = "icons\skillsystem\ico_rohstoff.paa";
 		side[] = {"civ"};
 		Resource = "Minerals";
@@ -36,7 +36,7 @@ class profession {
 	class PKW {
 		displayName = "STR_PRO_Fahren_PKW";
 		variable = "PKW"; 
-		baseEXPgain = 30;
+		baseEXPgain = 10;
 		icon = "icons\skillsystem\ico_auto.paa";
 		side[] = {"civ"};
 	};
@@ -44,7 +44,7 @@ class profession {
 	class LKW {
 		displayName = "STR_PRO_Fahren_LKW";
 		variable = "LKW"; 
-		baseEXPgain = 20;
+		baseEXPgain = 10;
 		icon = "icons\skillsystem\ico_lkw.paa";
 		side[] = {"civ"};
 	};
@@ -60,7 +60,7 @@ class profession {
 	class Reparieren {
 		displayName = "STR_PRO_Repair";
 		variable = "Reparieren";
-		baseEXPgain = 250;
+		baseEXPgain = 200;
 		icon = "icons\acemenu\ico_repair.paa";
 		side[] = {"civ","cop","med"};
 	};
