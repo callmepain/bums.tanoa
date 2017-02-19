@@ -29,7 +29,7 @@ if (IL_DevMod) then
 	Player globalChat Format["IgiLoad ""%1"" IN.", IL_Script_Inst];
 };
 
-//if (isDedicated) exitwith {};
+if (isDedicated) exitwith {};
 //if (isServer) exitwith {};
 
 //	VARIABLES
@@ -38,13 +38,13 @@ _obj_main_type = (typeOf _obj_main);
 
 
 	//Check if vehicle is supported or it is PLayer init
-// if !((_obj_main_type in (IL_Supported_Vehicles_All)) || (_obj_main == Player) || (isServer) || (isDedicated)) exitwith
-// {
-	// if (IL_DevMod) then
-	// {
-		// Player globalChat Format["IgiLoad. Object: ""%1"" is not supported.", _obj_main];
-	// };
-// };
+ if !((_obj_main_type in (IL_Supported_Vehicles_All)) || (_obj_main == Player) || (isDedicated)) exitwith
+ {
+	 if (IL_DevMod) then
+	 {
+		 Player globalChat Format["IgiLoad. Object: ""%1"" is not supported.", _obj_main];
+	 };
+ };
 
 //	PROCEDURES AND FUNCTIONS
 #include "init_veh.sqf";

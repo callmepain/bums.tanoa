@@ -78,6 +78,7 @@ class Life_Client_Core {
         class ticketAction {};
         class unrestrain {};
 		class carProcessingMenu;
+		class container_sell_menu {};
     };
 
     class Admin {
