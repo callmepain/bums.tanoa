@@ -63,12 +63,12 @@ _productionInfo = switch (_type) do
 	case "lsd": 								{[["lsd_unprocessed"],[4],"lsd_processed",1,"lsd",3000]};
 	case "oil": 								{[["oil_unprocessed"],[3],"oil_processed",1,"herstellung",1200]};
 	case "salt": 							{[["salt_unrefined"],[3],"salt_refined",1,"herstellung",450]};
-	case "sand": 							{[["sand"],[2],"glass",1,"herstellung",650]};
+	case "sand": 							{[["sand"],[3],"glass",1,"herstellung",650]};
 	
 	case "golderz": 						{[["golderz_unrefined"],[3],"golderz_refined",1,"herstellung",2100]};
-	case "wood": 							{[["wood_unrefined"],[2],"wood_refined",1,"herstellung",2100]};
+	case "wood": 							{[["wood_unrefined"],[3],"wood_refined",1,"herstellung",2100]};
 	case "silver": 							{[["silver_unrefined"],[3],"silver_refined",1,"herstellung",1750]};
-	case "coal": 							{[["coal_unrefined"],[2],"coal_refined",1,"herstellung",1050]};
+	case "coal": 							{[["coal_unrefined"],[3],"coal_refined",1,"herstellung",1050]};
 	
 	case "stahl": 							{[["coal_refined","iron_refined"],[2,1],"stahlbarren_refined",1,"herstellung",5000]};
 	case "platinbarren":				{[["golderz_refined","silver_refined"],[2,1],"platinbarren_refined",1,"herstellung",5000]};
