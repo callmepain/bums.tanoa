@@ -5,7 +5,7 @@ _veh = nearestObject[getPos _processor,"car"];
 _veh2 = typeOf _veh;
 
 _carprice = M_CONFIG(getNumber,"LifeCfgVehicles",_veh2,"price");
-_price = (_Carprice / 100) *5;
+_price = (_Carprice / 100) * vehicle_repair_multiplier;
 
 _delete =
 [
