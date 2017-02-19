@@ -25,7 +25,7 @@ _unit = _plist lbData _sel;
 _unit = call compile format ["%1", _unit];
 if (isNull _unit || isNil "_unit") exitWith {};
 if (_unit == player) exitWith {};
-_name = getText(configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "displayName")
+_name = getText(configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "displayName");
 _uid = getPlayerUID _unit;
 _owners = _vehicle getVariable "vehicle_info_owners";
 _index = [_uid,_owners] call TON_fnc_index;
