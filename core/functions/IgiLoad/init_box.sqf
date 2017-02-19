@@ -110,6 +110,7 @@ IL_Init_Box =
 		{
 			_obj setVariable["slots", 2, true];
 			_obj setVariable["cargo_offset", 0.4, true];
+			[_obj, 750] call IL_SetNewMass;
 		};
 	};
 //	END IL_Init_Box

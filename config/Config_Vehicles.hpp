@@ -1,4 +1,6 @@
 #define FARBEN { "Aqua", "civ", {"#(argb,8,8,3)color(0.247,0.600,1,1)","#(argb,8,8,3)color(0.2,0.2,0.2,1)","#(argb,8,8,3)color(1,1,1,0.05)"}, ""},{ "Schwarz", "civ", {"#(argb,8,8,3)color(0,0,0,1)","#(argb,8,8,3)color(0.2,0.2,0.2,1)","#(argb,8,8,3)color(1,1,1,0.05)"}, ""},{ "Dunkel Blau", "civ", {"#(argb,8,8,3)color(0.012,0.059,0.129,1)","#(argb,8,8,3)color(0.2,0.2,0.2,1)","#(argb,8,8,3)color(1,1,1,0.05)"}, ""},{ "Dunkel Grün", "civ", {"#(argb,8,8,3)color(0.012,0.122,0.012,1)","#(argb,8,8,3)color(0.2,0.2,0.2,1)","#(argb,8,8,3)color(1,1,1,0.05)"}, "" },{ "Dunkel Rot", "civ", {"#(argb,8,8,3)color(0.075,0,0,1)", "#(argb,8,8,3)color(0.2,0.2,0.2,1)","#(argb,8,8,3)color(1,1,1,0.05)"}, "" },{ "Grün", "civ", {"#(argb,8,8,3)color(0.678,1,0,1)","#(argb,8,8,3)color(0.2,0.2,0.2,1)","#(argb,8,8,3)color(1,1,1,0.05)"}, "" },{ "Grau", "civ", {"#(argb,8,8,3)color(0.494,0.490,0.494,1)","#(argb,8,8,3)color(0.2,0.2,0.2,1)","#(argb,8,8,3)color(1,1,1,0.05)"}, "" },{ "Orange", "civ", {"#(argb,8,8,3)color(0.808,0.416,0,1)","#(argb,8,8,3)color(0.2,0.2,0.2,1)", "#(argb,8,8,3)color(1,1,1,0.05)" }, "" },{ "Pink", "civ", {"#(argb,8,8,3)color(1,0.1,0.9,1)","#(argb,8,8,3)color(0.2,0.2,0.2,1)", "#(argb,8,8,3)color(1,1,1,0.05)"}, "" },{ "Lila", "civ", {"#(argb,8,8,3)color(0.086,0.012,0.141,1)","#(argb,8,8,3)color(0.2,0.2,0.2,1)", "#(argb,8,8,3)color(1,1,1,0.05)"}, "" },{ "Rot", "civ", {"#(argb,8,8,3)color(0.631,0.004,0,1)","#(argb,8,8,3)color(0.2,0.2,0.2,1)", "#(argb,8,8,3)color(1,1,1,0.05)"}, "" },{ "Weiss", "civ", {"#(argb,8,8,3)color(1,1,1,1)","#(argb,8,8,3)color(0.2,0.2,0.2,1)", "#(argb,8,8,3)color(1,1,1,0.05)"}, "" },{ "Gelb", "civ", {"#(argb,8,8,3)color(1,0.9,0,1)","#(argb,8,8,3)color(0.2,0.2,0.2,1)", "#(argb,8,8,3)color(1,1,1,0.05)"}, "" }
+#define FARBENCONTAINER { "Aqua", "civ", {"#(argb,8,8,3)color(0.247,0.600,1,1)","#(argb,8,8,3)color(0.247,0.600,1,1)","#(argb,8,8,3)color(0.247,0.600,1,1)"}, ""},{ "Schwarz", "civ", {"#(argb,8,8,3)color(0,0,0,1)","#(argb,8,8,3)color(0,0,0,1)","#(argb,8,8,3)color(0,0,0,1)"}, ""},{ "Dunkel Blau", "civ", {"#(argb,8,8,3)color(0.012,0.059,0.129,1)","#(argb,8,8,3)color(0.012,0.059,0.129,1)","#(argb,8,8,3)color(0.012,0.059,0.129,1)"}, ""},{ "Dunkel Grün", "civ", {"#(argb,8,8,3)color(0.012,0.122,0.012,1)","#(argb,8,8,3)color(0.012,0.122,0.012,1)","#(argb,8,8,3)color(0.012,0.122,0.012,1)"}, "" },{ "Dunkel Rot", "civ", {"#(argb,8,8,3)color(0.075,0,0,1)", "#(argb,8,8,3)color(0.075,0,0,1)","#(argb,8,8,3)color(0.075,0,0,1)"}, "" },{ "Grün", "civ", {"#(argb,8,8,3)color(0.678,1,0,1)","#(argb,8,8,3)color(0.678,1,0,1)","#(argb,8,8,3)color(0.678,1,0,1)"}, "" },{ "Grau", "civ", {"#(argb,8,8,3)color(0.494,0.490,0.494,1)","#(argb,8,8,3)color(0.494,0.490,0.494,1)","#(argb,8,8,3)color(0.494,0.490,0.494,1)"}, "" },{ "Orange", "civ", {"#(argb,8,8,3)color(0.808,0.416,0,1)","#(argb,8,8,3)color(0.808,0.416,0,1)", "#(argb,8,8,3)color(0.808,0.416,0,1)" }, "" },{ "Pink", "civ", {"#(argb,8,8,3)color(1,0.1,0.9,1)","#(argb,8,8,3)color(1,0.1,0.9,1)", "#(argb,8,8,3)color(1,0.1,0.9,1)"}, "" },{ "Lila", "civ", {"#(argb,8,8,3)color(0.086,0.012,0.141,1)","#(argb,8,8,3)color(0.086,0.012,0.141,1)", "#(argb,8,8,3)color(0.086,0.012,0.141,1)"}, "" },{ "Rot", "civ", {"#(argb,8,8,3)color(0.631,0.004,0,1)","#(argb,8,8,3)color(0.631,0.004,0,1)", "#(argb,8,8,3)color(0.631,0.004,0,1)"}, "" },{ "Weiss", "civ", {"#(argb,8,8,3)color(1,1,1,1)","#(argb,8,8,3)color(1,1,1,1)", "#(argb,8,8,3)color(1,1,1,1)"}, "" },{ "Gelb", "civ", {"#(argb,8,8,3)color(1,0.9,0,1)","#(argb,8,8,3)color(1,0.9,0,1)", "#(argb,8,8,3)color(1,0.9,0,1)"}, "" }
+
 
 class CarShops 
 {
@@ -161,8 +163,8 @@ class CarShops
 			{"Box_NATO_AmmoVeh_F", ""},
 			{"Box_East_AmmoVeh_F", ""},
 			{"Box_IND_AmmoVeh_F", ""},
-			{"Land_CargoBox_V1_F", ""},
-			{"Land_Cargo20_blue_F", ""},
+			{"Land_CargoBox_V1_F", ""}
+			/*{"Land_Cargo20_blue_F", ""},
 			{"Land_Cargo20_brick_red_F", ""},
 			{"Land_Cargo20_cyan_F", ""},
 			{"Land_Cargo20_grey_F", ""},
@@ -173,7 +175,7 @@ class CarShops
 			{"Land_Cargo20_red_F", ""},
 			{"Land_Cargo20_sand_F", ""},
 			{"Land_Cargo20_white_F", ""},
-			{"Land_Cargo20_yellow_F", ""}
+			{"Land_Cargo20_yellow_F", ""}*/
 		};
 	};
 	
@@ -1212,28 +1214,28 @@ class LifeCfgVehicles {
         vItemSpace = 200;
         conditions = "";
         price = 15000;
-        textures[] = {};
+        textures[] = {FARBENCONTAINER};
     };
 	
 	class Box_NATO_AmmoVeh_F {
         vItemSpace = 200;
         conditions = "";
-        price = 15000;
-        textures[] = {};
+        price = 10000;
+        textures[] = {FARBENCONTAINER};
     };
 	
 	class Box_East_AmmoVeh_F {
         vItemSpace = 200;
         conditions = "";
         price = 15000;
-        textures[] = {};
+        textures[] = {FARBENCONTAINER};
     };
 	
 	class Box_IND_AmmoVeh_F {
         vItemSpace = 200;
         conditions = "";
         price = 15000;
-        textures[] = {};
+        textures[] = {FARBENCONTAINER};
     };
 	
 	class Land_Cargo20_blue_F {
@@ -1327,14 +1329,14 @@ class LifeCfgVehicles {
         vItemSpace = 200;
         conditions = "";
         price = -1;
-        textures[] = {};
+        textures[] = {FARBENCONTAINER};
     };
 
     class B_supplyCrate_F {
         vItemSpace = 200;
         conditions = "";
         price = -1;
-        textures[] = {};
+        textures[] = {FARBENCONTAINER};
     };
 
 	
