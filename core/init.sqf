@@ -99,6 +99,8 @@ player setVariable ["transporting",false,true];
 player setVariable ["playerSurrender",false,true];
 player setVariable ["autosafe",false];
 player setVariable ["Unconscious",false,true];
+player setVariable ["arrested",false,true];
+player setVariable ["kaution",0,true];
 
 diag_log "Past Settings Init";
 

@@ -17,6 +17,18 @@ class playerSettings {
 		 w = 0.485625 * safezoneW;
 		 h = 0.854 * safezoneH;
 	 };
+	 
+	class Hintergrund: IGUIBack
+	{
+		idc = 2200;
+
+		x = 0.300306 * safezoneW + safezoneX;
+		y = 0.2602 * safezoneH + safezoneY;
+		w = 0.401645 * safezoneW;
+		h = 0.50617 * safezoneH;
+		colorBackground[] = {0,0,0,0.7};
+	};
+	 
 	 class moneyTitle: life_RscText
 	 {
 		 idc = -1;
@@ -72,16 +84,16 @@ class playerSettings {
 			tooltip = "Schließt das Fenster"; //--- ToDo: Localize;
 		};
 	 
-		 class ButtonCraft : Life_RscButtonMenu 
-		 {
-			 idc = 2025;
-			 text = "$STR_PM_Craft";
-			 onButtonClick = "closeDialog 0; createDialog ""Life_craft"";";
-			 x = 0.42 + (6.25 / 19.8) + (1 / 250 / (safezoneW / safezoneH));
-			 y = 0.805;
-			 w = (6.25 / 40);
-			 h = (1 / 25);
-		};
+		 // class ButtonCraft : Life_RscButtonMenu 
+		 // {
+			 // idc = 2025;
+			 // text = "$STR_PM_Craft";
+			 // onButtonClick = "closeDialog 0; createDialog ""Life_craft"";";
+			 // x = 0.42 + (6.25 / 19.8) + (1 / 250 / (safezoneW / safezoneH));
+			 // y = 0.805;
+			 // w = (6.25 / 40);
+			 // h = (1 / 25);
+		// };
 		
 		 class moneyEdit: life_RscEdit
 		 {

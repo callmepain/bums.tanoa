@@ -112,6 +112,9 @@ class Life_Client_Core {
         class freezePlayer {};
         class jail {};
         class jailMe {};
+        class kaution {};
+        class kautionInit {};
+        class kautionLBChange {};
         class knockedOut {};
         class knockoutAction {};
         class removeLicenses {};
