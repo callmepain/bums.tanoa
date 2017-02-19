@@ -97,7 +97,8 @@ if ((_veh isKindOf "Car") || (_veh isKindOf "Ship") || (_veh isKindOf "Air")) th
 			if ((east countSide playableUnits) > 0) then {
 				_veh setHitPointDamage ["hitEngine",_carmotordmg];
 			};*/
-			[_veh,_carrep] remoteExec ["TON_fnc_repairCar",0];
+			//[_veh,_carrep] remoteExec ["TON_fnc_repairCar",-2];
+			[_veh, _carrep] call life_fnc_setHitIndex;
 		} else {
 			_veh setDamage 0;
 		};

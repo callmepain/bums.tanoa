@@ -63,7 +63,7 @@ life_market_resources = [
 /////// --------------------------------------- essen 	--------------------------------------- ///////
 
 	
-	["peach", 11, 0, 0, 0.001, 0.001,
+	["peach", 15, 0, 0, 0.001, 0.001,
 		[
 			["apple",1],
 			["rabbit_raw",1],
@@ -81,7 +81,7 @@ life_market_resources = [
 		]
 	],
 	
-	["apple", 7, 0, 0, 0.001, 0.001,
+	["apple", 10, 0, 0, 0.001, 0.001,
 		[
 			["peach",1],
 			["rabbit_raw",1],
@@ -99,7 +99,7 @@ life_market_resources = [
 		]
 	],	
 	
-	["rabbit_raw", 4, 0, 0, 0.001, 0.001,
+	["rabbit_raw", 20, 0, 0, 0.001, 0.001,
 		[
 			["peach",1],
 			["apple",1],
@@ -117,7 +117,7 @@ life_market_resources = [
 		]
 	],
 	
-	["salema_raw", 4, 0, 0, 0.001, 0.001,
+	["salema_raw", 20, 0, 0, 0.001, 0.001,
 		[
 			["peach",1],
 			["apple",1],
@@ -135,7 +135,7 @@ life_market_resources = [
 		]
 	],
 	
-	["ornate_raw", 4, 0, 0, 0.001, 0.001,
+	["ornate_raw", 20, 0, 0, 0.001, 0.001,
 		[
 			["peach",1],
 			["apple",1],
@@ -153,7 +153,7 @@ life_market_resources = [
 		]
 	],
 	
-	["mackerel_raw", 4, 0, 0, 0.001, 0.001,
+	["mackerel_raw", 20, 0, 0, 0.001, 0.001,
 		[
 			["peach",1],
 			["apple",1],
@@ -171,7 +171,7 @@ life_market_resources = [
 		]
 	],
 	
-	["tuna_raw", 4, 0, 0, 0.001, 0.001,
+	["tuna_raw", 20, 0, 0, 0.001, 0.001,
 		[
 			["peach",1],
 			["apple",1],
@@ -189,7 +189,7 @@ life_market_resources = [
 		]
 	],
 	
-	["mullet_raw", 4, 0, 0, 0.001, 0.001,
+	["mullet_raw", 20, 0, 0, 0.001, 0.001,
 		[
 			["peach",1],
 			["apple",1],
@@ -207,7 +207,7 @@ life_market_resources = [
 		]
 	],
 	
-	["catshark_raw", 4, 0, 0, 0.001, 0.001,
+	["catshark_raw", 20, 0, 0, 0.001, 0.001,
 		[
 			["peach",1],
 			["apple",1],
@@ -225,7 +225,7 @@ life_market_resources = [
 		]
 	],
 	
-	["turtle_raw", 4, 0, 0, 0.001, 0.001,
+	["turtle_raw", 20, 0, 0, 0.001, 0.001,
 		[
 			["peach",1],
 			["apple",1],
@@ -243,7 +243,7 @@ life_market_resources = [
 		]
 	],
 	
-	["hen_raw", 4, 0, 0, 0.001, 0.001,
+	["hen_raw",20, 0, 0, 0.001, 0.001,
 		[
 			["peach",1],
 			["apple",1],
@@ -261,7 +261,7 @@ life_market_resources = [
 		]
 	],
 	
-	["rooster_raw", 4, 0, 0, 0.001, 0.001,
+	["rooster_raw", 20, 0, 0, 0.001, 0.001,
 		[
 			["peach",1],
 			["apple",1],
@@ -279,7 +279,7 @@ life_market_resources = [
 		]
 	],
 	
-	["sheep_raw", 4, 0, 0, 0.001, 0.001,
+	["sheep_raw", 20, 0, 0, 0.001, 0.001,
 		[
 			["peach",1],
 			["apple",1],
@@ -297,7 +297,7 @@ life_market_resources = [
 		]
 	],
 	
-	["goat_raw", 4, 0, 0, 0.001, 0.001,
+	["goat_raw", 20, 0, 0, 0.001, 0.001,
 		[
 			["peach",1],
 			["apple",1],
@@ -331,7 +331,7 @@ life_market_resources = [
 		]
 	],
 	
-	["wood_refined", 135, 0, 0, 0.002, 0.002,
+	["wood_refined", 575, 0, 0, 0.002, 0.002,
 		[
 			["coal_refined",1],
 			["wood_refined",1],
@@ -370,7 +370,7 @@ life_market_resources = [
 		] 
 	],
 	
-	["copper_refined", 299, 0, 0, 0.005, 0.005,
+	["copper_refined", 672, 0, 0, 0.005, 0.005,
 		[ 
 			["coal_refined",1], 
 			["wood_refined",1],
@@ -409,7 +409,7 @@ life_market_resources = [
 		] 
 	],
 	
-	["cement", 508, 0, 0, 0.009, 0.009,
+	["cement", 783, 0, 0, 0.009, 0.009,
 		[ 
 			["coal_refined",1], 
 			["wood_refined",1],
