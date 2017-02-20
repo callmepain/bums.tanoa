@@ -2313,11 +2313,17 @@
 		<Key ID="STR_Process_brilliantschmuck">
             <Original>Brilliantschmuck herstellen</Original>
         </Key>
-		 <Key ID="STR_Process_Gold">
-            <Original>Gold schleifen</Original>
+		 <Key ID="STR_Process_gold">
+            <Original>Gold verarbeiten</Original>
         </Key>
-		<Key ID="STR_Process_Silver">
-            <Original>Silber schleifen</Original>
+		<Key ID="STR_Process_stahl">
+            <Original>Stahl verarbeiten</Original>
+        </Key>
+		<Key ID="STR_Process_platin">
+            <Original>Platin verarbeiten</Original>
+        </Key>
+		<Key ID="STR_Process_silver">
+            <Original>Silber verarbeiten</Original>
         </Key>
 		 <Key ID="STR_Process_Wood">
             <Original>Holz verarbeiten</Original>
