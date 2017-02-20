@@ -17,4 +17,4 @@ switch (playerSide) do {
 };
 
 
-	life_actions = life_actions + [player addAction["Admin",life_fnc_copInteractionMenu,cursorTarget,0,false,false,"",'']];
+	// life_actions = life_actions + [player addAction["Admin",life_fnc_copInteractionMenu,cursorTarget,0,false,false,"",'']];

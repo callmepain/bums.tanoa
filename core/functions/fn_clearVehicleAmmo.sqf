@@ -38,3 +38,8 @@ clearWeaponCargoGlobal _vehicle;
 clearMagazineCargoGlobal _vehicle;
 clearItemCargoGlobal _vehicle;
 clearBackpackCargoGlobal _vehicle;
+
+_vehicle setVariable ["BIS_enableRandomization", false];
+_vehicle setFuelCargo 0;
+_vehicle setAmmoCargo 0;
+_vehicle setRepairCargo 0;
