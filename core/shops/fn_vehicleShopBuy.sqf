@@ -115,6 +115,7 @@ _vehicle lock 2;
 [_vehicle] call life_fnc_clearVehicleAmmo;
 [_vehicle,"trunk_in_use",false,true] remoteExecCall ["TON_fnc_setObjVar",RSERV];
 [_vehicle,"beladbar",true,true] remoteExecCall ["TON_fnc_setObjVar",RSERV];
+[_vehicle,"betankung",false,true] remoteExecCall ["TON_fnc_setObjVar",RSERV];
 [_vehicle,"vehicle_info_owners",[[getPlayerUID player,profileName]],true] remoteExecCall ["TON_fnc_setObjVar",RSERV];
 
 _vehicle disableTIEquipment true; //No Thermals.. They're cheap but addictive.

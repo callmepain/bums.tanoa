@@ -91,7 +91,7 @@ if (isDedicated) exitWith{};
 						
 						switch(true) do
 						{
-							case (isEngineOn _vehicleToFuel && ((driver _vehicleToFuel) isEqualTo player) && (_vehicleToFuel isKindOf "Landvehicle") && (_vehicleToFuel != player) && (_veh in life_truck)):
+							case (isEngineOn _vehicleToFuel && ((driver _vehicleToFuel) isEqualTo player) && (_vehicleToFuel isKindOf "Landvehicle") && (_vehicleToFuel != player) && (_veh in life_FahrenLKW)):
 							{
 								_fuelConsumption = 0;
 								_mass = getMass _vehicleToFuel;

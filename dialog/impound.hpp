@@ -122,7 +122,7 @@ class Life_impound_menu
 		{
 			idc = 2802;
 			onLBSelChanged = "_this call life_fnc_garageLBChange;";
-			sizeEx = 0.035;
+			sizeEx = 0.04;
 			text = "";
 			x = 0.313434 * safezoneW + safezoneX;
 			y = 0.324 * safezoneH + safezoneY;

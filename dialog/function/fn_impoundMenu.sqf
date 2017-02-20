@@ -43,5 +43,7 @@ _Titel ctrlSetStructuredText parseText format["<t align='center'>Fahrzeuggarage<
     _control lbSetValue [(lbSize _control)-1,(_x select 0)];
 } forEach _vehicles;
 
+lbSort _control;		
+
 ctrlShow[2810,false];
 ctrlShow[2811,false];

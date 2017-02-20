@@ -114,7 +114,7 @@ class Life_impoundVehicles_menu
 		{
 			idc = 3802;
 			text = "";
-			sizeEx = 0.035;
+			sizeEx = 0.04;
 			colorBackground[] = {0.1,0.1,0.1,0.9};
 			onLBSelChanged = "_this call life_fnc_garageLBChangeImpound;";
 			

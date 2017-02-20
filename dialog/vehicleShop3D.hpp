@@ -32,12 +32,11 @@ class Life_Vehicle_Shop_v2_3D {
 		{
 			idc = 2301;
 
-			x = -26.27 * GUI_GRID_W + GUI_GRID_X;
-			y = -9 * GUI_GRID_H + GUI_GRID_Y;
-			w = 13.9294 * GUI_GRID_W;
-			h = 1.5 * GUI_GRID_H;
+			x = 0.0353973 * safezoneW + safezoneX;
+			y = 0.0268408 * safezoneH + safezoneY;
+			w = 0.139867 * safezoneW;
+			h = 0.0330111 * safezoneH;
 			colorText[] = {0.95,0.95,0.95,1};
-			text = "";
 		};
 		class VehicleTitleBox: Life_RscText
 		{
@@ -131,7 +130,7 @@ class Life_Vehicle_Shop_v2_3D {
 			y = 0.09498 * safezoneH + safezoneY;
 			w = 0.144375 * safezoneW;
 			h = 0.500001 * safezoneH;
-			sizeEx = 1.0 * GUI_GRID_H;
+			sizeEx = 0.04;
 			colorBackground[] = {0.1,0.1,0.1,0.9};
 		};
 		class ColorList: Life_RscCombo
@@ -140,7 +139,6 @@ class Life_Vehicle_Shop_v2_3D {
 			onLBSelChanged = "[] call life_fnc_vehicleColor3DRefresh;";
 
 			x = 0.0232205 * safezoneW + safezoneX;
-			// y = 17.2 * GUI_GRID_H + GUI_GRID_Y;
 			y = 0.604 * safezoneH + safezoneY;
 			w = 0.145107 * safezoneW;
 			h = 0.022 * safezoneH;
@@ -151,10 +149,6 @@ class Life_Vehicle_Shop_v2_3D {
 			idc = 2303;
 			x = 0.810943 * safezoneW + safezoneX;
 			y = 0.082 * safezoneH + safezoneY;
-			// x = 0.81965 * safezoneW + safezoneX;
-			// y = 0.104 * safezoneH + safezoneY;
-			// w = 0.175313 * safezoneW;
-			// h = 0.275 * safezoneH;
 			w = 0.190781 * safezoneW;
 			h = 0.341 * safezoneH;
 			colorBackground[] = {0.1,0.1,0.1,0.9};

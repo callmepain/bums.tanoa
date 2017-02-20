@@ -521,7 +521,7 @@ publicVariable "life_market_resources";
 life_market_resources_nahrung =["peach","apple","rabbit_raw","salema_raw","ornate_raw","mackerel_raw","tuna_raw","mullet_raw","catshark_raw","turtle_raw","hen_raw","rooster_raw","sheep_raw","goat_raw"];
 life_market_resources_rohstoffe =["wood_refined","cement","salt_refined","glass","coal_refined","copper_refined","iron_refined","oil_processed","stahlbarren_refined"];
 life_market_resources_drogen =["pilze_processed","marijuana","cocaine_processed","heroin_processed","lsd_processed"];
-life_market_resources_multi =["platinbarren_refined","diamond_cut","silver_refined","golderz_refined","platinbarren_refined","silberschmuck_refined","goldschmuck_refined","brilliantschmuck_refined"];
+life_market_resources_multi =["platinbarren_refined","diamond_cut","silver_refined","golderz_refined","silberschmuck_refined","goldschmuck_refined","brilliantschmuck_refined"];
 publicVariable "life_market_resources_rohstoffe";
 publicVariable "life_market_resources_drogen";
 publicVariable "life_market_resources_multi";
