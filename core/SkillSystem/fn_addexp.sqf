@@ -37,7 +37,7 @@ if( _exp >= _nextLevel ) then {
 	_pgText = _ui displayCtrl 382020; 
 	_pgText2 = _ui displayCtrl 382021;
 	_pgText ctrlSetText format ["LevelUP"];
-	_pgText2 ctrlSetText format ["Erfarung in %1: +%2xp",_type,floor(_amount)];
+	_pgText2 ctrlSetText format ["Erfahrung im %1: +%2xp",_type,floor(_amount)];
 	_progress progressSetPosition _prozent;
 
 	_now = [_level,_type] call life_fnc_getnow;
@@ -47,9 +47,9 @@ if( _exp >= _nextLevel ) then {
 	CONSTPROF(life_civlkw_level ,(SKILLSYSTEM_VALUE("LKW","civ") select 0));
 	CONSTPROF(life_civair_level ,(SKILLSYSTEM_VALUE("Fliegen","civ") select 0));
 	CONSTPROF(life_civabbau_level ,(SKILLSYSTEM_VALUE("Rohstoffabbau","civ") select 0));
-	
+	life_markers = false;
 	if ((_next == "") && (_now == "")) then {
-		if ((_type == "FahrenPKW") || (_type == "FahrenLKW") || (_type == "Fliegen")) then { 
+		if ((_type == "PKW") || (_type == "LKW") || (_type == "Fliegen")) then { 
 			[(format ["%1 ist nun Level %2.<br />Du kannst nun neue Fahrzeuge kaufen.",_type,_level+1]),"LevelSystem","Green"] call MSG_fnc_handle;
 		} else {
 			[(format ["%1 ist nun Level %2.<br />Du bist jetzt noch effektiver.",_type,_level+1]),"LevelSystem","Green"] call MSG_fnc_handle;

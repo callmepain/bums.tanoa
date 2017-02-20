@@ -78,7 +78,7 @@ _action = ["rausziehn","Spieler Rausziehen","icons\acemenu\ico_jail.paa",{[_targ
 ["Ship", 0, ["ACE_MainActions","Cop car menu"], _action, true] call ace_interact_menu_fnc_addActionToClass;
 
 /*         Medic ACE MENU         */
-_action = ["Bloodlevel","Blut berprüfen","icons\acemenu\ico_search.paa",{[(format ["Der Patient hat noch <br/> %1 Liter Blut!", [_target] call life_fnc_bloodcount]),"Hinweis","green"] call MSG_fnc_handle},{playerSide == independent/* && isPlayer _target*/}] call ace_interact_menu_fnc_createAction;
+_action = ["Bloodlevel","Blut berprüfen","icons\acemenu\ico_search.paa",{[(format ["Der Patient hat noch <br/> %1 Liter Blut!", [_target] call life_fnc_bloodcount]),"Hinweis","green"] call MSG_fnc_handle},{playerSide == independent && isPlayer _target}] call ace_interact_menu_fnc_createAction;
 [typeOf player, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToClass;
 
 diag_log "----------------------------------------------------------------------------------------------------";

@@ -43,6 +43,7 @@ class Life_Client_Core {
 		class car_repair {};
 		class craftAction {};
 		class storeContainer {};
+      class container_sell_menu {};
         class arrestAction {};
         class buyLicense {};
         class captureHideout {};
@@ -79,7 +80,7 @@ class Life_Client_Core {
         class surrender {};
         class ticketAction {};
         class unrestrain {};
-		};
+    };
 
     class Admin {
         file = "core\admin";
@@ -141,6 +142,14 @@ class Life_Client_Core {
 		class getnext {};
 		class getnow {};
 	};
+	
+	class Markers 
+	{	
+		file = "core\markers";
+		class del_markers {};
+        class get_markers {};
+	};
+	
     class Cop {
         file = "core\cop";
         class bountyReceive {};

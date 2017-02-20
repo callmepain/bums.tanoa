@@ -70,9 +70,9 @@ class Life_Settings {
 
     /* Fuel System Configurations */
     pump_service = true; //Allow users to use pump service on the map. Default = false
-    fuel_cost = 80; //Cost of fuel per liter at fuel stations (if not defined for the vehicle already).
+    fuel_cost = 10; //Cost of fuel per liter at fuel stations (if not defined for the vehicle already).
     service_chopper = 1000; //Cost to service chopper at chopper service station(Repair/Refuel).
-    fuelCan_refuel = 250; //Cost to refuel an empty fuel canister at the fuel station pumps. (Be wary of your buy/sell prices on fuel cans to prevent exploits...)
+    fuelCan_refuel = 2; //Cost to refuel an empty fuel canister at the fuel station pumps. (Be wary of your buy/sell prices on fuel cans to prevent exploits...)
 
     /* Gang System Configurations */
     gang_price = 75000; //Gang creation price. --Remember they are persistent so keep it reasonable to avoid millions of gangs.
@@ -147,6 +147,8 @@ class Life_Settings {
     vehicle_sell_multiplier = .5; // Vehicle Garage Sell Price = Vehicle Buy Price * multiplier
 	  /* Vehicle Impound Prices */
 	vehicle_impound_multiplier = .05; //Vehicle Impound Price = Vehicle Buy Price * multiplier
+	/* Vehicle Repair Prices */
+	vehicle_repair_multiplier = .02; //Vehicle Impound Price = Vehicle Buy Price * multiplier
 	/* Vehicle Insurance Prices */ 
 	vehicle_insurance_multiplier = .15; //Civilian Vehicle Insurance Price = Vehicle Buy Price * multiplier 
     /* "Other" Vehicle Prices */

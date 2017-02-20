@@ -96,8 +96,45 @@ for "_i" from 1 to 50 do
 {
 	player setVariable[format["tankstelle_%1",_i],0,true];
 };
-
-
+life_markers = false;
+life_marker_mine = [];
+life_marker_gather = [];
+life_marker_process = [];
+life_marker_trader = [];
+_resourceCfg = missionConfigFile >> "CfgGather" >> "Minerals";
+_gatherCfg = missionConfigFile >> "CfgGather" >> "Resources";
+_processorCfg = missionConfigFile >> "CfgGather" >> "Processing";
+_traderCfg = missionConfigFile >> "CfgGather" >> "Shops";
+for "_i" from 0 to count(_resourceCfg)-1 do {
+    _curConfig = _resourceCfg select _i;
+    _resourceZones = getArray(_curConfig >> "zones");
+	_resourceName = getText(_curConfig >> "displayName");
+	_resourceLevel = getNumber(_curConfig >> "level");
+	_zonesize = getNumber(_curConfig >> "zoneSize");
+	life_marker_mine pushback [_resourceZones,_resourceName,_resourceLevel,_zonesize];
+};
+for "_i" from 0 to count(_gatherCfg)-1 do {
+    _curConfig4 = _gatherCfg select _i;
+    _gatherZones = getArray(_curConfig4 >> "zones");
+	_gatherName = getText(_curConfig4 >> "displayName");
+	_gatherLevel = getNumber(_curConfig4 >> "level");
+	_zonesize = getNumber(_curConfig4 >> "zoneSize");
+	life_marker_gather pushback [_gatherZones,_gatherName,_gatherLevel,_zonesize];
+};
+for "_i" from 0 to count(_processorCfg)-1 do {
+    _curConfig2 = _processorCfg select _i;
+	_processorname = getText(_curConfig2 >> "processorname");
+	_processor = getText(_curConfig2 >> "processor");
+	_processLevel = getNumber(_curConfig2 >> "level");
+	life_marker_process pushback [_processor,_processorname,_processLevel];
+};
+for "_i" from 0 to count(_traderCfg)-1 do {
+    _curConfig3 = _traderCfg select _i;
+	_tradername = getText(_curConfig3 >> "Shopsname");
+	_traders = getText(_curConfig3 >> "Shops");
+	_traderLevel = getNumber(_curConfig3 >> "level");
+	life_marker_trader pushback [_traders,_tradername,_traderLevel];
+};
 /*
     Master Array of items?
 */

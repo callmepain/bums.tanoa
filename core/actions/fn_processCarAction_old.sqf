@@ -12,10 +12,8 @@
 *
 */
 
-private ["_text","_noLicenseCost","_materialsGiven","_materialsRequired","_inputItems", "_outputItem", "_inputItemsNeeded", "_outputItemAmount", "_itemsInv", "_itemsNeeded", "_inputItemsDeleted", "_ui", "_progress", "_pgText", "_cP", "_productionAmount", "_possibleProductionAmount","_processor","_formatedProcessingInfo","_hasLicense","_licenseNeeded","_processingCost","_type","_count_car_inv"];
+private ["_inputItems", "_outputItem", "_inputItemsNeeded", "_outputItemAmount", "_itemsInv", "_itemsNeeded", "_inputItemsDeleted", "_ui", "_progress", "_pgText", "_cP", "_productionAmount", "_possibleProductionAmount","_processor","_formatedProcessingInfo","_hasLicense","_licenseNeeded","_processingCost","_type","_productionInfo","_count_car_inv"];
 disableSerialization;
-_inputItems = [];
-_inputItemsNeeded = [];
 if (isDedicated) exitWith {};
 sleep (random 1.00000);
 
@@ -52,34 +50,42 @@ life_is_processing = true;
 _vehicle setVariable["car_processing",true,true];
 
 //define your production line here
-if (isClass (missionConfigFile >> "ProcessAction" >> _type)) then {
-    _materialsRequired = M_CONFIG(getArray,"ProcessAction",_type,"MaterialsReq");
-    _materialsGiven = M_CONFIG(getArray,"ProcessAction",_type,"MaterialsGive");
-    _noLicenseCost = M_CONFIG(getNumber,"ProcessAction",_type,"NoLicenseCost");
-    _text = M_CONFIG(getText,"ProcessAction",_type,"Text");
+_productionInfo = switch (_type) do
+{
+
+	case "cannabis": 					{[["cannabis"],[4],"marijuana",1,"marijuana",500]};
+	case "cement": 						{[["rock"],[3],"cement",1,"herstellung",350]};
+	case "cocaine":						{[["cocaine_unprocessed"],[4],"cocaine_processed",1,"cocaine",2000]};
+	case "copper": 						{[["copper_unrefined"],[3],"copper_refined",1,"herstellung",2100]};
+	case "diamond": 					{[["diamond_uncut"],[3],"diamond_cut",1,"herstellung",1750]};
+	case "heroin": 						{[["heroin_unprocessed"],[4],"heroin_processed",1,"heroin",2100]};	
+	case "iron": 							{[["iron_unrefined"],[3],"iron_refined",1,"herstellung",1120]};
+	case "lsd": 								{[["lsd_unprocessed"],[4],"lsd_processed",1,"lsd",3000]};
+	case "oil": 								{[["oil_unprocessed"],[3],"oil_processed",1,"herstellung",1200]};
+	case "salt": 							{[["salt_unrefined"],[3],"salt_refined",1,"herstellung",450]};
+	case "sand": 							{[["sand"],[3],"glass",1,"herstellung",650]};
+	
+	case "golderz": 						{[["golderz_unrefined"],[3],"golderz_refined",1,"herstellung",2100]};
+	case "wood": 							{[["wood_unrefined"],[3],"wood_refined",1,"herstellung",2100]};
+	case "silver": 							{[["silver_unrefined"],[3],"silver_refined",1,"herstellung",1750]};
+	case "coal": 							{[["coal_unrefined"],[3],"coal_refined",1,"herstellung",1050]};
+	
+	case "stahl": 							{[["coal_refined","iron_refined"],[2,1],"stahlbarren_refined",1,"herstellung",5000]};
+	case "platinbarren":				{[["golderz_refined","silver_refined"],[2,1],"platinbarren_refined",1,"herstellung",5000]};
+	case "silberschmuck":			{[["silver_refined","diamond_cut"],[2,1],"silberschmuck_refined",1,"herstellung",5000]};//silberschmuck
+	case "goldschmuck":				{[["golderz_refined","diamond_cut"],[2,1],"goldschmuck_refined",1,"herstellung",5000]};//goldschmuck
+	case "brilliantschmuck":		{[["platinbarren_refined","diamond_cut"],[2,1],"brilliantschmuck_refined",1,"herstellung",5000]};//brilliantschmuck
+	
+	default {[]};
 };
 
-_itemInfo = [_materialsRequired,_materialsGiven,_noLicenseCost,(localize format ["%1",_text])];
-if (count _itemInfo isEqualTo 0) exitWith {life_action_inUse = false;};
-
-//Setup vars.
-_oldItem = _itemInfo select 0;
-_newItem = _itemInfo select 1;
-_cost = _itemInfo select 2;
-_upp = _itemInfo select 3;
-_exit = false;
-if (count _oldItem isEqualTo 0) exitWith {life_action_inUse = false;};
-
-
 //initialize
-{
-_inputItems pushback (_x select 0);
-_inputItemsNeeded pushback (_x select 1);
-}foreach _oldItem;
-_outputItem = (_newItem select 0) select 0;
-_outputItemAmount = (_newItem select 0) select 1;
-_licenseNeeded = "herstellung";
-_processingCost = [(_cost),0,0,[0]] call BIS_fnc_param;
+_inputItems = _productionInfo select 0;
+_inputItemsNeeded = _productionInfo select 1;
+_outputItem = _productionInfo select 2;
+_outputItemAmount = [(_productionInfo select 3),0,0,[0]] call BIS_fnc_param;
+_licenseNeeded = _productionInfo select 4;
+_processingCost = [(_productionInfo select 5),0,0,[0]] call BIS_fnc_param;
      
 _car_inventory = (_vehicle getVariable ["Trunk",[]])select 0;
 

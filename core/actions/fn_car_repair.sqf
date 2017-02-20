@@ -5,7 +5,7 @@ _veh = nearestObject[getPos _processor,"car"];
 _veh2 = typeOf _veh;
 
 _carprice = M_CONFIG(getNumber,"LifeCfgVehicles",_veh2,"price");
-_price = (_Carprice / 100) *5;
+_price = (_Carprice / 100) * vehicle_repair_multiplier;
 
 _delete =
 [
@@ -17,6 +17,7 @@ _delete =
 if (_delete) then {
 	 if (_price > CASH) exitWith { [(format [ "Du hast zuwenig Kohle!"]),"Hinweis","Yellow"] call MSG_fnc_handle;};
 	 CASH = CASH - _price;
-	[_veh,0] remoteExec ["TON_fnc_repairCar",0];
+	//[_veh,0] remoteExec ["TON_fnc_repairCar",-2];
+	[_veh, 0] call life_fnc_setHitIndex;
 	[(format [ "Dein Auto wurde Repariert"]),"Reparatur","Green"] call MSG_fnc_handle;
 }

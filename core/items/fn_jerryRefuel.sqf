@@ -90,7 +90,7 @@ if (life_interrupted) exitWith {life_interrupted = false; titleText[localize "ST
 
 if(!local _vehicle) then
 {
-	[[_vehicle,(Fuel _vehicle) + _Sprit],"life_fnc_setFuel",_vehicle,false] spawn life_fnc_MP;
+	[_vehicle,(Fuel _vehicle) + _Sprit] remoteExecCall ["life_fnc_setFuel",_vehicle];
 }
 else
 {

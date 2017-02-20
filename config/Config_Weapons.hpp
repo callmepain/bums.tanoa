@@ -154,10 +154,12 @@ class WeaponShops
             { "ItemWatch", "", 50, 25, "" },
             { "FirstAidKit", "", 150, 75, "" },
             { "NVGoggles_mas_h", "", 2000, 1000, "" },
-            { "Chemlight_red", "", 300, 150, "" },
-            { "Chemlight_yellow", "", 300, 150, "" },
-            { "Chemlight_green", "", 300, 150, "" },
-            { "Chemlight_blue", "", 300, 150, "" }
+			{ "ACE_Flashlight_XL50", "", 1500, 150, "" },
+            { "ACE_Chemlight_HiOrange", "", 1500, 150, "" },
+            { "ACE_Chemlight_HiRed", "", 1500, 150, "" },
+            { "ACE_Chemlight_HiYellow", "", 1500, 150, "" },
+			{ "ACE_Chemlight_Orange", "", 1500, 150, "" },
+            { "ACE_Chemlight_HiWhite", "", 1500, 150, "" }
         };
         mags[] = {};
         accs[] = {};
@@ -178,10 +180,12 @@ class WeaponShops
             { "ItemWatch", "", 250, 25, "" },
             { "FirstAidKit", "", 750, 75, "" },
             { "NVGoggles_mas_h", "", 10000, 1000, "" },
-            { "Chemlight_red", "", 1500, 150, "" },
-            { "Chemlight_yellow", "", 1500, 150, "" },
-            { "Chemlight_green", "", 1500, 150, "" },
-            { "Chemlight_blue", "", 1500, 150, "" }
+			{ "ACE_Flashlight_XL50", "", 1500, 150, "" },
+            { "ACE_Chemlight_HiOrange", "", 1500, 150, "" },
+            { "ACE_Chemlight_HiRed", "", 1500, 150, "" },
+            { "ACE_Chemlight_HiYellow", "", 1500, 150, "" },
+			{ "ACE_Chemlight_Orange", "", 1500, 150, "" },
+            { "ACE_Chemlight_HiWhite", "", 1500, 150, "" }
         };
         mags[] = {};
         accs[] = {};
@@ -198,11 +202,13 @@ class WeaponShops
 			{ "ACE_fieldDressing", "", 150, 65, "" },
 			{ "ACE_packingBandage", "", 150, 65, "" },
 			{ "ACE_EarPlugs", "", 150, -1, "" },
+			{ "ACE_CableTie", "", 1500, 150, "" },
 			{ "tf_anprc148jem", "", 150, -1, "" },
 			{ "tf_anprc155", "", 150, -1, "" },
             { "Binocular", "", 150, 75, "" },
             { "ItemGPS", "", 100, 50, "" },
             { "FirstAidKit", "", 150, 75, "" },
+			{ "ACE_Flashlight_XL50", "", 1500, 150, "" },
             { "NVGoggles_mas_h", "", 2000, 1000, "" },
             { "HandGrenade_Stone", "", 1700, 950, "" },
 			{ "hgun_mas_glock_F", "", 1500, 750, "call life_coplevel >= 3" },
@@ -265,6 +271,7 @@ class WeaponShops
 		{
 			{ "ACE_elasticBandage", "", 150, 65, "" },
 			{ "ACE_epinephrine", "", 150, 65, "" },
+			{ "ACE_atropine", "", 150, 65, "" },
 			{ "ACE_morphine", "", 150, 65, "" },
 			{ "ACE_fieldDressing", "", 150, 65, "" },
 			{ "ACE_packingBandage", "", 150, 65, "" },
@@ -275,6 +282,7 @@ class WeaponShops
 			{ "ACE_salineIV_500", "", 150, 65, "" },
 			{ "ACE_bloodIV_250", "", 150, 65, "" },
 			{ "ACE_bloodIV_500", "", 150, 65, "" },
+			{ "ACE_bloodIV", "", 150, 65, "" },
 			{ "ACE_personalAidKit", "", 150, 65, "" },
 			{ "ACE_surgicalKit", "", 150, 65, "" },
 			{ "ACE_bodyBag", "", 150, 65, "" },
@@ -284,7 +292,13 @@ class WeaponShops
             { "ItemGPS", "", 100, 50, "" },
             { "Binocular", "", 150, 75, "" },
             { "FirstAidKit", "", 150, 75, "" },
-            { "NVGoggles_mas_h", "", 1200, 600, "" }
+            { "NVGoggles_mas_h", "", 1200, 600, "" },
+			{ "ACE_Flashlight_XL50", "", 1500, 150, "" },
+			{ "ACE_Chemlight_HiOrange", "", 1500, 150, "" },
+            { "ACE_Chemlight_HiRed", "", 1500, 150, "" },
+            { "ACE_Chemlight_HiYellow", "", 1500, 150, "" },
+			{ "ACE_Chemlight_Orange", "", 1500, 150, "" },
+            { "ACE_Chemlight_HiWhite", "", 1500, 150, "" }
         };
         mags[] = {};
         accs[] = {};
