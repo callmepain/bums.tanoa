@@ -5,133 +5,164 @@ class Life_FuelStat {
     enableSimulation = 1;
     onLoad = "ctrlShow [2330,false];";
 
-    class controlsBackground {
-        class Life_RscTitleBackground: Life_RscText    {
-            colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
-            idc = -1;
-            x = 0.1;
-            y = 0.2;
-            w = 0.8;
-            h = (1 / 25);
-        };
+    class controlsBackground 
+	{
+		
+		class HintergrundPic: RscPicture
+		{
+			idc = -1;
 
-        class MainBackground: Life_RscText {
-            colorBackground[] = {0,0,0,0.7};
-            idc = -1;
-            x = 0.1;
-            y = 0.2 + (11 / 250);
-            w = 0.8;
-            h = 0.7 - (22 / 250);
-        };
+			text = "images\tablet\tablet.paa";
+			x = 0.258501 * safezoneW + safezoneX;
+			y = 0.07166 * safezoneH + safezoneY;
+			w = 0.485625 * safezoneW;
+			h = 0.854 * safezoneH;
+			// colorText[] = {1,1,1,0.7};
+		};
+		class Hintergrund: IGUIBack
+		{
+			idc = 2200;
 
-        class Title: Life_RscTitle {
-            idc = 20301;
-            text = "";
-            x = 0.1;
-            y = 0.2;
-            w = 0.8;
-            h = (1 / 25);
-        };
+			x = 0.300306 * safezoneW + safezoneX;
+			y = 0.2602 * safezoneH + safezoneY;
+			w = 0.401645 * safezoneW;
+			h = 0.50617 * safezoneH;
+			colorBackground[] = {0,0,0,0.7};
+		};
+		class Titel: RscStructuredText
+		{
+			idc = 1100;
 
-        class VehicleTitleBox: Life_RscText {
-            idc = -1;
-            text = "$STR_GUI_ShopStock";
-            colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
-            x = 0.11;
-            y = 0.26;
-            w = 0.32;
-            h = (1 / 25);
-        };
+			x = 0.308252 * safezoneW + safezoneX;
+			y = 0.2668 * safezoneH + safezoneY;
+			w = 0.384743 * safezoneW;
+			h = 0.0219907 * safezoneH;
+			colorText[] = {1,1,1,1};
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.75};
+		};
+		class VehicleTitleBox: Life_RscText
+		{
+			idc = -1;
 
-        class VehicleInfoHeader: Life_RscText {
-            idc = 20330;
-            text = "$STR_GUI_VehInfo";
-            colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
-            x = 0.46;
-            y = 0.26;
-            w = 0.42;
-            h = (1 / 25);
-        };
+			text = "Lagerbestand"; //--- ToDo: Localize;
+			x = 0.314239 * safezoneW + safezoneX;
+			y = 0.297531 * safezoneH + safezoneY;
+			w = 0.220905 * safezoneW;
+			h = 0.0220074 * safezoneH;
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])","(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
+		};
+		class VehicleInfoHeader: Life_RscText
+		{
+			idc = 20330;
 
-        class FuelPrice: Life_RscTitle {
-            idc = 20322;
-            text = "Price:";
-            x = 0.15;
-            y = 0.8;
-            w = 0.8;
-            h = (1 / 25);
-        };
+			text = "Fahrzeuginformationen"; //--- ToDo: Localize;
+			x = 0.545185 * safezoneW + safezoneX;
+			y = 0.297531 * safezoneH + safezoneY;
+			w = 0.145596 * safezoneW;
+			h = 0.0220074 * safezoneH;
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])","(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
+		};
+		class FuelPrice: Life_RscTitle
+		{
+			idc = 20322;
 
-        class literfuel: Life_RscTitle {
-            idc = 20324;
-            text = "Fuel:";
-            x = 0.55;
-            y = 0.75;
-            w = 0.8;
-            h = (1 / 25);
-        };
-        class Totalfuel: Life_RscTitle {
-            idc = 20323;
-            text = "Total:";
-            x = 0.75;
-            y = 0.8;
-            w = 0.8;
-            h = (1 / 25);
-        };
-        class CloseBtn: Life_RscButtonMenu {
-            idc = -1;
-            text = "$STR_Global_Close";
-            onButtonClick = "closeDialog 0; life_action_inUse = false;";
-            x = -0.06 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
-            y = 0.9 - (1 / 25);
-            w = (6.25 / 40);
-            h = (1 / 25);
-        };
+			text = "Price:"; //--- ToDo: Localize;
+			x = 0.545185 * safezoneW + safezoneX;
+			y = 0.58803 * safezoneH + safezoneY;
+			w = 0.145596 * safezoneW;
+			h = 0.0220074 * safezoneH;
+			colorText[] = {0.95,0.95,0.95,1};
+			colorBackground[] = {0,0,0,0.5};
+		};
+		class literfuel: Life_RscTitle
+		{
+			idc = 20324;
 
-        class refuelCar: Life_RscButtonMenu {
-            idc = 20309;
-            text = "Refuel";
-            onButtonClick = "[] spawn life_fnc_fuelRefuelCar;";
-            x = 0.26 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
-            y = 0.9 - (1 / 25);
-            w = (6.25 / 40);
-            h = (1 / 25);
-        };
+			text = "Fuel:"; //--- ToDo: Localize;
+			x = 0.545185 * safezoneW + safezoneX;
+			y = 0.665056 * safezoneH + safezoneY;
+			w = 0.145596 * safezoneW;
+			h = 0.0220074 * safezoneH;
+			colorText[] = {0.95,0.95,0.95,1};
+			colorBackground[] = {0,0,0,0.5};
+		};
+		class Totalfuel: Life_RscTitle
+		{
+			idc = 20323;
+
+			text = "Total:"; //--- ToDo: Localize;
+			x = 0.545185 * safezoneW + safezoneX;
+			y = 0.621041 * safezoneH + safezoneY;
+			w = 0.145596 * safezoneW;
+			h = 0.0220074 * safezoneH;
+			colorText[] = {0.95,0.95,0.95,1};
+			colorBackground[] = {0,0,0,0.5};
+		};
     };
 
-    class controls {
-        class VehicleList: Life_RscListBox {
-            idc = 20302;
-            text = "";
-            sizeEx = 0.04;
-            colorBackground[] = {0.1,0.1,0.1,0.9};
-            onLBSelChanged = "_this call life_fnc_fuelLBChange";
-            x = 0.11;
-            y = 0.302;
-            w = 0.32;
-            h = 0.49;
-        };
+    class controls 
+	{
+		class Close: RscButtonMenu
+		{
+			onButtonClick = "closeDialog 0; life_tanken = false;";
 
-        class fuelTank: life_RscXSliderH {
-            idc = 20901;
-            text = "";
-            onSliderPosChanged = "[3,_this select 1] call life_fnc_s_onSliderChange;";
-            tooltip = "";
-            x = 0.47;
-            y = .80;
-            w = "9 *(((safezoneW / safezoneH) min 1.2) / 40)";
-            h = "1 *((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
-        };
+			idc = 2400;
+			x = 0.702113 * safezoneW + safezoneX;
+			y = 0.478 * safezoneH + safezoneY;
+			w = 0.0259119 * safezoneW;
+			h = 0.044 * safezoneH;
+			colorText[] = {1,1,1,1};
+			colorBackground[] = {0,0,0,0.8};
+			tooltip = "Schließt das Fenster"; //--- ToDo: Localize;
+		};
+		
+		class refuelCar: Life_RscButtonMenu
+		{
+			idc = 20309;
+			onButtonClick = "[] spawn life_fnc_fuelRefuelCar;";
 
-        class vehicleInfomationList: Life_RscStructuredText
-        {
-            idc = 20303;
-            text = "";
-            sizeEx = 0.035;
-            x = 0.46;
-            y = 0.3;
-            w = 0.42;
-            h = 0.5;
-        };
+			text = "Refuel"; //--- ToDo: Localize;
+			x = 0.314239 * safezoneW + safezoneX;
+			y = 0.720074 * safezoneH + safezoneY;
+			w = 0.062757 * safezoneW;
+			h = 0.0220074 * safezoneH;
+			colorText[] = {1,1,1,1};
+			colorBackground[] = {0,0,0,0.8};
+		};
+		
+		class VehicleList: Life_RscListBox
+		{
+			idc = 20302;
+			onLBSelChanged = "_this call life_fnc_fuelLBChange";
+
+			x = 0.314239 * safezoneW + safezoneX;
+			y = 0.329442 * safezoneH + safezoneY;
+			w = 0.220905 * safezoneW;
+			h = 0.363122 * safezoneH;
+			sizeEx = 0.035;
+			colorBackground[] = {0,0,0,0.5};
+		};
+		class fuelTank: life_RscXSliderH
+		{
+			idc = 20901;
+			onSliderPosChanged = "[3,_this select 1] call life_fnc_s_onSliderChange;";
+
+			x = 0.545185 * safezoneW + safezoneX;
+			y = 0.555018 * safezoneH + safezoneY;
+			w = 0.145596 * safezoneW;
+			h = 0.0220074 * safezoneH;
+			colorBackground[] = {0,0,0,0.5};
+		};
+		class vehicleInfomationList: Life_RscStructuredText
+		{
+			idc = 20303;
+
+			x = 0.545185 * safezoneW + safezoneX;
+			y = 0.334944 * safezoneH + safezoneY;
+			w = 0.145596 * safezoneW;
+			h = 0.20907 * safezoneH;
+			sizeEx = 0.04;
+			colorBackground[] = {0,0,0,0.5};
+		};
     };
 };

@@ -129,7 +129,7 @@ class life_weapon_shop {
 			w = 0.121498 * safezoneW;
 			h = 0.340856 * safezoneH;
 			colorBackground[] = {0,0,0,0.5};
-			sizeEx = 0.04;
+			sizeEx = 0.0375;
 		};
 		class MagsList: Life_RscListBox
 		{
@@ -141,7 +141,7 @@ class life_weapon_shop {
 			w = 0.121498 * safezoneW;
 			h = 0.340856 * safezoneH;
 			colorBackground[] = {0,0,0,0.5};
-			sizeEx = 0.04;
+			sizeEx = 0.0375;
 		};
 		class AccsList: Life_RscListBox
 		{
@@ -153,7 +153,7 @@ class life_weapon_shop {
 			w = 0.121498 * safezoneW;
 			h = 0.340856 * safezoneH;
 			colorBackground[] = {0,0,0,0.5};
-			sizeEx = 0.04;
+			sizeEx = 0.0375;
 		};
 		class ButtonBuySell: Life_RscButtonMenu
 		{

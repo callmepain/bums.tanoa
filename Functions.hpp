@@ -38,13 +38,16 @@ class Life_Client_Core {
     };
 
     class Actions {
-        file = "core\actions";
+        file = "core\actions";		
+		class carProcessingMenu;
 		class car_repair {};
+		class craftAction {};
+		class storeContainer {};
+      class container_sell_menu {};
         class arrestAction {};
         class buyLicense {};
         class captureHideout {};
         class catchFish {};
-       class craftAction {};
         class dpFinish {};
         class dropFishingNet {};
         class escortAction {};
@@ -63,6 +66,7 @@ class Life_Client_Core {
         class processCarAction {};
         class pulloutAction {};
         class putInCar {};
+        class rechnung {};
         class removeContainer {};
         class repairTruck {};
         class restrainAction {};
@@ -73,12 +77,9 @@ class Life_Client_Core {
         class serviceChopper {};
         class stopEscorting {};
         class storeVehicle {};
-		class storeContainer {};
         class surrender {};
         class ticketAction {};
         class unrestrain {};
-		class carProcessingMenu;
-		class container_sell_menu {};
     };
 
     class Admin {
