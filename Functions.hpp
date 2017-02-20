@@ -141,6 +141,14 @@ class Life_Client_Core {
 		class getnext {};
 		class getnow {};
 	};
+	
+	class Markers 
+	{	
+		file = "core\markers";
+		class del_markers {};
+        class get_markers {};
+	};
+	
     class Cop {
         file = "core\cop";
         class bountyReceive {};
