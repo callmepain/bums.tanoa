@@ -150,6 +150,16 @@ class Life_Client_Core {
         class get_markers {};
 	};
 	
+	class Schliessfach 
+	{	
+		file = "core\schliessfach";
+		class openSchliessfach {};
+        class schliessfachInventory {};
+		class schliessfachStoreItem {};
+		class schliessfachTakeItem {};
+		class schliessfachUpdateWeight {};
+	};
+	
     class Cop {
         file = "core\cop";
         class bountyReceive {};

@@ -36,6 +36,7 @@
 #include "spawnSelection.hpp"
 #include "ticket.hpp"
 #include "trunk.hpp"
+#include "schliessfach.hpp"
 #include "ui.hpp"
 #include "vehicleShop.hpp"
 #include "vehicleShop3D.hpp"
