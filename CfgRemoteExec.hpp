@@ -109,6 +109,7 @@ class CfgRemoteExec {
         F(TON_fnc_vehicleCreate,SERVER)
         F(TON_fnc_vehicleDelete,SERVER)
         F(TON_fnc_vehicleStore,SERVER)
+		F(TON_fnc_save_schliessfach,SERVER)
         F(TON_fnc_vehicleUpdate,SERVER)
 		F(TON_fnc_handleMessages,SERVER)
 		F(TON_fnc_insureCar,SERVER) 

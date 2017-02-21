@@ -1,3 +1,4 @@
+#include "..\script_macros.hpp"
 _markername=[];
 
 for "_i" from 0 to 200 do {  
