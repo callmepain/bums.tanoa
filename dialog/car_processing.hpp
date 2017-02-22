@@ -72,7 +72,7 @@ class car_processing
 		};
 		class BtnProcessing: Life_RscButtonMenu
 		{
-			onButtonclick = "[] spawn life_fnc_processCarAction;";
+			//onButtonclick = "[] spawn life_fnc_processCarAction;";
 			idc = 1101;
 
 			text = "Herstellen"; //--- ToDo: Localize;

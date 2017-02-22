@@ -8,13 +8,10 @@
 */
 disableSerialization;
 if (isDedicated) exitWith {};
-sleep (random 1.00000);
-if((lbCurSel 49402) == -1) exitWith {[(format [localize "STR_Shop_Veh_DidntPick"]),"Hinweis","Yellow"] call MSG_fnc_handle;};
-_control = ((findDisplay 49400) displayCtrl 49402);
-_vehicle = _control lbData (lbCurSel _control);
-_vehicle = call compile format["%1", _vehicle];
-_vehicle = life_car select _vehicle;
-diag_log format["ficken:%1",_vehicle];
+if((lbCurSel 39402) == -1) exitWith {[(format [localize "STR_Shop_Veh_DidntPick"]),"Hinweis","Yellow"] call MSG_fnc_handle;};
+_control = ((findDisplay 39400) displayCtrl 39402);
+_index =  lbValue[39402,(lbCurSel 39402)];
+_vehicle = (life_car select _index);
 if(isNull _vehicle) exitWith {};
 closeDialog 0;
 

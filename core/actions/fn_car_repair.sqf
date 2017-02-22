@@ -1,12 +1,12 @@
 #include "..\..\script_macros.hpp"
+_index =  lbValue[39402,(lbCurSel 39402)];
+_car = (life_car select _index);
+_carprice = M_CONFIG(getNumber,"LifeCfgVehicles",(typeof _car),"price");
+_repairmutli = LIFE_SETTINGS(getNumber,"vehicle_repair_multiplier");
+_price = _Carprice * _repairmutli;
 
-_processor = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
-_veh = nearestObject[getPos _processor,"car"];
-_veh2 = typeOf _veh;
-
-_carprice = M_CONFIG(getNumber,"LifeCfgVehicles",_veh2,"price");
-_price = (_Carprice / 100) * vehicle_repair_multiplier;
-
+closeDialog 0;
+"debug_console" callExtension format["_car:%1 #1101",_car];
 _delete =
 [
 	format["Moechtest du dein Auto fuer %1 $ Reparieren?",_price],
@@ -18,6 +18,7 @@ if (_delete) then {
 	 if (_price > CASH) exitWith { [(format [ "Du hast zuwenig Kohle!"]),"Hinweis","Yellow"] call MSG_fnc_handle;};
 	 CASH = CASH - _price;
 	//[_veh,0] remoteExec ["TON_fnc_repairCar",-2];
-	[_veh, 0] call life_fnc_setHitIndex;
+	[_car] remoteExec ["TON_fnc_vehicleUpdate",RSERV];
+	[_car, 0] call life_fnc_setHitIndex;
 	[(format [ "Dein Auto wurde Repariert"]),"Reparatur","Green"] call MSG_fnc_handle;
 }

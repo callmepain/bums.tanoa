@@ -148,7 +148,7 @@ class Life_Settings {
 	  /* Vehicle Impound Prices */
 	vehicle_impound_multiplier = .05; //Vehicle Impound Price = Vehicle Buy Price * multiplier
 	/* Vehicle Repair Prices */
-	vehicle_repair_multiplier = .02; //Vehicle Impound Price = Vehicle Buy Price * multiplier
+	vehicle_repair_multiplier = .05; 
 	/* Vehicle Insurance Prices */ 
 	vehicle_insurance_multiplier = .15; //Civilian Vehicle Insurance Price = Vehicle Buy Price * multiplier 
     /* "Other" Vehicle Prices */
