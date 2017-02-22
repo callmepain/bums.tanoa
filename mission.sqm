@@ -8,7 +8,7 @@ class EditorData
 	toggles=514;
 	class ItemIDProvider
 	{
-		nextID=14057;
+		nextID=14059;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={5699.0142,11.425295,10167.216};
-		dir[]={-0.917642,-0.27124316,0.29047263};
-		up[]={-0.25859764,0.96251035,0.081857249};
-		aside[]={0.30178589,-1.2770761e-007,0.95338255};
+		pos[]={5703.3643,6.3289495,10271.66};
+		dir[]={-0.91855752,-0.23699751,-0.3166911};
+		up[]={-0.2241289,0.97149503,-0.077272639};
+		aside[]={-0.32597968,-7.2340481e-007,0.94548821};
 	};
 };
 binarizationWanted=0;
@@ -17094,7 +17094,7 @@ class Mission
 			side="Civilian";
 			class Entities
 			{
-				items=171;
+				items=172;
 				class Item0
 				{
 					dataType="Object";
@@ -28490,8 +28490,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={5699.2368,4.6064339,10270.409};
-						angles[]={0,1.5669042,0};
+						position[]={5699.4507,4.6064339,10270.574};
+						angles[]={0,1.867905,0};
 					};
 					side="Civilian";
 					flags=5;
@@ -28505,6 +28505,87 @@ class Mission
 					id=14036;
 					type="C_Man_casual_6_F";
 					atlOffset=8.4877014e-005;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="allowDamage";
+							expression="_this allowdamage _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.03;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="enableStamina";
+							expression="_this enablestamina _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+				class Item171
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={5698.0913,4.606349,10266.445};
+						angles[]={0,1.7401094,0};
+					};
+					side="Civilian";
+					flags=5;
+					class Attributes
+					{
+						init="this addAction[""Schliessfach"",life_fnc_openSchliessfach,"""",0,false,false,"""",'playerSide == civilian'];";
+						name="test2_1";
+						disableSimulation=1;
+						ignoreByDynSimulGrid=1;
+					};
+					id=14058;
+					type="C_Man_casual_6_F";
 					class CustomAttributes
 					{
 						class Attribute0

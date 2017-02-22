@@ -15,7 +15,7 @@
 life_query_time = time;
 life_action_delay = time;
 life_trunk_vehicle = objNull;
-life_schliessfach = objNull;
+life_schliessfach = player;
 life_session_completed = false;
 life_garage_store = false;
 life_session_tries = 0;
@@ -97,7 +97,6 @@ for "_i" from 1 to 50 do
 {
 	player setVariable[format["tankstelle_%1",_i],0,true];
 };
-player setVariable["schliessfach",[[["copper_unrefined",4]],16]];
 life_markers = false;
 life_marker_mine = [];
 life_marker_gather = [];
