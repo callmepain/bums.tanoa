@@ -154,6 +154,8 @@ class Life_Client_Core {
 	{	
 		file = "core\schliessfach";
 		class openSchliessfach {};
+		class erweiternSf {};
+		class buySchliessfach {};
         class schliessfachInventory {};
 		class schliessfachStoreItem {};
 		class schliessfachTakeItem {};

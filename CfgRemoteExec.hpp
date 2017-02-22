@@ -109,13 +109,16 @@ class CfgRemoteExec {
         F(TON_fnc_vehicleCreate,SERVER)
         F(TON_fnc_vehicleDelete,SERVER)
         F(TON_fnc_vehicleStore,SERVER)
-		F(TON_fnc_save_schliessfach,SERVER)
         F(TON_fnc_vehicleUpdate,SERVER)
 		F(TON_fnc_handleMessages,SERVER)
 		F(TON_fnc_insureCar,SERVER) 
 		F(TON_fnc_loadBounties,SERVER)
 		F(TON_fnc_msgRequest,SERVER)
-		F(TON_fnc_saveBounties,SERVER)				
+		F(TON_fnc_saveBounties,SERVER)		
+
+		F(TON_fnc_insert_schliessfach,SERVER)
+		F(TON_fnc_select_schliessfach,SERVER)
+		F(TON_fnc_update_schliessfach,SERVER)
 		
         F(life_fnc_jailSys,SERVER)
         F(life_fnc_wantedAdd,SERVER)

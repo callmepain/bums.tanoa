@@ -9,8 +9,15 @@
 */
 private["_veh","_tInv","_pInv","_veh_data"];
 _veh = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
-if(isNull _veh OR !alive _veh) exitWith {closeDialog 0;diag_log "veh is dead"}; //If null / dead exit menu
+if(isNull life_schliessfach OR !alive life_schliessfach) exitWith {closeDialog 0;diag_log "veh is dead"}; //If null / dead exit menu
 disableSerialization;
+_weight = life_schliessfach getVariable["schliessfach_groesse",0];
+_sfnow = format["Stufe%1",_weight];
+
+_sfCfg = missionConfigFile >> "schliessfach" >> _sfnow;
+_sfnext = getText(_sfCfg >> "next");
+_sfgroesse = getNumber(_sfCfg >> "groesse");
+_mWeight = _sfgroesse;
 
 _tInv = (findDisplay 4500) displayCtrl 4502;
 _pInv = (findDisplay 4500) displayCtrl 4503;
@@ -18,14 +25,15 @@ _display = findDisplay 4500;
 _Titel = _display displayCtrl 4100;
 lbClear _tInv;
 lbClear _pInv;
-_mWeight = 10000;
-_veh_data = [_mWeight,(_veh getVariable["schliessfach",[[],0]]) select 1];
+
+//_mWeight = 10000;
+_veh_data = [_mWeight,(life_schliessfach getVariable["schliessfach",[[],0]]) select 1];
 if ((_veh_data select 0) isEqualTo -1) exitWith {closeDialog 0};
 
 ctrlSetText[4504,format ["Platz: %1/%2",(_veh_data select 1),(_veh_data select 0)]];
 _Titel ctrlSetStructuredText parseText format["<t align='center'>Schliessfach</t><t align='right'>%1: %2/%3</t>",(localize "STR_MISC_Weight"),_veh_data select 1,_veh_data select 0];
-_data = _veh getVariable ["schliessfach",[[],0]];
-if (count _data isEqualTo 0) then {_veh setVariable ["schliessfach",[[],0],true]; _data = [];} else {_data = (_data select 0);};
+_data = life_schliessfach getVariable ["schliessfach",[[],0]];
+if (count _data isEqualTo 0) then {life_schliessfach setVariable ["schliessfach",[[],0],true]; _data = [];} else {_data = (_data select 0);};
 //Player Inventory Items
 {
     _val = ITEM_VALUE(configName _x);
