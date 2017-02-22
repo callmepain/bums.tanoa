@@ -18,7 +18,6 @@ _inputItems = [];
 _inputItemsNeeded = [];
 if (isDedicated) exitWith {};
 sleep (random 1.00000);
-
 if (life_is_processing) exitWith 
 {
 	["Der Kollege ist beschäftigt.<br/> Bitte nicht stressen!","Hinweis","yellow"] call MSG_fnc_handle;

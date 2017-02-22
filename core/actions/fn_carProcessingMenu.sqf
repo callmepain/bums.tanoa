@@ -32,10 +32,9 @@ if (life_is_processing) exitWith {[(format [localize "Der Kollege ist beschäfti
 life_car_processing = [_processor,_type select 0,_type select 1];
 life_car = [];
 _control = ((findDisplay 39400) displayCtrl 39402);
-
-
-
-
+_display = findDisplay 39400;
+_Btn = _display displayCtrl 1101;
+_Btn buttonSetAction "[] spawn life_fnc_processCarAction;";
 
 {
 	if((alive _x) && (_x in life_vehicles)) then 

@@ -43,7 +43,8 @@ class Life_Client_Core {
 		class car_repair {};
 		class craftAction {};
 		class storeContainer {};
-      class container_sell_menu {};
+		class container_sell_menu {};
+		class repair_menu {};
         class arrestAction {};
         class buyLicense {};
         class captureHideout {};
