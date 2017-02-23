@@ -195,7 +195,7 @@ Example 2:
 			displayName = "STR_MAR_Wood_Mine";
 			processor = "wood_processing";
 			processorname = "STR_MAR_Wood_processing";
-            item = "pickaxe";
+            item = "axe";
             mined[] = { "wood_unrefined" };
             zoneSize = 30;
 			level = 1;

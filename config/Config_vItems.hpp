@@ -13,28 +13,35 @@ class VirtualShops {
         name = "STR_Shops_Market";
         side = "civ";
         conditions = "";
-        items[] = { "fuelFB5L","fuelFD25L","fuelFK50L","waterBottle", "rabbit", "apple", "redgull", "tbacon", "pickaxe", "shovel", "jackhammer", "toolkit", "peach", "rabbit_raw", "hen_raw", "rooster_raw", "sheep_raw", "goat_raw" };
+        items[] = { "fuelFB5L","fuelFD25L","fuelFK50L","waterBottle", "rabbit", "apple", "redgull", "tbacon", "axe","pickaxe", "shovel", "jackhammer", "toolkit", "peach", "rabbit_raw", "hen_raw", "rooster_raw", "sheep_raw", "goat_raw" };
     };
 
     class med_market {
         name = "STR_Shops_Market";
         side = "med";
         conditions = "";
-        items[] = { "waterBottle", "rabbit", "redgull", "tbacon", "toolkit"};
+        items[] = { "waterBottle", "rabbit", "redgull", "tbacon", "toolkit","fuelFB5L","fuelFD25L","fuelFK50L"};
+    };
+	
+	 class adac_market {
+        name = "STR_Shops_Market";
+        side = "adac";
+        conditions = "";
+        items[] = { "waterBottle", "rabbit", "redgull", "tbacon", "toolkit","fuelFB5L","fuelFD25L","fuelFK50L"};
     };
 
     class rebel {
         name = "STR_Shops_Rebel";
         side = "civ";
         conditions = "license_civ_rebel";
-        items[] = { "waterBottle", "rabbit", "redgull", "tbacon", "lockpick", "pickaxe", "shovel", "jackhammer", "toolkit", "boltcutter", "blastingcharge" };
+        items[] = { "waterBottle", "rabbit", "redgull", "tbacon", "lockpick","axe", "pickaxe", "shovel", "jackhammer", "toolkit", "boltcutter", "blastingcharge" };
     };
 
     class gang {
         name = "STR_Shops_Gang";
         side = "civ";
         conditions = "";
-        items[] = { "waterBottle", "rabbit", "redgull", "tbacon", "lockpick", "pickaxe", "shovel", "jackhammer", "toolkit", "boltcutter", "blastingcharge" };
+        items[] = { "waterBottle", "rabbit", "redgull", "tbacon", "lockpick","axe", "pickaxe", "shovel", "jackhammer", "toolkit", "boltcutter", "blastingcharge" };
     };
 
     class wongs {
@@ -182,6 +189,17 @@ class VirtualItems {
         illegal = false;
         edible = -1;
         icon = "icons\items\ico_pickaxe.paa";
+    };
+	
+	class axe {
+        variable = "axe";
+        displayName = "STR_Item_axe";
+        weight = 2;
+        buyPrice = 120;
+        sellPrice = 48;
+        illegal = false;
+        edible = -1;
+        icon = "icons\items\ico_axe.paa";
     };
 	
 	class shovel {

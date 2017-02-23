@@ -52,7 +52,8 @@ _Btn4 ctrlSetStructuredText parseText "<t align='center' size='0.85' font ='Puri
 
 if (_disableBuy) then {
     //Disable the buy button.
-    ctrlEnable [2309,false];
+    ctrlEnable [1008,false];
+	ctrlEnable [1007,false];
 };
 
 //Fetch the shop config.

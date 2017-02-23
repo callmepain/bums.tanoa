@@ -305,6 +305,9 @@
 		<Key ID="STR_NOTF_Shovel">
             <Original>Hier benötigst du eine Schaufel!</Original>
         </Key>
+		<Key ID="STR_NOTF_Axe">
+            <Original>Hier benötigst du eine Axt!</Original>
+        </Key>
         <Key ID="STR_NOTF_isrestrained">
             <Original>Wie willst du mit gefesselten Händen sammeln?</Original>
         </Key>
@@ -1956,6 +1959,9 @@
         <Key ID="STR_Item_Pickaxe">
             <Original>Spitzhacke</Original>
         </Key>
+		<Key ID="STR_Item_axe">
+            <Original>Axt</Original>
+        </Key>
 		<Key ID="STR_Item_Jackhammer">
             <Original>Presslufthammer</Original>
         </Key>
@@ -3184,7 +3190,10 @@
         <Key ID="STR_MAR_Sergeant_Weapon_Shop">
             <Original>Sergeant Waffengeschäft</Original>
         </Key>
-        <Key ID="STR_MAR_W_E_Vehicle Shop">
+        <Key ID="STR_MAR_W_E_Vehicle_Shop">
+            <Original>Autohändler</Original>
+        </Key>
+		<Key ID="STR_MAR_adac_Vehicle_Shop">
             <Original>Autohändler</Original>
         </Key>
         <Key ID="STR_MAR_Process_Sand">
@@ -3222,6 +3231,9 @@
         </Key>
         <Key ID="STR_MAR_EMS_Item_Shop">
             <Original>Sanitäter Ausrüstung</Original>
+        </Key>
+		<Key ID="STR_MAR_adac_Item_Shop">
+            <Original>ADAC Ausrüstung</Original>
         </Key>
         <Key ID="STR_MAR_EMS_Clothing_Shop">
             <Original>Sanitäter Kleidungsgeschäft</Original>

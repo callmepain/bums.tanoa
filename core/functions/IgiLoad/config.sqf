@@ -1,3 +1,4 @@
+#include "..\..\..\script_macros.hpp"
 //if true then show debug globalChat (TODO add more hints)
 IL_DevMod = false;
 
@@ -104,7 +105,7 @@ if (isnil "IL_Variables") then
 	IL_Supported_Strider = ["I_MRAP_03_F", "I_MRAP_03_gmg_F", "I_MRAP_03_hmg_F", "CAF_TAPV_ar", "caf_tapv_gl_ar", "caf_tapv_50_ar", "CAF_TAPV_tw", "caf_tapv_gl_tw", "caf_tapv_50_tw", "Night_B_MRAP_03_F", "Night_B_MRAP_03_gmg_F", "Night_B_MRAP_03_hmg_F"];
 	IL_Supported_Hunter = ["B_MRAP_01_F", "B_MRAP_01_gmg_F", "B_MRAP_01_hmg_F", "Marinir_B_MRAP_01_FG" , "Marinir_MRAP_01_gmg_FG", "Marinir_MRAP_01_hmg_FG", "B_mas_mar_MRAP_01_med_F", "B_mas_mar_MRAP_01_F", "B_mas_mar_MRAP_01_gmg_F", "B_mas_mar_MRAP_01_hmg_F"];
 	IL_Supported_Ifrit = ["O_MRAP_02_F", "O_MRAP_02_gmg_F", "O_MRAP_02_hmg_F"];
-	IL_Supported_VAN = ["C_Van_01_box_F", "B_G_Van_01_transport_F", "C_Van_01_transport_F"];
+	IL_Supported_VAN = life_FahrenPKW;//["C_Van_01_box_F", "B_G_Van_01_transport_F", "C_Van_01_transport_F"];
 	IL_Supported_OFFROAD = ["Mrshounka_raptor_civ"];
 	IL_Supported_SUV = ["C_SUV_01_F"];
 	IL_Supported_Motorboat = ["C_Boat_Civil_01_F", "C_Boat_Civil_01_rescue_F", "C_Boat_Civil_01_police_F"];
@@ -138,7 +139,7 @@ if (isnil "IL_Variables") then
 	IL_Supported_Cargo_Veh_TEMPEST = [];
 	IL_Supported_Cargo_Veh_TEMPEST_Transporter = [];
 	
-	if(playerside == independent) then 
+	if(playerside == east) then 
 	{
 		IL_Supported_Cargo_Veh_Kamaz = IL_Supported_Cargo_ALL + IL_Supported_Rubberboat + IL_Supported_SDV + IL_Supported_Hatchback + IL_Supported_VAN + IL_Supported_OFFROAD + IL_Supported_Motorboat + IL_Supported_Speedboot;
 		IL_Supported_Cargo_Veh_Kamaz_Transporter = IL_Supported_Cargo_ALL + IL_Supported_Rubberboat;
@@ -154,6 +155,7 @@ if (isnil "IL_Variables") then
 		IL_Supported_Cargo_Veh_TEMPEST = IL_Supported_Cargo_Veh_Kamaz;
 		IL_Supported_Cargo_Veh_TEMPEST_Transporter = IL_Supported_Cargo_Veh_Kamaz_Transporter;
 		IL_Supported_Cargo_Veh_HEMTT = IL_Supported_Cargo_Veh_Kamaz;
+		;
 	};
 	
 	IL_Supported_Cargo_NonVeh_Kamaz = IL_Supported_Veh_Ammo + IL_Supported_Cargo20;
