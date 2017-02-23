@@ -6,7 +6,6 @@ _repairmutli = LIFE_SETTINGS(getNumber,"vehicle_repair_multiplier");
 _price = _Carprice * _repairmutli;
 
 closeDialog 0;
-"debug_console" callExtension format["_car:%1 #1101",_car];
 _delete =
 [
 	format["Moechtest du dein Auto fuer %1 $ Reparieren?",_price],

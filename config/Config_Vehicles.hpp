@@ -256,27 +256,40 @@ class CarShops
         // };
     // };
 
-    // class med_shop {
-        // side = "med";
-        // conditions = "";
-        // vehicles[] = {
- //           { "VPC", "" },
-  //          { "mercedes_atego_bomberos_ingame", "" },
-			// { "vvv_fire_truck", "" }
- //           { "mr_stretcher", "" },
-   //         { "FTP_MAN", "" },
-        // };
-    // };
+     class med_shop {
+         side = "med";
+         conditions = "";
+         vehicles[] = {
+            { "GeK_Mercedes_ML63", "call life_medlevel >= 1" },
+         };
+     };
 
-    // class med_air_hs {
-        // side = "med";
-        // conditions = "";
-        // vehicles[] = {
-            // { "B_Heli_Light_01_F", "" },
-            // { "O_Heli_Light_02_unarmed_F", "" },
-			// { "C_hh60j_unarmed_F", "" }
-        // };
-    // };
+     class med_air_hs {
+         side = "med";
+         conditions = "";
+         vehicles[] = {
+             { "B_Heli_Light_01_F", "" },
+             { "O_Heli_Light_02_unarmed_F", "" }
+         };
+     };
+	 
+	 class adac_shop {
+         side = "adac";
+         conditions = "";
+         vehicles[] = {
+            { "GeK_Mercedes_ML63", "call life_adaclevel >= 1" },
+			{ "B_Truck_01_transport_F", "call life_adaclevel >= 1" }
+         };
+     };
+
+     class adac_air_hs {
+         side = "adac";
+         conditions = "";
+         vehicles[] = {
+             { "B_Heli_Light_01_F", "" },
+             { "O_Heli_Light_02_unarmed_F", "" }
+         };
+     };
 
     class cop_car {
         side = "cop";
@@ -765,7 +778,15 @@ class LifeCfgVehicles {
         vItemSpace = 45;
         conditions = "";
         price = 68890;
-        textures[] = { FARBEN };
+        textures[] = { 
+		FARBEN, 
+		{ "ADAC", "adac", {
+			"#(argb,8,8,3)color(0.9,0.4,0,1)"
+		}, "" },
+		{ "Medic", "med", {
+			"#(argb,8,8,3)color(0.9,0,0,1)"
+		}, "" }
+		};
     };	
 	class ivory_r34 {
         vItemSpace = 35;
@@ -1131,7 +1152,7 @@ class LifeCfgVehicles {
 
     class B_Heli_Transport_01_F {
         vItemSpace = 50;
-        conditions = "license_cop_cAir";
+        conditions = "";
         price = 270000;
         textures[] = {};
     };
@@ -1214,7 +1235,7 @@ class LifeCfgVehicles {
         vItemSpace = 200;
         conditions = "";
         price = 15000;
-        textures[] = {FARBENCONTAINER};
+        textures[] = {};
     };
 	
 	class Box_NATO_AmmoVeh_F {
@@ -1393,7 +1414,7 @@ class LifeCfgVehicles {
 
     class B_Truck_01_transport_F {
         vItemSpace = 150;
-        conditions = "license_civ_trucking";
+        conditions = "license_civ_trucking || call life_adaclevel >= 1";
         price = 402500;
         textures[] = { };
     };
@@ -1524,7 +1545,7 @@ will modify the virtual space and the price of the vehicle, but other informatio
 
     class B_Heli_Light_01_F {
         vItemSpace = 30;
-        conditions = "license_civ_pilot || {license_cop_cAir} || {license_med_mAir}";
+        conditions = "license_civ_pilot";
         price = 60000;
         textures[] = { };
     };
@@ -1544,38 +1565,38 @@ will modify the virtual space and the price of the vehicle, but other informatio
 	
 	class B_Heli_Transport_01_camo_F {
         vItemSpace = 50;
-		conditions = "license_civ_pilot || {license_med_mAir} || call life_coplevel >= 4";
+		conditions = "license_civ_pilot || call life_coplevel >= 4";
         price = 500000;
     };
 	
 	class B_Heli_Transport_03_unarmed_F {
         vItemSpace = 75;
-		conditions = "license_civ_pilot || {license_med_mAir}";
+		conditions = "license_civ_pilot";
         price = 320000;
     };
 	
 	class I_Heli_Transport_02_F {
         vItemSpace = 50;
-		conditions = "license_civ_pilot || {license_med_mAir}";
+		conditions = "license_civ_pilot";
         price = 337000;
     };
 	
 	class I_Heli_light_03_unarmed_F {
         vItemSpace = 50;
-		conditions = "license_civ_pilot || {license_med_mAir} || call life_coplevel >= 4";
+		conditions = "license_civ_pilot || call life_coplevel >= 4";
         price = 120000;
     };
 	
 	class O_Heli_Transport_04_F {
         vItemSpace = 75;
-		conditions = "license_civ_pilot || {license_med_mAir}";
+		conditions = "license_civ_pilot";
         price = 159000;
     };
 
 
     class O_Heli_Light_02_unarmed_F {
         vItemSpace = 50;
-        conditions = "license_civ_pilot || {license_med_mAir}";
+        conditions = "license_civ_pilot";
         price = 110000;
         textures[] = { };
     };

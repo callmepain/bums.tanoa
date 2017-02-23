@@ -78,6 +78,9 @@ if (_requiredItem != "") then {
 			case "shovel": {
 				[(format [localize "STR_NOTF_Shovel"]),"Hinweis","Yellow"] call MSG_fnc_handle;
             };
+			case "axe": {
+				[(format [localize "STR_NOTF_Axe"]),"Hinweis","Yellow"] call MSG_fnc_handle;
+            };
         };
         life_action_inUse = false;
         _exit = true;
@@ -108,8 +111,14 @@ if (_diff isEqualTo 0) exitWith {
 	[localize "STR_NOTF_InvFull","Hinweis","Yellow"] call MSG_fnc_handle;
     life_action_inUse = false;
 };
-player say3D "mining";
-
+_requiredItem spawn {
+	for "_i" from 0 to 1 do {
+		if(_this isEqualTo "pickaxe") then {player say3D "mining";};
+		if(_this isEqualTo "axe") then {player say3D "axe";};
+		if(_this isEqualTo "shovel") then {player say3D "shovel";};
+		sleep 0.5;
+	};
+};
 for "_i" from 0 to 4 do {
     player playMoveNow "AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon";
     waitUntil {
