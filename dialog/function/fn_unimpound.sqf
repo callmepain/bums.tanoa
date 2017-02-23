@@ -35,17 +35,29 @@ if (BANK < _price) exitWith
 	[(format[localize "STR_Garage_CashError",[_price] call life_fnc_numberText]),"Hinweis","yellow"] call MSG_fnc_handle;
 };
 
-[(format["Dein Fahrzeug<br/><t color='#FFFF00'>%1<t><t color='#FFFFFF'><br/>wird geholt.<br/><br/>Du hast <t color='#FFFF00'>$%2<t><t color='#FFFFFF'> für den Stellplatz bezahlt.<br/>Bitte warten.<br/>Der zuständige Mitarbeiter such noch den Schlüssel.<t>",_vehicleName,[_price] call life_fnc_numberText]),"Fahrzeuggarage","green"] call MSG_fnc_handle;
+[(format["Dein Fahrzeug<br/><t color='#FFFF00'>%1<t><t color='#FFFFFF'><br/>wird geholt.<br/><br/>Du hast <t color='#FFFF00'>$%2<t><t color='#FFFFFF'> für den Stellplatz bezahlt.<br/>Bitte warten.<br/><br/>Der zuständige Mitarbeiter such noch den Schlüssel.<t>",_vehicleName,[_price] call life_fnc_numberText]),"Fahrzeuggarage","green"] call MSG_fnc_handle;
 
-if (life_garage_sp isEqualType []) then 
+
+
+[life_garage_sp,_vid,_pid,_unit,_price,_spawntext]spawn
 {
-	[_vid,_pid,(life_garage_sp select 0),_unit,_price,(life_garage_sp select 1),_spawntext] remoteExec ["TON_fnc_spawnVehicle",RSERV];
-} 
-else 
-{
-	[_vid,_pid,(getMarkerPos life_garage_sp),_unit,_price,markerDir life_garage_sp,_spawntext] remoteExec ["TON_fnc_spawnVehicle",RSERV];
+	life_garage_sp = (_this select 0);
+	_vid = (_this select 1);
+	_pid = (_this select 2);
+	_unit = (_this select 3);
+	_price = (_this select 4);
+	_spawntext = (_this select 5);
+	
+	uiSleep 1;
+	if (life_garage_sp isEqualType []) then 
+	{
+		[_vid,_pid,(life_garage_sp select 0),_unit,_price,(life_garage_sp select 1),_spawntext] remoteExec ["TON_fnc_spawnVehicle",RSERV];
+	} 
+	else 
+	{
+		[_vid,_pid,(getMarkerPos life_garage_sp),_unit,_price,markerDir life_garage_sp,_spawntext] remoteExec ["TON_fnc_spawnVehicle",RSERV];
+	};
 };
-
 
 
 BANK = BANK - _price;

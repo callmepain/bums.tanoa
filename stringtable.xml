@@ -1947,6 +1947,15 @@
 		<Key ID="STR_Item_fuelFK50L">
             <Original>Kerosin Kanister</Original>
         </Key>
+		<Key ID="STR_Item_fuelFBE">
+            <Original>leerer Benzin Kanister</Original>
+        </Key>
+		<Key ID="STR_Item_fuelFDE">
+            <Original>leerer Diesel Kanister</Original>
+        </Key>
+		<Key ID="STR_Item_fuelFKE">
+            <Original>leerer Kerosin Kanister</Original>
+        </Key>
         <Key ID="STR_Item_Defibrillator">
             <Original>Defibrillator</Original>
         </Key>

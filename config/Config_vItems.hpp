@@ -264,7 +264,7 @@ class VirtualItems {
 	class fuelFD25L {
         variable = "fuelFD25L";
         displayName = "STR_Item_fuelFD25L";
-        weight = 5;
+        weight = 25;
         buyPrice = 850;
         sellPrice = 500;
         illegal = false;
@@ -275,9 +275,42 @@ class VirtualItems {
 	class fuelFK50L {
         variable = "fuelFK50L";
         displayName = "STR_Item_fuelFK50L";
-        weight = 5;
+        weight = 50;
         buyPrice = 850;
         sellPrice = 500;
+        illegal = false;
+        edible = -1;
+        icon = "icons\items\ico_fuel.paa";
+    };
+	
+		class fuelFBE {
+        variable = "fuelFBE";
+        displayName = "STR_Item_fuelFBE";
+        weight = 1;
+        buyPrice = -1;
+        sellPrice = -1;
+        illegal = false;
+        edible = -1;
+        icon = "icons\items\ico_fuel.paa";
+    };
+	
+	class fuelFDE {
+        variable = "fuelFDE";
+        displayName = "STR_Item_fuelFDE";
+        weight = 1;
+        buyPrice = -1;
+        sellPrice = -1;
+        illegal = false;
+        edible = -1;
+        icon = "icons\items\ico_fuel.paa";
+    };
+
+	class fuelFKE {
+        variable = "fuelFKE";
+        displayName = "STR_Item_fuelFKE";
+        weight = 1;
+        buyPrice = -1;
+        sellPrice = -1;
         illegal = false;
         edible = -1;
         icon = "icons\items\ico_fuel.paa";

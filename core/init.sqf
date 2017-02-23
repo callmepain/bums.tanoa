@@ -54,12 +54,13 @@ if (life_server_extDB_notLoaded) exitWith {
 
 waitUntil {life_server_isReady};
 [] call SOCK_fnc_dataQuery;
+diag_log "::Life Client:: Waiting for sesion completed..";
 waitUntil {life_session_completed};
 0 cutText[localize "STR_Init_ClientFinish","BLACK FADED"];
 0 cutFadeOut 9999999;
 
 
-//diag_log "::Life Client:: Group Base Execution";
+diag_log "::Life Client:: Group Base Execution";
 [] spawn life_fnc_escInterupt;
 
 switch (playerSide) do 
