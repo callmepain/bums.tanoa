@@ -1545,7 +1545,7 @@ will modify the virtual space and the price of the vehicle, but other informatio
 
     class B_Heli_Light_01_F {
         vItemSpace = 30;
-        conditions = "license_civ_pilot";
+        conditions = "license_civ_pilot || call life_medlevel >= 1";
         price = 60000;
         textures[] = { };
     };
@@ -1596,7 +1596,7 @@ will modify the virtual space and the price of the vehicle, but other informatio
 
     class O_Heli_Light_02_unarmed_F {
         vItemSpace = 50;
-        conditions = "license_civ_pilot";
+        conditions = "license_civ_pilot || call life_medlevel >= 1 || call life_adaclevel >= 1";
         price = 110000;
         textures[] = { };
     };
