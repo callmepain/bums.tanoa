@@ -39,14 +39,14 @@ class Clothing {
 			{ "U_C_Man_casual_4_F", "Summer Clothes (Sky)", 1500, "" },
 			{ "U_C_Man_casual_5_F", "Summer Clothes (Yellow)", 1500, "" },
 			{ "U_C_Man_casual_6_F", "Summer Clothes (Red)", 1500, "" },
-			{ "U_I_C_Soldier_Bandit_5_F", "Sport Clothes (Blue)", 1500, "" },
-			{ "U_I_C_Soldier_Bandit_4_F", "Sport Clothes (Blue)", 1500, "" },
+			{ "U_I_C_Soldier_Bandit_5_F", "Totenkopf", 1500, "" },
+			{ "U_I_C_Soldier_Bandit_4_F", "Muskelshirt", 1500, "" },
             { "U_C_WorkerCoveralls", "Mechanic Coveralls", 2500, "" },
 			{ "U_C_man_sport_1_F", "Sport Clothes (Beach)", 3500, "" },
 			{ "U_C_man_sport_2_F", "Sport Clothes (Orange)", 3500, "" },
 			{ "U_C_man_sport_3_F", "Sport Clothes (Blue)", 3500, "" },
             { "U_NikosAgedBody", "Casual Wears", 5000, "" },
-			{ "U_B_GEN_Soldier_F", "Sport Clothes (Blue)", 5000, "" }
+			{ "U_B_GEN_Soldier_F", "Uniform", 5000, "" }
         };
         headgear[] = {
             { "NONE", "Remove Hat", 0, "" },
