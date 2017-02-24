@@ -201,7 +201,7 @@ class playerSettings {
 			h = 0.0308 * safezoneH;
 			colorText[] = {1,1,1,1};
 			colorBackground[] = {0,0,0,0.8};
-			tooltip = "Loeschen"; //--- ToDo: Localize;
+			tooltip = "Löschen"; //--- ToDo: Localize;
 		};
 		class UseButton: Life_RscButtonMenu
 		{
@@ -259,7 +259,7 @@ class playerSettings {
 			y = 0.7016 * safezoneH + safezoneY;
 			w = 0.028875 * safezoneW;
 			h = 0.0504 * safezoneH;
-			tooltip = "Admin MenÃ¼"; //--- ToDo: Localize;
+			tooltip = "Admin Menü"; //--- ToDo: Localize;
 		};
 		 class ButtonSettings_ICON: life_RscPicture
 		 {

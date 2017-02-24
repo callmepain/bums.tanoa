@@ -86,7 +86,7 @@ class CarShops
  	        { "ivory_elise", "call life_civpkw_level >= 5" },
  	        { "GeK_A45", "call life_civpkw_level >= 5" },
  	        { "ivory_lfa", "call life_civpkw_level >= 6" },
- 	        { "shounka_a3_rs5_civ", "call life_civpkw_level >= 61" },
+ 	        { "shounka_a3_rs5_civ", "call life_civpkw_level >= 6" },
  	        { "shounka_rs6", "call life_civpkw_level >= 6" },
  	        { "Urbanized_GranTurismo_black", "call life_civpkw_level >= 6" },
  	        { "GeK_C63_AMG", "call life_civpkw_level >= 6" },
@@ -218,15 +218,13 @@ class CarShops
 		side = "civ";
          conditions = "";
          vehicles[] = {
-             { "C_Heli_Light_01_civil_F", "" },
-			 { "B_Heli_Light_01_stripped_F", "" },
-             { "B_Heli_Light_01_F", "" },
-			 { "I_Heli_Transport_02_F", "" },
-			 { "O_Heli_Transport_04_F", "" },
-			 { "B_Heli_Transport_03_unarmed_F", "" },
-             { "O_Heli_Light_02_unarmed_F", "" },
-			 { "IVORY_BELL512", "" },
-			 { "ivory_b206", "" }
+             { "C_Heli_Light_01_civil_F", "call life_civair_level >= 1" },
+			 { "B_Heli_Light_01_stripped_F", "call life_civair_level >= 2" },
+             { "B_Heli_Light_01_F", "call life_civair_level >= 2" },
+			 { "I_Heli_Transport_02_F", "call life_civair_level >= 6" },
+			 { "O_Heli_Transport_04_F", "call life_civair_level >= 4" },
+			 { "B_Heli_Transport_03_unarmed_F", "call life_civair_level >= 5" },
+             { "O_Heli_Light_02_unarmed_F", "call life_civair_level >= 3" }
          };
      };
 
@@ -423,11 +421,159 @@ class LifeCfgVehicles {
 	
 	/////////LKWS/////////
 	class shounka_a3_spr_civ {
+		level = 3;
         vItemSpace = 100;
         conditions = "";
         price = 98725;
         textures[] = { FARBEN };
     };
+	class C_Van_01_box_F {
+		level = 1;
+        vItemSpace = 80;
+        conditions = "license_civ_trucking";
+        price = 34500;
+        textures[] = { };
+    };
+		class C_Van_01_fuel_F {
+		level = 4;
+        vItemSpace = 150;
+        vFuelSpace = 40250;
+        conditions = "license_civ_trucking";
+        price = 40250;
+        textures[] = { };
+    };
+	    class I_Truck_02_transport_F {
+		level = 2;
+        vItemSpace = 65;
+        conditions = "license_civ_trucking";
+        price = 55775;
+        textures[] = { };
+    };
+	class I_Truck_02_covered_F {
+		level = 4;
+        vItemSpace = 110;
+        conditions = "license_civ_trucking";
+        price = 97231;
+        textures[] = { };
+    };	
+    class O_Truck_03_transport_F {
+		level = 5;
+        vItemSpace = 100;
+        conditions = "license_civ_trucking";
+        price = 114418;
+        textures[] = { };
+    };
+    class O_Truck_03_covered_F {
+		level = 6;
+        vItemSpace = 130;
+        conditions = "license_civ_trucking";
+        price = 228850;
+        textures[] = {};
+    };
+	class O_Truck_03_repair_F {
+		level = 7;
+        vItemSpace = 140;
+        conditions = "license_civ_trucking";
+        price = 285600;
+        textures[] = { };
+    };
+	class B_Truck_01_transport_F {
+		level = 8;
+        vItemSpace = 150;
+        conditions = "license_civ_trucking || call life_adaclevel >= 1";
+        price = 402500;
+        textures[] = { };
+    };
+	class B_Truck_01_covered_F {
+		level = 9;
+        vItemSpace = 160;
+        conditions = "license_civ_trucking";
+        price = 460000;
+        textures[] = { };
+    };
+	class B_Truck_01_box_F {
+		level = 10;
+        vItemSpace = 1000;
+        conditions = "license_civ_trucking";
+        price = 690000;
+        textures[] = { };
+    };
+	class I_Truck_02_fuel_F {
+		level = 5;
+        vItemSpace = 300;
+        vFuelSpace = 83567;
+        conditions = "license_civ_trucking";
+        price = 66700;
+          textures[] = { };
+    };
+	class O_Truck_03_fuel_F {
+		level = 6;
+        vItemSpace = 475;
+        conditions = "license_civ_trucking";
+        price = 133343;
+        textures[] = { };
+    };
+	class B_Truck_01_fuel_F {
+		level = 10;
+        vItemSpace = 1000;
+        vFuelSpace = 448500;
+        conditions = "license_civ_trucking";
+        price = 448500;
+        textures[] = {};
+    };
+	
+	
+	///////////air//////////////
+	
+	
+	
+   class C_Heli_Light_01_civil_F  {
+		level = 1;
+        vItemSpace = 30;
+		conditions = "license_civ_pilot || call life_coplevel >= 4";
+        price = 45000;
+		textures[] = { };
+    };
+	class B_Heli_Light_01_stripped_F {
+		level = 2;
+        vItemSpace = 30;
+        conditions = "";
+        price = 60000;
+        textures[] = { };
+    };
+	class B_Heli_Light_01_F {
+		level = 2;
+        vItemSpace = 30;
+        conditions = "license_civ_pilot || call life_medlevel >= 1";
+        price = 60000;
+        textures[] = { };
+    };
+	class I_Heli_Transport_02_F {
+		level = 6;
+        vItemSpace = 50;
+		conditions = "license_civ_pilot";
+        price = 337000;
+    };
+	class O_Heli_Transport_04_F {
+		level = 4;
+        vItemSpace = 75;
+		conditions = "license_civ_pilot";
+        price = 159000;
+    };
+	class B_Heli_Transport_03_unarmed_F {
+		level = 5;
+        vItemSpace = 75;
+		conditions = "license_civ_pilot";
+        price = 320000;
+    };	
+	class O_Heli_Light_02_unarmed_F {
+		level = 3;
+        vItemSpace = 50;
+        conditions = "license_civ_pilot || call life_medlevel >= 1 || call life_adaclevel >= 1";
+        price = 110000;
+        textures[] = { };
+    };
+	
 	
 	///////////autos cops//////////////
 	class red_charger_15_p_sheriff {
@@ -499,6 +645,7 @@ class LifeCfgVehicles {
 		
 	///////////autos gebraucht//////////////
 	class shounka_a3_cliors_civ {
+		level = 1;
         vItemSpace = 40;
         conditions = "";
         price = 3500;
@@ -506,6 +653,7 @@ class LifeCfgVehicles {
     };
 	
 	class shounka_nemo {
+		level = 2;
         vItemSpace = 40;
         conditions = "";
         price = 8900;
@@ -513,6 +661,7 @@ class LifeCfgVehicles {
     };
 	
 	class GeK_Yukon {
+		level = 1;
         vItemSpace = 45;
         conditions = "";
         price = 19500;
@@ -520,6 +669,7 @@ class LifeCfgVehicles {
     };
 	
 	class ivory_190e {
+		level = 1;
         vItemSpace = 45;
         conditions = "";
         price = 1300;
@@ -527,6 +677,7 @@ class LifeCfgVehicles {
     };
 	
 	class Mrshounka_twingo_p {
+		level = 1;
         vItemSpace = 45;
         conditions = "";
         price = 1750;
@@ -534,6 +685,7 @@ class LifeCfgVehicles {
     };
 	
 	class Mrshounka_a3_smart_civ {
+		level = 1;
         vItemSpace = 45;
         conditions = "";
         price = 2000;
@@ -541,6 +693,7 @@ class LifeCfgVehicles {
     };
 	
 	class Mrshounka_golfvi_civ {
+		level = 2;
         vItemSpace = 35;
         conditions = "";
         price = 5000;
@@ -548,6 +701,7 @@ class LifeCfgVehicles {
     };
 	
 	class Mrshounka_mercedes_190_p_civ {
+		level = 2;
         vItemSpace = 45;
         conditions = "";
         price = 2699;
@@ -555,6 +709,7 @@ class LifeCfgVehicles {
     };
 	
 	class Mrshounka_207_civ {
+		level = 2;
         vItemSpace = 45;
         conditions = "";
         price = 7500;
@@ -562,6 +717,7 @@ class LifeCfgVehicles {
     };
 	
 	class Mrshounka_r5_civ {
+		level = 2;
         vItemSpace = 45;
         conditions = "";
         price = 5000;
@@ -569,6 +725,7 @@ class LifeCfgVehicles {
     };
 	
 	class GeK_ElCamino {
+		level = 3;
         vItemSpace = 35;
         conditions = "";
         price = 8949;
@@ -576,6 +733,7 @@ class LifeCfgVehicles {
     };
 	
 	class Mrshounka_c4_p_civ {
+		level = 3;
         vItemSpace = 35;
         conditions = "";
         price = 5800;
@@ -583,6 +741,7 @@ class LifeCfgVehicles {
     };
 	
 	class shounka_a3_ds4_civ {
+		level = 3;
         vItemSpace = 40;
         conditions = "";
         price = 10980;
@@ -590,6 +749,7 @@ class LifeCfgVehicles {
     };
 
 	class Mrshounka_a3_308_civ {
+		level = 3;
         vItemSpace = 45;
         conditions = "";
         price = 9999;
@@ -597,12 +757,14 @@ class LifeCfgVehicles {
     };
 	
 	class Mrshounka_a3_308_rcz {
+		level = 3;
         vItemSpace = 45;
         conditions = "";
         price = 11250;
         textures[] = { FARBEN };
     };
 	class IVORY_PRIUS {
+		level = 3;
         vItemSpace = 50;
         conditions = "";
         price = 2000;
@@ -610,6 +772,7 @@ class LifeCfgVehicles {
     };
 
 	class Mrshounka_a3_ds3_civ {
+		level = 4;
         vItemSpace = 40;
         conditions = "";
         price = 15400;
@@ -617,12 +780,14 @@ class LifeCfgVehicles {
     };
 	
 	class Mrshounka_raptor_civ {
+		level = 4;
         vItemSpace = 45;
         conditions = "";
         price = 18500;
         textures[] = { FARBEN };
     };
 	class ivory_gti {
+		level = 4;
         vItemSpace = 45;
         conditions = "";
         price = 7650;
@@ -630,6 +795,7 @@ class LifeCfgVehicles {
     };
 
 	class shounka_a3_peugeot508_civ {
+		level = 4;
         vItemSpace = 45;
         conditions = "";
         price = 13350;
@@ -637,12 +803,14 @@ class LifeCfgVehicles {
     };
 	
 	class mrshounka_92_civ {
+		level = 4;
         vItemSpace = 35;
         conditions = "";
         price = 58964;
         textures[] = { FARBEN };
     };
 	class Mrshounka_jeep_blinde_noir {
+		level = 8;
         vItemSpace = 65;
         conditions = "";
         price = 500000;
@@ -652,6 +820,7 @@ class LifeCfgVehicles {
 	///////////autos neuwagen//////////////	
 	
 	class ivory_e36 {
+		level = 3;
         vItemSpace = 45;
         conditions = "";
         price = 22500;
@@ -659,6 +828,7 @@ class LifeCfgVehicles {
     };
 
 	class shounka_avalanche {
+		level = 3;
         vItemSpace = 35;
         conditions = "";
         price = 13800;
@@ -666,6 +836,7 @@ class LifeCfgVehicles {
     };
 	
 	class shounka_clk {
+		level = 3;
         vItemSpace = 40;
         conditions = "";
         price = 38500;
@@ -673,6 +844,7 @@ class LifeCfgVehicles {
     };
 	
 	class Mrshounka_megane_rs_2015_civ {
+		level = 3;
         vItemSpace = 45;
         conditions = "";
         price = 16350;
@@ -680,6 +852,7 @@ class LifeCfgVehicles {
     };
 	
 	class GeK_TLC100 {
+		level = 3;
         vItemSpace = 45;
         conditions = "";
         price = 21350;
@@ -687,6 +860,7 @@ class LifeCfgVehicles {
     };
 
 	class GeK_C30 {
+		level = 3;
         vItemSpace = 45;
         conditions = "";
         price = 15250;
@@ -694,6 +868,7 @@ class LifeCfgVehicles {
     };
 	
 	class red_gs350_13_black {
+		level = 4;
         vItemSpace = 35;
         conditions = "";
         price = 34569;
@@ -701,6 +876,7 @@ class LifeCfgVehicles {
     };
 	
 	class Mrshounka_Alfa_Romeo_civ {
+		level = 4;
         vItemSpace = 35;
         conditions = "";
         price = 10990;
@@ -708,6 +884,7 @@ class LifeCfgVehicles {
     };
 		
 	class GeK_Camaro {
+		level = 4;
         vItemSpace = 35;
         conditions = "";
         price = 29000;
@@ -715,66 +892,77 @@ class LifeCfgVehicles {
     };
 	
 	class Mrshounka_raptor2_civ {
+		level = 4;
         vItemSpace = 45;
         conditions = "";
         price = 47999;
         textures[] = { FARBEN };
     };
 	class ivory_isf {
+		level = 4;
         vItemSpace = 45;
         conditions = "";
         price = 28900;
         textures[] = { FARBEN };
     };	
 	class ivory_evox {
+		level = 4;
         vItemSpace = 35;
         conditions = "";
         price = 20999;
         textures[] = { FARBEN };
     };
 	class Mrshounka_subaru08_civ {
+		level = 5;
         vItemSpace = 45;
         conditions = "";
         price = 22570;
         textures[] = { FARBEN };
     };
 	class red_ram_06_civ {
+		level = 5;
         vItemSpace = 65;
         conditions = "";
         price = 27990;
         textures[] = { FARBEN };
     };	
 	class ivory_m3 {
+		level = 5;
         vItemSpace = 45;
         conditions = "";
         price = 33500;
         textures[] = { FARBEN };
     };
 	class Mrshounka_mustang_civ {
+		level = 5;
         vItemSpace = 45;
         conditions = "";
         price = 16990;
         textures[] = { FARBEN };
     };
 	class Mrshounka_hummer_civ {
+		level = 5;
         vItemSpace = 45;
         conditions = "";
         price = 86900;
         textures[] = { FARBEN };
     };	
 	class Mrshounka_cherokee_noir {
+		level = 5;
         vItemSpace = 40;
         conditions = "";
         price = 45000;
         textures[] = { FARBEN };
     };
 	class Mrshounka_evox_civ {
+		level = 5;
         vItemSpace = 40;
         conditions = "";
         price = 15000;
         textures[] = { FARBEN };
     };
 	class GeK_Mercedes_ML63 {
+		level = 5;
         vItemSpace = 45;
         conditions = "";
         price = 68890;
@@ -789,42 +977,49 @@ class LifeCfgVehicles {
 		};
     };	
 	class ivory_r34 {
+		level = 5;
         vItemSpace = 35;
         conditions = "";
         price = 24500;
         textures[] = { FARBEN };
     };
 	class ivory_wrx {
+		level = 5;
         vItemSpace = 45;
         conditions = "";
         price = 35762;
         textures[] = { FARBEN };
     };
 	class GeK_Supra {
+		level = 5;
         vItemSpace = 45;
         conditions = "";
         price = 30000;
         textures[] = { FARBEN };
     };
 	class ivory_supra {
+		level = 5;
         vItemSpace = 45;
         conditions = "";
         price = 37985;
         textures[] = { FARBEN };
     };
 	class Mrshounka_Volkswagen_Touareg_civ {
+		level = 5;
         vItemSpace = 65;
         conditions = "";
         price = 45000;
         textures[] = { FARBEN };
     };	
 	class shounka_h2 {
+		level = 6;
         vItemSpace = 40;
         conditions = "";
         price = 41900;
         textures[] = { FARBEN };
     };
 	class GeK_GTR {
+		level = 6;
         vItemSpace = 45;
         conditions = "";
         price = 61999;
@@ -837,6 +1032,7 @@ class LifeCfgVehicles {
 	
 	
 	class Mrshounka_Vandura_civ {
+		level = 2;
         vItemSpace = 35;
         conditions = "";
         price = 10000;
@@ -844,6 +1040,7 @@ class LifeCfgVehicles {
     };
 	
 	class Urbanized_67Mustang_black {
+		level = 4;
         vItemSpace = 35;
         conditions = "";
         price = 24900;
@@ -851,6 +1048,7 @@ class LifeCfgVehicles {
     };
 	
 	class shounka_transam {
+		level = 4;
         vItemSpace = 35;
         conditions = "";
         price = 15645;
@@ -858,6 +1056,7 @@ class LifeCfgVehicles {
     };
 	
 	class red_beetle_66_bahamablue {
+		level = 5;
         vItemSpace = 35;
         conditions = "";
         price = 10990;
@@ -865,6 +1064,7 @@ class LifeCfgVehicles {
     };
 	
 	class Urbanized_427_black {
+		level = 6;
         vItemSpace = 35;
         conditions = "";
         price = 139950;
@@ -872,6 +1072,7 @@ class LifeCfgVehicles {
     };
 	
 	class Mrshounka_lincoln_civ {
+		level = 6;
         vItemSpace = 35;
         conditions = "";
         price = 22500;
@@ -879,6 +1080,7 @@ class LifeCfgVehicles {
     };
 	
 	class ivory_gt500 {
+		level = 7;
         vItemSpace = 35;
         conditions = "";
         price = 43000;
@@ -890,6 +1092,7 @@ class LifeCfgVehicles {
 	
 	
 	class red_charger_15_civ {
+		level = 4;
         vItemSpace = 35;
         conditions = "";
         price = 39900;
@@ -897,6 +1100,7 @@ class LifeCfgVehicles {
     };
 
 	class red_genesis_16_civ {
+		level = 4;
         vItemSpace = 35;
         conditions = "";
         price = 34700;
@@ -904,6 +1108,7 @@ class LifeCfgVehicles {
     };
 
 	class red_xkrs_12_civ {
+		level = 5;
         vItemSpace = 35;
         conditions = "";
         price = 24900;
@@ -911,25 +1116,28 @@ class LifeCfgVehicles {
     };
 
 	class red_s65_12_civ {
+		level = 5;
         vItemSpace = 35;
         conditions = "";
         price = 43700;
         textures[] = { FARBEN };
     };
 	class zorak_audi_rs3 {
+		level = 5;
         vItemSpace = 35;
         conditions = "";
         price = 43900;
         textures[] = { FARBEN };
     };
 	class Mrshounka_rs4_civ {
-
+		level = 5;
         vItemSpace = 35;
         conditions = "";
         price = 48900;
         textures[] = { FARBEN };
     };
 	class Mrshounka_bmwm1_civ_orange {
+		level = 5;
         vItemSpace = 35;
         conditions = "";
         price = 45499;
@@ -937,6 +1145,7 @@ class LifeCfgVehicles {
     };
 	
 	class Mrshounka_bmwm6_civ {
+		level = 5;
         vItemSpace = 35;
         conditions = "";
         price = 54990;
@@ -944,36 +1153,42 @@ class LifeCfgVehicles {
     };
 
 	class Mrshounka_a3_dodge15_civ {
+		level = 5;
         vItemSpace = 35;
         conditions = "";
         price = 39900;
         textures[] = { FARBEN };
     };
 	class ivory_elise {
+		level = 5;
         vItemSpace = 35;
         conditions = "";
         price = 36500;
         textures[] = { FARBEN };
     };
 	class GeK_A45 {
+		level = 5;
         vItemSpace = 35;
         conditions = "";
         price = 49880;
         textures[] = { FARBEN };
     };
 	class ivory_lfa {
+		level = 6;
         vItemSpace = 35;
         conditions = "";
         price = 449000;
         textures[] = { FARBEN };
     };
 	class shounka_a3_rs5_civ {
+		level = 6;
         vItemSpace = 35;
         conditions = "";
         price = 54830;
         textures[] = { FARBEN };
     };	
 	class shounka_rs6 {
+		level = 6;
         vItemSpace = 35;
         conditions = "";
         price = 83224;
@@ -981,36 +1196,42 @@ class LifeCfgVehicles {
     };
 
 	class Urbanized_GranTurismo_black {
+		level = 6;
         vItemSpace = 35;
         conditions = "";
         price = 52990;
         textures[] = { FARBEN };
     };
 	class GeK_C63_AMG {
+		level = 6;
         vItemSpace = 35;
         conditions = "";
         price = 111222;
         textures[] = { FARBEN };
     };
 	class IVORY_R8 {
+		level = 7;
         vItemSpace = 35;
         conditions = "";
         price = 154990;
         textures[] = { FARBEN };
     };
 	class IVORY_R8SPYDER {
+		level = 7;
         vItemSpace = 35;
         conditions = "";
         price = 135000;
         textures[] = { FARBEN };
     };
 	class ivory_c {
+		level = 7;
         vItemSpace = 35;
         conditions = "";
         price = 241451;
         textures[] = { FARBEN };
     };
 	class Mrshounka_c63_2015_civ {
+		level = 7;
         vItemSpace = 35;
         conditions = "";
         price = 186000;
@@ -1021,6 +1242,7 @@ class LifeCfgVehicles {
 	///////////autos Supersport//////////////
 	
 	class shounka_f430_spider {
+		level = 6;
         vItemSpace = 35;
         conditions = "";
         price = 105000;
@@ -1028,18 +1250,21 @@ class LifeCfgVehicles {
     };
 
 	class Urbanized_458Ferrari_black {
+		level = 7;
         vItemSpace = 35;
         conditions = "";
         price = 189950;
         textures[] = { FARBEN };
     };
 	class ivory_lp560 {
+		level = 7;
         vItemSpace = 35;
         conditions = "";
         price = 165000;
         textures[] = { FARBEN };
     };
 	class shounka_mp4 {
+		level = 7;
         vItemSpace = 35;
         conditions = "";
         price = 179900;
@@ -1047,6 +1272,7 @@ class LifeCfgVehicles {
     };
 
 	class Mrshounka_cayenne_p_civ {
+		level = 7;
         vItemSpace = 35;
         conditions = "";
         price = 74990;
@@ -1054,6 +1280,7 @@ class LifeCfgVehicles {
     };
 	
 	class shounka_porsche911 {
+		level = 7;
         vItemSpace = 35;
         conditions = "";
         price = 30000;
@@ -1061,18 +1288,21 @@ class LifeCfgVehicles {
     };
 
 	class shounka_gt {
+		level = 8;
         vItemSpace = 35;
         conditions = "";
         price = 300000;
         textures[] = { FARBEN };
     };
 	class Urbanized_LP700 {
+		level = 8;
         vItemSpace = 35;
         conditions = "";
         price = 230000;
         textures[] = { FARBEN };
     };
 	class IVORY_REV {
+		level = 8;
         vItemSpace = 35;
         conditions = "";
         price = 275000;
@@ -1080,6 +1310,7 @@ class LifeCfgVehicles {
     };
 
 	class Mrshounka_pagani_c {
+		level = 8;
         vItemSpace = 35;
         conditions = "";
         price = 325000;
@@ -1087,6 +1318,7 @@ class LifeCfgVehicles {
     };
 	
 	class Urbanized_LaFerrari {
+		level = 8;
         vItemSpace = 35;
         conditions = "";
         price = 350000;
@@ -1094,18 +1326,21 @@ class LifeCfgVehicles {
     };
 
 	class mrshounka_huracan_c {
+		level = 9;
         vItemSpace = 35;
         conditions = "";
         price = 300000;
         textures[] = { FARBEN };
     };
 	class Mrshounka_veneno_c {
+		level = 9;
         vItemSpace = 35;
         conditions = "";
         price = 350000;
         textures[] = { FARBEN };
     };
 	class Mrshounka_agera_p {
+		level = 10;
         vItemSpace = 35;
         conditions = "";
         price = 675325;
@@ -1113,6 +1348,7 @@ class LifeCfgVehicles {
     };
 
 	class Mrshounka_lykan_c {
+		level = 10;
         vItemSpace = 35;
         conditions = "";
         price = 400000;
@@ -1185,12 +1421,7 @@ class LifeCfgVehicles {
         textures[] = { };
     };
 
-    class O_Truck_03_transport_F {
-        vItemSpace = 100;
-        conditions = "license_civ_trucking";
-        price = 114418;
-        textures[] = { };
-    };
+
 	
 	class B_Truck_01_Repair_F {
         vItemSpace = 1337;
@@ -1199,25 +1430,10 @@ class LifeCfgVehicles {
         textures[] = { };
     };
 	
-	class O_Truck_03_repair_F {
-        vItemSpace = 140;
-        conditions = "license_civ_trucking";
-        price = 285600;
-        textures[] = { };
-    };
 	
-	class B_Truck_01_covered_F {
-        vItemSpace = 160;
-        conditions = "license_civ_trucking";
-        price = 460000;
-        textures[] = { };
-    };
-	class O_Truck_03_fuel_F {
-        vItemSpace = 475;
-        conditions = "license_civ_trucking";
-        price = 133343;
-        textures[] = { };
-    };
+	
+	
+
 
     class O_Truck_03_device_F {
         vItemSpace = 500;
@@ -1405,19 +1621,9 @@ class LifeCfgVehicles {
         textures[] = { };
     };
 
-    class B_Truck_01_box_F {
-        vItemSpace = 1000;
-        conditions = "license_civ_trucking";
-        price = 690000;
-        textures[] = { };
-    };
+    
 
-    class B_Truck_01_transport_F {
-        vItemSpace = 150;
-        conditions = "license_civ_trucking || call life_adaclevel >= 1";
-        price = 402500;
-        textures[] = { };
-    };
+    
 
     class O_MRAP_02_F {
         vItemSpace = 60;
@@ -1475,28 +1681,13 @@ will modify the virtual space and the price of the vehicle, but other informatio
     };
 
 
-    class I_Truck_02_covered_F {
-        vItemSpace = 110;
-        conditions = "license_civ_trucking";
-        price = 97231;
-        textures[] = { };
-    };
+    
 
 
-    class I_Truck_02_transport_F {
-        vItemSpace = 65;
-        conditions = "license_civ_trucking";
-        price = 55775;
-        textures[] = { };
-    };
 
 
-    class O_Truck_03_covered_F {
-        vItemSpace = 130;
-        conditions = "license_civ_trucking";
-        price = 228850;
-        textures[] = {};
-    };
+
+
 
     class C_Hatchback_01_F {
         vItemSpace = 30;
@@ -1520,14 +1711,7 @@ will modify the virtual space and the price of the vehicle, but other informatio
         textures[] = { };
     };
 
-    class C_Van_01_box_F {
-        vItemSpace = 80;
-        conditions = "license_civ_trucking";
-        price = 34500;
-        textures[] = { };
-    };
-
-
+    
     class B_MRAP_01_F {
         vItemSpace = 60;
         conditions = "";
@@ -1536,26 +1720,12 @@ will modify the virtual space and the price of the vehicle, but other informatio
     };
 
 
-     class B_Heli_Light_01_stripped_F {
-        vItemSpace = 30;
-        conditions = "";
-        price = 60000;
-        textures[] = { };
-    };
+     
 
-    class B_Heli_Light_01_F {
-        vItemSpace = 30;
-        conditions = "license_civ_pilot || call life_medlevel >= 1";
-        price = 60000;
-        textures[] = { };
-    };
+    
 
 
-    class C_Heli_Light_01_civil_F : B_Heli_Light_01_F {
-        vItemSpace = 30;
-		conditions = "license_civ_pilot || call life_coplevel >= 4";
-        price = 45000;
-    };
+ 
 	
 	class B_Heli_Light_01_armed_F {
         vItemSpace = 50;
@@ -1569,17 +1739,7 @@ will modify the virtual space and the price of the vehicle, but other informatio
         price = 500000;
     };
 	
-	class B_Heli_Transport_03_unarmed_F {
-        vItemSpace = 75;
-		conditions = "license_civ_pilot";
-        price = 320000;
-    };
 	
-	class I_Heli_Transport_02_F {
-        vItemSpace = 50;
-		conditions = "license_civ_pilot";
-        price = 337000;
-    };
 	
 	class I_Heli_light_03_unarmed_F {
         vItemSpace = 50;
@@ -1587,19 +1747,10 @@ will modify the virtual space and the price of the vehicle, but other informatio
         price = 120000;
     };
 	
-	class O_Heli_Transport_04_F {
-        vItemSpace = 75;
-		conditions = "license_civ_pilot";
-        price = 159000;
-    };
+	
 
 
-    class O_Heli_Light_02_unarmed_F {
-        vItemSpace = 50;
-        conditions = "license_civ_pilot || call life_medlevel >= 1 || call life_adaclevel >= 1";
-        price = 110000;
-        textures[] = { };
-    };
+    
 
     class B_SDV_01_F {
         vItemSpace = 100;
@@ -1622,27 +1773,6 @@ will modify the virtual space and the price of the vehicle, but other informatio
         textures[] = {};
     };
 
-	class C_Van_01_fuel_F {
-        vItemSpace = 150;
-        vFuelSpace = 40250;
-        conditions = "license_civ_trucking";
-        price = 40250;
-        textures[] = { };
-    };
 
-    class I_Truck_02_fuel_F {
-        vItemSpace = 300;
-        vFuelSpace = 83567;
-        conditions = "license_civ_trucking";
-        price = 66700;
-          textures[] = { };
-    };
-
-    class B_Truck_01_fuel_F {
-        vItemSpace = 1000;
-        vFuelSpace = 448500;
-        conditions = "license_civ_trucking";
-        price = 448500;
-        textures[] = {};
-    };
+    
 };

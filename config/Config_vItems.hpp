@@ -13,7 +13,7 @@ class VirtualShops {
         name = "STR_Shops_Market";
         side = "civ";
         conditions = "";
-        items[] = { "fuelFB5L","fuelFD25L","fuelFK50L","waterBottle", "rabbit", "apple", "redgull", "tbacon", "axe","pickaxe", "shovel", "jackhammer", "toolkit", "peach", "rabbit_raw", "hen_raw", "rooster_raw", "sheep_raw", "goat_raw" };
+        items[] = { "fuelFB5L","fuelFD25L","fuelFK50L","waterBottle", "rabbit", "apple", "redgull", "tbacon", "lockpick","axe","pickaxe", "shovel", "jackhammer", "toolkit", "peach", "rabbit_raw", "hen_raw", "rooster_raw", "sheep_raw", "goat_raw" };
     };
 
     class med_market {
@@ -349,7 +349,7 @@ class VirtualItems {
         variable = "lockpick";
         displayName = "STR_Item_Lockpick";
         weight = 1;
-        buyPrice = 2500;
+        buyPrice = 5000;
         sellPrice = 1000;
         illegal = true;
         edible = -1;

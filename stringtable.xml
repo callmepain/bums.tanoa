@@ -1015,7 +1015,7 @@
             <Original>Arzt</Original>
         </Key>
         <Key ID="STR_NOTF_HS_Healing">
-            <Original>Bitte bewege dich nicht!</Original>
+            <Original>Du wirst behandelt!Bitte warte kurz...</Original>
         </Key>
         <Key ID="STR_NOTF_HS_ToFar">
             <Original>Du musst in der Nähe vom Arzt bleiben, damit er dich behandeln kann.</Original>
