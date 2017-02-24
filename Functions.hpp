@@ -35,6 +35,7 @@ class Life_Client_Core {
         class survival {};
         class welcomeNotification {};
 		class bloodcount {};
+		class mapmarker {};
     };
 
     class Actions {
@@ -142,6 +143,9 @@ class Life_Client_Core {
 		class addexp {};
 		class getnext {};
 		class getnow {};
+		class getnext_menu {};
+		class getnow_menu {};
+		class get_next_car {};
 	};
 	
 	class Markers 

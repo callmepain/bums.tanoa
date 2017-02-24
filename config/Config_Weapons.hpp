@@ -144,8 +144,8 @@ class WeaponShops
 		{
 			{ "ACE_fieldDressing", "", 150, 65, "" },
 			{ "ACE_packingBandage", "", 150, 65, "" },
-			{ "tf_pnr1000a", "", 150, -1, "" },
-			{ "tf_anprc155", "", 150, -1, "" },
+			{ "tf_fadak", "", 5000, -1, "" },
+			{ "tf_anprc155", "", 10000, -1, "" },
 			{ "ACE_EarPlugs", "", 150, -1, "" },
             { "Binocular", "", 150, 75, "" },
             { "ItemGPS", "", 100, 50, "" },

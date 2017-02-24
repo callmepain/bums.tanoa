@@ -13,7 +13,10 @@ if (hasInterface) then {
 [] execVM "KRON_Strings.sqf";
 
 [] execvm "core\functions\fn_effects.sqf";
-[] execVM "core\mapmarker.sqf"; 
+
+_handle = [] spawn life_fnc_mapmarker;
+ waitUntil {scriptDone _handle};
+
 _igiload = execVM "core\functions\IgiLoad\IgiLoadInit.sqf";
 StartProgress = true;
 
