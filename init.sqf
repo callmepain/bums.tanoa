@@ -34,6 +34,9 @@ if ((isServer) or (isDedicated)) then {
     tf_same_sw_frequencies_for_side = true; //Selbe Freuquenzen für Fraktion? - ja ^ nein
     publicVariable "tf_same_sw_frequencies_for_side";
 	
+	tf_same_lr_frequencies_for_side = true;
+	publicVariable "tf_same_lr_frequencies_for_side";
+	
 	TF_defaultGuerBackpack = "tf_anprc155";
 	TF_defaultGuerPersonalRadio = "tf_anprc148jem";
 	TF_defaultWestBackpack = "tf_anprc155";
@@ -79,7 +82,6 @@ if ((isServer) or (isDedicated)) then {
  
  };
  
-_igiload = execVM "core\functions\IgiLoad\IgiLoadInit.sqf";
 StartProgress = true;
 
 life_fnc_setHitIndex = {
