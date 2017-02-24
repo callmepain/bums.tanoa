@@ -11,7 +11,7 @@ disableSerialization;
 _dialog = findDisplay 7730;
 _Names = _dialog displayCtrl 7731;
 _Titel = _dialog displayCtrl 1100;
-_Titel ctrlSetStructuredText parseText "<t align='center' >Fahigkeiten</t>";
+_Titel ctrlSetStructuredText parseText "<t align='center' >Fähigkeiten</t>";
 
 lbClear _Names;
 _side = "";
@@ -43,6 +43,18 @@ _SkillConfigs = "_side in getArray(_x >> 'side') "configClasses (missionConfigFi
 		_Names lbSetPicture [(lbSize _Names)-1,_icon];
 	};
 	if(_side == "med") then {
+		//_Skills = _Skills + localize getText(_x >> "displayName") + "<br/>";
+		_profText = localize getText(_x >> "displayName");
+		_icon = getText(_x >> "icon");
+		//_data = missionNamespace getVariable (_x select 0);
+		_data = SKILLSYSTEM_VALUE(configName _x,_side);
+		_profLevel = _data select 0;
+		_profExp = _data select 1;
+		_Names lbAdd format["%1",_profText];
+		_Names lbSetData [(lbSize _Names)-1,str(_profText)];
+		_Names lbSetPicture [(lbSize _Names)-1,_icon];
+	};
+	if(_side == "adac") then {
 		//_Skills = _Skills + localize getText(_x >> "displayName") + "<br/>";
 		_profText = localize getText(_x >> "displayName");
 		_icon = getText(_x >> "icon");

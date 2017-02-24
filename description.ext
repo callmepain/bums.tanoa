@@ -62,7 +62,19 @@ class CfgSounds {
 
     class mining {
         name = "mining";
-        sound[] = {"\sounds\mining.ogg", 1.0, 1};
+        sound[] = {"\sounds\mining_neu.ogg", 1.0, 1};
+        titles[] = {};
+    };
+	
+	class axe {
+        name = "axe";
+        sound[] = {"\sounds\axe.ogg", 1.0, 1};
+        titles[] = {};
+    };
+	
+	class shovel {
+        name = "shovel";
+        sound[] = {"\sounds\shovel.ogg", 1.0, 1};
         titles[] = {};
     };
 

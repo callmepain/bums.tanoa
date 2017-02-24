@@ -15,6 +15,7 @@
 life_query_time = time;
 life_action_delay = time;
 life_trunk_vehicle = objNull;
+life_schliessfach = player;
 life_session_completed = false;
 life_garage_store = false;
 life_session_tries = 0;
@@ -135,6 +136,22 @@ for "_i" from 0 to count(_traderCfg)-1 do {
 	_traderLevel = getNumber(_curConfig3 >> "level");
 	life_marker_trader pushback [_traders,_tradername,_traderLevel];
 };
+
+if !(isDedicated) then {
+	{
+		_mines = (_x select 0);
+		for "_i" from 0 to ((count _mines) - 1) do {
+			"Land_Lampa_sidl_3" createVehicle (getMarkerPos (_x select 0 select _i));
+		};
+	}forEach life_marker_mine;
+	{
+		_mines = (_x select 0);
+		for "_i" from 0 to ((count _mines) - 1) do {
+			"Land_Lampa_sidl_3" createVehicle (getMarkerPos (_x select 0 select _i));
+		};
+	}forEach life_marker_gather;
+};
+
 /*
     Master Array of items?
 */

@@ -144,15 +144,14 @@ class WeaponShops
 		{
 			{ "ACE_fieldDressing", "", 150, 65, "" },
 			{ "ACE_packingBandage", "", 150, 65, "" },
-			{ "tf_pnr1000a", "", 150, -1, "" },
-			{ "tf_anprc155", "", 150, -1, "" },
+			{ "tf_fadak", "", 5000, -1, "" },
+			{ "tf_anprc155", "", 10000, -1, "" },
 			{ "ACE_EarPlugs", "", 150, -1, "" },
             { "Binocular", "", 150, 75, "" },
             { "ItemGPS", "", 100, 50, "" },
             { "ItemMap", "", 50, 25, "" },
             { "ItemCompass", "", 50, 25, "" },
             { "ItemWatch", "", 50, 25, "" },
-            { "FirstAidKit", "", 150, 75, "" },
             { "NVGoggles_mas_h", "", 2000, 1000, "" },
 			{ "ACE_Flashlight_XL50", "", 1500, 150, "" },
             { "ACE_Chemlight_HiOrange", "", 1500, 150, "" },
@@ -167,7 +166,7 @@ class WeaponShops
 
     class f_station_store 
 	{
-        name = "Altis Fuel Station Store";
+        name = "Tanoa Fuel Station Store";
         side = "";
         conditions = "";
         items[] = 
@@ -178,7 +177,6 @@ class WeaponShops
             { "ItemMap", "", 250, 25, "" },
             { "ItemCompass", "", 250, 25, "" },
             { "ItemWatch", "", 250, 25, "" },
-            { "FirstAidKit", "", 750, 75, "" },
             { "NVGoggles_mas_h", "", 10000, 1000, "" },
 			{ "ACE_Flashlight_XL50", "", 1500, 150, "" },
             { "ACE_Chemlight_HiOrange", "", 1500, 150, "" },
@@ -194,7 +192,7 @@ class WeaponShops
     //Cop Shops
     class cop_basic 
 	{
-        name = "Altis Cop Shop";
+        name = "Tanoa Cop Shop";
         side = "cop";
         conditions = "";
         items[] = 
@@ -207,7 +205,6 @@ class WeaponShops
 			{ "tf_anprc155", "", 150, -1, "" },
             { "Binocular", "", 150, 75, "" },
             { "ItemGPS", "", 100, 50, "" },
-            { "FirstAidKit", "", 150, 75, "" },
 			{ "ACE_Flashlight_XL50", "", 1500, 150, "" },
             { "NVGoggles_mas_h", "", 2000, 1000, "" },
             { "HandGrenade_Stone", "", 1700, 950, "" },
@@ -291,7 +288,30 @@ class WeaponShops
 			{ "tf_anprc155", "", 150, -1, "" },
             { "ItemGPS", "", 100, 50, "" },
             { "Binocular", "", 150, 75, "" },
-            { "FirstAidKit", "", 150, 75, "" },
+            { "NVGoggles_mas_h", "", 1200, 600, "" },
+			{ "ACE_Flashlight_XL50", "", 1500, 150, "" },
+			{ "ACE_Chemlight_HiOrange", "", 1500, 150, "" },
+            { "ACE_Chemlight_HiRed", "", 1500, 150, "" },
+            { "ACE_Chemlight_HiYellow", "", 1500, 150, "" },
+			{ "ACE_Chemlight_Orange", "", 1500, 150, "" },
+            { "ACE_Chemlight_HiWhite", "", 1500, 150, "" }
+        };
+        mags[] = {};
+        accs[] = {};
+    };
+	
+	class adac_basic 
+	{
+        name = "store";
+        side = "adac";
+        conditions = "";
+        items[] = 
+		{
+			{ "ACE_EarPlugs", "", 150, -1, "" },
+			{ "tf_anprc148jem", "", 150, -1, "" },
+			{ "tf_anprc155", "", 150, -1, "" },
+            { "ItemGPS", "", 100, 50, "" },
+            { "Binocular", "", 150, 75, "" },
             { "NVGoggles_mas_h", "", 1200, 600, "" },
 			{ "ACE_Flashlight_XL50", "", 1500, 150, "" },
 			{ "ACE_Chemlight_HiOrange", "", 1500, 150, "" },

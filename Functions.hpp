@@ -35,6 +35,7 @@ class Life_Client_Core {
         class survival {};
         class welcomeNotification {};
 		class bloodcount {};
+		class mapmarker {};
     };
 
     class Actions {
@@ -43,7 +44,8 @@ class Life_Client_Core {
 		class car_repair {};
 		class craftAction {};
 		class storeContainer {};
-      class container_sell_menu {};
+		class container_sell_menu {};
+		class repair_menu {};
         class arrestAction {};
         class buyLicense {};
         class captureHideout {};
@@ -141,6 +143,9 @@ class Life_Client_Core {
 		class addexp {};
 		class getnext {};
 		class getnow {};
+		class getnext_menu {};
+		class getnow_menu {};
+		class get_next_car {};
 	};
 	
 	class Markers 
@@ -148,6 +153,18 @@ class Life_Client_Core {
 		file = "core\markers";
 		class del_markers {};
         class get_markers {};
+	};
+	
+	class Schliessfach 
+	{	
+		file = "core\schliessfach";
+		class openSchliessfach {};
+		class erweiternSf {};
+		class buySchliessfach {};
+        class schliessfachInventory {};
+		class schliessfachStoreItem {};
+		class schliessfachTakeItem {};
+		class schliessfachUpdateWeight {};
 	};
 	
     class Cop {

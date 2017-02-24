@@ -80,7 +80,7 @@ switch (_mode) do {
 	 // platzhalter
 	case 9: 
 	{
-		
+		// platzhalter
 	};
 	////////gear & cash & pos & alive
 	case 10: 

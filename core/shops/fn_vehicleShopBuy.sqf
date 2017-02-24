@@ -12,7 +12,13 @@ params[
 	["_mode",true,[true]],
 	["_insure",false,[false]]
 ];
-
+_check = [];
+{
+	_check pushback _x;
+}forEach life_Container;
+_check pushback "car";
+_check pushback "air";
+_check pushback "Ship";
 if ((lbCurSel 2302) isEqualTo -1) exitWith {hint localize "STR_Shop_Veh_DidntPick";closeDialog 0;};
 
 private _className = lbData[2302,(lbCurSel 2302)];
@@ -67,11 +73,11 @@ if ((life_veh_shop select 0) == "med_air_hs") then {
     if (_spawnPoints isEqualType []) then {
         //Find an available spawn point.
         {
-            if ((nearestObjects[(getMarkerPos _x),["Car","Ship","Air"],5]) isEqualTo []) exitWith {_spawnPoint = _x};
+            if ((nearestObjects[(getMarkerPos _x),_check,5]) isEqualTo []) exitWith {_spawnPoint = _x};
             true
         } count _spawnPoints;
     } else {
-        if (nearestObjects[(getMarkerPos _spawnPoints),["Car","Ship","Air"],5] isEqualTo []) exitWith {_spawnPoint = _spawnPoints};
+        if (nearestObjects[(getMarkerPos _spawnPoints),_check,5] isEqualTo []) exitWith {_spawnPoint = _spawnPoints};
     };
 };
 

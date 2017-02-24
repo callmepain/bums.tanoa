@@ -10,7 +10,7 @@ private ["_handle"];
 _handle = [] spawn life_fnc_stripDownPlayer;
 waitUntil {scriptDone _handle};
 
-player addUniform "U_Rangemaster";
+player forceAddUniform "U_B_HeliPilotCoveralls";
 player addBackpack "tf_anprc155";
 player linkItem "ItemMap";
 player linkItem "tf_anprc148jem";

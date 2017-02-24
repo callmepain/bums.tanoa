@@ -39,6 +39,7 @@ class profession {
 		baseEXPgain = 10;
 		icon = "icons\skillsystem\ico_auto.paa";
 		side[] = {"civ"};
+		Resource[] = {"civ_car_oldtimer","civ_car_gebrauchtwagen","civ_car_sportwagen","civ_car_neuwagen","civ_car_supersport"};
 	};
 
 	class LKW {
@@ -47,6 +48,7 @@ class profession {
 		baseEXPgain = 10;
 		icon = "icons\skillsystem\ico_lkw.paa";
 		side[] = {"civ"};
+		Resource = "civ_truck";
 	};
 
 	class Fliegen {
@@ -55,6 +57,7 @@ class profession {
 		baseEXPgain = 20;
 		icon = "icons\skillsystem\ico_fliegen.paa";
 		side[] = {"civ"};
+		Resource = "civ_air";
 	};
 	
 	class Reparieren {
