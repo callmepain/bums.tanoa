@@ -105,8 +105,8 @@ class Life_FuelStat {
 		class Close: RscButtonMenu
 		{
 			onButtonClick = "closeDialog 0; life_tanken = false;";
+			idc = -1;
 
-			idc = 2400;
 			x = 0.702113 * safezoneW + safezoneX;
 			y = 0.478 * safezoneH + safezoneY;
 			w = 0.0259119 * safezoneW;
@@ -115,21 +115,19 @@ class Life_FuelStat {
 			colorBackground[] = {0,0,0,0.8};
 			tooltip = "Schließt das Fenster"; //--- ToDo: Localize;
 		};
-		
 		class refuelCar: Life_RscButtonMenu
 		{
 			idc = 20309;
 			onButtonClick = "[] spawn life_fnc_fuelRefuelCar;";
 
 			text = "Refuel"; //--- ToDo: Localize;
-			x = 0.314239 * safezoneW + safezoneX;
-			y = 0.720074 * safezoneH + safezoneY;
-			w = 0.062757 * safezoneW;
+			x = 0.545185 * safezoneW + safezoneX;
+			y = 0.70907 * safezoneH + safezoneY;
+			w = 0.145596 * safezoneW;
 			h = 0.0220074 * safezoneH;
 			colorText[] = {1,1,1,1};
-			colorBackground[] = {0,0,0,0.8};
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])","(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
 		};
-		
 		class VehicleList: Life_RscListBox
 		{
 			idc = 20302;
@@ -138,8 +136,8 @@ class Life_FuelStat {
 			x = 0.314239 * safezoneW + safezoneX;
 			y = 0.329442 * safezoneH + safezoneY;
 			w = 0.220905 * safezoneW;
-			h = 0.363122 * safezoneH;
-			sizeEx = 0.035;
+			h = 0.407137 * safezoneH;
+			sizeEx = 0.04;
 			colorBackground[] = {0,0,0,0.5};
 		};
 		class fuelTank: life_RscXSliderH
@@ -161,7 +159,6 @@ class Life_FuelStat {
 			y = 0.334944 * safezoneH + safezoneY;
 			w = 0.145596 * safezoneW;
 			h = 0.20907 * safezoneH;
-			sizeEx = 0.04;
 			colorBackground[] = {0,0,0,0.5};
 		};
     };

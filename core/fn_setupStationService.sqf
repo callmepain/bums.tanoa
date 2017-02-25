@@ -167,7 +167,7 @@ _tanoaPositions = [
     _pump = nearestObjects [_x,["Land_fs_feed_F","Land_FuelStation_01_pump_F","Land_FuelStation_02_pump_F"],5] select 0;
     _pump setFuelCargo 0;
     _pump addAction ["<t color='#FF0000'>Fahrzeug auftanken</t>", life_fnc_fuelStatOpen, 1, 10, true, true, "", '_this distance _target < 5 && cursorObject isEqualTo _target'];
-	_pump addAction["<t color='#FF0000'>Benzinkanister auftanken</t>",life_fnc_serviceVehicle,"kanisterbenzin",10,false,true,"",'!life_tanken && life_inv_fuelFBE > 0 &&  _this distance _target < 5 && cursorObject isEqualTo _target'];  
-	_pump addAction["<t color='#FF0000'>Dieselkanister auftanken</t>",life_fnc_serviceVehicle,"kanisterdiesel",10,false,true,"",'!life_tanken && life_inv_fuelFDE > 0 &&  _this distance _target < 5 && cursorObject isEqualTo _target'];
+	_pump addAction["<t color='#FF0000'>Benzinkanister auftanken</t>",life_fnc_fuelRefuelCar,"kanisterbenzin",10,false,true,"",'!life_tanken && life_inv_fuelFBE > 0 &&  _this distance _target < 5 && cursorObject isEqualTo _target'];  
+	_pump addAction["<t color='#FF0000'>Dieselkanister auftanken</t>",life_fnc_fuelRefuelCar,"kanisterdiesel",10,false,true,"",'!life_tanken && life_inv_fuelFDE > 0 &&  _this distance _target < 5 && cursorObject isEqualTo _target'];
     false
 } count _tanoaPositions;
