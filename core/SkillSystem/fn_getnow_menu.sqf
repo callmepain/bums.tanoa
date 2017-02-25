@@ -31,7 +31,7 @@ for "_i" from 0 to count(_levelreg)-1 do {
 	_minerals pushback [_resourcename,_resourceLevel];  
 };
 {  
-	if ((_x select 1) == (_level)) then {  
+	if ((_x select 1) <= (_level)) then {  
 		_ergebnis pushBack (_x select 0); 
 	};  
 } forEach _minerals; 
