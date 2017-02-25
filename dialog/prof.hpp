@@ -48,7 +48,7 @@ class Life_Prof_Dialog
 
 			text = "Aktuelle Erfahrung"; //--- ToDo: Localize;
 			x = 0.432969 * safezoneW + safezoneX;
-			y = 0.61 * safezoneH + safezoneY;
+			y = 0.302 * safezoneH + safezoneY;
 			w = 0.12375 * safezoneW;
 			h = 0.022 * safezoneH;
 			colorText[] = {0.95,0.95,0.95,1};
@@ -60,9 +60,9 @@ class Life_Prof_Dialog
 			style = 2;
 
 			text = "Skill Level"; //--- ToDo: Localize;
-			x = 0.314375 * safezoneW + safezoneX;
-			y = 0.61 * safezoneH + safezoneY;
-			w = 0.114013 * safezoneW;
+			x = 0.309219 * safezoneW + safezoneX;
+			y = 0.302 * safezoneH + safezoneY;
+			w = 0.118594 * safezoneW;
 			h = 0.022 * safezoneH;
 			colorText[] = {0.95,0.95,0.95,1};
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.75};
@@ -73,9 +73,9 @@ class Life_Prof_Dialog
 			style = 2;
 
 			text = "Skills"; //--- ToDo: Localize;
-			x = 0.314375 * safezoneW + safezoneX;
-			y = 0.302 * safezoneH + safezoneY;
-			w = 0.114013 * safezoneW;
+			x = 0.309219 * safezoneW + safezoneX;
+			y = 0.39 * safezoneH + safezoneY;
+			w = 0.118594 * safezoneW;
 			h = 0.022 * safezoneH;
 			colorText[] = {0.95,0.95,0.95,1};
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.75};
@@ -87,7 +87,7 @@ class Life_Prof_Dialog
 
 			text = "Nächstes Level"; //--- ToDo: Localize;
 			x = 0.561875 * safezoneW + safezoneX;
-			y = 0.61 * safezoneH + safezoneY;
+			y = 0.302 * safezoneH + safezoneY;
 			w = 0.128906 * safezoneW;
 			h = 0.022 * safezoneH;
 			colorText[] = {0.95,0.95,0.95,1};
@@ -97,9 +97,10 @@ class Life_Prof_Dialog
 		{
 			idc = 1008;
 			style = 2;
+
 			text = "Aktuell verfügbar"; //--- ToDo: Localize;
 			x = 0.432969 * safezoneW + safezoneX;
-			y = 0.302 * safezoneH + safezoneY;
+			y = 0.39 * safezoneH + safezoneY;
 			w = 0.12375 * safezoneW;
 			h = 0.022 * safezoneH;
 			colorText[] = {0.95,0.95,0.95,1};
@@ -109,12 +110,37 @@ class Life_Prof_Dialog
 		{
 			idc = 1009;
 			style = 2;
+
 			text = "Als nächstes verfügbar"; //--- ToDo: Localize;
 			x = 0.561875 * safezoneW + safezoneX;
-			y = 0.302 * safezoneH + safezoneY;
+			y = 0.39 * safezoneH + safezoneY;
 			w = 0.128906 * safezoneW;
 			h = 0.022 * safezoneH;
 			colorText[] = {0.95,0.95,0.95,1};
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.75};
+		};
+		class aktuelleffekt: Life_RscTitle
+		{
+			idc = 1012;
+			style = 2;
+			
+			text = "Aktueller Effekt"; //--- ToDo: Localize;
+			x = 0.432969 * safezoneW + safezoneX;
+			y = 0.665 * safezoneH + safezoneY;
+			w = 0.12375 * safezoneW;
+			h = 0.022 * safezoneH;
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.75};
+		};
+		class nexteffekt: Life_RscTitle
+		{
+			idc = 1013;
+			style = 2;
+			
+			text = "Nächster Effekt"; //--- ToDo: Localize;
+			x = 0.561875 * safezoneW + safezoneX;
+			y = 0.665 * safezoneH + safezoneY;
+			w = 0.128906 * safezoneW;
+			h = 0.022 * safezoneH;
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.75};
 		};
 	};
@@ -138,11 +164,11 @@ class Life_Prof_Dialog
 		{
 			idc = 7734;
 			style = 2;
-			sizeEx = 0.15;
+			sizeEx = 0.08;
 			x = 0.561875 * safezoneW + safezoneX;
-			y = 0.643 * safezoneH + safezoneY;
+			y = 0.324 * safezoneH + safezoneY;
 			w = 0.128906 * safezoneW;
-			h = 0.099 * safezoneH;
+			h = 0.055 * safezoneH;
 			colorBackground[] = {0,0,0,0.3};
 		};
 		
@@ -150,22 +176,22 @@ class Life_Prof_Dialog
 		{
 			idc = 7733;
 			style = 2;
-			sizeEx = 0.15;
+			sizeEx = 0.08;
 			x = 0.432969 * safezoneW + safezoneX;
-			y = 0.643 * safezoneH + safezoneY;
+			y = 0.324 * safezoneH + safezoneY;
 			w = 0.12375 * safezoneW;
-			h = 0.099 * safezoneH;
+			h = 0.055 * safezoneH;
 			colorBackground[] = {0,0,0,0.3};
 		};
 		class level_Text: Life_RscListBox
 		{
 			idc = 7732;
 			style = 2;
-			sizeEx = 0.15;
-			x = 0.314375 * safezoneW + safezoneX;
-			y = 0.643 * safezoneH + safezoneY;
-			w = 0.113437 * safezoneW;
-			h = 0.099 * safezoneH;
+			sizeEx = 0.08;
+			x = 0.309219 * safezoneW + safezoneX;
+			y = 0.324 * safezoneH + safezoneY;
+			w = 0.118594 * safezoneW;
+			h = 0.055 * safezoneH;
 			colorBackground[] = {0,0,0,0.3};
 		};
 		
@@ -175,10 +201,10 @@ class Life_Prof_Dialog
 			style = 2;
 			onLBSelChanged = "[_this] spawn life_fnc_grabSkills";
 			sizeEx = 0.04;
-			x = 0.314375 * safezoneW + safezoneX;
-			y = 0.335 * safezoneH + safezoneY;
-			w = 0.113437 * safezoneW;
-			h = 0.264 * safezoneH;
+			x = 0.309219 * safezoneW + safezoneX;
+			y = 0.412 * safezoneH + safezoneY;
+			w = 0.118594 * safezoneW;
+			h = 0.341 * safezoneH;
 			colorBackground[] = {0,0,0,0.3};
 		};
 		class verfuegbar_text: Life_RscListBox
@@ -187,9 +213,9 @@ class Life_Prof_Dialog
 			style = 2;
 			sizeEx = 0.04;
 			x = 0.432969 * safezoneW + safezoneX;
-			y = 0.335 * safezoneH + safezoneY;
+			y = 0.412 * safezoneH + safezoneY;
 			w = 0.12375 * safezoneW;
-			h = 0.264 * safezoneH;
+			h = 0.242 * safezoneH;
 			colorBackground[] = {0,0,0,0.3};
 		};
 		class next_text: Life_RscListBox
@@ -198,11 +224,32 @@ class Life_Prof_Dialog
 			style = 2;
 			sizeEx = 0.04;
 			x = 0.561875 * safezoneW + safezoneX;
-			y = 0.335 * safezoneH + safezoneY;
+			y = 0.412 * safezoneH + safezoneY;
 			w = 0.128906 * safezoneW;
-			h = 0.264 * safezoneH;
+			h = 0.242 * safezoneH;
 			colorBackground[] = {0,0,0,0.3};
 		};
-		
+		class akt_effekt_list: Life_RscListBox
+		{
+			idc = 1502;
+			style = 2;
+			sizeEx = 0.04;
+			x = 0.432969 * safezoneW + safezoneX;
+			y = 0.687 * safezoneH + safezoneY;
+			w = 0.12375 * safezoneW;
+			h = 0.066 * safezoneH;
+			colorBackground[] = {0,0,0,0.3};
+		};
+		class next_effekt: Life_RscListBox
+		{
+			idc = 1503;
+			style = 2;
+			sizeEx = 0.04;
+			x = 0.561875 * safezoneW + safezoneX;
+			y = 0.687 * safezoneH + safezoneY;
+			w = 0.128906 * safezoneW;
+			h = 0.066 * safezoneH;
+			colorBackground[] = {0,0,0,0.3};
+		};
 	};
 }; 

@@ -221,3 +221,4 @@ class Life_Settings {
 #include "Config_Garages.hpp"
 #include "Config_SkillSystem.hpp"
 #include "Config_Schliessfach.hpp"
+#include "Config_Spritverbrauch.hpp"
