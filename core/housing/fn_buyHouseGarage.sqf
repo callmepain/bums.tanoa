@@ -8,6 +8,7 @@
 
 private _house = param [0,objNull,[objNull]];
 private _uid = getPlayerUID player;
+private _side = side player;
 
 if (isNull _house) exitWith {};
 if (_house getVariable ["garageBought",false]) exitWith {hint localize "STR_Garage_alreadyOwned";};
@@ -33,7 +34,7 @@ if (_action) then {
     if (life_HC_isActive) then {
         [_uid,_house,0] remoteExec ["HC_fnc_houseGarage",HC_Life];
     } else {
-        [_uid,_house,0] remoteExec ["TON_fnc_houseGarage",RSERV];
+        [_uid,_house,_side,0] remoteExec ["TON_fnc_houseGarage",RSERV];
     };
 
     _house setVariable ["garageBought",true,true];

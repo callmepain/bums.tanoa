@@ -44,12 +44,14 @@ if (_classView != "" && {isClass (configFile >> "CfgVehicles" >> _classView) && 
             life_preview_light setLightAmbient [1,1,1];
         };
         _object = _classView createVehicle life_pos_attach;
+		
         _id = player getVariable ["life_clientID",-1];
         [_object] remoteExecCall ["life_fnc_hideObj",-_id];
         [life_preview_light] remoteExecCall ["life_fnc_hideObj",-_id];
         [_object] call life_fnc_clearVehicleAmmo;
         _object attachTo [life_attachment_point, life_pos_attach];
-
+		
+		
         life_preview_3D_vehicle_object = _object;
     };
 };

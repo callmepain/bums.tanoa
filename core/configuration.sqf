@@ -218,6 +218,30 @@ _pkws = getArray(_pkw >> "vehicles");
 	life_FahrenPKW pushBack (_x select 0);
 } forEach _pkws;
 
+_pkw = missionConfigFile  >> "CarShops" >> "kart_shop"; 
+_pkws = getArray(_pkw >> "vehicles");
+{ 
+	life_FahrenPKW pushBack (_x select 0);
+} forEach _pkws;
+
+_pkw = missionConfigFile  >> "CarShops" >> "med_shop"; 
+_pkws = getArray(_pkw >> "vehicles");
+{ 
+	life_FahrenPKW pushBack (_x select 0);
+} forEach _pkws;
+
+_pkw = missionConfigFile  >> "CarShops" >> "adac_shop"; 
+_pkws = getArray(_pkw >> "vehicles");
+{ 
+	life_FahrenPKW pushBack (_x select 0);
+} forEach _pkws;
+
+_pkw = missionConfigFile  >> "CarShops" >> "cop_car"; 
+_pkws = getArray(_pkw >> "vehicles");
+{ 
+	life_FahrenPKW pushBack (_x select 0);
+} forEach _pkws;
+
 _lkw = missionConfigFile  >> "CarShops" >> "civ_truck"; 
 _lkws = getArray(_lkw >> "vehicles");
 { 
@@ -225,6 +249,24 @@ _lkws = getArray(_lkw >> "vehicles");
 } forEach _lkws;
 
 _air = missionConfigFile  >> "CarShops" >> "civ_air"; 
+_airs = getArray(_air >> "vehicles");
+{ 
+	life_Fahrenair pushBack (_x select 0);
+} forEach _airs;
+
+_air = missionConfigFile  >> "CarShops" >> "med_air_hs"; 
+_airs = getArray(_air >> "vehicles");
+{ 
+	life_Fahrenair pushBack (_x select 0);
+} forEach _airs;
+
+_air = missionConfigFile  >> "CarShops" >> "adac_air_hs"; 
+_airs = getArray(_air >> "vehicles");
+{ 
+	life_Fahrenair pushBack (_x select 0);
+} forEach _airs;
+
+_air = missionConfigFile  >> "CarShops" >> "cop_air"; 
 _airs = getArray(_air >> "vehicles");
 { 
 	life_Fahrenair pushBack (_x select 0);

@@ -35,7 +35,35 @@ if (BANK < _price) exitWith
 	[(format[localize "STR_Garage_CashError",[_price] call life_fnc_numberText]),"Hinweis","yellow"] call MSG_fnc_handle;
 };
 
-[(format["Dein Fahrzeug<br/><t color='#FFFF00'>%1<t><t color='#FFFFFF'><br/>wird geholt.<br/><br/>Du hast <t color='#FFFF00'>$%2<t><t color='#FFFFFF'> für den Stellplatz bezahlt.<br/>Bitte warten.<br/><br/>Der zuständige Mitarbeiter such noch den Schlüssel.<t>",_vehicleName,[_price] call life_fnc_numberText]),"Fahrzeuggarage","green"] call MSG_fnc_handle;
+[(format[
+"Dein Fahrzeug
+<br/>
+<t color='#FFFF00'>
+%1
+</t>
+<br/>
+wird geholt.
+<br/>
+<br/>
+Du hast 
+<br/>
+<t color='#FFFF00'>
+$%2
+</t>
+<br/>
+für den Stellplatz bezahlt.
+<br/>
+<br/>
+Bitte warten.
+<br/>
+<br/>
+Der zuständige Mitarbeiter sucht noch den Schlüssel.
+",
+_vehicleName,
+[_price] call life_fnc_numberText]),
+"Fahrzeuggarage",
+"green"
+] call MSG_fnc_handle;
 
 
 

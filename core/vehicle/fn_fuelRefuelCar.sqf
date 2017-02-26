@@ -24,10 +24,11 @@ switch (_modus) do
 {
 	default
 	{
-		_classname = lbData[20302,(lbCurSel 20302)];
-		_index =  lbValue[20302,(lbCurSel 20302)];
+		_classname = lbData[20306,(lbCurSel 20306)];
+		_index =  lbValue[20306,(lbCurSel 20306)];
 
-		if (isNil "_classname" || _classname isEqualTo "") exitWith {
+		if (isNil "_classname" || _classname isEqualTo "") exitWith 
+		{
 			[(format[localize "STR_Select_Vehicle_Pump"]),"Hinweis","yellow"] call MSG_fnc_handle;
 			vehiclefuelList = [];
 			life_tanken = false;
@@ -39,13 +40,11 @@ switch (_modus) do
 		_car = (vehiclefuelList select _index);
 		_vehicleInfo = [_className]call life_fnc_fetchVehInfo;
 		_fuelNow = fuel _car;
-		if(_fuelNow >= 0.975) exitWith {["Dein Tank hat nicht genug Platz, um die Mindestabnahmemenge an Sprit aufzunehmen!","Hinweis","yellow"] call MSG_fnc_handle;};
+		if(_fuelNow >= 0.9) exitWith {["Dein Tank hat nicht genug Platz, um die Mindestabnahmemenge an Sprit aufzunehmen!","Hinweis","yellow"] call MSG_fnc_handle;};
 		_fueltank = (_vehicleInfo select 12);
-		_fueltoput= ((SliderPosition 20901)-(floor(_fuelnow * _fueltank)));
-		_setfuell = _fuelnow + (_fueltoput/_fueltank);
-		_timer = (1 / ((_fueltank - (_fueltank * _fuelnow)) / _fueltoput));
+		_fueltoput= ((SliderPosition 20307)-(floor(_fuelnow * _fueltank)));
 		_totalcost = round(_fueltoput * life_fuelPrices);
-
+		
 		if (_car distance player > 10 && !(isNull objectParent player)) exitWith 
 		{
 			[(format[localize "STR_Distance_Vehicle_Pump"]),"Hinweis","yellow"] call MSG_fnc_handle;
@@ -68,38 +67,44 @@ switch (_modus) do
 		_pgText = _ui displayCtrl 38202;
 		_pgText ctrlSetText format[""];
 		_progress progressSetPosition 0.01;
+		_vehtype = typeOf _car;
+		_durchfluss = 45;
+		
+		if(_vehtype in life_FahrenLKW) then 
+		{
+		_durchfluss = 120;
+		};
+		
+		_dauer = (_fueltoput /_durchfluss)*60;
+		_cpup = 1/_dauer;
 		_cP = 0;
-		_tp =0;
+		_fuelup = ((_fueltoput / _fueltank) / _dauer);
+		_setFuel = 0;
 		
 		for "_i" from 0 to 1 step 0 do 
 		{
-			sleep  _timer;
-			_cP = _cP + 0.01;
+			sleep  1;
+			_cP = _cP + _cpup;
+			_setFuel = _setFuel + _fuelup;
 			_progress progressSetPosition _cP;
-			
-			if((speed _car) > 0.1) exitWith {_pgText ctrlSetText format["Betankung abgebrochen."];};
-			if(_cP >= 1) exitWith {_pgText ctrlSetText format["Betankung abgeschlossen."];};
-			if (player distance _car > 10) exitWith {_pgText ctrlSetText format["Betankung abgebrochen."];};
-			if !(isNull objectParent player) exitWith {_pgText ctrlSetText format["Betankung abgebrochen."];};
-			_kosten = _kosten + (0.01 * _totalcost);
-			
-			_pgText ctrlSetText format ["%3		%1	%2		Preis:	$%4",round(_cp * _fueltoput*100)/100,"Liter","Betankung läuft:",round(_kosten*100)/100];
-			_tp = _tp +1;
-			if (_tp == 9) then 
-			{
-				_tp = 0;
-				[_car,_fuelNow + (_cP * _setfuell)] remoteExecCall ["life_fnc_setFuel",_car];
-			};
+
+			if((speed _car) > 0.1) exitWith {_pgText ctrlSetText format["Betankung abgebrochen."];[_car,_fuelNow + _setFuel] remoteExecCall ["life_fnc_setFuel",_car];};
+			if(_cP >= 1) exitWith {_pgText ctrlSetText format["Betankung abgeschlossen."];[_car,_fuelNow + _setFuel] remoteExecCall ["life_fnc_setFuel",_car];};
+			if (player distance _car > 10) exitWith {_pgText ctrlSetText format["Betankung abgebrochen."];[_car,_fuelNow + _setFuel] remoteExecCall ["life_fnc_setFuel",_car];};
+			if !(isNull objectParent player) exitWith {_pgText ctrlSetText format["Betankung abgebrochen."];[_car,_fuelNow + _setFuel] remoteExecCall ["life_fnc_setFuel",_car];};
+			_kosten = _kosten + (_cpup * _totalcost);
+
+			_pgText ctrlSetText format ["%3 %1 %2 Preis: $%4",round(_cp * _fueltoput*100)/100,"Liter","Betankung läuft:",round(_kosten*100)/100];
 		};
 	};
 	
 	case "kanisterbenzin":
 	{
-		_preis = 12.9;
+		_preis = LIFE_SETTINGS(getNumber,"fuel_price_benzin");
 		If(life_tanken) exitWith {hint "Du tankst schon dein Kanister auf!"};
 		_action = 
 		[
-			format["Bist du sicher das du deinen Kanister auffüllen möchtest?<br />Dein Preis pro Liter beträgt: %1 €",_preis],
+			format["Bist du sicher das du deinen Kanister auffüllen möchtest?<br />Dein Preis pro Liter beträgt: <t color='#FFFF00'> $%1</t>",_preis],
 			"Kanister auftanken",
 			"Tanken",
 			"Nein Danke"
@@ -149,11 +154,11 @@ switch (_modus) do
 	case "kanisterdiesel":
 	{
 	
-	_preis = 8.73;
+		_preis = LIFE_SETTINGS(getNumber,"fuel_price_diesel");
 		If(life_tanken) exitWith {hint "Du tankst schon dein Kanister auf!"};
 		_action = 
 		[
-			format["Bist du sicher das du deinen Kanister auffüllen möchtest?<br />Dein Preis pro Liter beträgt: %1 €",_preis],
+			format["Bist du sicher das du deinen Kanister auffüllen möchtest?<br />Dein Preis pro Liter beträgt:<t color='#FFFF00'> $%1</t>",_preis],
 			"Kanister auftanken",
 			"Tanken",
 			"Nein Danke"
@@ -214,7 +219,7 @@ switch (_modus) do
 if(_exit1) exitWith
 {
 	life_tanken = false;
-	["Du hast nicht genug Platz, um einen gefüllten Kanister zu transportieren","Hinweiß","yellow"] call MSG_fnc_handle;	
+	["Du hast nicht genug Platz, um einen gefüllten Kanister zu transportieren","Hinweis","yellow"] call MSG_fnc_handle;	
 };
 
 if(_exit2) exitWith
@@ -240,18 +245,17 @@ if !(_car isEqualTo "") then
 	_car setVariable ["betankung",false,true];
 	[_car] remoteExec ["TON_fnc_vehicleUpdate",RSERV];
 };
+
+
 _rechnung = _rechnung + floor _kosten;
+
 if(_rechnung == 0) exitWith {life_tanken = false;"progressBar" cutText ["","PLAIN"];};
 player setVariable[format["%1",_marker],_rechnung,true];
 
 uiSleep 4;
 "progressBar" cutText ["","PLAIN"];
-[(format["Geh nun zur Kasse und bezahle deine Rechnung in Höhe von<br/><t color='#FFFFFF'> $%1.",[_rechnung] call life_fnc_numberText]),"Tankrechnung","green"] call MSG_fnc_handle;	
+[(format["Geh nun zur Kasse und bezahle deine Rechnung in Höhe von<br/><t color='#FFFF00'> $%1</t>.",[_rechnung] call life_fnc_numberText]),"Tankrechnung","green"] call MSG_fnc_handle;	
 
-// sleep (5*60);
-// _rechnung = player getVariable[format["%1",_tankestelle],0];
-// if(_rechnung == 0) exitWith {};
-// _rechnung = _rechnung * 2;
-// hint "Da du ja deine Rechnung nicht bezahlen wolltest, wirst du nun wegen Zechprellerei angezeigt!";
-// [[getPlayerUID player,name player,"480",_rechnung],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
-// player setVariable[format["%1",_tankestelle],0,true];
+waitUntil{((player distance (getMarkerPos _marker)) > 40)};
+[(format["Du hast noch 5 Minuten Zeit um deine Rechnung in Höhe von<br/><t color='#FFFF00'> $%1.</t><br/>zu bezahlen. Danach wirst du wegen Zechprellerei gesucht!",[_rechnung] call life_fnc_numberText]),"Hinweis","yellow"] call MSG_fnc_handle;	
+[getPlayerUID player,player getVariable ["realname",name player],player,_marker,_rechnung] remoteExec ["life_fnc_wantedTanke",RSERV];

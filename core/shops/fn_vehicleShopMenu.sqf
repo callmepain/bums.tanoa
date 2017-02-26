@@ -79,6 +79,8 @@ ctrlShow [2304,false];
     };
 } forEach _vehicleList;
 
+lbSort _control;
+
 if (LIFE_SETTINGS(getNumber,"vehicleShop_3D") isEqualTo 1) then {
   [] call life_fnc_vehicleShopInit3DPreview;
 };
