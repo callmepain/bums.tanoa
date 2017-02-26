@@ -9,7 +9,6 @@
 */
 private ["_curObject","_isWater","_CrateModelNames","_crate","_fish","_animal","_whatIsIt","_handle"];
 _curObject = cursorObject;
-"debug_console" callExtension format["_curObject:%1 #0011",_curObject];
 if (life_action_inUse) exitWith {}; //Action is in use, exit to prevent spamming.
 if (life_interrupted) exitWith {life_interrupted = false;};
 _isWater = surfaceIsWater (visiblePositionASL player);
@@ -26,7 +25,6 @@ if (LIFE_SETTINGS(getNumber,"global_ATM") isEqualTo 1) then{
 };
 
 if (isNull _curObject || (typeof _curObject) isEqualTo "les_fikovnik2") exitWith {
-"debug_console" callExtension format["_curObject:%1 #1101",_curObject];
     if (_isWater) then {
         _fish = (nearestObjects[player,(LIFE_SETTINGS(getArray,"animaltypes_fish")),3]) select 0;
         if (!isNil "_fish") then {
