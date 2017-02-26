@@ -66,6 +66,7 @@ switch (_modus) do
 		_pgText = _ui displayCtrl 38202;
 		_pgText ctrlSetText format[""];
 		_progress progressSetPosition 0.01;
+
 		_vehtype = typeOf _car;
 		_durchfluss = 45;
 		if(_vehtype in life_FahrenLKW) then {
@@ -90,6 +91,7 @@ switch (_modus) do
 			_kosten = _kosten + (_cpup * _totalcost);
 			
 			_pgText ctrlSetText format ["%3		%1	%2		Preis:	$%4",round(_cp * _fueltoput*100)/100,"Liter","Betankung läuft:",round(_kosten*100)/100];
+
 		};
 	};
 	
