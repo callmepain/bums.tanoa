@@ -2,7 +2,8 @@
 /*
     File: fn_p_openMenu.sqf
     Author: Bryan "Tonic" Boardwine
-
+	Edit by H4uklotz
+	
     Description:
     Opens the players virtual inventory menu
 */
@@ -21,10 +22,12 @@ switch (playerSide) do {
 
     case civilian: {
         ctrlShow[2008,false];
+        ctrlShow[1210,false];
     };
 
     case independent: {
         ctrlShow[2008,false];
+		ctrlShow[1210,false];
         ctrlShow[1209,false];
         ctrlShow[1207,false];
     };
@@ -32,6 +35,7 @@ switch (playerSide) do {
 
 if (FETCH_CONST(life_adminlevel) < 1) then {
     ctrlShow[2021,false];
+    ctrlShow[20210,false];
 };
 
 [] call life_fnc_p_updateMenu;

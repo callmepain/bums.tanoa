@@ -30,4 +30,4 @@ if(_time < 5 || _time > 120) exitWith {[(format ["Du kannst Personen nur zwische
 if(_kaution > 120) exitWith {[(format ["Du kannst die Kautionszeit nur zw. 0 - 120 Minuten festlegen!"]),"Hinweis","Yellow"] call MSG_fnc_handle;	};
 
 closeDialog 0; 
-[player, _time,_kaution] call life_fnc_arrestAction;
+[_curTarget, _time,_kaution] call life_fnc_arrestAction;

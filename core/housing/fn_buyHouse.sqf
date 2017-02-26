@@ -6,9 +6,9 @@
     Description:
     Buys the house?
 */
-private ["_house","_uid","_action","_houseCfg"];
-_house = param [0,objNull,[objNull]];
-_uid = getPlayerUID player;
+private _house = param [0,objNull,[objNull]];
+private _uid = getPlayerUID player;
+private _side = side player;
 
 if (isNull _house) exitWith {};
 if (!(_house isKindOf "House_F")) exitWith {};
@@ -35,7 +35,7 @@ if (_action) then {
     if (life_HC_isActive) then {
         [_uid,_house] remoteExec ["HC_fnc_addHouse",HC_Life];
     } else {
-        [_uid,_house] remoteExec ["TON_fnc_addHouse",RSERV];
+        [_uid,_house,_side] remoteExec ["TON_fnc_addHouse",RSERV];
     };
 
     if (LIFE_SETTINGS(getNumber,"player_advancedLog") isEqualTo 1) then {
