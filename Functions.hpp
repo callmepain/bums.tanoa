@@ -155,6 +155,19 @@ class Life_Client_Core {
         class get_markers {};
 	};
 	
+	class Spritverbrauch 
+	{	
+		file = "core\sprit";
+		class spritverbrauch {};
+	};
+	
+	class Ausweis 
+	{	
+		file = "core\ausweis";
+		class zeige_ausweis {};
+		class open_ausweis {};
+	};
+	
 	class Schliessfach 
 	{	
 		file = "core\schliessfach";

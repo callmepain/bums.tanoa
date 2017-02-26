@@ -24,7 +24,7 @@ if (LIFE_SETTINGS(getNumber,"global_ATM") isEqualTo 1) then{
     };
 };
 
-if (isNull _curObject) exitWith {
+if (isNull _curObject || (typeof _curObject) isEqualTo "les_fikovnik2") exitWith {
     if (_isWater) then {
         _fish = (nearestObjects[player,(LIFE_SETTINGS(getArray,"animaltypes_fish")),3]) select 0;
         if (!isNil "_fish") then {

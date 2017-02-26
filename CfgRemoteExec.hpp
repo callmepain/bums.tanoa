@@ -13,6 +13,7 @@ class CfgRemoteExec {
         jip = 0;
 
         /* Client only functions */
+		F(life_fnc_zeige_ausweis,CLIENT)
         F(life_fnc_AAN,CLIENT)
         F(life_fnc_addVehicle2Chain,CLIENT)
         F(life_fnc_adminID,CLIENT)

@@ -22,8 +22,9 @@ if (_type isEqualTo "now") then {
 		} else {_toShow = false;};
 		if (_toShow) then {
 			_vehicleInfo = [_x] call life_fnc_fetchVehInfo;
-			_control lbAdd (_vehicleInfo select 3);
-			_control lbSetPicture [(lbSize _control)-1,(_vehicleInfo select 2)];
+			_msg = [_vehicleInfo select 3,30] call KRON_StrLeft;
+			_control lbAdd (_msg);
+			//_control lbSetPicture [(lbSize _control)-1,(_vehicleInfo select 2)];
 		};
 	} forEach _vehicles;
 } else {
@@ -36,8 +37,9 @@ if (_type isEqualTo "now") then {
 		} else {_toShow = false;};
 		if (_toShow) then {
 			_vehicleInfo = [_x] call life_fnc_fetchVehInfo;
-			_controlnext lbAdd (_vehicleInfo select 3);
-			_controlnext lbSetPicture [(lbSize _controlnext)-1,(_vehicleInfo select 2)];
+			_msg = [_vehicleInfo select 3,30] call KRON_StrLeft;
+			_controlnext lbAdd (_msg);
+			//_controlnext lbSetPicture [(lbSize _controlnext)-1,(_vehicleInfo select 2)];
 		};
 	} forEach _vehicles;
 };

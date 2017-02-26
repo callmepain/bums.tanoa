@@ -48,7 +48,6 @@ life_preview_light = objNull;
 life_pos_exist = false;
 life_pos_attach = [];
 life_position = [];
-life_markers = false;
 life_canpay_bail = true;
 life_unconscious = false;
 life_smartphoneTarget = ObjNull;

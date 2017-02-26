@@ -83,61 +83,23 @@ if (isDedicated) exitWith{};
 						
 					if(driver _vehicle isEqualTo _x) then
 					{
-						_vehicleInfo = [typeOf _vehicle] call life_fnc_fetchVehInfo; 
-						_vehicleTankMax = _vehicleInfo select 12;					
-						_fuel_old = fuel _vehicle;									
-						_vehicleToFuel = (vehicle player);
-						_veh = (typeOf _vehicleToFuel);
+						_veh = (typeOf _vehicle);
 						
 						switch(true) do
 						{
-							case (isEngineOn _vehicleToFuel && ((driver _vehicleToFuel) isEqualTo player) && (_vehicleToFuel isKindOf "Landvehicle") && (_vehicleToFuel != player) && (_veh in life_FahrenLKW)):
+							case (isEngineOn _vehicle && ((driver _vehicle) isEqualTo player) && (_vehicle isKindOf "Landvehicle") && (_vehicle != player) && (_veh in life_FahrenLKW)):
 							{
-								_fuelConsumption = 0;
-								_mass = getMass _vehicleToFuel;
-								_vehiclespeed = speed _vehicleToFuel;
-								_fuel_old = fuel _vehicle;
-								_exp = (_mass / 10000) + exp(_vehiclespeed/80)+(cos((_vehiclespeed*(180/300))/5));
-								if (_vehiclespeed < 10) then {
-									_fuelConsumption = ((_exp * 2) / 17000);
-								}else {
-									_fuelConsumption = ((_exp * 3.5) / 17000);
-								};
-								_vehicleToFuel setFuel (_fuel_old - _fuelConsumption);
-								_fuelConsumption = round(_fuelConsumption * 1000000)/100;
+								_fuelConsumption = [_vehicle,"LKW"] call life_fnc_spritverbrauch;
 								_name = format ["%1<t size='0.85' color='#ffff00'>Dieselverbrauch: <t/><t color='#ff0000'>%3 Liter</t><br/><t size='1' color='#00ff00'>Insassen:</t><br/><img size='0.7' color='#ff0000' image='a3\ui_f\data\IGUI\Cfg\Actions\getindriver_ca.paa'/><t size='0.85' color='#ffff00'>   %2</t><br/>", _name, (name _x), (_fuelConsumption)]; 
 							};
-							case (isEngineOn _vehicleToFuel && ((driver _vehicleToFuel) isEqualTo player) && (_vehicleToFuel isKindOf "Landvehicle") && (_vehicleToFuel != player)):
+							case (isEngineOn _vehicle && ((driver _vehicle) isEqualTo player) && (_vehicle isKindOf "Landvehicle") && (_vehicle != player) && (_veh in life_FahrenPKW)):
 							{
-								_fuelConsumption = 0;
-								_mass = getMass _vehicleToFuel;
-								_vehiclespeed = speed _vehicleToFuel;
-								_fuel_old = fuel _vehicle;
-								_exp = (_mass / 10000) + (exp(_vehiclespeed/200))+((cos((_vehiclespeed*(180/1500)-1.571))/5));
-								if (_vehiclespeed < 10) then {
-									_fuelConsumption = ((_exp * 2) / 17000);
-								}else {
-									_fuelConsumption = ((_exp * 3.5) / 17000);
-								};
-								_vehicleToFuel setFuel (_fuel_old - _fuelConsumption);
-								_fuelConsumption = round(_fuelConsumption * 1000000 * 2.5)/100;
-
+								_fuelConsumption = [_vehicle,"PKW"] call life_fnc_spritverbrauch;
 								_name = format ["%1<t size='0.85' color='#ffff00'>Benzinverbrauch: <t/><t color='#ff0000'>%3 Liter</t><br/><t size='1' color='#00ff00'>Insassen:</t><br/><img size='0.7' color='#ff0000' image='a3\ui_f\data\IGUI\Cfg\Actions\getindriver_ca.paa'/><t size='0.85' color='#ffff00'>   %2</t><br/>", _name, (name _x), (_fuelConsumption)]; 
 							};
-							case (isEngineOn _vehicleToFuel && ((driver _vehicleToFuel) isEqualTo player) && (_vehicleToFuel isKindOf "Air") && (_vehicleToFuel != player)):
+							case (isEngineOn _vehicle && ((driver _vehicle) isEqualTo player) && (_vehicle isKindOf "Air") && (_vehicle != player)):
 							{
-								_fuelConsumption = 0;
-								_mass = getMass _vehicleToFuel;
-								_vehiclespeed = speed _vehicleToFuel;
-								_fuel_old = fuel _vehicle;
-								_exp = (_mass / 3000) + (exp(_vehiclespeed/180))+(0.5*(cos((_vehiclespeed*(180/3.141))/8)));
-								if (_vehiclespeed < 10) then {
-									_fuelConsumption = ((_exp * 0.6) / 10000);
-								}else {
-									_fuelConsumption = ((_exp * 2) / 10000);
-								};
-								_vehicleToFuel setFuel (_fuel_old - _fuelConsumption);
-								_fuelConsumption = round(_fuelConsumption * 1000000)/100;
+								_fuelConsumption = [_vehicle,"Fliegen"] call life_fnc_spritverbrauch;
 								_name = format ["%1<t size='0.85' color='#ffff00'>Kerosinverbrauch: <t/><t color='#ff0000'>%3 Liter</t><br/><t size='1' color='#00ff00'>Insassen:</t><br/><img size='0.7' color='#ff0000' image='a3\ui_f\data\IGUI\Cfg\Actions\getindriver_ca.paa'/><t size='0.85' color='#ffff00'>   %2</t><br/>", _name, (name _x), (_fuelConsumption)]; 
 							};
 							

@@ -173,6 +173,7 @@ if (LIFE_SETTINGS(getNumber,"pump_service") isEqualTo 1) then {
 
 } forEach getArray (missionConfigFile >> "disableChannels");
 
+_igiload = execVM "core\functions\IgiLoad\IgiLoadInit.sqf";
 
 life_hideoutBuildings = [];
 {

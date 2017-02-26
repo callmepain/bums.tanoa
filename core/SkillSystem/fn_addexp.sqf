@@ -17,12 +17,14 @@ SIDEOFPLAYER(_side);
 if (_type isEqualTo "LKW" && playerSide isEqualTo east) exitWith{};
 if (_type isEqualTo "PKW" && playerSide isEqualTo east) exitWith{};
 if (_type isEqualTo "fliegen" && playerSide isEqualTo east) exitWith{};
+if (_type isEqualTo "Reparieren" && playerSide isEqualTo east) exitWith{};
 if (_type isEqualTo "LKW" && playerSide isEqualTo west) exitWith{};
 if (_type isEqualTo "PKW" && playerSide isEqualTo west) exitWith{};
 if (_type isEqualTo "fliegen" && playerSide isEqualTo west) exitWith{};
 if (_type isEqualTo "LKW" && playerSide isEqualTo independent) exitWith{};
 if (_type isEqualTo "PKW" && playerSide isEqualTo independent) exitWith{};
 if (_type isEqualTo "fliegen" && playerSide isEqualTo independent) exitWith{};
+
 _profData = SKILLSYSTEM_VALUE(_type,_side);
 //0 = level 
 //1 = exp 
@@ -56,7 +58,6 @@ if( _exp >= _nextLevel ) then {
 	CONSTPROF(life_civlkw_level ,(SKILLSYSTEM_VALUE("LKW","civ") select 0));
 	CONSTPROF(life_civair_level ,(SKILLSYSTEM_VALUE("Fliegen","civ") select 0));
 	CONSTPROF(life_civabbau_level ,(SKILLSYSTEM_VALUE("Rohstoffabbau","civ") select 0));
-	life_markers = false;
 	if ((_next == "") && (_now == "")) then {
 		if ((_type == "PKW") || (_type == "LKW") || (_type == "Fliegen")) then { 
 			[(format ["%1 ist nun Level %2.<br />Du kannst nun neue Fahrzeuge kaufen.",_type,_level+1]),"LevelSystem","Green"] call MSG_fnc_handle;

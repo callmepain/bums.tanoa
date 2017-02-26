@@ -81,11 +81,12 @@ switch(true)do
 
 
 
+
 if(_vehicle isKindOf "House_F" && !(typeOf _vehicle in life_Container) && {count (_vehicle getVariable ["containers",[]]) == 0}) exitWith {hint localize "STR_MISC_NoStorageWarn"; closeDialog 0; _vehicle setVariable["trunk_in_use",false,true];};
 if(_veh_data select 0 == -1 && {!(_vehicle isKindOf "House_F")}) exitWith {closeDialog 0; _vehicle setVariable["trunk_in_use",false,true]; hint localize "STR_MISC_NoStorageVeh";};
 
-
-_Titel ctrlSetStructuredText parseText format["<t align='center'>Kofferraum</t><t align='right'>%1: %2/%3</t>",(localize "STR_MISC_Weight"),_veh_data select 1,_veh_data select 0];
+_vehicleInfo = [typeof _vehicle] call life_fnc_fetchVehInfo;
+_Titel ctrlSetStructuredText parseText format["<t align='center'>Kofferraum %4</t><t align='right'>%1: %2/%3</t>",(localize "STR_MISC_Weight"),_veh_data select 1,_veh_data select 0,_vehicleInfo select 3];
 
 [_vehicle] call life_fnc_vehInventory;
 life_trunk_vehicle = _vehicle;

@@ -80,7 +80,7 @@ switch (_modus) do
 		_cP = 0;
 		_fuelup = ((_fueltoput / _fueltank) / _dauer);
 		_setFuel = 0;
-		
+
 		for "_i" from 0 to 1 step 0 do 
 		{
 			sleep  1;
@@ -95,6 +95,7 @@ switch (_modus) do
 			_kosten = _kosten + (_cpup * _totalcost);
 
 			_pgText ctrlSetText format ["%3 %1 %2 Preis: $%4",round(_cp * _fueltoput*100)/100,"Liter","Betankung läuft:",round(_kosten*100)/100];
+
 		};
 	};
 	
