@@ -8,7 +8,7 @@ class EditorData
 	toggles=514;
 	class ItemIDProvider
 	{
-		nextID=14182;
+		nextID=14200;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={14125.612,51.793041,8396.4199};
-		dir[]={0.11995433,-0.45962068,0.88005286};
-		up[]={0.062075142,0.8881036,0.45541489};
-		aside[]={0.99090284,6.8711233e-007,-0.13506302};
+		pos[]={5619.1006,4.2267375,10285.376};
+		dir[]={0.82831895,0.052337598,-0.55790204};
+		up[]={-0.043434788,0.99863297,0.029254695};
+		aside[]={-0.55866867,-1.6589183e-008,-0.82945883};
 	};
 };
 binarizationWanted=0;
@@ -140,13 +140,14 @@ addons[]=
 	"Mrshounka_rs4_p",
 	"Urbanized_GranTurismo",
 	"Mrshounka_c63_2015_p",
-	"A3_Signs_F_Signs_Ad"
+	"A3_Signs_F_Signs_Ad",
+	"ausextras_lamps"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=91;
+		items=92;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -679,6 +680,11 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="http://www.arma3.com";
 		};
+		class Item91
+		{
+			className="ausextras_lamps";
+			name="ausextras_lamps";
+		};
 	};
 };
 randomSeed=2639488;
@@ -797,13 +803,14 @@ class Mission
 		year=2035;
 		month=7;
 		day=6;
-		minute=0;
+		hour=3;
+		minute=15;
 		startFogDecay=0.0049333;
 		forecastFogDecay=0.0049333;
 	};
 	class Entities
 	{
-		items=2406;
+		items=2411;
 		class Item0
 		{
 			dataType="Marker";
@@ -119489,32 +119496,119 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={5622.0425,2.6921022,10259.953};
-				angles[]={0,5.7149777,0};
+				position[]={5629.9136,6.506042,10263.98};
+				angles[]={0,0.25435105,0};
 			};
 			side="Empty";
-			flags=4;
+			flags=1;
 			class Attributes
 			{
 			};
-			id=14178;
-			type="Land_ChairPlastic_F";
+			id=14193;
+			type="Land_fluor_lamp";
+			atlOffset=4.1942458;
 		};
 		class Item2405
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={5626.106,2.6921022,10257.574};
-				angles[]={0,5.0565176,0};
+				position[]={5631.5737,6.5156627,10270.487};
+				angles[]={0,0.25435105,0};
 			};
 			side="Empty";
-			flags=4;
+			flags=1;
 			class Attributes
 			{
 			};
-			id=14179;
-			type="Land_ChairPlastic_F";
+			id=14194;
+			type="Land_fluor_lamp";
+			atlOffset=4.2043991;
+		};
+		class Item2406
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5632.6807,5.6028843,10292.488};
+				angles[]={0.064152949,0.25435114,0.20783485};
+			};
+			side="Empty";
+			flags=1;
+			class Attributes
+			{
+			};
+			id=14195;
+			type="Land_fluor_lamp";
+			atlOffset=3.3959236;
+		};
+		class Item2407
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5629.1348,7.0885053,10279.877};
+				angles[]={0.051620767,0.25435117,0.19477156};
+			};
+			side="Empty";
+			flags=1;
+			class Attributes
+			{
+			};
+			id=14196;
+			type="Land_fluor_lamp";
+			atlOffset=4.8815446;
+		};
+		class Item2408
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5634.2739,5.6248827,10298.217};
+				angles[]={0.064152949,0.25435114,0.20783485};
+			};
+			side="Empty";
+			flags=1;
+			class Attributes
+			{
+			};
+			id=14197;
+			type="Land_fluor_lamp";
+			atlOffset=3.417922;
+		};
+		class Item2409
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5640.4834,7.0203357,10296.595};
+				angles[]={0.20471458,1.8636732,6.2095966};
+			};
+			side="Empty";
+			flags=1;
+			class Attributes
+			{
+			};
+			id=14198;
+			type="Land_fluor_lamp";
+			atlOffset=4.809504;
+		};
+		class Item2410
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5630.9014,7.0960946,10286.215};
+				angles[]={0.051620767,0.25435117,0.19477156};
+			};
+			side="Empty";
+			flags=1;
+			class Attributes
+			{
+			};
+			id=14199;
+			type="Land_fluor_lamp";
+			atlOffset=4.8891339;
 		};
 	};
 	class Connections
