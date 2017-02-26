@@ -1,4 +1,4 @@
-#include "..\..\script_macros.hpp"
+ï»¿#include "..\..\script_macros.hpp"
 /*
 	File: fn_rechnung.sqf
 	Author: Hauklotz
@@ -20,12 +20,18 @@ for "_i" from 0 to 50 step 1 do
 		};
 };
 
-if(_rechnung == 0) exitWith {Hint "Du hast keine offene Rechnung"};
+if(_rechnung == 0) exitWith 
+{
+	["Du hast keine offene Rechnung","Hinweis","yellow"] call MSG_fnc_handle;	
+};
 
-if(CASH < _rechnung) exitWith {hint "Du hast nicht genug Geld dabei."; sleep 1;};
+if(CASH < _rechnung) exitWith 
+{
+	
+};
 _action =
  [
-	format["Deine Tankrechnung beträgt $%1",[_rechnung] call life_fnc_numberText],
+	format["Deine Tankrechnung betrÃ¤gt<t color='#FFFF00'> $%1</t>",[_rechnung] call life_fnc_numberText],
 	"Tankrechnung bezahlen",
 	"Bezahlen",
 	"Nein Danke"
@@ -34,7 +40,7 @@ _action =
 if(_action) then 
 {
 	CASH = CASH - _rechnung;
-	hint format["Du hast deine Rechnung in Höhe von $%1 bezahlt.",[_rechnung] call life_fnc_numberText];
+	[(format["Du hast deine Rechnung in HÃ¶he von <t color='#FFFF00'> $%1</t> bezahlt.",[_rechnung] call life_fnc_numberText]),"Tankrechnung","green"] call MSG_fnc_handle;	
 	player setVariable[format["%1",_marker],0,true];
 	[14] call SOCK_fnc_updatePartial;
 }
@@ -42,7 +48,7 @@ else
 {
 	_action2 =
 	 [
-		format["Willst du wirklich nicht deine Rechnung in höhe von $%1 bezahlen?",[_rechnung] call life_fnc_numberText],
+		format["Willst du wirklich nicht deine Rechnung in HÃ¶he von <t color='#FFFF00'> $%1</t> bezahlen?",[_rechnung] call life_fnc_numberText],
 		"Tankrechnung bezahlen",
 		"Bezahlen",
 		"Nein Danke"
@@ -51,13 +57,15 @@ else
 	if(_action2) then 
 	{
 		CASH = CASH - _rechnung;
-		hint format["Du hast deine Rechnung in Höhe von $%1 bezahlt.",[_rechnung] call life_fnc_numberText];
+
+		[(format["Du hast deine Rechnung in HÃ¶he von <t color='#FFFF00'> $%1</t> bezahlt.",[_rechnung] call life_fnc_numberText]),"Tankrechnung","green"] call MSG_fnc_handle;	
+		
 		player setVariable[format["%1",_marker],0,true];
 		[14] call SOCK_fnc_updatePartial;
 	}
 	else
 	{
-		sleep 2.5;
-		hint "Du hast noch 5 Minuten Zeit, deine Rechnung zu begleichen, sonst wirst du wegen Zechprellerei angezeigt!";
+		sleep 2.5;		
+		[(format["Du hast noch 5 Minuten Zeit um deine Rechnung in HÃ¶he von<br/><t color='#FFFF00'> $%1.</t><br/>zu bezahlen. Danach wirst du wegen Zechprellerei gesucht!",[_rechnung] call life_fnc_numberText]),"Hinweis","yellow"] call MSG_fnc_handle;	
 	};
 };

@@ -33,25 +33,41 @@ if (count _vehicleList < 1) exitWith
 
 if (!createDialog "Life_FuelStat") exitWith {};
 
-_fuelCost = LIFE_SETTINGS(getNumber,"fuel_cost");
-
 [] spawn {waitUntil {!dialog}; life_tanken = false;};
 
-ctrlSetText [1100,"Fuel Station"];
+_display = findDisplay 20300;
+_titel = _display displayCtrl 1100;
+_listeTitel = _display displayCtrl 20301;
+_infoTitel = _display displayCtrl 20302;
+_preis = _display displayCtrl 20303;
+_liter = _display displayCtrl 20304;
+_total = _display displayCtrl 20305;
+_liste = _display displayCtrl 20306;
+_tanken = _display displayCtrl 20309;
 
-if (isNil "life_fuelPrices") then 
-{
-    life_fuelPrices = _fuelCost;
-};
+
+_Titel ctrlSetStructuredText parseText format["<t align='center'>Tankstelle</t>"];
+_listeTitel ctrlSetStructuredText parseText format["<t align='center'>Fahrzeuge in der Nähe</t>"];
+_infoTitel ctrlSetStructuredText parseText format["<t align='center'>Fahrzeuginformationen</t>"];
+_liter ctrlSetStructuredText parseText format["<t align='left'>Tankmenge: <t align='right'>0L</t>"];
+_total ctrlSetStructuredText parseText format["<t align='left'>Gesamtkosten: <t align='right'>$0</t>"];
+
+
+
+ ctrlShow[20302,false];
+ ctrlShow[20303,false];
+ ctrlShow[20304,false];
+ ctrlShow[20305,false];
+ ctrlShow[20307,false];
+ ctrlShow[20308,false];
+ ctrlShow[20309,false];
+
+
 
 //Fetch the shop config.
 vehicleFuelList =[];
 
-_control = ((findDisplay 20300) displayCtrl 20302);
-lbClear _control; //Flush the list.
-
-ctrlSetText [20322,format [localize "STR_Price_Fuel_Pump",life_fuelPrices]];
-ctrlSetText [20323,format ["Total : %1$",life_fuelPrices * 0.1]];
+lbClear _liste; //Flush the list.
 
 {
 	if((alive _x) && (_x in life_vehicles)) then 
@@ -69,17 +85,17 @@ ctrlSetText [20323,format ["Total : %1$",life_fuelPrices * 0.1]];
 				
 		if(_x getVariable ["betankung",false]) then
 		{
-			_control lbAdd format["%1 - [Entfernung: %2m] - [wird aufgetankt]",_displayName,round(_fuelstation distance _x)];
-			_control lbSetData [(lbSize _control)-1,_className];
-			_control lbSetPicture [(lbSize _control)-1,_picture];
-			_control lbSetValue [(lbSize _control)-1,_ForEachIndex];
+			_liste lbAdd format["%1 - [Entfernung: %2m] - [wird aufgetankt]",_displayName,round(_fuelstation distance _x)];
+			_liste lbSetData [(lbSize _liste)-1,_className];
+			_liste lbSetPicture [(lbSize _liste)-1,_picture];
+			_liste lbSetValue [(lbSize _liste)-1,_ForEachIndex];
 		}
 		else
 		{
-			_control lbAdd format["%1 - [Entfernung: %2m]",_displayName,round(_fuelstation distance _x)];
-			_control lbSetData [(lbSize _control)-1,_className];
-			_control lbSetPicture [(lbSize _control)-1,_picture];
-			_control lbSetValue [(lbSize _control)-1,_ForEachIndex];
+			_liste lbAdd format["%1 - [Entfernung: %2m]",_displayName,round(_fuelstation distance _x)];
+			_liste lbSetData [(lbSize _liste)-1,_className];
+			_liste lbSetPicture [(lbSize _liste)-1,_picture];
+			_liste lbSetValue [(lbSize _liste)-1,_ForEachIndex];
 		};
 	};
 } foreach vehicleFuelList;

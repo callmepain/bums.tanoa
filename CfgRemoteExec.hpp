@@ -129,6 +129,7 @@ class CfgRemoteExec {
         F(life_fnc_wantedPerson,SERVER)
         F(life_fnc_wantedPunish,SERVER)
         F(life_fnc_wantedRemove,SERVER)
+        F(life_fnc_wantedTanke,SERVER)
         F(life_fnc_wantedTicket,SERVER)
 		
 		F(life_fnc_vehicleInfoUpdate,SERVER)

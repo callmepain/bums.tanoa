@@ -38,21 +38,22 @@ switch (_mode) do {
     };
 
     case 3: {
-        _classname = lbData[20302,(lbCurSel 20302)];
-        _index =  lbValue[20302,(lbCurSel 20302)];
-        if ((lbCurSel 20302) isEqualTo -1) exitWith {hint localize "STR_Select_Vehicle_Pump";};
-        if (!isNil "_classname" || _classname =="") then {
+        _classname = lbData[20306,(lbCurSel 20306)];
+        _index =  lbValue[20306,(lbCurSel 20306)];
+        if ((lbCurSel 20306) isEqualTo -1) exitWith {[(format[localize "STR_Select_Vehicle_Pump"]),"Hinweis","yellow"] call MSG_fnc_handle;};
+        if (!isNil "_classname" || _classname =="") then 
+		{
             _car = (vehiclefuelList select _index);
             _vehicleInfo = [_className] call life_fnc_fetchVehInfo;
             _fuel = fuel _car;
             _fueltank = (_vehicleInfo select 12);
-            if (_car isKindOf "B_Truck_01_box_F" || _car isKindOf "B_Truck_01_transport_F") then {
-                _fueltank = 450;
-            };
-            ctrlSetText[20324,format ["Fuel : %1 liters",round(_value) - (floor(_fuel * _fueltank))]];
-            ctrlSetText [20323,format ["Total : $%1",round (life_fuelPrices * (round(_value) -(floor(_fuel * _fueltank)))) ]];
-        } else {
-            hint localize "STR_Select_Vehicle_Pump";
+						
+			((findDisplay 20300) displayCtrl 20304) ctrlSetStructuredText parseText  format ["<t align='left'>Tankmenge: <t align='right'>%1L</t>",round(_value) - (floor(_fuel * _fueltank))];
+			((findDisplay 20300) displayCtrl 20305) ctrlSetStructuredText parseText  format ["<t align='left'>Gesamtkosten: <t align='right'>$%1</t>",round ((life_fuelPrices * (round(_value) -(floor(_fuel * _fueltank))))*100)/100 ];
+        } 
+		else 
+		{
+            [(format[localize "STR_Select_Vehicle_Pump"]),"Hinweis","yellow"] call MSG_fnc_handle;
         };
     };
 

@@ -32,30 +32,29 @@ if (!isServer && (!isNil "life_adminlevel" || !isNil "life_coplevel" || !isNil "
     failMission "SpyGlass";
 };
 
-//Parse basic player information.
+//	--------------------------------------------- Geld gedöns ----------------------------------------------	//
 CASH = parseNumber (_this select 2);
 BANK = parseNumber (_this select 3);
 
-//Loop through licenses
+//	--------------------------------------------- Lizenz gedöns (Always index 4)  ----------------------------------------------	//
 if (count (_this select 4) > 0) then 
 	{
 		{missionNamespace setVariable [(_x select 0),(_x select 1)];
 	} forEach (_this select 4);
 };
 
-//Lvl gedöns
+//	--------------------------------------------- LVL gedöns ----------------------------------------------	//
 CONST(life_coplevel,(_this select 5));
 CONST(life_adminlevel,(_this select 6));
 CONST(life_donorlevel,(_this select 7));
 CONST(life_medlevel,(_this select 8));
 CONST(life_adaclevel,(_this select 9));
 
-//gear gedöns
+//	--------------------------------------------- GEAR gedöns ----------------------------------------------	//
 life_gear = _this select 10;
 [true] call life_fnc_loadGear;
 
-//Parse side specific information.
-
+//	--------------------------------------------- BLACKLIST / ARREST gedöns ----------------------------------------------	//
 if(playerSide == west) then
 {
 	life_blacklisted = _this select 11;
@@ -64,12 +63,11 @@ else
 {
 	life_is_arrested = _this select 11;
 };
-
-//positions gedöns
+//	--------------------------------------------- Alive gedöns ----------------------------------------------	//
 life_is_alive = _this select 12;
+//	--------------------------------------------- Position gedöns ----------------------------------------------	//
 life_position = _this select 13;
-
-//proof gedöns
+//	--------------------------------------------- Prof gedöns ----------------------------------------------	//
 if(count (_this select 14) > 0) then 
 {
 	{
@@ -81,32 +79,28 @@ if(count (_this select 14) > 0) then
 	CONSTPROF(life_civabbau_level ,(SKILLSYSTEM_VALUE("Rohstoffabbau","civ") select 0));
 };
 
-//gang gedöns
-life_gangData = _this select (_count - 2);
+//	--------------------------------------------- Gangs gedöns ----------------------------------------------	//
+life_gangData = _this select (_count - 3);
 if(count life_gangData != 0) then 
 {
 	[] spawn life_fnc_initGang;
 };
 
 
-// housing gedöns
-life_houses = [];
-// life_houses = _this select (_count - 2);
-// {
-	// _house = nearestBuilding (call compile format["%1", _x select 0]);
-	// life_vehicles pushBack _house;
-// } foreach life_houses;
-// [] spawn life_fnc_initHouses;
+//	--------------------------------------------- Houses gedöns ----------------------------------------------	//
+// life_houses = [];
+life_houses = _this select (_count - 2);
+{
+	_house = nearestBuilding (call compile format["%1", _x select 0]);
+	life_vehicles pushBack _house;
+} foreach life_houses;
+[] spawn life_fnc_initHouses;
 
 
-
+//	--------------------------------------------- keys gedöns ----------------------------------------------	//
 if (count (_this select (_count - 1)) > 0) then {
     {life_vehicles pushBack _x;} forEach (_this select (_count - 1));
 };
-
-// [[getPlayerUID player],"TON_fnc_loadBounties",false,false] spawn life_fnc_MP;
-// [getPlayerUID player] remoteExec ["TON_fnc_loadBounties",2];
-
 
 if(playerSide isEqualTo civilian) then
 {
