@@ -42,3 +42,7 @@
 #include "vehicleShopMarket.hpp"
 #include "wanted_list.hpp"
 #include "wantedadd2.hpp"
+#include "civ_ausweis.hpp"
+#include "cop_ausweis.hpp"
+#include "adac_ausweis.hpp"
+#include "ems_ausweis.hpp"

@@ -44,7 +44,7 @@ if (_amount > (ITEM_VALUE(_type))) exitWith {[(format [localize "STR_Shop_Virt_N
 	
 if(_state) then 
 {
-	_price = (_price * _amount_all);
+	_price = floor(_price * _amount_all);
 	// _name = [_var] call life_fnc_vartostr;
 	if(_drogen + _test > 200) exitwith {[(format [localize "Da die Nachfrage nach dieser Droge gesunken ist,\n nimmt der Dealer auf unbestimmte Zeit keine mehr an.\nBitte versuch es später erneut."]),"Hinweis","Yellow"] call MSG_fnc_handle;};
 	if(([false,_type,_amount_all] call life_fnc_handleInv)) then
@@ -77,7 +77,7 @@ if(_state) then
 }
 else
 {
-	_price = (_price * _amount);
+	_price = floor(_price * _amount);
 	// _name = [_var] call life_fnc_vartostr;
 	if(_drogen + _test > 200) exitwith {[(format [localize "Da die Nachfrage nach dieser Droge gesunken ist,\n nimmt der Dealer auf unbestimmte Zeit keine mehr an.\nBitte versuch es später erneut."]),"Hinweis","Yellow"] call MSG_fnc_handle;};
 	if(([false,_type,_amount] call life_fnc_handleInv)) then

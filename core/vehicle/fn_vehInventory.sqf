@@ -41,7 +41,10 @@ switch(true)do
 if ((_veh_data select 0) isEqualTo -1) exitWith {closeDialog 0};
 
 ctrlSetText[3504,format ["Platz: %1/%2",(_veh_data select 1),(_veh_data select 0)]];
-_Titel ctrlSetStructuredText parseText format["<t align='center'>Kofferraum</t><t align='right'>%1: %2/%3</t>",(localize "STR_MISC_Weight"),_veh_data select 1,_veh_data select 0];
+//_Titel ctrlSetStructuredText parseText format["<t align='center'>Kofferraum</t><t align='right'>%1: %2/%3</t>",(localize "STR_MISC_Weight"),_veh_data select 1,_veh_data select 0];
+_vehicleInfo = [typeof _vehicle] call life_fnc_fetchVehInfo;
+_Titel ctrlSetStructuredText parseText format["<t align='center'>Kofferraum %4</t><t align='right'>%1: %2/%3</t>",(localize "STR_MISC_Weight"),_veh_data select 1,_veh_data select 0,_vehicleInfo select 3];
+
 _data = _veh getVariable ["Trunk",[]];
 if (count _data isEqualTo 0) then {_veh setVariable ["Trunk",[[],0],true]; _data = [];} else {_data = (_data select 0);};
 //Player Inventory Items

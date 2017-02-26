@@ -14,14 +14,20 @@ _timeStamp = diag_tickTime;
 /*         CIV ACE MENU         */
 _action = ["Vehicle Repair","Repair Vehicle","icons\acemenu\ico_repair.paa",{_target spawn life_fnc_repairTruck},{life_inv_toolkit >= 1 && _target call life_fnc_isDamaged}] call ace_interact_menu_fnc_createAction;
 ["LandVehicle", 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;
+_action = ["Vehicle Repair","Repair Vehicle","icons\acemenu\ico_repair.paa",{_target spawn life_fnc_repairTruck},{life_inv_toolkit >= 1 && _target call life_fnc_isDamaged}] call ace_interact_menu_fnc_createAction;
+["Air", 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;
+_action = ["Vehicle Repair","Repair Vehicle","icons\acemenu\ico_repair.paa",{_target spawn life_fnc_repairTruck},{life_inv_toolkit >= 1 && _target call life_fnc_isDamaged}] call ace_interact_menu_fnc_createAction;
+["Ship", 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;
 _action = ["Vehicle Flip","Flip Car","icons\acemenu\ico_repair.paa",{_target setPos [(getPos _target select 0)+0.2, (getPos _target select 1)+0.2, (getPos _target select 2)+0.5];},{true}] call ace_interact_menu_fnc_createAction;
 ["LandVehicle", 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;
+_action = ["Vehicle Flip","Flip Car","icons\acemenu\ico_repair.paa",{_target setPos [(getPos _target select 0)+0.2, (getPos _target select 1)+0.2, (getPos _target select 2)+0.5];},{true}] call ace_interact_menu_fnc_createAction;
+["Air", 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;
 _action = ["Tanken","Tanken","icons\items\ico_fuel.paa",{["fuelFB5L",_target] spawn life_fnc_jerryRefuel},{life_inv_fuelFB5L >= 1 && fuel _target < 0.9 && typeof _target in life_FahrenPKW}] call ace_interact_menu_fnc_createAction;
 ["LandVehicle", 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;
 _action = ["Tanken","Tanken","icons\items\ico_fuel.paa",{["fuelFD25L",_target] spawn life_fnc_jerryRefuel},{life_inv_fuelFD25L >= 1 && fuel _target < 0.9 && typeof _target in life_FahrenLKW}] call ace_interact_menu_fnc_createAction;
 ["LandVehicle", 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;
 _action = ["Tanken","Tanken","icons\items\ico_fuel.paa",{["fuelFK50L",_target] spawn life_fnc_jerryRefuel},{life_inv_fuelFK50L >= 1 && fuel _target < 0.9 && typeof _target in life_Fahrenair}] call ace_interact_menu_fnc_createAction;
-["LandVehicle", 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;
+["Air", 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;
 
 /*_action = ["PushBoot","Boot Schieben","",{[] spawn life_fnc_pushObject},{(alive cursorTarget && {crew cursorTarget isEqualTo []} && {canMove cursorTarget})}] call ace_interact_menu_fnc_createAction;
 ["Ship", 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;*/
@@ -76,6 +82,23 @@ _action = ["beschlagnahmen","beschlagnahmen","icons\acemenu\ico_jail.paa",{[_tar
 ["Ship", 0, ["ACE_MainActions","Cop car menu"], _action, true] call ace_interact_menu_fnc_addActionToClass;
 _action = ["rausziehn","Spieler Rausziehen","icons\acemenu\ico_jail.paa",{[_target] spawn life_fnc_pulloutAction},{true}] call ace_interact_menu_fnc_createAction;
 ["Ship", 0, ["ACE_MainActions","Cop car menu"], _action, true] call ace_interact_menu_fnc_addActionToClass;
+
+
+/*_objectToAddActionTo = player;
+_actionName = "fickdich"; //Doesn't really matter.. something unique with no spaces.
+_actionText = "fickdich";
+_actionIcon = "icons\acemenu\ico_abzeichen.paa"; 
+_actionCode = { [_target] spawn life_fnc_vehInvSearch; }; // Code called when action is activated
+_actionParams = []; //parameters for _actionCode
+_condition = { true }; //condition (like addAction)
+_position = [0,0,0]; //or selection name in model or code
+_distance = 10; //distance for the action
+[_objectToAddActionTo, 0, [], [_actionName,_actionText,"",_actionCode, _condition , {}, _actionParams, _position, _distance] call ace_interact_menu_fnc_createAction] call ace_interact_menu_fnc_addActionToObject;
+*/
+
+
+
+
 
 /*         Medic ACE MENU         */
 _action = ["Bloodlevel","Blut berprüfen","icons\acemenu\ico_search.paa",{[(format ["Der Patient hat noch <br/> %1 Liter Blut!", [_target] call life_fnc_bloodcount]),"Hinweis","green"] call MSG_fnc_handle},{playerSide == independent && isPlayer _target}] call ace_interact_menu_fnc_createAction;
