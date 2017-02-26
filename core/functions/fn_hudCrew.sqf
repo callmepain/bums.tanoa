@@ -99,7 +99,7 @@ if (isDedicated) exitWith{};
 							};
 							case (isEngineOn _vehicle && ((driver _vehicle) isEqualTo player) && (_vehicle isKindOf "Air") && (_vehicle != player)):
 							{
-								_fuelConsumption = [_vehicle,"AIR"] call life_fnc_spritverbrauch;
+								_fuelConsumption = [_vehicle,"Fliegen"] call life_fnc_spritverbrauch;
 								_name = format ["%1<t size='0.85' color='#ffff00'>Kerosinverbrauch: <t/><t color='#ff0000'>%3 Liter</t><br/><t size='1' color='#00ff00'>Insassen:</t><br/><img size='0.7' color='#ff0000' image='a3\ui_f\data\IGUI\Cfg\Actions\getindriver_ca.paa'/><t size='0.85' color='#ffff00'>   %2</t><br/>", _name, (name _x), (_fuelConsumption)]; 
 							};
 							

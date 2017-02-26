@@ -25,6 +25,6 @@ else
 	waitUntil{!isNull (findDisplay 38500)}; //Wait for the spawn selection to be open.
 	waitUntil{isNull (findDisplay 38500)}; //Wait for the spawn selection to be done. 
 };
-
+player setVariable ["rank",(FETCH_CONST(life_adaclevel)),true];
 life_is_alive = true;
 player addRating 99999999;

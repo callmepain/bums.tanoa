@@ -23,6 +23,11 @@ class RscTitles {
 	#include "dialog\progress_exp.hpp"
 	#include "dialog\crew.hpp"  
 	#include "dialog\derleon\msg\msg.hpp"
+	
+	#include "dialog\civ_ausweis.hpp"
+	#include "dialog\cop_ausweis.hpp"	
+	#include "dialog\ems_ausweis.hpp"
+	#include "dialog\adac_ausweis.hpp"
 };
 
 class CfgFunctions {

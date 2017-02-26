@@ -17,12 +17,14 @@ SIDEOFPLAYER(_side);
 if (_type isEqualTo "LKW" && playerSide isEqualTo east) exitWith{};
 if (_type isEqualTo "PKW" && playerSide isEqualTo east) exitWith{};
 if (_type isEqualTo "fliegen" && playerSide isEqualTo east) exitWith{};
+if (_type isEqualTo "Reparieren" && playerSide isEqualTo east) exitWith{};
 if (_type isEqualTo "LKW" && playerSide isEqualTo west) exitWith{};
 if (_type isEqualTo "PKW" && playerSide isEqualTo west) exitWith{};
 if (_type isEqualTo "fliegen" && playerSide isEqualTo west) exitWith{};
 if (_type isEqualTo "LKW" && playerSide isEqualTo independent) exitWith{};
 if (_type isEqualTo "PKW" && playerSide isEqualTo independent) exitWith{};
 if (_type isEqualTo "fliegen" && playerSide isEqualTo independent) exitWith{};
+
 _profData = SKILLSYSTEM_VALUE(_type,_side);
 //0 = level 
 //1 = exp 

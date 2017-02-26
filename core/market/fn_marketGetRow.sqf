@@ -10,11 +10,7 @@ _shortname = _this select 0;
 _ret = [];
 
 {
-	if((_x select 0) == _shortname) exitWith
-	{
-		_ret = _x;
-	};
-}
-foreach life_market_resources;
+	if((_x select 0) == _shortname) exitWith { _ret = _x; };
+} foreach life_market_resources;
 
 _ret;

@@ -161,6 +161,13 @@ class Life_Client_Core {
 		class spritverbrauch {};
 	};
 	
+	class Ausweis 
+	{	
+		file = "core\ausweis";
+		class zeige_ausweis {};
+		class open_ausweis {};
+	};
+	
 	class Schliessfach 
 	{	
 		file = "core\schliessfach";

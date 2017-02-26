@@ -18,23 +18,20 @@ _arr_price = [_shortname] call life_fnc_marketGetPriceRow;
 _ret = [0,0,0,0];
 
 {
-	if((_x select 0) == _shortname) exitWith
-	{
-		_ret = _x;
-	};
-}
-foreach life_market_prices_fix;
+	if((_x select 0) == _shortname) exitWith { _ret = _x; };
+}foreach life_market_prices_fix;
 
 //Calculate the new price of the product
 _price = _arr_price select 1; //current price
 _realprice = _ret select 1;
-_globalprice = _arr_price select 2; //current change rate
-
+//_globalprice = _arr_price select 2; 
+_min = _realprice -((_realprice / 100) * 30);
+_globalprice = _min; //current change rate
 _modifier = (_amount * (_arr_resource select 4)); //calculate modifier
 
 _price = _price - _modifier;
 _globalprice = _globalprice - _modifier;
-_min = _realprice -((_realprice / 100) * 30);
+
 
 //Check borders
 if(_price < _min) then {_price = _min;};
@@ -51,27 +48,16 @@ if( _price > _max)then {_price = _max;};
 if(!_israw) then
 {
 	{
-		if((count _x) == 2) then
-		{
+		if((count _x) == 2) then {
 		    _relamount = ceil (_amount * (_x select 1));
-		
-		    if(_relamount > 0) then
-		    {
-			[_x select 0, _relamount, true, false] call life_fnc_marketBuy; //Make prices higher, no broadcast!
-		    }
-		    else
-		    {
-			_relamount = -(_relamount);
-			[_x select 0, _relamount, true, false] call life_fnc_marketSell; //Make prices higher, no broadcast!
+		    if(_relamount > 0) then {
+				[_x select 0, _relamount, true, false] call life_fnc_marketBuy; //Make prices higher, no broadcast!
+		    } else {
+				_relamount = -(_relamount);
+				[_x select 0, _relamount, true, false] call life_fnc_marketSell; //Make prices higher, no broadcast!
 		    };
-		}
-		else
-		{
-		    
 		};
-		
-	}
-	foreach (_arr_resource select 6); //in change array
+	} foreach (_arr_resource select 6); //in change array
 };
 
 //Broadcast now if can send
