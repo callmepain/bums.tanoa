@@ -121,5 +121,4 @@ if !((lbSize _ctrl)-1 isEqualTo -1) then {
 } else {
     ctrlShow[2304,false];
 };
-((findDisplay 2300) displayCtrl 2304) lbSetCurSel 0;
 true;
