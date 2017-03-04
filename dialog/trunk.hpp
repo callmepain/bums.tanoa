@@ -91,6 +91,7 @@ class TrunkMenu
 			h = 0.308 * safezoneH;
 			colorBackground[] = {0,0,0,0.3};
 			sizeEx = 0.04;
+			style = 0;
 		};
 		class PlayerGear: Life_RscListBox
 		{
@@ -102,6 +103,7 @@ class TrunkMenu
 			h = 0.308 * safezoneH;
 			colorBackground[] = {0,0,0,0.3};
 			sizeEx = 0.04;
+			style = 0;
 		};
 		class TrunkEdit: Life_RscEdit
 		{
@@ -112,6 +114,7 @@ class TrunkMenu
 			y = 0.654 * safezoneH + safezoneY;
 			w = 0.176201 * safezoneW;
 			h = 0.022 * safezoneH;
+			style = 2;
 			colorBackground[] = {0,0,0,0.3};
 		};
 		class PlayerEdit: Life_RscEdit
@@ -123,6 +126,7 @@ class TrunkMenu
 			y = 0.654 * safezoneH + safezoneY;
 			w = 0.181384 * safezoneW;
 			h = 0.022 * safezoneH;
+			style = 2;
 			colorBackground[] = {0,0,0,0.3};
 		};
 		class TakeItem: Life_RscButtonMenu
@@ -135,7 +139,7 @@ class TrunkMenu
 			y = 0.687 * safezoneH + safezoneY;
 			w = 0.176201 * safezoneW;
 			h = 0.022 * safezoneH;
-			colorText[] = {1,1,1,1};
+			colorText[] = {1,1,1,1};			
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.75};
 		};
 		class StoreItem: Life_RscButtonMenu

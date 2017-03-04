@@ -25,6 +25,7 @@ class CarShops
     class civ_car_oldtimer 
 	{
         side = "civ";
+		shopTitle = "Oldtimerhändler";
         conditions = "call life_civpkw_level >= 2 && license_civ_driver";
         vehicles[] = {
 			{ "Mrshounka_Vandura_civ", "call life_civpkw_level >= 2" },
@@ -40,6 +41,7 @@ class CarShops
 	class civ_car_gebrauchtwagen 
 	{
         side = "civ";
+		shopTitle = "Gebrauchtwagenhändler";
         conditions = "call life_civpkw_level >= 1 && license_civ_driver";
         vehicles[] = {
             { "shounka_a3_cliors_civ", "call life_civpkw_level >= 1" },
@@ -70,6 +72,7 @@ class CarShops
 	class civ_car_sportwagen 
 	{
         side = "civ";
+		shopTitle = "Sportwagenhändler";
         conditions = "call life_civpkw_level >= 4 && license_civ_driver";
         vehicles[] = {
 
@@ -92,14 +95,15 @@ class CarShops
  	        { "GeK_C63_AMG", "call life_civpkw_level >= 6" },
  	        { "IVORY_R8", "call life_civpkw_level >= 7" },
  	        // { "IVORY_R8SPYDER", "call life_civpkw_level >= 7" },//
- 	        { "ivory_c", "call life_civpkw_level >= 7" },
- 	        { "Mrshounka_c63_2015_civ", "call life_civpkw_level >= 7" }
+ 	        { "ivory_c", "call life_civpkw_level >= 7" }
+ 	        // { "Mrshounka_c63_2015_civ", "call life_civpkw_level >= 7" } //
         };
     };
 	
 	class civ_car_neuwagen 
 	{
         side = "civ";
+		shopTitle = "Neuwagenhändler";
         conditions = "call life_civpkw_level >= 3 && license_civ_driver";
         vehicles[] = {
             { "ivory_e36", "call life_civpkw_level >= 3" },
@@ -135,6 +139,7 @@ class CarShops
 	class civ_car_supersport 
 	{
         side = "civ";
+		shopTitle = "Supersporthändler";
         conditions = "call life_civpkw_level >= 7 && license_civ_driver";
         vehicles[] = {
             // { "shounka_f430_spider", "call life_civpkw_level >= 6" },//
@@ -158,6 +163,7 @@ class CarShops
 	class civ_container	
 	{
 		side = "civ";
+		shopTitle = "Containerverleih";
 		conditions = "";
 		vehicles[] = {
 			{"Box_NATO_AmmoVeh_F", ""},
@@ -182,6 +188,7 @@ class CarShops
     class kart_shop 
 	{
         side = "civ";
+		shopTitle = "Go-Kart-Shop";
         conditions = "";
         vehicles[] = {
             { "C_Kart_01_Blu_F", "" },
@@ -194,6 +201,7 @@ class CarShops
     class civ_truck 
 	{
         side = "civ";
+		shopTitle = "Lastkraftwagenhändler";
         conditions = "license_civ_trucking";
         vehicles[] = {
             { "C_Van_01_box_F", "call life_civlkw_level >= 1" },
@@ -213,35 +221,39 @@ class CarShops
         };
     };
 
-     class civ_air 
-	 {
+	class civ_air 
+	{
 		side = "civ";
-         conditions = "";
-         vehicles[] = {
-             { "C_Heli_Light_01_civil_F", "call life_civair_level >= 1" },
-			 { "B_Heli_Light_01_stripped_F", "call life_civair_level >= 2" },
-             { "B_Heli_Light_01_F", "call life_civair_level >= 2" },
-			 { "I_Heli_Transport_02_F", "call life_civair_level >= 6" },
-			 { "O_Heli_Transport_04_F", "call life_civair_level >= 4" },
-			 { "B_Heli_Transport_03_unarmed_F", "call life_civair_level >= 5" },
-             { "O_Heli_Light_02_unarmed_F", "call life_civair_level >= 3" },
-			 { "C_Plane_Civil_01_racing_F", "call life_civair_level >= 3" }
-         };
-     };
+		shopTitle = "alles was Fliegen kann";
+		conditions = "";
+		vehicles[] = 
+		{
+			{ "C_Heli_Light_01_civil_F", "call life_civair_level >= 1" },
+			{ "B_Heli_Light_01_stripped_F", "call life_civair_level >= 2" },
+			{ "B_Heli_Light_01_F", "call life_civair_level >= 2" },
+			{ "I_Heli_Transport_02_F", "call life_civair_level >= 6" },
+			{ "O_Heli_Transport_04_F", "call life_civair_level >= 4" },
+			{ "B_Heli_Transport_03_unarmed_F", "call life_civair_level >= 5" },
+			{ "O_Heli_Light_02_unarmed_F", "call life_civair_level >= 3" },
+			{ "C_Plane_Civil_01_racing_F", "call life_civair_level >= 3" }
+		};
+	};
 
-      class civ_ship 
-	  {
-         side = "civ";
-         conditions = "";
-         vehicles[] = {
-             { "C_Rubberboat", "" },
-             { "C_Boat_Civil_01_F", "" },
-			 { "O_Lifeboat", "" },
-			 { "C_Boat_Civil_01_rescue_F", "" },
-             { "B_SDV_01_F", "" },
-			  { "C_Scooter_Transport_01_F", "" }
-         };
-     };
+	class civ_ship 
+	{
+        side = "civ";
+		shopTitle = "Bootswerft";
+        conditions = "";
+        vehicles[] = 
+		{
+			{ "C_Rubberboat", "" },
+			{ "C_Boat_Civil_01_F", "" },
+			{ "O_Lifeboat", "" },
+			{ "C_Boat_Civil_01_rescue_F", "" },
+			{ "B_SDV_01_F", "" },
+			{ "C_Scooter_Transport_01_F", "" }
+        };
+    };
 
     // class reb_car {
         // side = "civ";
@@ -255,43 +267,57 @@ class CarShops
         // };
     // };
 
-     class med_shop {
-         side = "med";
-         conditions = "";
-         vehicles[] = {
+     class med_shop 
+	 {
+        side = "med";
+		shopTitle = "TFD Fahrzeugshop";
+        conditions = "";
+        vehicles[] = 
+		{
             { "GeK_Mercedes_ML63", "call life_medlevel >= 1" },
-         };
-     };
+        };
+    };
 
-     class med_air_hs {
-         side = "med";
-         conditions = "";
-         vehicles[] = {
-             { "B_Heli_Light_01_F", "" },
-             { "O_Heli_Light_02_unarmed_F", "" }
-         };
-     };
+     class med_air_hs 
+	 {
+        side = "med";
+		shopTitle = "TFD Helikoptershop";
+        conditions = "";
+        vehicles[] = 
+		{
+            { "B_Heli_Light_01_F", "" },
+            { "O_Heli_Light_02_unarmed_F", "" }
+        };
+    };
 	 
-	 class adac_shop {
-         side = "adac";
-         conditions = "";
-         vehicles[] = {
+	 class adac_shop 
+	 {
+        side = "adac";
+		shopTitle = "TAC Fahrzeugshop";
+        conditions = "";
+        vehicles[] = 
+		{
             { "GeK_Mercedes_ML63", "call life_adaclevel >= 1" },
 			{ "B_Truck_01_transport_F", "call life_adaclevel >= 1" }
-         };
-     };
+        };
+    };
 
-     class adac_air_hs {
-         side = "adac";
-         conditions = "";
-         vehicles[] = {
-             { "B_Heli_Light_01_F", "" },
-             { "O_Heli_Light_02_unarmed_F", "" }
-         };
-     };
+     class adac_air_hs 
+	{
+        side = "adac";
+		shopTitle = "TAC Helikoptershop";
+        conditions = "";
+        vehicles[] = 
+		{
+            { "B_Heli_Light_01_F", "" },
+            { "O_Heli_Light_02_unarmed_F", "" }
+        };
+    };
 
-    class cop_car {
+    class cop_car 
+	{
         side = "cop";
+		shopTitle = "TPD Fahrzeugshop";
         conditions = "";
         vehicles[] = {
             { "red_charger_15_p_sheriff", "call life_coplevel >= 1" },
@@ -310,8 +336,10 @@ class CarShops
         };
     };
 
-    class cop_air {
+    class cop_air 
+	{
         side = "cop";
+		shopTitle = "TPD Helikoptershop";
         conditions = "call life_coplevel >= 3";
         vehicles[] = {
             { "B_Heli_Light_01_F", "" },
@@ -322,8 +350,10 @@ class CarShops
         };
     };
 
-    class cop_ship {
+    class cop_ship 
+	{
         side = "cop";
+		shopTitle = "TPD Bootswerft";
         conditions = "";
         vehicles[] = {
             { "B_Boat_Transport_01_F", "" },
@@ -1458,7 +1488,7 @@ class LifeCfgVehicles {
 	class Box_NATO_AmmoVeh_F {
         vItemSpace = 200;
         conditions = "";
-        price = 10000;
+        price = 15000;
         textures[] = {FARBENCONTAINER};
     };
 	
