@@ -94,4 +94,3 @@ if (LIFE_SETTINGS(getNumber,"vehicleShop_3D") isEqualTo 1) then {
 };
 
 ((findDisplay 2300) displayCtrl 2302) lbSetCurSel 0;
-((findDisplay 2300) displayCtrl 2304) lbSetCurSel 0;
