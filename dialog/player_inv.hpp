@@ -108,6 +108,7 @@ class playerSettings {
 			y = 0.3628 * safezoneH + safezoneY;
 			w = 0.060375 * safezoneW;
 			h = 0.0252 * safezoneH;
+			style = 2;
 		};
 		 class NearPlayers: Life_RscCombo
 		{
@@ -168,6 +169,7 @@ class playerSettings {
 			w = 0.144375 * safezoneW;
 			h = 0.297 * safezoneH;
 			sizeEx = 0.040;
+			style = 0;
 		};
 		 
 		class itemEdit: Life_RscEdit
@@ -179,6 +181,8 @@ class playerSettings {
 			y = 0.599 * safezoneH + safezoneY;
 			w = 0.148313 * safezoneW;
 			h = 0.0248 * safezoneH;
+			colorBackground[] = {0,0,0,0.3};
+			style = 2;
 		};
 		class iNearPlayers: Life_RscCombo
 		{
@@ -188,6 +192,7 @@ class playerSettings {
 			y = 0.632 * safezoneH + safezoneY;
 			w = 0.148312 * safezoneW;
 			h = 0.022 * safezoneH;
+			style = 0;
 		};
 		 class RemoveButton: Life_RscButtonMenu
 		{

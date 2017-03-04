@@ -29,7 +29,7 @@ class life_wanted_menu {
 			h = 0.50617 * safezoneH;
 			colorBackground[] = {0,0,0,0.7};
 		};
-		class Titel: RscStructuredText
+		class Titel: Life_RscStructuredText
 		{
 			idc = 1100;
 

@@ -24,6 +24,7 @@ if (_shop isEqualTo "") exitWith {};
 if (!(_sideCheck isEqualTo sideUnknown) && {!(playerSide isEqualTo _sideCheck)}) exitWith {[(format [localize "STR_Shop_Veh_NotAllowed"]),"Hinweis","Yellow"] call MSG_fnc_handle;};
 
 private _conditions = M_CONFIG(getText,"CarShops",_shop,"conditions");
+private _shopTitle = M_CONFIG(getText,"CarShops",_shop,"shopTitle");
 if !([_conditions] call life_fnc_levelCheck) exitWith {[(format [localize "STR_Shop_Veh_NotAllowed"]),"Hinweis","Yellow"] call MSG_fnc_handle;};
 
 if (LIFE_SETTINGS(getNumber,"vehicleShop_3D") isEqualTo 1) then {
@@ -34,19 +35,26 @@ if (LIFE_SETTINGS(getNumber,"vehicleShop_3D") isEqualTo 1) then {
 
 life_veh_shop = [_shop,_spawnpoints,_shopFlag,_disableBuy]; //Store it so so other parts of the system can access it.
 
-ctrlSetText [2301,_shopTitle];
-
 
 _display = findDisplay 2300;
+_titel = _display displayCtrl 1002;
+_liste = _display displayCtrl 1003;
+_info  = _display displayCtrl 1004;
 _Btn1 = _display displayCtrl 1005;
 _Btn2 = _display displayCtrl 1006;
 _Btn3 = _display displayCtrl 1007;
 _Btn4 = _display displayCtrl 1008;
 
-_Btn1 ctrlSetStructuredText parseText "<t align='center' size='0.85' font ='PuristaBold'>Schließen</t>";
-_Btn2 ctrlSetStructuredText parseText "<t align='center' size='0.85' font ='PuristaBold'>Mieten</t>";
-_Btn3 ctrlSetStructuredText parseText "<t align='center' size='0.85' font ='PuristaBold'>Kaufen ohne Versicherung</t>";
-_Btn4 ctrlSetStructuredText parseText "<t align='center' size='0.85' font ='PuristaBold'>Kaufen inkl. Versicherung</t>";
+// _titel ctrlSetStructuredText parseText format["%1",_shopTitle];
+
+
+_titel ctrlSetStructuredText parseText format["<t align='center'>%1</t>",_shopTitle];
+_liste ctrlSetStructuredText parseText "<t align='center'>verfügbare Fahrzeuge</t>";
+_info ctrlSetStructuredText parseText "<t align='center'>Fahrzeuginformationen</t>";
+_Btn1 ctrlSetStructuredText parseText "Schließen";
+_Btn2 ctrlSetStructuredText parseText "Mieten";
+_Btn3 ctrlSetStructuredText parseText "Kaufen ohne Versicherung";
+_Btn4 ctrlSetStructuredText parseText "Kaufen inkl. Versicherung";
 
 
 
