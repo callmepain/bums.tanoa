@@ -16,7 +16,7 @@ if (hasInterface) then {
 [] execvm "core\functions\fn_effects.sqf";
 
 _handle = [] spawn life_fnc_mapmarker;
- waitUntil {scriptDone _handle};
+waitUntil {scriptDone _handle};
 if ((isServer) or (isDedicated)) then {
  //TFAR ==============================
     TF_terrain_interception_coefficient = 1; //Interferenzen durch Gelände.

@@ -1,0 +1,44 @@
+﻿_handle = []spawn {
+	disableSerialization;
+	bj_karten = [];
+	bj_meine_karte = [];
+	bj_dealer_karte = [];
+	bj_dealer_punkte = 0;
+	bj_meine_punkte = 0;
+	call life_fnc_bj_clear;
+	bj_einsatz = 0;
+	_bj_config = missionConfigFile >> "BlackJack";
+	for "_i" from 0 to count(_bj_config)-1 do {
+		_curConfig = _bj_config select _i;
+		_kname = getText(_curConfig >> "displayName");
+		 _kwert = getNumber(_curConfig >> "wert");
+		 _kbild = getText(_curConfig >> "bild");
+		 bj_karten pushBack [_kname,_kwert,_kbild];
+	};
+	_punkte_dealer = ((findDisplay 2300) displayCtrl 1100);
+	_punkte_meine = ((findDisplay 2300) displayCtrl 1101);
+	_btn_start = ((findDisplay 2300) displayCtrl 1602);
+	_btn_genug = ((findDisplay 2300) displayCtrl 1601);
+	_btn_nehmen = ((findDisplay 2300) displayCtrl 1600);
+	_kohle = ((findDisplay 2300) displayCtrl 2100);
+	_status = ((findDisplay 2300) displayCtrl 1102);
+	_btn_nehmen ctrlEnable false;
+	_btn_genug ctrlEnable false;
+	if ((lbCurSel 2100) isEqualTo -1) exitWith {[(format ["Kein Einsatz ausgewählt!"]),"Hinweis","Red"] call MSG_fnc_handle;};
+	bj_einsatz = lbData [2100,lbCurSel 2100];
+	if (life_cash < (parseNumber bj_einsatz)) exitWith {[(format ["Du hast zuwenig Geld"]),"Hinweis","Red"] call MSG_fnc_handle;};
+	[1]spawn life_fnc_bj_geben;
+	sleep 0.5;
+	[2]spawn life_fnc_bj_geben;
+	_btn_nehmen ctrlShow true;
+	_btn_genug ctrlShow true;
+	_btn_start ctrlShow false;
+	_kohle ctrlShow false;
+
+	_btn_genug ctrlSetStructuredText parseText "<t align='center'>genug</t>";
+	_btn_nehmen ctrlSetStructuredText parseText "<t align='center'>Karte ziehn</t>";
+	_status ctrlSetStructuredText parseText format["<t align='center'>%1</t>",""];
+	sleep 1;
+	_btn_nehmen ctrlEnable true;
+	_btn_genug ctrlEnable true;
+};

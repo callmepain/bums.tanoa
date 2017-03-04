@@ -13,6 +13,7 @@
 *****************************
 */
 life_query_time = time;
+Life_ohrstecker = false;
 life_action_delay = time;
 life_trunk_vehicle = objNull;
 life_schliessfach = player;

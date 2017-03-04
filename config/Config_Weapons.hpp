@@ -30,22 +30,33 @@ class WeaponShops
         conditions = "license_civ_gun";
         items[] = 
 		{
-            { "hgun_mas_mak_F", "", 6000, 3000, "" },
-            { "hgun_mas_uzi_F", "", 15000, 7500, "" }, 
-            { "hgun_mas_acp_F", "", 9000, 4500, "" },
-            { "hgun_mas_m9_F", "", 7500, 3750, "" },
-            { "hgun_mas_p226_F", "",8000, 4000, "" }
+            { "CUP_srifle_CZ550", "", 50000, 25000, "" },
+            { "hgun_PDW2000_F", "", 35000, 15000, "" }, 
+            { "arifle_SDAR_F", "", 30000, 15000, "" },
+            { "hgun_ACPC2_F", "", 10000, 5000, "" },
+            { "CUP_hgun_Duty", "",7500, 3500, "" },
+			{ "CUP_hgun_Phantom", "",7500, 3500, "" },
+			{ "CUP_hgun_Colt1911", "",10000, 5000, "" },
+			{ "hgun_P07_F", "",7500, 3500, "" },
+			{ "hgun_Rook40_F", "",6500, 3000, "" },
+			{ "CUP_hgun_TaurusTracker455_gold", "",8000, 4000, "" },
+			{ "hgun_Pistol_heavy_02_F", "",8500, 4000, "" }
         };
         mags[] = 
 		{
-            { "8Rnd_mas_9x18_Mag", "", 125, 60, "" },
-            { "25Rnd_mas_9x19_Mag", "", 150, 75, "" },
-            { "12Rnd_mas_45acp_Mag", "", 200, 100, "" },
-            { "17Rnd_mas_9x21_Mag", "", 250, 125, "" }
+            { "CUP_5x_22_LR_17_HMR_M", "", 400,200, "" },
+            { "30Rnd_9x21_Mag", "", 300, 150, "" },
+            { "20Rnd_556x45_UW_mag", "", 300, 150, "" },
+            { "9Rnd_45ACP_Mag", "", 200, 100, "" },
+			{ "16Rnd_9x21_Mag", "", 150, 75, "" },
+			{ "CUP_18Rnd_9x19_Phantom", "", 150, 75, "" },
+			{ "CUP_7Rnd_45ACP_1911", "", 200, 100, "" },
+			{ "CUP_6Rnd_45ACP_M", "", 200, 100, "" },
+			{ "6Rnd_45ACP_Cylinder", "", 200, 100, "" }
         };
         accs[] = 
 		{
-            { "optic_ACO_grn_smg", "", 2500, 1250, "" }
+            //{ "optic_Aco", "", 1000, 500, "" }
         };
     };
 
@@ -57,44 +68,60 @@ class WeaponShops
 		conditions = "license_civ_gun";
 		items[] = 
 		{
-			{ "hgun_mas_grach_F", "", 20000, 10000, "" },
-			{ "arifle_mas_akm", "", 50000, 25000, "" },			
-			{ "arifle_mas_aks74", "", 35000, 17500, "" },
-			{ "arifle_mas_aks74u", "", 33000, 16500, "" },
-			{ "arifle_mas_fal", "", 22000, 11000, "" },
-			{ "arifle_mas_lee", "", 22000, 11000, "" },
-			{ "arifle_mas_mp40", "", 30000, 15000, "" },			
-			{ "srifle_mas_svd", "", 25000, 12500, "" },
-			{ "srifle_mas_vss", "", 22000, 11000, "" }
+			{ "CUP_arifle_AK47", "", 250000, 125000, "" },
+			{ "arifle_CTAR_ghex_F", "", 150000, 75000, "" },			
+			{ "arifle_MXC_khk_F", "", 100000, 50000, "" },
+			{ "arifle_SPAR_01_blk_F", "", 150000, 75000, "" },
+			{ "CUP_arifle_XM8_Compact", "", 160000, 75000, "" },
+			{ "CUP_arifle_AKS_Gold", "", 250000, 125000, "" },
+			{ "arifle_Katiba_F", "", 150000, 75000, "" },			
+			{ "CUP_arifle_L85A2_NG", "", 180000, 12500, "" },
+			{ "CUP_arifle_G36K_camo", "", 160000, 75000, "" },
+			{ "CUP_srifle_CZ750", "", 480000, 240000, "" },
+			{ "CUP_srifle_M14_DMR", "", 750000, 350000, "" },
+			{ "CUP_srifle_VSSVintorez", "", 250000, 125000, "" },
+			{ "hgun_Pistol_heavy_01_F", "", 50000, 25000, "" },
+			{ "CUP_hgun_MicroUzi", "", 75000, 35000, "" }
 		};
 		mags[] = 
 		{
-			{ "5Rnd_mas_762x51_Stanag", "",   125, 60, "" },
-			{ "8Rnd_mas_9x18_Mag", "",   150, 75, "" },
-			{ "10Rnd_mas_762x54_mag", "", 175, 85, "" },
-			{ "13Rnd_mas_9x21_Mag", "",   200, 100, "" },
-			{ "15Rnd_mas_9x21_Mag", "",   225, 112, "" },
-			{ "17Rnd_mas_9x21_Mag", "",   275, 135, "" },
-			{ "20Rnd_762x51_Mag", "",   400, 200, "" },
-			{ "20Rnd_mas_762x51_Stanag", "",   400, 200, "" },
-			{ "20Rnd_mas_762x51_T_Stanag", "",   400, 200, "" },
-			{ "20Rnd_mas_9x39_mag", "", 400, 200, "" },
-			{ "30Rnd_mas_545x39_T_mag", "",   500, 250, "" },
-			{ "30Rnd_mas_545x39_mag", "",   500, 250, "" },			
-			{ "30Rnd_mas_762x39_T_mag", "", 500, 250, "" },
-			{ "30Rnd_mas_762x39_mag", "",  500, 250, "" },
-			{ "30Rnd_mas_9x21_Stanag", "", 500, 250, "" }
+			{ "CUP_30Rnd_762x39_AK47_M", "",   1500, 750, "" },
+			{ "30Rnd_580x42_Mag_Tracer_F", "",   800, 400, "" },
+			{ "30Rnd_580x42_Mag_F", "",   800, 400, "" },
+			{ "30Rnd_65x39_caseless_mag", "", 650, 325, "" },
+			{ "30Rnd_556x45_Stanag", "",   800, 400, "" },
+			{ "30Rnd_556x45_Stanag_Tracer_Yellow", "",   800, 400, "" },
+			{ "CUP_30Rnd_556x45_G36", "",   800, 400, "" },
+			{ "30Rnd_65x39_caseless_green", "",   800, 400, "" },
+			{ "CUP_30Rnd_556x45_Stanag", "",   800, 400, "" },
+			{ "CUP_10Rnd_762x51_CZ750_Tracer", "",   1500, 750, "" },
+			{ "CUP_20Rnd_762x51_DMR", "",   5000, 2500, "" },			
+			{ "CUP_10Rnd_9x39_SP5_VSS_M", "", 1000, 500, "" },
+			{ "11Rnd_45ACP_Mag", "",  400, 200, "" },
+			{ "CUP_30Rnd_9x19_UZI", "", 400, 200, "" }
 			
 		};
 		accs[] = 
 		{
-			{ "optic_mas_acog"", ", 3500, 1750, "" },
-			{ "optic_mas_aim"", ", 3600, 1800, "" },
-			{ "optic_mas_Arco_blk", "", 4000, 2000, "" },
-			{ "optic_mas_MRCO_camo", "", 3500, 1750, "" },
-			{ "optic_mas_kobra_c", "", 3500, 1750, "" },
-			{ "acc_flashlight"", ", 1000, 500, "" },
-			{ "bipod_02_F_blk", "", 1000, 500, "" }			
+			{ "CUP_optic_Kobra", "", 15000, 7500, "" },
+			{ "optic_ERCO_khk_F", "", 15000, 7500, "" },
+			{ "muzzle_snds_58_ghex_F", "", 5000, 2500, "" },
+			{ "optic_Arco_ghex_F", "", 15000, 7500, "" },
+			{ "muzzle_snds_H_khk_F", "", 5000, 2500, "" },
+			{ "optic_Hamr", "", 15000, 7500, "" },
+			{ "muzzle_snds_M", "", 5000, 2500, "" },
+			{ "bipod_01_F_blk", "", 3500, 1700, "" },
+			{ "optic_Arco_blk_F", "", 15000, 7500, "" },
+			{ "CUP_optic_HoloBlack", "", 5000, 2500, "" },
+			{ "CUP_muzzle_snds_L85", "", 1000, 500, "" },
+			{ "CUP_muzzle_snds_G36_desert", "", 5000, 2500, "" },
+			{ "CUP_optic_SB_11_4x20_PM", "", 25000, 12500, "" },
+			{ "CUP_bipod_Harris_1A2_L", "", 3500, 1750, "" },
+			{ "CUP_optic_LeupoldMk4", "", 35000, 17500, "" },
+			{ "CUP_optic_PSO_1", "", 25000, 12500, "" },
+			{ "optic_MRD", "", 4000, 2000, "" },
+			{ "muzzle_snds_acp", "", 1000, 500, "" },
+			{ "CUP_muzzle_snds_MicroUzi", "", 1000, 500, "" }		
 		};
 	};
 	
@@ -105,32 +132,37 @@ class WeaponShops
         conditions = "";
          items[] = 
 		 {
-            { "hgun_mas_mak_F", "", 6000, 3000, "" },
-            { "hgun_mas_uzi_F", "", 15000, 7500, "" }, 
-            { "hgun_mas_acp_F", "", 9000, 4500, "" },
-            { "hgun_mas_m9_F", "", 7500, 3750, "" },
-            { "hgun_mas_p226_F", "", 8000, 4000, "" }, 
-            { "arifle_mas_m1014", "", 12000, 6000, "" }, 			
-            { "arifle_mas_lee", "", 28000, 14000, "" }, 		
+            { "CUP_arifle_AKS74U", "", 120000, 60000, "" },
+            { "arifle_Mk20_plain_F", "", 120000, 60000, "" }, 
+            { "arifle_TRG21_F", "", 120000, 60000, "" },
+            { "CUP_srifle_L129A1", "", 250000, 125000, "" },
+            { "CUP_smg_EVO", "", 75000, 30000, "" }, 
+            { "SMG_01_F", "", 75000, 30000, "" }, 			
+            { "CUP_64Rnd_9x19_Bizon_M", "", 85000, 40000, "" }, 
+			{ "CUP_hgun_SA61", "", 50000, 25000, "" }			
         };
         mags[] = 
 		{
-            { "8Rnd_mas_9x18_Mag", "", 125, 60, "" },
-            { "25Rnd_mas_9x19_Mag", "", 150, 75, "" },
-            { "12Rnd_mas_45acp_Mag", "", 200, 100, "" },
-            { "17Rnd_mas_9x21_Mag", "", 250, 125, "" },
-            { "17Rnd_mas_9x21_Mag", "", 250, 125, "" },
-            { "7Rnd_mas_12Gauge_Slug", "", 250, 125, "" },			
-            { "5Rnd_mas_762x51_Stanag", "", 250, 125, "" },			
+            { "CUP_30Rnd_545x39_AK_M", "", 650, 325, "" },
+            { "CUP_30Rnd_TE1_Green_Tracer_545x39_AK_M", "", 650, 325, "" },
+            { "30Rnd_556x45_Stanag", "", 600, 300, "" },
+            { "CUP_20Rnd_762x51_L129_M", "", 1500, 750, "" },
+            { "CUP_30Rnd_9x19_EVO", "", 350, 125, "" },
+			{ "30Rnd_9x21_Mag", "", 350, 125, "" },
+            { "30Rnd_45ACP_Mag_SMG_01", "", 350, 125, "" },			
+            { "30Rnd_45ACP_Mag_SMG_01_Tracer_Red", "", 350, 125, "" },
+			{ "CUP_64Rnd_9x19_Bizon_M", "", 500, 250, "" },
+			{ "CUP_64Rnd_White_Tracer_9x19_Bizon_M", "", 500, 250, "" },
+			{ "CUP_20Rnd_B_765x17_Ball_M", "", 400, 200, "" }			
         };
         accs[] = 
 		{
-            { "optic_mas_acog"", ", 3500, 1750, "" },
-            { "optic_mas_aim"", ", 3600, 1800, "" },
-            { "optic_mas_Arco_blk", "", 4000, 2000, "" },
-            { "optic_mas_MRCO_camo", "", 3500, 1750, "" },
-            { "acc_flashlight"", ", 1000, 500, "" },
-            { "bipod_02_F_blk", "", 1000, 500, "" }			
+            { "CUP_optic_Kobra", "", 7500, 3750, "" },
+            { "CUP_muzzle_Bizon", "", 3500, 1750, "" },
+            { "optic_Aco_smg", "", 5000, 2500, "" },
+            { "CUP_optic_CompM4", "", 10000, 5000, "" },
+            { "muzzle_snds_L", "", 1000, 500, "" },
+			{ "muzzle_snds_acp", "", 1000, 500, "" }			
 		};
     };
 

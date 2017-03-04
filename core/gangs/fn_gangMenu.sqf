@@ -33,7 +33,7 @@ if !(_ownerID isEqualTo getPlayerUID player) then {
     (CONTROL(2620,2631)) ctrlEnable false; //Disband Gang
 };
 
-_Titel ctrlSetStructuredText parseText format["<t align='center'>Gang-Menü</t><t align='right'>max. Mitgliederanzahl: %1</t>",_gangMax];
+_Titel ctrlSetStructuredText parseText format["<t align='left'>Gang: %2</t><t align='center'>Gang-Menü</t><t align='right'>max. Mitgliederanzahl: %1</t>",_gangMax,_gangName];
 
 (CONTROL(2620,2629)) ctrlSetText _gangName;
 (CONTROL(2620,601)) ctrlSetText format [(localize "STR_GNOTF_Funds")+ " $%1",[_gangBank] call life_fnc_numberText];

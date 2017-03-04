@@ -15,8 +15,8 @@ _delete = false;
 _check pushback "Car";
 _check pushback "Air";
 _check pushback "Ship";
-_nearVehicles = nearestObjects[getPos (_this select 0),life_Container,30];
-if (count _nearVehicles > 0) then {
+_nearVehicles2 = nearestObjects[getPos (_this select 0),life_Container,30];
+if (count _nearVehicles2 > 0) then {
 _delete =
  [
 	format["Bei Fahrzeugen, die mit Containern beladen sind, werden die Container gelöscht! 		Willst du wirklich dein Fahrzeug in die Garage stellen und den Container löschen?"],
@@ -28,27 +28,21 @@ _delete =
 	_delete = true;
 };
 if(_delete) then {
-	if !(isNull objectParent player) then {
-		_vehicle = vehicle player;
-	} else {
-		_nearVehicles = nearestObjects[getPos (_this select 0),_check,30]; //Fetch vehicles within 30m.
-		if (count _nearVehicles > 0) then {
-			{
-				if (!isNil "_vehicle") exitWith {}; //Kill the loop.
-				_vehData = _x getVariable ["vehicle_info_owners",[]];
-				if (count _vehData  > 0) then {
-					_vehOwner = ((_vehData select 0) select 0);
-					if ((getPlayerUID player) == _vehOwner && (typeOf _x in life_Container))  then
-					{
-						deleteVehicle _x;
-					}
-					else
-					{
-						_vehicle = _x;
-					};
+	_nearVehicles = nearestObjects[getPos (_this select 0),_check,30]; //Fetch vehicles within 30m.
+	if (count _nearVehicles > 0) then {
+		{
+			if (!isNil "_vehicle") exitWith {}; //Kill the loop.
+			_vehData = _x getVariable ["vehicle_info_owners",[]];
+			if (count _vehData  > 0) then {
+				_vehOwner = ((_vehData select 0) select 0);
+				if ((getPlayerUID player) isEqualTo _vehOwner AND (typeOf _x in life_Container))  then {
+					deleteVehicle _x;
 				};
-			} forEach _nearVehicles;
-		};
+				if ((getPlayerUID player) isEqualTo _vehOwner AND !(typeOf _x in life_Container))  then {
+					_vehicle = _x;
+				};
+			};
+		} forEach _nearVehicles;
 	};
 };
 if (isNil "_vehicle") exitWith {[(format [localize "STR_Garage_NoNPC"]),"Hinweis","Yellow"] call MSG_fnc_handle;};
