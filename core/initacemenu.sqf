@@ -1,19 +1,27 @@
 #include "..\script_macros.hpp"
 private ["_handle","_timeStamp"];
 _timeStamp = diag_tickTime;
-
+_classes = ["C_man_1","O_medic_F","B_RangeMaster_F"];
+ace_interaction_fnc_canTapShoulder = compileFinal "false";
 ///////// delete self medic /////////////
-[typeOf player, 1,["ACE_SelfActions","Medical"]] call ace_interact_menu_fnc_removeActionFromClass;
-[typeOf player, 1,["ACE_SelfActions","Medical_Menu"]] call ace_interact_menu_fnc_removeActionFromClass;
-[typeOf player, 0,["ACE_MainActions","Medical_Menu"]] call ace_interact_menu_fnc_removeActionFromClass;
+{
+	[_x , 1,["ACE_SelfActions","Medical"]] call ace_interact_menu_fnc_removeActionFromClass;
+	[_x , 1,["ACE_SelfActions","Medical_Menu"]] call ace_interact_menu_fnc_removeActionFromClass;
 
+	[_x , 0,["ACE_MainActions","Medical_Menu"]] call ace_interact_menu_fnc_removeActionFromClass;
 
-[typeOf player, 0,["ACE_MainActions","ACE_GetDown"]] call ace_interact_menu_fnc_removeActionFromClass;
-[typeOf player, 0,["ACE_MainActions","ACE_SendAway"]] call ace_interact_menu_fnc_removeActionFromClass;
+	[_x , 0,["ACE_MainActions","ACE_GetDown"]] call ace_interact_menu_fnc_removeActionFromClass;
+	[_x , 0,["ACE_MainActions","ACE_SendAway"]] call ace_interact_menu_fnc_removeActionFromClass;
 
-_action = ["Ausweis zeigen","Ausweis zeigen","icons\acemenu\ico_repair.paa",{[_player] remoteExecCall ["life_fnc_zeige_ausweis",_target]},{true}] call ace_interact_menu_fnc_createAction;
-["Man", 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;
+	[_x , 0,["ACE_MainActions","ACE_TapShoulderRight"]] call ace_interact_menu_fnc_removeActionFromClass;
+	[_x , 0,["ACE_MainActions","ACE_TapShoulderLeft"]] call ace_interact_menu_fnc_removeActionFromClass;
+} forEach _classes;
 
+//////////////ausweis////////////
+{
+	_action = ["Ausweis zeigen","Ausweis zeigen","icons\acemenu\ico_repair.paa",{[_player] remoteExecCall ["life_fnc_zeige_ausweis",_target]},{isPlayer _target}] call ace_interact_menu_fnc_createAction;
+	[_x, 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;
+} forEach _classes;
 
 /*         CIV ACE MENU         */
 _action = ["Vehicle Repair","Repair Vehicle","icons\acemenu\ico_repair.paa",{_target spawn life_fnc_repairTruck},{life_inv_toolkit >= 1 && _target call life_fnc_isDamaged}] call ace_interact_menu_fnc_createAction;
@@ -37,17 +45,18 @@ _action = ["Tanken","Tanken","icons\items\ico_fuel.paa",{["fuelFK50L",_target] s
 ["Ship", 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;*/
 
 /*         COP ACE MENU         */
-_action1 = ["Cop menu", "Cop Menu", "icons\acemenu\ico_abzeichen.paa", {true}, {playerSide isEqualTo west && isPlayer _target}] call ace_interact_menu_fnc_createAction; // add another custom node
-["Man", 0, ["ACE_MainActions"], _action1] call ace_interact_menu_fnc_addActionToClass;
-_action2 = ["CheckLicense","Lizenen Überprüfen","icons\acemenu\ico_license.paa",{[_player] remoteExecCall ["life_fnc_licenseCheck",_target]},{_target isKindOf "Man"}] call ace_interact_menu_fnc_createAction;
-["Man", 0, ["ACE_MainActions","Cop menu"], _action2] call ace_interact_menu_fnc_addActionToClass;
-_action3 = ["Checkplayer","Spieler durchsuchen","icons\acemenu\ico_search.paa",{_target spawn life_fnc_searchAction},{_target isKindOf "Man"}] call ace_interact_menu_fnc_createAction;
-["Man", 0, ["ACE_MainActions","Cop menu"], _action3] call ace_interact_menu_fnc_addActionToClass;
-_action4 = ["giveticket","Ticket ausstellen","icons\acemenu\ico_ticket.paa",{_target call life_fnc_ticketAction},{_target isKindOf "Man"}] call ace_interact_menu_fnc_createAction;
-["Man", 0, ["ACE_MainActions","Cop menu"], _action4] call ace_interact_menu_fnc_addActionToClass;
-_action5 = ["arrest","Einsperren","icons\acemenu\ico_jail.paa",{createDialog "jail_time"},{_target isKindOf "Man"}] call ace_interact_menu_fnc_createAction;
-["Man", 0, ["ACE_MainActions","Cop menu"], _action5] call ace_interact_menu_fnc_addActionToClass;
-
+{
+	_action = ["Cop menu", "Cop Menu", "icons\acemenu\ico_abzeichen.paa", {true}, {((side _player) isEqualTo west) && isPlayer _target}] call ace_interact_menu_fnc_createAction; // add another custom node
+	[_x, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToClass;
+	_action = ["CheckLicense","Lizenen Überprüfen","icons\acemenu\ico_license.paa",{[_player] remoteExecCall ["life_fnc_licenseCheck",_target]},{true}] call ace_interact_menu_fnc_createAction;
+	[_x, 0, ["ACE_MainActions","Cop menu"], _action] call ace_interact_menu_fnc_addActionToClass;
+	_action = ["Checkplayer","Spieler durchsuchen","icons\acemenu\ico_search.paa",{_target spawn life_fnc_searchAction},{true}] call ace_interact_menu_fnc_createAction;
+	[_x, 0, ["ACE_MainActions","Cop menu"], _action] call ace_interact_menu_fnc_addActionToClass;
+	_action = ["giveticket","Ticket ausstellen","icons\acemenu\ico_ticket.paa",{_target call life_fnc_ticketAction},{true}] call ace_interact_menu_fnc_createAction;
+	[_x, 0, ["ACE_MainActions","Cop menu"], _action] call ace_interact_menu_fnc_addActionToClass;
+	_action = ["arrest","Einsperren","icons\acemenu\ico_jail.paa",{createDialog "jail_time"},{true}] call ace_interact_menu_fnc_createAction;
+	[_x, 0, ["ACE_MainActions","Cop menu"], _action] call ace_interact_menu_fnc_addActionToClass;
+} forEach _classes;
 /*         COP ACE MENU   car      */
 
 _action = ["Cop car menu", "Cop Menu", "icons\acemenu\ico_abzeichen.paa", {true}, {playerSide isEqualTo west && _target isKindOf "landVehicle"}] call ace_interact_menu_fnc_createAction; // add another custom node
@@ -105,9 +114,10 @@ _distance = 10; //distance for the action
 
 
 /*         Medic ACE MENU         */
-_action = ["Bloodlevel","Blut berprüfen","icons\acemenu\ico_search.paa",{[(format ["Der Patient hat noch <br/> %1 Liter Blut!", [_target] call life_fnc_bloodcount]),"Hinweis","green"] call MSG_fnc_handle},{playerSide == independent && isPlayer _target}] call ace_interact_menu_fnc_createAction;
-[typeOf player, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToClass;
-
+{
+	_action = ["Bloodlevel","Blut berprüfen","icons\acemenu\ico_search.paa",{[(format ["Der Patient hat noch <br/> %1 Liter Blut!", [_target] call life_fnc_bloodcount]),"Hinweis","green"] call MSG_fnc_handle},{playerSide == independent && isPlayer _target}] call ace_interact_menu_fnc_createAction;
+	[_x, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToClass;
+} forEach _classes;
 diag_log "----------------------------------------------------------------------------------------------------";
 diag_log format ["               End of ACE Menu Client Init :: Total Execution Time %1 seconds ",(diag_tickTime) - _timeStamp];
 diag_log "----------------------------------------------------------------------------------------------------";

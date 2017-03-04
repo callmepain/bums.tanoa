@@ -224,3 +224,4 @@ class Life_Settings {
 #include "Config_SkillSystem.hpp"
 #include "Config_Schliessfach.hpp"
 #include "Config_Spritverbrauch.hpp"
+#include "Config_BlackJack.hpp"

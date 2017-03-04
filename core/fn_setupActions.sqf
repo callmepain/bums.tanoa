@@ -19,5 +19,7 @@ switch (playerSide) do {
 
 	// life_actions = life_actions + [player addAction["Admin",life_fnc_copInteractionMenu,cursorTarget,0,false,false,"",'']];
 	//life_actions = life_actions + [player addAction["ausweis",life_fnc_zeige_ausweis,"",0,false,false,"",'']];
-	life_actions = life_actions + [player addAction["Personalausweis zeigen",{[player] remoteExecCall ["life_fnc_zeige_ausweis",cursorTarget];},"",0,false,false,"",'
-		isPlayer cursorTarget && alive cursorTarget && (player distance cursorTarget < 3) && (speed player < 1 && speed cursorTarget < 1)']];
+//	life_actions = life_actions + [player addAction["Personalausweis zeigen",{[player] remoteExecCall ["life_fnc_zeige_ausweis",cursorTarget];},"",0,false,false,"",'
+//		isPlayer cursorTarget && alive cursorTarget && (player distance cursorTarget < 3) && (speed player < 1 && speed cursorTarget < 1)']];
+
+//	life_actions = life_actions + [player addAction["open",life_fnc_blackjack_init,"",0,false,false,"",'']];

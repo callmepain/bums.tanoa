@@ -12,7 +12,7 @@ params [
     ["_shooter",objNull,[objNull]]
 ];
 
-if (isNull _unit || isNull _shooter) exitWith {player allowDamage true; life_istazed = false;};
+if (isNull _unit || isNull _shooter) exitWith {player allowDamage true;[player, "blockDamage", "Tazed", false] call ace_common_fnc_statusEffect_set; life_istazed = false;};
 
 if (_shooter isKindOf "Man" && alive player) then {
     if (!life_istazed) then {
@@ -50,9 +50,11 @@ if (_shooter isKindOf "Man" && alive player) then {
         };
         life_istazed = false;
         player allowDamage true;
+		[player, "blockDamage", "Tazed", false] call ace_common_fnc_statusEffect_set;
         disableUserInput false;
     };
 } else {
     _unit allowDamage true;
+	[_unit, "blockDamage", "Tazed", false] call ace_common_fnc_statusEffect_set;
     life_iztazed = false;
 };

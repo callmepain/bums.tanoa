@@ -728,7 +728,7 @@
             <Original>Die Auswahl hat einen Fehler...</Original>
         </Key>
         <Key ID="STR_Garage_NoNPC">
-            <Original>Es befindet sich kein Fahrzeug in der Nähe des NPC.</Original>
+            <Original>Es befindet sich kein Fahrzeug in der Nähe des NPC das dir gehört.</Original>
         </Key>
     </Package>
     <Package name="Key_Chain">

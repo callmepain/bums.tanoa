@@ -99,6 +99,7 @@ class Life_Client_Core {
         class adminSpectate {};
         class adminTeleport {};
         class adminTpHere {};
+		class player_level_get {};
     };
 	
 	class Adac {
@@ -153,6 +154,19 @@ class Life_Client_Core {
 		file = "core\markers";
 		class del_markers {};
         class get_markers {};
+	};
+	
+	class BlackJack 
+	{	
+		file = "core\blackjack";
+		class bj_mischen {};
+        class bj_nehmen {};
+		class bj_stop {};
+		class blackjack_init {};
+		class bj_geben {};
+		class bj_clear {};
+		class bj_get_punkte {};
+		class bj_end_dealer {};
 	};
 	
 	class Spritverbrauch 
@@ -240,6 +254,7 @@ class Life_Client_Core {
         class unimpoundvehicles {};
         class vehicleGarage {};
         class wireTransfer {};    
+		class admin_level {};
 		};
 	
     class Functions {
