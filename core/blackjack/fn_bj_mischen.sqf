@@ -37,7 +37,7 @@
 
 	_btn_genug ctrlSetStructuredText parseText "<t align='center'>genug</t>";
 	_btn_nehmen ctrlSetStructuredText parseText "<t align='center'>Karte ziehn</t>";
-	_status ctrlSetStructuredText parseText format["<t align='center'>%1</t>",""];
+	_status ctrlSetStructuredText parseText format["<t align='right'>Aktuell: %1$</t>",[life_cash] call life_fnc_numberText];
 	sleep 1;
 	_btn_nehmen ctrlEnable true;
 	_btn_genug ctrlEnable true;

@@ -41,23 +41,28 @@ _handle = []spawn {
 			_punkte_dealer ctrlSetStructuredText parseText format["<t align='center'>%1</t>",_dealer_punkte];
 			_punkte_meine ctrlSetStructuredText parseText format["<t align='center'>%1</t>",_meine_punkte];
 			if((_meine_punkte <= 21) && (_dealer_punkte > 21)) then {
-				_status ctrlSetStructuredText parseText format["<t align='center'>%1 +%2$     Aktuell: %3$</t>","Du hast gewonnen",bj_einsatz,life_cash];
+				_status ctrlSetStructuredText parseText format["<t align='center'>%1 +%2$</t>     <t align='right'>Aktuell: %3$</t>","Du hast gewonnen",bj_einsatz,[life_cash] call life_fnc_numberText];
 				life_cash = life_cash + (parseNumber bj_einsatz);
 			};
 			if((_meine_punkte < _dealer_punkte) AND (_dealer_punkte > 21)) then {
 				life_cash = life_cash + (parseNumber bj_einsatz);
-				_status ctrlSetStructuredText parseText format["<t align='center'>%1 +%2$     Aktuell: %3$</t>","Du hast gewonnen",bj_einsatz,life_cash];
+				_status ctrlSetStructuredText parseText format["<t align='center'>%1 +%2$</t>     <t align='right'>Aktuell: %3$</t>","Du hast gewonnen",bj_einsatz,[life_cash] call life_fnc_numberText];
 			};
 			if((_meine_punkte > _dealer_punkte) AND (_dealer_punkte < 21) AND !(_meine_punkte > 21)) then {
 				life_cash = life_cash + (parseNumber bj_einsatz);
-				_status ctrlSetStructuredText parseText format["<t align='center'>%1 +%2$     Aktuell: %3$</t>","Du hast gewonnen",bj_einsatz,life_cash];
+				_status ctrlSetStructuredText parseText format["<t align='center'>%1 +%2$</t>     <t align='right'>Aktuell: %3$</t>","Du hast gewonnen",bj_einsatz,[life_cash] call life_fnc_numberText];
 			};
 			if(_meine_punkte isEqualTo _dealer_punkte) then {
-				_status ctrlSetStructuredText parseText format["<t align='center'>%1 +-0$     Aktuell: %2$</t>","Unentschieden",life_cash];
+				life_cash = life_cash - (parseNumber bj_einsatz);
+				life_fed_bank_money = life_fed_bank_money + (parseNumber bj_einsatz);
+				publicVariableServer "life_fed_bank_money";
+				_status ctrlSetStructuredText parseText format["<t align='center'>%1 -%2$</t>     <t align='right'>Aktuell: %2$</t>","Unentschieden",bj_einsatz,[life_cash] call life_fnc_numberText];
 			};
 			if((_meine_punkte < _dealer_punkte) AND (_dealer_punkte <= 21))then {
 				life_cash = life_cash - (parseNumber bj_einsatz);
-				_status ctrlSetStructuredText parseText format["<t align='center'>%1 -%2$     Aktuell: %3$</t>","Du hast verloren",bj_einsatz,life_cash];
+				life_fed_bank_money = life_fed_bank_money + (parseNumber bj_einsatz);
+				publicVariableServer "life_fed_bank_money";
+				_status ctrlSetStructuredText parseText format["<t align='center'>%1 -%2$</t>    <t align='right'> Aktuell: %3$</t>","Du hast verloren",bj_einsatz,[life_cash] call life_fnc_numberText];
 			};
 		};
 	};

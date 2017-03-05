@@ -22,6 +22,6 @@ _punkte_meine ctrlShow false;
 	_kohle lbAdd format ["%1",_x];
 	_kohle lbSetData [(lbSize _kohle)-1, str _x];
 } forEach _kohle_array;
-_status ctrlSetStructuredText parseText format["<t align='center'>Aktuell: %1$</t>",life_cash];
+_status ctrlSetStructuredText parseText format["<t align='right'>Aktuell: %1$</t>",[life_cash] call life_fnc_numberText];
 _btn_start ctrlSetStructuredText parseText "<t align='center'>Spiel Starten</t>";
 _titel ctrlSetStructuredText parseText "<t align='center'>Black Jack ohne Nutten v.1_0</t>";

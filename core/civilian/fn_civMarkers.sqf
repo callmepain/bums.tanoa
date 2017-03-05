@@ -8,6 +8,8 @@
 */
 private ["_markers","_members"];
 if (isDedicated) exitWith{};
+if (!hasInterface && !isDedicated) exitWith{};
+
 _markers = [];
 _members = [];
 _data  = SKILLSYSTEM_VALUE("Rohstoffabbau","civ");

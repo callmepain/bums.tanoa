@@ -65,7 +65,17 @@ switch (_code) do {
             _handled = true;
         };
     };
-
+	////holzfällen
+	case 16: {
+		if (!life_action_inUse) then {
+            [] spawn  {
+                private "_handle";
+                _handle = [] spawn life_fnc_woodcutting;
+                waitUntil {scriptDone _handle};
+                life_action_inUse = false;
+            };
+        };
+	};
     //Space key for Jumping
     case 57: {
         if (isNil "jumpActionTime") then {jumpActionTime = 0;};

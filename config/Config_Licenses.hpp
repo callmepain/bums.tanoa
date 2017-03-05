@@ -73,6 +73,14 @@ class Licenses {
         side = "civ";
     };
 	
+	class Foerster {
+        variable = "foerster";
+        displayName = "STR_License_foerster";
+        price = 10000;
+        illegal = false;
+        side = "civ";
+    };
+	
 /*    class oil {
         variable = "oil";
         displayName = "STR_License_Oil";
