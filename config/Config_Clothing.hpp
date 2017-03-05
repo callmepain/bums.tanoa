@@ -187,7 +187,9 @@ class Clothing {
         side = "civ";
         uniforms[] = {
             { "NONE", "Remove Uniform", 0, "" },
-            { "U_B_Wetsuit", "", 2000, "" }
+            { "U_B_Wetsuit", "", 2000, "" },
+			{ "U_O_Wetsuit", "", 3000, "" },
+			{ "U_I_Wetsuit", "", 4000, "" }
         };
         headgear[] = {
             { "NONE", "Remove Hat", 0, "" }
@@ -198,7 +200,9 @@ class Clothing {
         };
         vests[] = {
             { "NONE", "Remove Vest", 0, "" },
-            { "V_RebreatherB", "", 5000, "" }
+            { "V_RebreatherB", "", 5000, "" },
+			{ "V_RebreatherIA", "", 6000, "" },
+			{ "V_RebreatherIR", "", 7000, "" }
         };
         backpacks[] = {
             { "NONE", "Remove Backpack", 0, "" }

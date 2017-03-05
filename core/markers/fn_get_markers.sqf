@@ -16,8 +16,8 @@ switch(_type) do {
 				_mines = (_x select 0);
 				for "_i" from 0 to ((count _mines) - 1) do {
 					_marker = createMarkerLocal [format ["%1_%2",localize(_x select 1),_i], getMarkerPos (_x select 0 select _i)];
-					_marker setMarkerShape _shape;
-					_marker setMarkerSize [(_x select 3), (_x select 3)];
+					_marker setMarkerShapeLocal _shape;
+					_marker setMarkerSizeLocal [(_x select 3), (_x select 3)];
 					_marker setMarkerColorLocal _color;
 					_markers pushBack _marker;
 				};

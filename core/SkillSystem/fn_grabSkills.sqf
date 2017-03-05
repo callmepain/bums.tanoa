@@ -25,7 +25,7 @@ lbClear _datanow;
 lbClear _datanext;
 
 _side = "";
-_timemax = 0.5;
+_timemax = 0.52;
 _timenow = 0.5;
 _timenext = 0.5;
 _miningnow = 1;

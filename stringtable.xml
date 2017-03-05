@@ -2114,6 +2114,9 @@
 		<Key ID="STR_License_herstellung">
             <Original>Rohstoff Herstellung</Original>
         </Key>
+		<Key ID="STR_License_foerster">
+            <Original>Förster</Original>
+        </Key>
         <Key ID="STR_License_Diving">
             <Original>Taucherschein</Original>
         </Key>

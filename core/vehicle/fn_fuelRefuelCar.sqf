@@ -74,6 +74,10 @@ switch (_modus) do
 		{
 		_durchfluss = 120;
 		};
+		if(_vehtype in life_Fahrenair) then 
+		{
+		_durchfluss = 200;
+		};
 		
 		_dauer = (_fueltoput /_durchfluss)*60;
 		_cpup = 1/_dauer;
