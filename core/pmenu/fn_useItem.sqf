@@ -33,8 +33,8 @@ switch (true) do {
     };
 
     case (_item isEqualTo "blastingcharge"): {
-        player reveal fed_bank;
-        (group player) reveal fed_bank;
+        //player reveal fed_bank;
+        //(group player) reveal fed_bank;
         [cursorObject] spawn life_fnc_blastingCharge;
         closeDialog 0;
     };

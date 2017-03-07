@@ -67,7 +67,7 @@ switch (_code) do {
     };
 	////holzfällen
 	case 16: {
-		if (!life_action_inUse) then {
+		if (!life_action_inUse AND !((driver vehicle player ) isEqualTo player)) then {
             [] spawn  {
                 private "_handle";
                 _handle = [] spawn life_fnc_woodcutting;
@@ -386,6 +386,34 @@ switch (_code) do {
             };
         };
     };
-};
+	//Animation: Mittelfinger (Shift + Num 1)
+	case 79:
+	{
+		if(_shift) then {_handled = true;};
+			if (_shift) then
+			{
+				if ((_shift) && (vehicle player == player)) then
+				{
+					0 spawn{
+						0 spawn{
+							inanimation = true;
+							_time=time;
+							sleep 2;
+							waitUntil {time isEqualTo _time+15 || animationState player != "acts_briefing_sb_in" || !inanimation};
+							inanimation = false;
+						};
+						_dir=direction player;
+						player setDir _dir+300;
+						player playMoveNow "acts_briefing_sb_in";
+						sleep 7;
+						if (animationState player isEqualTo "acts_briefing_sb_in")then{
+							player switchmove "amovpercmstpsraswrfldnon";
+							player setDir _dir;
+						};
+					};
+				};
+			};
+		};
+	};
 
 _handled;

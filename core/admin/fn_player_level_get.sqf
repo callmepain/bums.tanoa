@@ -1,7 +1,7 @@
 private ["_display","_ret","_text"];
 disableSerialization;
 _ret = _this select 0;
-"debug_console" callExtension format["_ret:%1 #1011",_ret];
+
 _adminlevel = (_ret select 0);
 _adaclevel = (_ret select 1);
 _medlevel = (_ret select 2);
