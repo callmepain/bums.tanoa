@@ -12,8 +12,8 @@ if( _prof != "" ) then {
 	MININGMULTI(_mining,(_data select 0));
 	MININGTIME(_time,(_data select 0));
 }; 
-_wood = ["t_ficus_medium_f.p3d","t_cocosnucifera3s_tall_f.p3d","t_ficus_small_f.p3d","t_cyathea_f.p3d","t_inocarpus_f.p3d","t_palaquium_f.p3d",
-"t_leucaena_f.p3d","t_albizia_f.p3d","t_agathis_wide_f.p3d","t_cocosnucifera2s_small_f.p3d"];
+_wood = ["t_ficus_medium_f.p3d","t_cocosnucifera3s_tall_f.p3d","t_ficus_small_f.p3d","t_cyathea_f.p3d","t_inocarpus_f.p3d","t_palaquium_f.p3d","d_treestump_natural_large_f.p3d",
+"t_leucaena_f.p3d","t_albizia_f.p3d","t_agathis_wide_f.p3d","t_cocosnucifera2s_small_f.p3d","t_ficus_big_f.p3d"];
 if (life_action_inUse) exitWith {}; //Action is in use, exit to prevent spamming.
  if (life_inv_axe < 1) exitWith { [(format [localize "STR_NOTF_Axe"]),"Hinweis","Red"] call MSG_fnc_handle; };
 _amount = floor((random(_maxGather)+1)*_mining);
@@ -37,13 +37,13 @@ if (((getModelInfo _curObject) select 0) in _wood) then {
 		sleep _time;
 	};
 	_curObject setdamage 1;
-	if ([true, _mined, _diff] call life_fnc_handleInv) exitWith { 
+	if ([true, _mined, _diff] call life_fnc_handleInv) exitWith {
 		_itemName = M_CONFIG(getText, "VirtualItems", _mined, "displayName");
 		[(format [localize "STR_NOTF_Mine_Success", (localize _itemName), _diff]),"Hinweis","Green"] call MSG_fnc_handle;
 		for "_z" from 0 to 2 do {
 			sleep 1;
 		};
-		hideObjectGlobal _curObject;
+		[_curObject] remoteExec ["TON_fnc_remove_tree",2];
 		/////////SkillSystem/////////
 		if( _prof != "" ) then { 
 			_exp = _diff * M_CONFIG(getNumber,"profession","Rohstoffabbau","baseEXPgain");

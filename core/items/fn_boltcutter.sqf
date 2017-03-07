@@ -6,39 +6,55 @@
     Description:
     Breaks the lock on a single door (Closet door to the player).
 */
-private ["_building","_door","_doors","_cpRate","_title","_progressBar","_titleText","_cp","_ui"];
+private ["_building","_door","_doors","_cpRate","_title","_progressBar","_titleText","_cp","_ui","_bankindex","_pos"];
 _building = param [0,objNull,[objNull]];
+_banks = [];
+_pos = [0,0,0];
+_bank = false;
+for "_i" from 1 to 3 do {
+	_banks pushback (getmarkerpos format["fed_bank_nr_%1",_i]);
+};
+{
+	if(((getpos player) distance _x) < 10) exitwith {_bankindex	= _forEachIndex;}; 
+} foreach _banks;
+if (isNil "_bankindex") then {_bank = false;} else {_bank = true;_pos = _banks select _bankindex;};
+private _vaultHouse = [[["Altis", "Land_Research_house_V1_F"], ["Tanoa", "Land_CommonwealthBank"]]] call TON_fnc_terrainSort;
 
-private _vaultHouse = [[["Altis", "Land_Research_house_V1_F"], ["Tanoa", "Land_Medevac_house_V1_F"]]] call TON_fnc_terrainSort;
 private _altisArray = [16019.5,16952.9,0];
-private _tanoaArray = [11074.2,11501.5,0.00137329];
-private _pos = [[["Altis", _altisArray], ["Tanoa", _tanoaArray]]] call TON_fnc_terrainSort;
+private _tanoaArray = [5702.71,10269.7];
+//private _pos = [[["Altis", _altisArray], ["Tanoa", _tanoaArray]]] call TON_fnc_terrainSort;
 
 if (isNull _building) exitWith {};
 if (!(_building isKindOf "House_F")) exitWith {hint localize "STR_ISTR_Bolt_NotNear";};
-if (((nearestObject [_pos,"Land_Dome_Big_F"]) == _building || (nearestObject [_pos,_vaultHouse]) == _building) && (west countSide playableUnits < (LIFE_SETTINGS(getNumber,"minimum_cops")))) exitWith {
+if (((nearestObject [_pos,_vaultHouse]) == _building) && (west countSide playableUnits < (LIFE_SETTINGS(getNumber,"minimum_cops")))) exitWith {
     hint format [localize "STR_Civ_NotEnoughCops",(LIFE_SETTINGS(getNumber,"minimum_cops"))];
 };
-if ((typeOf _building) == _vaultHouse && (nearestObject [_pos,"Land_Dome_Big_F"]) getVariable ["locked",true]) exitWith {hint localize "STR_ISTR_Bolt_Exploit"};
+
+//if ((typeOf _building) == _vaultHouse && (nearestObject [_pos,"Land_CommonwealthBank"]) getVariable ["locked",true]) exitWith {hint localize "STR_ISTR_Bolt_Exploit"};
 if (isNil "life_boltcutter_uses") then {life_boltcutter_uses = 0;};
+if (((nearestObject [_pos,"Land_CommonwealthBank"]) == _building)AND (_bank)) then {
+	_doors = FETCH_CONFIG2(getNumber,"CfgVehicles",(typeOf _building),"numberOfDoors");
+	_door = 0;
 
-_doors = FETCH_CONFIG2(getNumber,"CfgVehicles",(typeOf _building),"numberOfDoors");
-_door = 0;
-//Find the nearest door
-for "_i" from 1 to _doors do {
-    _selPos = _building selectionPosition format ["Door_%1_trigger",_i];
-    _worldSpace = _building modelToWorld _selPos;
-        if (player distance _worldSpace < 2) exitWith {_door = _i;};
-};
-if (_door isEqualTo 0) exitWith {hint localize "STR_Cop_NotaDoor"}; //Not near a door to be broken into.
-if ((_building getVariable [format ["bis_disabled_Door_%1",_door],0]) isEqualTo 0) exitWith {hint localize "STR_House_Raid_DoorUnlocked"};
+	_selPos2 = _building selectionPosition "Interact5";
+	_worldSpace2 = _building modelToWorld _selPos2;
 
-if ((nearestObject [_pos,"Land_Dome_Big_F"]) == _building || (nearestObject [_pos,_vaultHouse]) == _building) then {
-    [[1,2],"STR_ISTR_Bolt_AlertFed",true,[]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
+	if (player distance _worldSpace2 < 2) then {_door = 5;};
+	if (_door isEqualTo 0) exitWith {hint localize "STR_Cop_NotaDoor"}; //Not near a door to be broken into.
+	if ((_building getVariable [format ["bis_disabled_Door_%1",_door],0]) isEqualTo 0) exitWith {hint localize "STR_House_Raid_DoorUnlocked"};
 } else {
-    [0,"STR_ISTR_Bolt_AlertHouse",true,[profileName]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
+	_doors = FETCH_CONFIG2(getNumber,"CfgVehicles",(typeOf _building),"numberOfDoors");
+	_door = 0;
+	//Find the nearest door
+	for "_i" from 1 to _doors do {
+		_selPos = _building selectionPosition format ["Door_%1_trigger",_i];
+		_worldSpace = _building modelToWorld _selPos;
+		if (player distance _worldSpace < 5) exitWith {_door = _i;};
+	};
+	if (_door isEqualTo 0) exitWith {hint localize "STR_Cop_NotaDoor"}; //Not near a door to be broken into.
+	[0,"STR_ISTR_Bolt_AlertHouse",true,[profileName]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
 };
-
+if ((_building getVariable [format ["bis_disabled_Door_%1",_door],0]) isEqualTo 0) exitWith {hint localize "STR_House_Raid_DoorUnlocked"};
 life_action_inUse = true;
 //Setup the progress bar
 disableSerialization;
@@ -52,7 +68,7 @@ _progressBar progressSetPosition 0.01;
 _cP = 0.01;
 
 switch (typeOf _building) do {
-    case "Land_Dome_Big_F": {_cpRate = 0.003;};
+    case "Land_CommonwealthBank": {_cpRate = 0.05;};
     case "Land_Medevac_house_V1_F";
     case "Land_Research_house_V1_F": {_cpRate = 0.0015;};
     default {_cpRate = 0.08;}
