@@ -21,10 +21,12 @@ if ((getPlayerUID player) == _vehOwner)  then
 {
 	_type = typeOf _vehicle;
 	_price = M_CONFIG(getNumber,"LifeCfgVehicles",_type,"price");
-	_price = _price / 2;
+	_rentMultiplier = LIFE_SETTINGS(getNumber,"vehicle_rental_multiplier");
+	_sellMultiplier = LIFE_SETTINGS(getNumber,"vehicle_sell_multiplier");
+	_price = (_price * _rentMultiplier) * _sellMultiplier;
 	CASH = CASH + _price;
 	deleteVehicle _vehicle;
-	[(format ["Du hast für deinen Container: %1 $ bekommen",_price]),"Hinweis","Green"] call MSG_fnc_handle;
+	[(format ["Du hast für deinen Container: <t color='#FFFF00'>$%1</t> bekommen",[_price] call life_fnc_numberText]),"Hinweis","Green"] call MSG_fnc_handle;
 }
 /*if !(isNull objectParent player) then {
 	_vehicle = vehicle player;

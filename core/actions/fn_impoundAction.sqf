@@ -23,9 +23,6 @@ _price = M_CONFIG(getNumber,"LifeCfgVehicles",(typeOf _vehicle),"price");
 life_action_inUse = true;
 _prof = "Beschlagnahmen";
 
-diag_log format ["_vehicle %1",_vehicle];
-diag_log format ["_vInfo %1",_vInfo];
-
 if (count _vInfo > 0) then {
     _side = (_vInfo select 2);
 };

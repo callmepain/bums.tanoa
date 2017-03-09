@@ -244,7 +244,8 @@ class Life_RscPictureKeepAspect : Life_RscPicture
 
 class Life_RscStructuredText {
     type = 13;
-    style = 0;
+    // linespacing = 1;
+    style = 2;
     x = 0;
     y = 0;
     h = 0.035;

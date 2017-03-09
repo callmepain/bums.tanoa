@@ -60,7 +60,7 @@ switch (true) do
 		(CONTROL(2300,2303)) ctrlSetStructuredText parseText format[
 			(localize "STR_Shop_Veh_UI_Rental")+ " <t color='#8cff9b' align='right'>$%1</t><br/>"
 			+(localize "STR_Shop_Veh_UI_Trunk")+ " <t color='#8cff9b' align='right'>%2</t><br/>",
-		[_initalPrice] call life_fnc_numberText,
+		[_rentPrice] call life_fnc_numberText,
 		if(_trunkSpace == -1) then {"keine"} else {_trunkSpace}
 		];
 	};
@@ -112,25 +112,13 @@ _colorArray = M_CONFIG(getArray,"LifeCfgVehicles",_classNameLife,"textures");
     };
 } forEach _colorArray;
 
-_numberindexcolorarray = [];
-for "_i" from 0 to (count(_colorArray) - 1) do {
-    _numberindexcolorarray pushBack _i;
-};
-_indexrandom = _numberindexcolorarray call BIS_fnc_selectRandom;
-_ctrl lbSetCurSel _indexrandom;
+lbSort _ctrl;
 
-if (_className in (LIFE_SETTINGS(getArray,"vehicleShop_rentalOnly"))) then {
-    ctrlEnable [2309,false];
-} else {
-    if (!(life_veh_shop select 3)) then {
-        ctrlEnable [2309,true];
-    };
-};
+_ctrl lbSetCurSel 0;
 
 if !((lbSize _ctrl)-1 isEqualTo -1) then {
     ctrlShow[2304,true];
 } else {
     ctrlShow[2304,false];
 };
-((findDisplay 2300) displayCtrl 2304) lbSetCurSel 0;
 true;
