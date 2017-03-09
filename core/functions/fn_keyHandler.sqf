@@ -67,13 +67,13 @@ switch (_code) do {
     };
 	////holzfällen
 	case 16: {
-		if (!life_action_inUse AND !((driver vehicle player ) isEqualTo player)) then {
-            [] spawn  {
-                private "_handle";
-                _handle = [] spawn life_fnc_woodcutting;
-                waitUntil {scriptDone _handle};
-                life_action_inUse = false;
-            };
+		if (!life_action_inUse AND ((vehicle player) isEqualTo player) AND ((cursorObject distance2D player) < 2)) then {
+			[] spawn  {
+				private "_handle";
+				_handle = [] spawn life_fnc_woodcutting;
+				waitUntil {scriptDone _handle};
+				life_action_inUse = false;
+			};
         };
 	};
     //Space key for Jumping

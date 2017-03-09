@@ -18,7 +18,8 @@ _pid = getPlayerUID player;
 _unit = player;
 _sp = getMarkerPos life_garage_sp;
 _garage = life_garage_sp;
-
+_vehicleInfo = [_vehicleLife] call life_fnc_fetchVehInfo;
+_vehicleName = (_vehicleInfo select 3);
 _spawntext = localize "STR_Garage_spawn_Success";
 if (isNil "_vehicle") exitWith {hint localize "STR_Garage_Selection_Error"};
 if (!isClass (missionConfigFile >> "LifeCfgVehicles" >> _vehicleLife)) then {
@@ -82,7 +83,7 @@ _price = _price * _storageFee;
 if (!(_price isEqualType 0) || _price < 1) then {_price = 500;};
 if (BANK < _price) exitWith 
 {
-	[(format[localize "STR_Garage_CashError",[_price] call life_fnc_numberText]),"Hinweis","yellow"] call MSG_fnc_handle;
+	[(format[localize "STR_Garage_CashError",[_price] call life_fnc_numberText]),"Hinweis","red"] call MSG_fnc_handle;
 };
 
 [(format[

@@ -100,7 +100,11 @@ if (_spawnPoint isEqualTo "") exitWith
 
 CASH = CASH - _purchasePrice;
 [14] call SOCK_fnc_updatePartial;
+life_fed_bank_money = life_fed_bank_money + (_purchasePrice);
+publicVariableServer "life_fed_bank_money";
+
 closeDialog 0; //Exit the menu.
+
 if (_mode) then 
 {
     if (_insure) then 

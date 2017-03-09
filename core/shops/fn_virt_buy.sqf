@@ -54,11 +54,15 @@ if ([true,_type,_amount] call life_fnc_handleInv) then {
             if ((_price * _amount) > CASH) exitWith {[false,_type,_amount] call life_fnc_handleInv; [(format [localize "STR_NOTF_NotEnoughMoney"]),"Hinweis","Yellow"] call MSG_fnc_handle;};
             [(format  [localize "STR_Shop_Virt_BoughtItem",_amount,(localize _name),[(_price * _amount)] call life_fnc_numberText]),"Hinweis","Green"] call MSG_fnc_handle;
             CASH = CASH - _price * _amount;
+			life_fed_bank_money = life_fed_bank_money + (_price * _amount);
+			publicVariableServer "life_fed_bank_money";
         };
     } else {
         if ((_price * _amount) > CASH) exitWith {[(format [localize "STR_NOTF_NotEnoughMoney"]),"Hinweis","Yellow"] call MSG_fnc_handle; [false,_type,_amount] call life_fnc_handleInv;};
 			[(format  [localize "STR_Shop_Virt_BoughtItem",_amount,(localize _name),[(_price * _amount)] call life_fnc_numberText]),"Hinweis","Green"] call MSG_fnc_handle;
         CASH = CASH - _price * _amount;
+		life_fed_bank_money = life_fed_bank_money + (_price * _amount);
+		publicVariableServer "life_fed_bank_money";
     };
     [] call life_fnc_virt_update;
 };

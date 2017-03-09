@@ -11,7 +11,6 @@ disableSerialization;
 private["_control","_index","_className","_dataArr","_vehicleColor","_vehicleInfo","_trunkSpace","_sellPrice","_retrievePrice"];
 _control = _this select 0;
 _index = _this select 1;
-
 //Fetch some information.
 _dataArr = CONTROL_DATAI(_control,_index);
 _dataArr = call compile format ["%1",_dataArr];
@@ -35,7 +34,6 @@ _retrievePrice = _price * LIFE_SETTINGS(getNumber,"vehicle_impound_multiplier");
 _sellPrice = _price * _sellMultiplier;
 
 _fuel = ((_dataArr select 2) * (_vehicleInfo select 12));
-
 if (!(_sellPrice isEqualType 0) || _sellPrice < 1) then {_sellPrice = 500;};
 if (!(_retrievePrice isEqualType 0) || _retrievePrice < 1) then {_retrievePrice = 500;};
 

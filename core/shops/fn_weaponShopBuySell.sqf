@@ -140,6 +140,8 @@ else
 				[(format["Du hast<br/><t color='#8cff9b'>%1x  - %2</t><br/>für<br/><t color='#8cff9b'>$%3</t><br/>gekauft.",_anzahl,_itemInfo select 1,[(_price * _anzahl)] call life_fnc_numberText]),"Ausrüstung gekauft","green"] call MSG_fnc_handle;
 				
 				CASH = CASH - (_price * _anzahl);
+				life_fed_bank_money = life_fed_bank_money + (_price * _amount);
+				publicVariableServer "life_fed_bank_money";
 			   
 				for "_i" from 0 to (_anzahl)-1 do 
 				{
@@ -154,7 +156,9 @@ else
 				};
 				[(format["Du hast<br/><t color='#8cff9b'>1x  - %1</t><br/>für<br/><t color='#8cff9b'>$%2</t><br/>gekauft.",_itemInfo select 1,[(_price)] call life_fnc_numberText]),"Ausrüstung gekauft","green"] call MSG_fnc_handle;
 				CASH = CASH - (_price);
-				[_item,true] call life_fnc_handleItem;		
+				[_item,true] call life_fnc_handleItem;
+				life_fed_bank_money = life_fed_bank_money + (_price * _amount);
+				publicVariableServer "life_fed_bank_money";				
 			};		   
 		};
 	} 
@@ -169,7 +173,9 @@ else
 			[(format["Du hast<br/><t color='#8cff9b'>%1x  - %2</t><br/>für<br/><t color='#8cff9b'>$%3</t><br/>gekauft.",_anzahl,_itemInfo select 1,[(_price * _anzahl)] call life_fnc_numberText]),"Ausrüstung gekauft","green"] call MSG_fnc_handle;
 			
 			CASH = CASH - (_price * _anzahl);
-		   
+			life_fed_bank_money = life_fed_bank_money + (_price * _amount);
+			publicVariableServer "life_fed_bank_money";
+			
 			for "_i" from 0 to (_anzahl)-1 do 
 			{
 				[_item,true,false,false,true] call life_fnc_handleItem;
@@ -184,6 +190,8 @@ else
 			[(format["Du hast<br/><t color='#8cff9b'>1x  - %1</t><br/>für<br/><t color='#8cff9b'>$%2</t><br/>gekauft.",_itemInfo select 1,[(_price)] call life_fnc_numberText]),"Ausrüstung gekauft","green"] call MSG_fnc_handle;
 			CASH = CASH - (_price);
 			[_item,true] call life_fnc_handleItem;		
+			life_fed_bank_money = life_fed_bank_money + (_price * _amount);
+			publicVariableServer "life_fed_bank_money";
 		};
 	};	
 };			
