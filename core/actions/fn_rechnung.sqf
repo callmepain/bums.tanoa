@@ -43,6 +43,8 @@ if(_action) then
 	[(format["Du hast deine Rechnung in Höhe von <t color='#FFFF00'> $%1</t> bezahlt.",[_rechnung] call life_fnc_numberText]),"Tankrechnung","green"] call MSG_fnc_handle;	
 	player setVariable[format["%1",_marker],0,true];
 	[14] call SOCK_fnc_updatePartial;
+	life_fed_bank_money = life_fed_bank_money + (_rechnung);
+	publicVariableServer "life_fed_bank_money";
 }
 else
 {
@@ -62,6 +64,8 @@ else
 		
 		player setVariable[format["%1",_marker],0,true];
 		[14] call SOCK_fnc_updatePartial;
+		life_fed_bank_money = life_fed_bank_money + (_rechnung);
+		publicVariableServer "life_fed_bank_money";
 	}
 	else
 	{

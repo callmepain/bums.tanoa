@@ -19,6 +19,8 @@ _price = 0;
 if (_price > CASH) exitWith {titleText[localize "STR_Shop_NotEnoughClothes","PLAIN"];};
 CASH = CASH - _price;
 [0] call SOCK_fnc_updatePartial;
+life_fed_bank_money = life_fed_bank_money + (_price);
+publicVariableServer "life_fed_bank_money";
 
 life_clothesPurchased = true;
 [] call life_fnc_playerSkins;
