@@ -1968,6 +1968,39 @@
         <Key ID="STR_Item_Pickaxe">
             <Original>Spitzhacke</Original>
         </Key>
+		<Key ID="STR_Item_wheatseeds">
+            <Original>wheat seed</Original>
+        </Key>
+		<Key ID="STR_Item_wheat">
+            <Original>wheat</Original>
+        </Key>
+		<Key ID="STR_Item_cottonseeds">
+            <Original>cotton seed</Original>
+        </Key>
+		<Key ID="STR_Item_cotton">
+            <Original>cotton</Original>
+        </Key>
+		<Key ID="STR_Item_sunflowerseeds">
+            <Original>sunflower seed</Original>
+        </Key>
+		<Key ID="STR_Item_sunflower">
+            <Original>sunflower</Original>
+        </Key>
+		<Key ID="STR_Item_cornseeds">
+            <Original>corn seed</Original>
+        </Key>
+		<Key ID="STR_Item_corn">
+            <Original>corn</Original>
+        </Key>
+		<Key ID="STR_Item_beanseeds">
+            <Original>bean seed</Original>
+        </Key>
+		<Key ID="STR_Item_bean">
+            <Original>bean</Original>
+        </Key>
+		<Key ID="STR_Item_cannabisseeds">
+            <Original>cannabis seed</Original>
+        </Key>
 		<Key ID="STR_Item_axe">
             <Original>Axt</Original>
         </Key>

@@ -26,7 +26,11 @@ switch (true) do {
             };
         };
     };
-
+	case (_item isEqualTo "marijuana"): {
+        [] spawn life_fnc_usemarijuana;
+        closeDialog 0;
+    };
+	
     case (_item isEqualTo "boltcutter"): {
         [cursorObject] spawn life_fnc_boltcutter;
         closeDialog 0;

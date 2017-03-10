@@ -13,7 +13,7 @@ class VirtualShops {
         name = "STR_Shops_Market";
         side = "civ";
         conditions = "";
-        items[] = { "fuelFB5L","fuelFD25L","fuelFK50L","waterBottle", "rabbit", "apple", "redgull", "tbacon", "lockpick","axe","pickaxe", "shovel", "jackhammer", "toolkit", "peach", "rabbit_raw", "hen_raw", "rooster_raw", "sheep_raw", "goat_raw" };
+        items[] = { "cannabisseeds","sunflowerseeds","cornseeds","beanseeds","cottonseeds","wheatseeds","fuelFB5L","fuelFD25L","fuelFK50L","waterBottle", "rabbit", "apple", "redgull", "tbacon", "lockpick","axe","pickaxe", "shovel", "jackhammer", "toolkit", "peach", "rabbit_raw", "hen_raw", "rooster_raw", "sheep_raw", "goat_raw" };
     };
 
     class med_market {
@@ -180,6 +180,127 @@ class VirtualItems {
     //Virtual Items
 
     //Misc
+	class wheatseeds {
+        variable = "wheatseeds";
+        displayName = "STR_Item_wheatseeds";
+        weight = 2;
+        buyPrice = 120;
+        sellPrice = 48;
+        illegal = false;
+        edible = -1;
+        icon = "icons\items\wheatseeds.paa";
+    };
+	
+	class wheat {
+        variable = "wheat";
+        displayName = "STR_Item_wheat";
+        weight = 2;
+        buyPrice = 120;
+        sellPrice = 48;
+        illegal = false;
+        edible = -1;
+        icon = "icons\items\wheat.paa";
+    };
+	
+	class cottonseeds {
+        variable = "cottonseeds";
+        displayName = "STR_Item_cottonseeds";
+        weight = 2;
+        buyPrice = 120;
+        sellPrice = 48;
+        illegal = false;
+        edible = -1;
+        icon = "icons\items\cottonseeds.paa";
+    };
+	
+	class cotton {
+        variable = "cotton";
+        displayName = "STR_Item_cotton";
+        weight = 2;
+        buyPrice = 120;
+        sellPrice = 48;
+        illegal = false;
+        edible = -1;
+        icon = "icons\items\cotton.paa";
+    };
+	
+	class sunflowerseeds {
+        variable = "sunflowerseeds";
+        displayName = "STR_Item_sunflowerseeds";
+        weight = 2;
+        buyPrice = 120;
+        sellPrice = 48;
+        illegal = false;
+        edible = -1;
+        icon = "icons\items\sunflowerseeds.paa";
+    };
+	
+	class sunflower {
+        variable = "sunflower";
+        displayName = "STR_Item_sunflower";
+        weight = 2;
+        buyPrice = 120;
+        sellPrice = 48;
+        illegal = false;
+        edible = -1;
+        icon = "icons\items\sunflower.paa";
+    };
+	
+	class cornseeds {
+        variable = "cornseeds";
+        displayName = "STR_Item_cornseeds";
+        weight = 2;
+        buyPrice = 120;
+        sellPrice = 48;
+        illegal = false;
+        edible = -1;
+        icon = "icons\items\cornseeds.paa";
+    };
+	
+	class corn {
+        variable = "corn";
+        displayName = "STR_Item_corn";
+        weight = 2;
+        buyPrice = 120;
+        sellPrice = 48;
+        illegal = false;
+        edible = -1;
+        icon = "icons\items\corn.paa";
+    };
+	
+	class beanseeds {
+        variable = "beanseeds";
+        displayName = "STR_Item_beanseeds";
+        weight = 2;
+        buyPrice = 120;
+        sellPrice = 48;
+        illegal = false;
+        edible = -1;
+        icon = "icons\items\beanseeds.paa";
+    };
+	
+	class bean {
+        variable = "bean";
+        displayName = "STR_Item_bean";
+        weight = 2;
+        buyPrice = 120;
+        sellPrice = 48;
+        illegal = false;
+        edible = -1;
+        icon = "icons\items\bean.paa";
+    };
+	
+	class cannabisseeds {
+        variable = "cannabisseeds";
+        displayName = "STR_Item_cannabisseeds";
+        weight = 2;
+        buyPrice = 120;
+        sellPrice = 48;
+        illegal = false;
+        edible = -1;
+        icon = "icons\items\cannabisseeds.paa";
+    };
+	
     class pickaxe {
         variable = "pickaxe";
         displayName = "STR_Item_Pickaxe";

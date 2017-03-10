@@ -65,6 +65,17 @@ switch (_code) do {
             _handled = true;
         };
     };
+	////////farming
+	case 18: {
+		if (!life_action_inUse AND ((vehicle player) isEqualTo player)) then {
+			[] spawn  {
+				private "_handle";
+				_handle = [] spawn life_fnc_grow;
+				waitUntil {scriptDone _handle};
+				life_action_inUse = false;
+			};
+        };
+	};
 	////holzfällen
 	case 16: {
 		if (!life_action_inUse AND ((vehicle player) isEqualTo player) AND ((cursorObject distance2D player) < 2)) then {
