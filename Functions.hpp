@@ -109,6 +109,19 @@ class Life_Client_Core {
         class adacMarkers {};
     };
 	
+	class farming {
+        file = "core\farming";
+        class grow {};
+        class harvest {};
+    };
+	
+	class drugs {
+        file = "core\drugs";
+        class useCocaine {};
+        class useHeroin {};
+		class useMarijuana {};
+    };
+	
     class Civilian {
         file = "core\civilian";
         class civLoadout {};

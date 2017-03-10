@@ -8,18 +8,18 @@ class EditorData
 	toggles=514;
 	class ItemIDProvider
 	{
-		nextID=14291;
+		nextID=14309;
 	};
 	class MarkerIDProvider
 	{
-		nextID=270;
+		nextID=276;
 	};
 	class Camera
 	{
-		pos[]={7092.2808,179.72971,7806.7734};
-		dir[]={0.12657724,-0.89055812,-0.43701664};
-		up[]={0.247749,0.45491967,-0.85537356};
-		aside[]={-0.9605692,-2.2643944e-006,-0.27821904};
+		pos[]={4830.9731,133.2688,9668.7861};
+		dir[]={0.46011323,-0.63274717,-0.62285149};
+		up[]={0.37596753,0.7743538,-0.50894308};
+		aside[]={-0.80434108,-1.2642704e-007,-0.59418488};
 	};
 };
 binarizationWanted=0;
@@ -855,7 +855,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=2437;
+		items=2460;
 		class Item0
 		{
 			dataType="Marker";
@@ -3012,7 +3012,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this addAction[localize""STR_Process_Marijuana"",life_fnc_processAction,""cannabis"",0,false,false,"""",' _b = nearestBuilding (getPosATL player); life_inv_cannabis > 0 && !life_is_processing && !life_action_inUse && !isNil {_b getVariable ""gangOwner""} && {(_b getVariable ""gangOwner"") == (group player)} && playerSide isEqualTo civilian '];  " \n "this addAction[localize""STR_Process_LSD"",life_fnc_processAction,""lsd"",0,false,false,"""",' _b = nearestBuilding (getPosATL player); life_inv_lsdUnprocessed > 0 && !life_is_processing && !life_action_inUse && !isNil {_b getVariable ""gangOwner""} && {(_b getVariable ""gangOwner"") == (group player)} && playerSide isEqualTo civilian ']; " \n "this addAction[localize""STR_Process_Cocaine"",life_fnc_processAction,""cocaine"",0,false,false,"""",' _b = nearestBuilding (getPosATL player); life_inv_cocaineUnprocessed > 0 && !life_is_processing && !life_action_inUse && !isNil {_b getVariable ""gangOwner""} && {(_b getVariable ""gangOwner"") == (group player)} && playerSide isEqualTo civilian ']; " \n "this addAction[localize""STR_Process_Heroin"",life_fnc_processAction,""heroin"",0,false,false,"""",' _b = nearestBuilding (getPosATL player); life_inv_heroinUnprocessed > 0 && !life_is_processing && !life_action_inUse && !isNil {_b getVariable ""gangOwner""} && {(_b getVariable ""gangOwner"") == (group player)} && playerSide isEqualTo civilian ']; " \n "";
+				init="this addAction[localize""STR_Process_Marijuana"",life_fnc_processAction,[""marijuana"",""Ernten""],0,false,false,"""",' _b = nearestBuilding (getPosATL player); life_inv_cannabis > 0 && !life_is_processing && !life_action_inUse && !isNil {_b getVariable ""gangOwner""} && {(_b getVariable ""gangOwner"") == (group player)} && playerSide isEqualTo civilian '];  " \n "this addAction[localize""STR_Process_LSD"",life_fnc_processAction,[""lsd"",""Ernten""],0,false,false,"""",' _b = nearestBuilding (getPosATL player); life_inv_lsdUnprocessed > 0 && !life_is_processing && !life_action_inUse && !isNil {_b getVariable ""gangOwner""} && {(_b getVariable ""gangOwner"") == (group player)} && playerSide isEqualTo civilian ']; " \n "this addAction[localize""STR_Process_Cocaine"",life_fnc_processAction,[""cocaine"",""Ernten""],0,false,false,"""",' _b = nearestBuilding (getPosATL player); life_inv_cocaineUnprocessed > 0 && !life_is_processing && !life_action_inUse && !isNil {_b getVariable ""gangOwner""} && {(_b getVariable ""gangOwner"") == (group player)} && playerSide isEqualTo civilian ']; " \n "this addAction[localize""STR_Process_Heroin"",life_fnc_processAction,[""heroin"",""Ernten""],0,false,false,"""",' _b = nearestBuilding (getPosATL player); life_inv_heroinUnprocessed > 0 && !life_is_processing && !life_action_inUse && !isNil {_b getVariable ""gangOwner""} && {(_b getVariable ""gangOwner"") == (group player)} && playerSide isEqualTo civilian ']; " \n "";
 				name="mari_processor";
 				disableSimulation=1;
 			};
@@ -3778,20 +3778,20 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={7847.0205,9.5673504,7801.5732};
-				angles[]={0,0.23432699,0};
+				position[]={7847.02,9.5676289,7801.5732};
+				angles[]={0,0.2343279,0};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this allowDamage false; this enableSimulation false; this addAction[localize""STR_Process_Cocaine"",life_fnc_processAction,""cocaine"",0,false,false,"""",' _b = (nearestObjects[getPosATL player,[""Land_School_01_F"",""Land_Warehouse_03_F"",""Land_House_Small_02_F""],25]) select 0; life_inv_cocaineUnprocessed > 0 && !life_is_processing && !life_action_inUse && !isNil {_b getVariable ""gangOwner""} && {(_b getVariable ""gangOwner"") == (group player)} && playerSide isEqualTo civilian ']; this setVariable [""realname"",""Cocaine Processing""];";
+				init="this addAction[localize""STR_Process_Cocaine"",life_fnc_processAction,[""cocaine"",""Ernten""],0,false,false,"""",' _b = nearestBuilding (getPosATL player); life_inv_cocaineUnprocessed > 0 && !life_is_processing && !life_action_inUse && !isNil {_b getVariable ""gangOwner""} && {(_b getVariable ""gangOwner"") == (group player)} && playerSide isEqualTo civilian ']; " \n "";
 				name="coke_processor";
 			};
 			id=669;
 			type="Land_Sink_F";
-			atlOffset=5.7220459e-006;
+			atlOffset=0.00028419495;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -3813,7 +3813,26 @@ class Mission
 						};
 					};
 				};
-				nAttributes=1;
+				class Attribute1
+				{
+					property="ace_isMedicalFacility";
+					expression="_this setVariable [""ace_medical_isMedicalFacility"",_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
 			};
 		};
 		class Item171
@@ -4481,20 +4500,19 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8261.082,135.1805,11153.579};
-				angles[]={0,1.034922,0};
+				position[]={8261.082,135.18019,11153.579};
+				angles[]={0,1.0349278,0};
 			};
 			side="Empty";
-			flags=4;
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this allowDamage false; this enableSimulation false; this addAction[localize""STR_Process_Heroin"",life_fnc_processAction,""heroin"",0,false,false,"""",' _b = (nearestObjects[getPosATL player,[""Land_School_01_F"",""Land_Warehouse_03_F"",""Land_House_Small_02_F""],25]) select 0; life_inv_heroinUnprocessed > 0 && !life_is_processing && !life_action_inUse && !isNil {_b getVariable ""gangOwner""} && {(_b getVariable ""gangOwner"") == (group player)} && playerSide isEqualTo civilian ']; this setVariable [""realname"",""Heroin Processing""];";
+				init="this addAction[localize""STR_Process_Heroin"",life_fnc_processAction,[""heroin"",""Ernten""],0,false,false,"""",' _b = nearestBuilding (getPosATL player); life_inv_heroinUnprocessed > 0 && !life_is_processing && !life_action_inUse && !isNil {_b getVariable ""gangOwner""} && {(_b getVariable ""gangOwner"") == (group player)} && playerSide isEqualTo civilian ']; " \n "";
 				name="heroin_processor";
 			};
 			id=699;
 			type="Land_Sink_F";
-			atlOffset=0.00022888184;
+			atlOffset=1.1849823;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -4516,7 +4534,26 @@ class Mission
 						};
 					};
 				};
-				nAttributes=1;
+				class Attribute1
+				{
+					property="ace_isMedicalFacility";
+					expression="_this setVariable [""ace_medical_isMedicalFacility"",_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
 			};
 		};
 		class Item188
@@ -24701,6 +24738,7 @@ class Mission
 					};
 					id=6129;
 					type="C_man_1";
+					atlOffset=0.15860271;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -41217,19 +41255,20 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={14103.574,84.842796,10690.693};
-				angles[]={0,1.1288427,0};
+				position[]={14103.574,84.842888,10690.693};
+				angles[]={0,1.128844,0};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this allowDamage false; this enableSimulation false; this addAction[localize""STR_Process_Marijuana"",life_fnc_processAction,""marijuana"",0,false,false,"""",' _b = nearestBuilding (getPosATL player); life_inv_cannabis > 0 && !life_is_processing && !life_action_inUse && !isNil {_b getVariable ""gangOwner""} && {(_b getVariable ""gangOwner"") == (group player)} && playerSide isEqualTo civilian ']; this setVariable [""realname"",""Marijuana Processing""];";
+				init="this addAction[localize""STR_Process_Marijuana"",life_fnc_processAction,[""marijuana"",""Ernten""],0,false,false,"""",' _b = nearestBuilding (getPosATL player); life_inv_cannabis > 0 && !life_is_processing && !life_action_inUse && !isNil {_b getVariable ""gangOwner""} && {(_b getVariable ""gangOwner"") == (group player)} && playerSide isEqualTo civilian '];  " \n "";
 				name="mari_processor_1";
 			};
 			id=6389;
 			type="Land_Sink_F";
+			atlOffset=9.1552734e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -41251,7 +41290,26 @@ class Mission
 						};
 					};
 				};
-				nAttributes=1;
+				class Attribute1
+				{
+					property="ace_isMedicalFacility";
+					expression="_this setVariable [""ace_medical_isMedicalFacility"",_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
 			};
 		};
 		class Item575
@@ -41983,13 +42041,13 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this addAction[localize""STR_Process_LSD"",life_fnc_processAction,""lsd"",0,false,false,"""",' _b = nearestBuilding (getPosATL player); life_inv_lsdUnprocessed > 0 && !life_is_processing && !life_action_inUse && !isNil {_b getVariable ""gangOwner""} && {(_b getVariable ""gangOwner"") == (group player)} && playerSide isEqualTo civilian ']; " \n "";
+				init="this addAction[localize""STR_Process_LSD"",life_fnc_processAction,[""lsd"",""Ernten""],0,false,false,"""",' _b = nearestBuilding (getPosATL player); life_inv_lsdUnprocessed > 0 && !life_is_processing && !life_action_inUse && !isNil {_b getVariable ""gangOwner""} && {(_b getVariable ""gangOwner"") == (group player)} && playerSide isEqualTo civilian ']; " \n "";
 				name="lsd_processor";
 				disableSimulation=1;
 			};
 			id=6409;
 			type="Land_Sink_F";
-			atlOffset=0.13799977;
+			atlOffset=0.13800001;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -42853,7 +42911,7 @@ class Mission
 		class Item619
 		{
 			dataType="Marker";
-			position[]={6010.0962,-8.4501375e-032,10166.762};
+			position[]={6010.7397,0,10166.47};
 			name="car1_2_1_2";
 			text="@STR_MAR_CarNeu_Shop";
 			type="c_car";
@@ -62693,7 +62751,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={6410.7705,23.334862,10912.241};
+				position[]={6420.4028,27.858912,10863.318};
 				angles[]={6.2405448,0,0.029324362};
 			};
 			side="Empty";
@@ -62705,7 +62763,6 @@ class Mission
 			};
 			id=10915;
 			type="banana_4";
-			atlOffset=-0.083023071;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -120879,6 +120936,292 @@ class Mission
 				};
 				nAttributes=2;
 			};
+		};
+		class Item2437
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7071.3301,3.5062017,7719.9766};
+				angles[]={0,6.0788178,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=5980;
+			type="Land_CncBarrierMedium4_F";
+			atlOffset=-2.3841858e-007;
+		};
+		class Item2438
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7078.6616,3.5062017,7721.5024};
+				angles[]={0,6.0788178,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=5981;
+			type="Land_CncBarrierMedium4_F";
+			atlOffset=-2.3841858e-007;
+		};
+		class Item2439
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7085.9507,3.5062017,7722.9287};
+				angles[]={0,6.0788178,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=5982;
+			type="Land_CncBarrierMedium4_F";
+			atlOffset=-2.3841858e-007;
+		};
+		class Item2440
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7093.1006,3.5062017,7724.6045};
+				angles[]={0,6.0788178,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=5983;
+			type="Land_CncBarrierMedium4_F";
+			atlOffset=-2.3841858e-007;
+		};
+		class Item2441
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7064.2998,3.5062017,7718.3345};
+				angles[]={0,6.0788178,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=5979;
+			type="Land_CncBarrierMedium4_F";
+			atlOffset=-2.3841858e-007;
+		};
+		class Item2442
+		{
+			dataType="Marker";
+			position[]={5034.8589,5.7704539,9788.1357};
+			name="wheat_1";
+			text="Weizen";
+			type="Empty";
+			angle=131.84;
+			id=14291;
+			atlOffset=-0.0069093704;
+		};
+		class Item2443
+		{
+			dataType="Marker";
+			position[]={5034.5229,0.8297534,9788.8379};
+			name="marker_270";
+			text="Weizen";
+			type="mil_dot";
+			id=14292;
+			atlOffset=-4.9160085;
+		};
+		class Item2444
+		{
+			dataType="Marker";
+			position[]={5038.5371,-4108371,9726.9219};
+			name="cotton_1";
+			text="cooton";
+			type="Empty";
+			angle=131.84;
+			id=14293;
+			atlOffset=-4108377.8;
+		};
+		class Item2445
+		{
+			dataType="Marker";
+			position[]={5038.5591,-4108371,9727.2656};
+			name="marker_271";
+			text="cotton";
+			type="mil_dot";
+			id=14294;
+			atlOffset=-4108377.8;
+		};
+		class Item2446
+		{
+			dataType="Marker";
+			position[]={4998.7407,6.6997399e-009,9687.7021};
+			name="sunflower_1";
+			text="sunflower";
+			type="Empty";
+			angle=131.84;
+			id=14295;
+			atlOffset=-7.0948439;
+		};
+		class Item2447
+		{
+			dataType="Marker";
+			position[]={4998.7617,-1.0776354e+013,9688.0459};
+			name="marker_272";
+			text="sunflower";
+			type="mil_dot";
+			id=14296;
+			atlOffset=-1.0776354e+013;
+		};
+		class Item2448
+		{
+			dataType="Marker";
+			position[]={4956.542,-0.11521482,9645.1348};
+			name="corn_1";
+			text="corn";
+			type="Empty";
+			angle=131.84;
+			id=14297;
+			atlOffset=-7.5529199;
+		};
+		class Item2449
+		{
+			dataType="Marker";
+			position[]={4956.563,-0.11521482,9645.4785};
+			name="marker_273";
+			text="corn";
+			type="mil_dot";
+			id=14298;
+			atlOffset=-7.5578518;
+		};
+		class Item2450
+		{
+			dataType="Marker";
+			position[]={4915.6836,1.0346627e+015,9602.0811};
+			name="bean_1";
+			text="beans";
+			type="Empty";
+			angle=131.84;
+			id=14299;
+			atlOffset=1.0346627e+015;
+		};
+		class Item2451
+		{
+			dataType="Marker";
+			position[]={4915.7046,0,9602.4248};
+			name="marker_274";
+			text="bean";
+			type="mil_dot";
+			id=14300;
+			atlOffset=-8.0936289;
+		};
+		class Item2452
+		{
+			dataType="Marker";
+			position[]={4998.5508,0,9687.8271};
+			name="marker_275";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorYellow";
+			a=30;
+			b=30;
+			id=14301;
+			atlOffset=-7.1006079;
+		};
+		class Item2453
+		{
+			dataType="Marker";
+			position[]={4956.5981,7.4376807,9645.2266};
+			name="marker_276";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorYellow";
+			a=30;
+			b=30;
+			id=14302;
+		};
+		class Item2454
+		{
+			dataType="Marker";
+			position[]={4915.1973,7.3834863,9602.5303};
+			name="marker_277";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorYellow";
+			a=30;
+			b=30;
+			id=14303;
+			atlOffset=-0.72575998;
+		};
+		class Item2455
+		{
+			dataType="Marker";
+			position[]={5038.2476,6.8672757,9726.9629};
+			name="marker_278";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorYellow";
+			a=30;
+			b=30;
+			id=14304;
+		};
+		class Item2456
+		{
+			dataType="Marker";
+			position[]={5034.7686,5.7698116,9788.2031};
+			name="marker_279";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorYellow";
+			a=30;
+			b=30;
+			id=14305;
+		};
+		class Item2457
+		{
+			dataType="Marker";
+			position[]={4877.2012,-4.139615e-028,9557.2949};
+			name="cannabis_1";
+			text="cannabis";
+			type="Empty";
+			angle=131.84;
+			id=14306;
+			atlOffset=-9.2898769;
+		};
+		class Item2458
+		{
+			dataType="Marker";
+			position[]={4877.2222,2.9207697e+033,9557.6387};
+			name="marker_280";
+			text="canabis";
+			type="mil_dot";
+			id=14307;
+			atlOffset=2.9207697e+033;
+		};
+		class Item2459
+		{
+			dataType="Marker";
+			position[]={4876.7144,16.137444,9557.7441};
+			name="marker_281";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorYellow";
+			a=30;
+			b=30;
+			id=14308;
+			atlOffset=6.9684916;
 		};
 	};
 	class Connections

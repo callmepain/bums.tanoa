@@ -1,3 +1,4 @@
+#include "..\..\script_macros.hpp"
 /*
     File: fn_keyDrop.sqf
     Author: Bryan "Tonic" Boardwine
@@ -17,7 +18,6 @@ _index = (parseNumber(_list lbData _sel));
 _vehicle = life_vehicles select _index;
 if (_vehicle isKindOf "House_F") exitWith {[(format [localize "STR_NOTF_cannotRemoveHouseKeys"]),"Hinweis","Yellow"] call MSG_fnc_handle;};
 _owners = _vehicle getVariable "vehicle_info_owners";
-
 _index2 = [(getPlayerUID player),_owners] call TON_fnc_index;
 life_vehicles = life_vehicles - [_vehicle];
 _owners deleteAt _index;

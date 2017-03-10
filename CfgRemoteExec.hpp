@@ -71,6 +71,9 @@ class CfgRemoteExec {
         F(TON_fnc_clientMessage,CLIENT)
         F(TON_fnc_player_query,CLIENT)
 		
+		
+		
+		
         /* Server only functions */
         F(BIS_fnc_execVM,SERVER)
         F(DB_fnc_insertRequest,SERVER)
@@ -188,6 +191,9 @@ class CfgRemoteExec {
         F(SPY_fnc_notifyAdmins,ANYONE)
 		F(TON_fnc_repairCar,ANYONE)
 		F(TON_fnc_remove_tree,ANYONE)
+		
+		F(TON_fnc_plantseed,ANYONE)
+		F(TON_fnc_wachsen,ANYONE)
     };
 
     class Commands {

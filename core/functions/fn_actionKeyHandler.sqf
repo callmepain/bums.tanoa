@@ -88,6 +88,11 @@ life_action_inUse = true;
         };
     };
 };*/
+if (typeOf _curObject IN ["A3L_Wheat","A3L_Corn","A3L_Beans","A3L_Cannabis","A3L_Cotton","Ficus_Bush_1","A3L_Pumpkin","A3L_Sunflower","Oleander2"]) then {
+	// It's a plant!
+	
+	[] call life_fnc_harvest;
+};
 //If target is a player then check if we can use the cop menu.
 if (isPlayer _curObject && _curObject isKindOf "Man") then {
     if ((_curObject getVariable ["restrained",false]) && !dialog && playerSide isEqualTo west) then {
