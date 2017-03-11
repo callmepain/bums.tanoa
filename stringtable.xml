@@ -3052,8 +3052,26 @@
         <Key ID="STR_MAR_Peaches_Field">
             <Original>Bananen Plantage</Original>
         </Key>
+		<Key ID="STR_MAR_wheat_Field">
+            <Original>Weizenfeld</Original>
+        </Key>
+		<Key ID="STR_MAR_corn_Field">
+            <Original>Kornfeld</Original>
+        </Key>
+		<Key ID="STR_MAR_cotton_Field">
+            <Original>Baumwollfeld</Original>
+        </Key>
+		<Key ID="STR_MAR_bean_Field">
+            <Original>Bohnenfeld</Original>
+        </Key>
+		<Key ID="STR_MAR_sunflower_Field">
+            <Original>Sonnenblumenfeld</Original>
+        </Key>
         <Key ID="STR_MAR_Market">
             <Original>Markt</Original>
+        </Key>
+		 <Key ID="STR_MAR_farmMarket">
+            <Original>Farm Markt</Original>
         </Key>
         <Key ID="STR_MAR_Air_Service">
             <Original>Werkstatt für Luftfahrzeuge</Original>

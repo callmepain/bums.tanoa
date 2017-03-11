@@ -78,7 +78,7 @@ switch (_code) do {
 	};
 	////holzfällen
 	case 16: {
-		if (!life_action_inUse AND ((vehicle player) isEqualTo player) AND ((cursorObject distance2D player) < 2)) then {
+		if (!life_action_inUse AND ((vehicle player) isEqualTo player) AND ((cursorObject distance2D player) < 2) AND (((getModelInfo cursorobject) select 0) in life_wood)) then {
 			[] spawn  {
 				private "_handle";
 				_handle = [] spawn life_fnc_woodcutting;

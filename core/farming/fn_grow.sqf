@@ -1,3 +1,4 @@
+#include "..\..\script_macros.hpp"
 /*
 	File: fn_gather.sqf
 	Author: Arma 3 Life [www.arma3-life.com/]
@@ -6,40 +7,64 @@
 	Main functionality for gathering.
 */
 closeDialog 0;
-private["_gather","_itemWeight","_diff","_itemName","_val","_resourceZones","_zone","_seeds"];
-_resourceZones = ["wheat_1","wheat_2","sunflower_1","sunflower_2","corn_1","bean_1","cotton_1","olive_1","opium_1","cannabis_1","pumpkin_1"];
-_zone = "";
-
-
-{
-	if(player distance (getMarkerPos _x) < 30) exitWith {_zone = _x;};
-} foreach _resourceZones;
-
-if(_zone == "") exitWith {
-	hint localize "STR_NOTF_notNearResource";
-	life_action_inUse = false;
-};
-
-//Get the resource that will be gathered from the zone name...
-switch(true) do {
-	case (_zone in ["wheat_1"]): {_gather = "wheat"; _seeds = "wheatseeds"; _val = 3;};
-	case (_zone in ["wheat_2"]): {_gather = "wheat"; _seeds = "wheatseeds"; _val = 3;};
-	case (_zone in ["sunflower_1"]): {_gather = "sunflower"; _seeds = "sunflowerseeds"; _val = 3;};
-	case (_zone in ["sunflower_2"]): {_gather = "sunflower"; _seeds = "sunflowerseeds"; _val = 3;};
-	case (_zone in ["corn_1"]): {_gather = "corn Plant"; _seeds = "cornseeds"; _val = 3;};
-	case (_zone in ["bean_1"]): {_gather = "bean Plant"; _seeds = "beanseeds"; _val = 3;};
-	case (_zone in ["cotton_1"]): {_gather = "cotton Plant"; _seeds = "cottonseeds"; _val = 3;};
-	case (_zone in ["olive_1"]): {_gather = "olive Plant"; _seeds = "olive seed"; _val = 3;};
-	case (_zone in ["opium_1"]): {_gather = "opium Poppy"; _seeds = "opium seed"; _val = 1;};
-	case (_zone in ["cannabis_1"]): {_gather = "cannabis Plant"; _seeds = "cannabisseeds"; _val = 1;};
-	case (_zone in ["pumpkin_1"]): {_gather = "pumpkin"; _seeds = "pumpkin seed"; _val = 1;};
-	default {""};
-};
-//gather check??
-if(vehicle player != player) exitWith {hint localize "STR_NOTF_GatherVeh";};
+private["_gather","_itemWeight","_diff","_itemName","_val","_resourceZones","_zone","_seeds","_maxGather","_resource","_amount","_maxGather","_requiredItem"];
 
 life_action_inUse = true;
+_zone = "";
+_zonename = "";
+_requiredItem = "";
+_exit = false;
+_prof = "Ernten";
 
+_resourceCfg = missionConfigFile >> "CfgGather" >> "Farming";
+
+for "_i" from 0 to count(_resourceCfg)-1 do {
+
+    _curConfig = _resourceCfg select _i;
+    _resource = configName _curConfig;
+    _maxGather = getNumber(_curConfig >> "amount");
+    _zoneSize = getNumber(_curConfig >> "zoneSize");
+    _resourceZones = getArray(_curConfig >> "zones");
+	_conditions = getText(_curConfig >> "conditions");
+    _requiredItem = getText(_curConfig >> "item");
+    {
+        if ((player distance (getMarkerPos _x)) < _zoneSize) exitWith {
+			_zone = _x;
+			_zonename = _resource;
+		};
+    } forEach _resourceZones;
+
+    if (_zone != "") exitWith {};
+};
+
+if (_zone isEqualTo "") exitWith {life_action_inUse = false;};
+
+_time = 0.5;
+_mining = 1;
+_data  = SKILLSYSTEM_VALUE(_prof,"civ");
+if( _prof != "" ) then {
+	MININGMULTI(_mining,(_data select 0));
+	MININGTIME(_time,(_data select 0));
+}; 
+_levelreg = missionConfigFile >> "CfgGather" >> "Resources" >> _zonename;
+_levelneed = getNumber(_levelreg >> "level");
+if(_levelneed > (_data select 0)) then {
+	[(format ["Du hast nicht das benötigte Level um hier Abzubauen!<br/> Du benötigst Ernten Level:%1",_levelneed]),"Fehler","red"] call MSG_fnc_handle;
+	_exit = true;
+};
+
+if (_exit) exitWith {life_action_inUse = false;};
+
+_amount = floor((random(_maxGather)+1)*_mining);
+_diff = [_resource,_amount,life_carryWeight,life_maxWeight] call life_fnc_calWeightDiff;
+
+if (_diff isEqualTo 0) exitWith {
+    [localize "STR_NOTF_InvFull","Hinweis","red"] call MSG_fnc_handle;
+
+    life_action_inUse = false;
+};
+//gather check??
+if(vehicle player != player) exitWith {[localize "STR_NOTF_GatherVeh","Hinweis","red"] call MSG_fnc_handle;};
 
 _plantnearby = false;
 
@@ -61,22 +86,25 @@ _objectarr = nearestObjects [player, [_x], 1];
 } foreach _plantclsnamearr;
 
 if (_plantnearby) then {
-
-["Zu dicht an anderer Pflanze","Hinweis","red"] call MSG_fnc_handle;
-life_action_inUse = false;
+	["Zu dicht an anderer Pflanze","Hinweis","red"] call MSG_fnc_handle;
+	life_action_inUse = false;
 } else {
-if(!([false,_seeds,1] call life_fnc_handleInv)) exitWith {
-["Du brauchst Samen vom Farmmarkt","Hinweis","red"] call MSG_fnc_handle;
-life_action_inUse = false;
+	if(!([false,_requiredItem,1] call life_fnc_handleInv)) exitWith {
+		["Du brauchst Samen vom Farmmarkt","Hinweis","red"] call MSG_fnc_handle;
+		life_action_inUse = false;
+	};
+	_plantedtext = format["Du hast %1 angebaut",_resource];
+	[_plantedtext,"Hinweis","green"] call MSG_fnc_handle;
+	[player,_resource] remoteExec ["TON_fnc_plantseed",0];
+	life_action_inUse = false;
+	player playMove "AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon";
+	waitUntil{animationState player != "AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon";};
 };
-_plantedtext = format["Du hast %1 angebaut",_gather];
-[_plantedtext,"Hinweis","red"] call MSG_fnc_handle;
-[player,_gather] remoteExec ["TON_fnc_plantseed",0];
-life_action_inUse = false;
-player playMove "AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon";
-waitUntil{animationState player != "AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon";};
+/////////SkillSystem/////////
+if( _prof != "" ) then { 
+	_exp = _diff * M_CONFIG(getNumber,"profession",_prof,"baseEXPgain");
+	[_prof,_exp] call life_fnc_addExp;
 };
-
 /*
 
 if(([true,_gather,_diff] call life_fnc_handleInv)) then

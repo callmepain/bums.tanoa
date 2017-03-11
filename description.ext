@@ -8,7 +8,7 @@ overviewText = "$STR_MISC_overviewText";    // Text to be displayed below the ov
 #include "dialog\derleon\Scripts_Master.hpp"
 
 class CfgServer {
-    DatabaseName = "altislife"; //Config name that'll be grep in the extdb-conf.ini. Default: [altislife]
+    DatabaseName = "tanoalife"; //Config name that'll be grep in the extdb-conf.ini. Default: [altislife]
     DebugMode = 0; //Enable many server/hc debugging logs. Default: 0 (1 = Enabled / 0 = Disabled)
     HeadlessSupport = 0; //Enable/Disable Headless client support. Default: 1 (1 = Enabled / 0 = Disabled)
     /*

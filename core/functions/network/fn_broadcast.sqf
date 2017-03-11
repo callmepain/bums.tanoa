@@ -1,3 +1,4 @@
+#include "..\..\..\script_macros.hpp"
 /*
     File: fn_broadcast.sqf
     Author: Bryan "Tonic" Boardwine
@@ -25,14 +26,14 @@ if (_localize) exitWith {
         for "_i" from 0 to (count _type)-1 do {
             switch (_type select _i) do {
                 case 0: {systemChat _msg;};
-                case 1: {hint _msg;};
+                case 1: {[_message,"Nachricht","Blue"] call MSG_fnc_handle;};
                 case 2: {titleText[_msg,"PLAIN"];};
             };
         };
     } else {
         switch (_type) do {
             case 0: {systemChat _msg;};
-            case 1: {hint _msg;};
+            case 1: {[_message,"Nachricht","Blue"] call MSG_fnc_handle;};
             case 2: {titleText[_msg,"PLAIN"];};
         };
     };
@@ -42,14 +43,14 @@ if (_type isEqualType []) then {
     for "_i" from 0 to (count _type)-1 do {
         switch (_type select _i) do {
             case 0: {systemChat _message};
-            case 1: {hint format ["%1", _message]};
+            case 1: {[format ["%1", _message],"Nachricht","Blue"] call MSG_fnc_handle;};
             case 2: {titleText[format ["%1",_message],"PLAIN"];};
         };
     };
 } else {
     switch (_type) do {
         case 0: {systemChat _message};
-        case 1: {hint format ["%1", _message]};
+        case 1: {[format ["%1", _message],"Nachricht","Blue"] call MSG_fnc_handle;};
         case 2: {titleText[format ["%1",_message],"PLAIN"];};
     };
 };

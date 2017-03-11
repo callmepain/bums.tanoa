@@ -42,8 +42,6 @@ if (player distance _worldSpace < 2) then {_door = 1;};
 if (_door isEqualTo 0) exitWith {[(localize "STR_Cop_NotaDoor"),"Hinweis","Red"] call MSG_fnc_handle;}; //Not near a door to be broken into.
 if ((_vault getVariable [format ["bis_disabled_Door_%1",_door],0]) isEqualTo 0) exitWith {[(localize "STR_House_Raid_DoorUnlocked"),"Hinweis","Red"] call MSG_fnc_handle;};
 
-[[1,2],format["Jemand bricht in die Bank von %1 ein!",_bankname],false,[]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
-
 
 if (!([false,"blastingcharge",1] call life_fnc_handleInv)) exitWith {}; //Error?
 
@@ -62,18 +60,71 @@ if (_bankindex isEqualTo 3) then {
 //hint localize "STR_ISTR_Blast_KeepOff";
 [(localize "STR_ISTR_Blast_KeepOff"),"Überfall","Green"] call MSG_fnc_handle;
 [_worldSpace] remoteExec ["life_fnc_demoChargeTimer",[west,player]];
-[_worldSpace,_hacked] remoteExec ["TON_fnc_handleBlastingCharge",2];
+[_worldSpace] remoteExec ["TON_fnc_handleBlastingCharge",2];
 if (_hacked isEqualTo 0) then {
 	[0,"STR_ISTR_Blast_Placed",true,[]] remoteExecCall ["life_fnc_broadcast",west];
+	[[1,2],format["Jemand bricht in die Bank von %1 ein!",_bankname],false,[]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
+	"debug_console" callExtension format["_hacked:%1 #1001",_hacked];
 } else {
-	if (_hacked < 10) exitWith {_time = time + ((1 * 60)*1.25);waitUntil{(round(_time - time) < 1)};[0,"STR_ISTR_Blast_Placed",true,[]] remoteExecCall ["life_fnc_broadcast",west];};
-	if (_hacked < 20) exitWith {_time = time + ((1 * 60)*1.5);waitUntil{(round(_time - time) < 1)};[0,"STR_ISTR_Blast_Placed",true,[]] remoteExecCall ["life_fnc_broadcast",west];};
-	if (_hacked < 30) exitWith {_time = time + ((1 * 60)*1.75);waitUntil{(round(_time - time) < 1)};[0,"STR_ISTR_Blast_Placed",true,[]] remoteExecCall ["life_fnc_broadcast",west];};
-	if (_hacked < 40) exitWith {_time = time + ((1 * 60)*2);waitUntil{(round(_time - time) < 1)};[0,"STR_ISTR_Blast_Placed",true,[]] remoteExecCall ["life_fnc_broadcast",west];};
-	if (_hacked < 50) exitWith {_time = time + ((1 * 60)*2.25);waitUntil{(round(_time - time) < 1)};[0,"STR_ISTR_Blast_Placed",true,[]] remoteExecCall ["life_fnc_broadcast",west];};
-	if (_hacked < 60) exitWith {_time = time + ((1 * 60)*2.5);waitUntil{(round(_time - time) < 1)};[0,"STR_ISTR_Blast_Placed",true,[]] remoteExecCall ["life_fnc_broadcast",west];};
-	if (_hacked < 70) exitWith {_time = time + ((1 * 60)*2.75);waitUntil{(round(_time - time) < 1)};[0,"STR_ISTR_Blast_Placed",true,[]] remoteExecCall ["life_fnc_broadcast",west];};
-	if (_hacked < 80) exitWith {_time = time + ((1 * 60)*3);waitUntil{(round(_time - time) < 1)};[0,"STR_ISTR_Blast_Placed",true,[]] remoteExecCall ["life_fnc_broadcast",west];};
-	if (_hacked < 90) exitWith {_time = time + ((1 * 60)*3.25);waitUntil{(round(_time - time) < 1)};[0,"STR_ISTR_Blast_Placed",true,[]] remoteExecCall ["life_fnc_broadcast",west];};
-	if (_hacked > 90) exitWith {_time = time + ((1 * 60)*3.5);waitUntil{(round(_time - time) < 1)};[0,"STR_ISTR_Blast_Placed",true,[]] remoteExecCall ["life_fnc_broadcast",west];};
+	if (_hacked < 10) exitWith {
+		_time = time + ((1 * 60)*1.25);
+		waitUntil{(round(_time - time) < 1)};
+		[0,"STR_ISTR_Blast_Placed",true,[]] remoteExecCall ["life_fnc_broadcast",west];
+		[[1,2],format["Jemand bricht in die Bank von %1 ein!",_bankname],false,[]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
+		"debug_console" callExtension format["_hacked:%1 #0101",_hacked];
+	};
+	if (_hacked < 20) exitWith {
+		_time = time + ((1 * 60)*1.5);
+		waitUntil{(round(_time - time) < 1)};
+		[0,"STR_ISTR_Blast_Placed",true,[]] remoteExecCall ["life_fnc_broadcast",west];
+		[[1,2],format["Jemand bricht in die Bank von %1 ein!",_bankname],false,[]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
+	};
+	if (_hacked < 30) exitWith {
+		_time = time + ((1 * 60)*1.75);
+		waitUntil{(round(_time - time) < 1)};
+		[0,"STR_ISTR_Blast_Placed",true,[]] remoteExecCall ["life_fnc_broadcast",west];
+		[[1,2],format["Jemand bricht in die Bank von %1 ein!",_bankname],false,[]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
+	};
+	if (_hacked < 40) exitWith {
+		_time = time + ((1 * 60)*2);
+		waitUntil{(round(_time - time) < 1)};
+		[0,"STR_ISTR_Blast_Placed",true,[]] remoteExecCall ["life_fnc_broadcast",west];
+		[[1,2],format["Jemand bricht in die Bank von %1 ein!",_bankname],false,[]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
+	};
+	if (_hacked < 50) exitWith {
+		_time = time + ((1 * 60)*2.25);
+		waitUntil{(round(_time - time) < 1)};
+		[0,"STR_ISTR_Blast_Placed",true,[]] remoteExecCall ["life_fnc_broadcast",west];
+		[[1,2],format["Jemand bricht in die Bank von %1 ein!",_bankname],false,[]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
+	};
+	if (_hacked < 60) exitWith {
+		_time = time + ((1 * 60)*2.5);
+		waitUntil{(round(_time - time) < 1)};
+		[0,"STR_ISTR_Blast_Placed",true,[]] remoteExecCall ["life_fnc_broadcast",west];
+		[[1,2],format["Jemand bricht in die Bank von %1 ein!",_bankname],false,[]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
+	};
+	if (_hacked < 70) exitWith {
+		_time = time + ((1 * 60)*2.75);
+		waitUntil{(round(_time - time) < 1)};
+		[0,"STR_ISTR_Blast_Placed",true,[]] remoteExecCall ["life_fnc_broadcast",west];
+		[[1,2],format["Jemand bricht in die Bank von %1 ein!",_bankname],false,[]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
+	};
+	if (_hacked < 80) exitWith {
+		_time = time + ((1 * 60)*3);
+		waitUntil{(round(_time - time) < 1)};
+		[0,"STR_ISTR_Blast_Placed",true,[]] remoteExecCall ["life_fnc_broadcast",west];
+		[[1,2],format["Jemand bricht in die Bank von %1 ein!",_bankname],false,[]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
+	};
+	if (_hacked < 90) exitWith {
+		_time = time + ((1 * 60)*3.25);
+		waitUntil{(round(_time - time) < 1)};
+		[0,"STR_ISTR_Blast_Placed",true,[]] remoteExecCall ["life_fnc_broadcast",west];
+		[[1,2],format["Jemand bricht in die Bank von %1 ein!",_bankname],false,[]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
+	};
+	if (_hacked > 90) exitWith {
+		_time = time + ((1 * 60)*3.5);
+		waitUntil{(round(_time - time) < 1)};
+		[0,"STR_ISTR_Blast_Placed",true,[]] remoteExecCall ["life_fnc_broadcast",west];
+		[[1,2],format["Jemand bricht in die Bank von %1 ein!",_bankname],false,[]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
+	};
 };

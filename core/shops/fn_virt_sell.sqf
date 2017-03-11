@@ -49,7 +49,7 @@ if(_state) then
 	if(_drogen + _test > 200) exitwith {[(format [localize "Da die Nachfrage nach dieser Droge gesunken ist,\n nimmt der Dealer auf unbestimmte Zeit keine mehr an.\nBitte versuch es später erneut."]),"Hinweis","Yellow"] call MSG_fnc_handle;};
 	if(([false,_type,_amount_all] call life_fnc_handleInv)) then
 	{
-		[(format [localize "STR_Shop_Virt_SellItem",_amount_all,localize _name,[_price] call life_fnc_numberText]),"Hinweis","Yellow"] call MSG_fnc_handle;
+		[(format [localize "STR_Shop_Virt_SellItem",_amount_all,localize _name,[_price] call life_fnc_numberText]),"Hinweis","Green"] call MSG_fnc_handle;
 
 		CASH = CASH + _price;
 		playSound "caching"; // Sound here
@@ -124,5 +124,3 @@ if (life_shop_type isEqualTo "drugdealer") then {
 };
 
 [10] call SOCK_fnc_updatePartial;
-
-closeDialog 0;

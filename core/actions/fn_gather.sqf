@@ -62,7 +62,7 @@ _amount = floor((random(_maxGather)+1)*_mining);
 _diff = [_resource,_amount,life_carryWeight,life_maxWeight] call life_fnc_calWeightDiff;
 
 if (_diff isEqualTo 0) exitWith {
-    [localize "STR_NOTF_InvFull","Hinweis","Yellow"] call MSG_fnc_handle;
+    [localize "STR_NOTF_InvFull","Hinweis","red"] call MSG_fnc_handle;
 
     life_action_inUse = false;
 };

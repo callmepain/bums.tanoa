@@ -24,6 +24,8 @@ for "_i" from 0 to 1 step 0 do {
 			["shop",life_marker_trader,_data] call life_fnc_del_markers;
 			["mining",life_marker_gather,_data2] call life_fnc_del_markers;
 			["miningtext",life_marker_gather,_data2] call life_fnc_del_markers;
+			["mining",life_marker_farming,_data2] call life_fnc_del_markers;
+			["miningtext",life_marker_farming,_data2] call life_fnc_del_markers;
 			sleep 0.2;
 			["mining",life_marker_mine,"ELLIPSE","ColorRed",_data] call life_fnc_get_markers;
 			["miningtext",life_marker_mine,"mil_box","ColorOrange",_data] call life_fnc_get_markers;
@@ -31,6 +33,8 @@ for "_i" from 0 to 1 step 0 do {
 			["shop",life_marker_trader,"b_unknown","ColorGreen",_data] call life_fnc_get_markers;
 			["mining",life_marker_gather,"ELLIPSE","ColorRed",_data2] call life_fnc_get_markers;
 			["miningtext",life_marker_gather,"mil_triangle","ColorCivilian",_data2] call life_fnc_get_markers;
+			["mining",life_marker_farming,"ELLIPSE","Coloryellow",_data2] call life_fnc_get_markers;
+			["miningtext",life_marker_farming,"mil_triangle","ColorCivilian",_data2] call life_fnc_get_markers;
 		};
         _members = units (group player);
         {
