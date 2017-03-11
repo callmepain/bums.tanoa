@@ -33,8 +33,8 @@ for "_i" from 0 to 1 step 0 do {
 			["shop",life_marker_trader,"b_unknown","ColorGreen",_data] call life_fnc_get_markers;
 			["mining",life_marker_gather,"ELLIPSE","ColorRed",_data2] call life_fnc_get_markers;
 			["miningtext",life_marker_gather,"mil_triangle","ColorCivilian",_data2] call life_fnc_get_markers;
-			["mining",life_marker_farming,"ELLIPSE","Coloryellow",_data2] call life_fnc_get_markers;
-			["miningtext",life_marker_farming,"mil_triangle","ColorCivilian",_data2] call life_fnc_get_markers;
+			["mining",life_marker_farming,"ELLIPSE","ColorRed",_data2] call life_fnc_get_markers;
+			["miningtext",life_marker_farming,"mil_triangle","Coloryellow",_data2] call life_fnc_get_markers;
 		};
         _members = units (group player);
         {

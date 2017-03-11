@@ -42,6 +42,7 @@
 		life_cash = life_cash - (parseNumber bj_einsatz);
 		life_fed_bank_money = life_fed_bank_money + (parseNumber bj_einsatz);
 		publicVariableServer "life_fed_bank_money";
+		life_bj_inUse = false; 
 		_status ctrlSetStructuredText parseText format["<t align='center'>%1 -%2$</t>     <t align='right'>Aktuell: %3$</t>","Du hast verloren!",bj_einsatz,[life_cash] call life_fnc_numberText];
 	};
 	playSound "bj_card";
@@ -68,6 +69,7 @@
 		_punkte_dealer ctrlSetStructuredText parseText format["<t align='center'>%1</t>",_dealer_punkte];
 		_punkte_meine ctrlSetStructuredText parseText format["<t align='center'>%1</t>",_meine_punkte];
 		life_cash = life_cash + (parseNumber bj_einsatz);
+		life_bj_inUse = false; 
 		_status ctrlSetStructuredText parseText format["<t align='center'>%1 +%2$</t>     <t align='right'>Aktuell: %3$</t>","Du hast gewonnen",bj_einsatz,[life_cash] call life_fnc_numberText];
 	};
 	sleep 0.5;

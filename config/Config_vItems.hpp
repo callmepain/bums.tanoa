@@ -17,10 +17,17 @@ class VirtualShops {
     };
 	
 	class farmmarket {
-        name = "STR_Shops_Market";
+        name = "STR_MAR_Farm_Store";
         side = "civ";
         conditions = "";
-        items[] = { "cannabisseeds","sunflowerseeds","cornseeds","beanseeds","cottonseeds","wheatseeds", "wheat", "cotton", "sunflower", "corn", "bean"};
+        items[] = { "sunflowerseeds","cornseeds","beanseeds","cottonseeds","wheatseeds", "wheat", "cotton", "sunflower", "corn", "bean"};
+    };
+	
+	class farmmarketgang {
+        name = "STR_Shops_farmGang";
+        side = "civ";
+        conditions = "";
+        items[] = { "cocaineseeds","heroinseeds","cannabisseeds" };
     };
 
     class med_market {
@@ -258,6 +265,28 @@ class VirtualItems {
 	class cannabisseeds {
         variable = "cannabisseeds";
         displayName = "STR_Item_cannabisseeds";
+        weight = 1;
+        buyPrice = 120;
+        sellPrice = 60;
+        illegal = false;
+        edible = -1;
+        icon = "icons\items\ico_seed.paa";
+    };
+	
+	class heroinseeds {
+        variable = "heroinseeds";
+        displayName = "STR_Item_heroinseeds";
+        weight = 1;
+        buyPrice = 120;
+        sellPrice = 60;
+        illegal = false;
+        edible = -1;
+        icon = "icons\items\ico_seed.paa";
+    };
+	
+	class cocaineseeds {
+        variable = "cocaineseeds";
+        displayName = "STR_Item_cocaineseeds";
         weight = 1;
         buyPrice = 120;
         sellPrice = 60;

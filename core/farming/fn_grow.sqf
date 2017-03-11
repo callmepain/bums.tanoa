@@ -74,10 +74,8 @@ _plantclsnamearr = [
 "A3L_Beans",
 "A3L_Cannabis",
 "A3L_Cotton",
-"Ficus_Bush_1",
-"A3L_Pumpkin",
 "A3L_Sunflower",
-"Oleander2"
+"koprivy"
 ];
 
 {
@@ -99,11 +97,11 @@ if (_plantnearby) then {
 	life_action_inUse = false;
 	player playMove "AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon";
 	waitUntil{animationState player != "AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon";};
-};
-/////////SkillSystem/////////
-if( _prof != "" ) then { 
-	_exp = _diff * M_CONFIG(getNumber,"profession",_prof,"baseEXPgain");
-	[_prof,_exp] call life_fnc_addExp;
+	/////////SkillSystem/////////
+	if( _prof != "" ) then { 
+		_exp = _diff * M_CONFIG(getNumber,"profession",_prof,"baseEXPgain");
+		[_prof,_exp] call life_fnc_addExp;
+	};
 };
 /*
 

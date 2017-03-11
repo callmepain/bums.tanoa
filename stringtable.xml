@@ -98,6 +98,9 @@
         <Key ID="STR_Shops_Gang">
             <Original>Gang Markt</Original>
         </Key>
+		<Key ID="STR_Shops_farmGang">
+            <Original>Gang Samen Markt</Original>
+        </Key>
         <Key ID="STR_Shops_C_Gang">
             <Original>Gang Kleidung</Original>
         </Key>
@@ -1969,37 +1972,43 @@
             <Original>Spitzhacke</Original>
         </Key>
 		<Key ID="STR_Item_wheatseeds">
-            <Original>wheat seed</Original>
+            <Original>Weizen Samen</Original>
+        </Key>		
+		<Key ID="STR_Item_heroinseeds">
+            <Original>Heroin Samen</Original>
+        </Key>
+		<Key ID="STR_Item_cocaineseeds">
+            <Original>Kokain Samen</Original>
         </Key>
 		<Key ID="STR_Item_wheat">
-            <Original>wheat</Original>
+            <Original>Weizen</Original>
         </Key>
 		<Key ID="STR_Item_cottonseeds">
-            <Original>cotton seed</Original>
+            <Original>Baumwoll Samen</Original>
         </Key>
 		<Key ID="STR_Item_cotton">
-            <Original>cotton</Original>
+            <Original>Baumwolle</Original>
         </Key>
 		<Key ID="STR_Item_sunflowerseeds">
-            <Original>sunflower seed</Original>
+            <Original>Sonnenblumen Samen</Original>
         </Key>
 		<Key ID="STR_Item_sunflower">
-            <Original>sunflower</Original>
+            <Original>Sonnenblumen</Original>
         </Key>
 		<Key ID="STR_Item_cornseeds">
-            <Original>corn seed</Original>
+            <Original>Korn Samen</Original>
         </Key>
 		<Key ID="STR_Item_corn">
-            <Original>corn</Original>
+            <Original>Korn</Original>
         </Key>
 		<Key ID="STR_Item_beanseeds">
-            <Original>bean seed</Original>
+            <Original>Bohnen Samen</Original>
         </Key>
 		<Key ID="STR_Item_bean">
-            <Original>bean</Original>
+            <Original>Bohnen</Original>
         </Key>
 		<Key ID="STR_Item_cannabisseeds">
-            <Original>cannabis seed</Original>
+            <Original>Kannabis Samen</Original>
         </Key>
 		<Key ID="STR_Item_axe">
             <Original>Axt</Original>
@@ -3037,6 +3046,9 @@
         <Key ID="STR_MAR_General_Store">
             <Original>Tüggy's Allerlei</Original>
         </Key>
+		<Key ID="STR_MAR_Farm_Store">
+            <Original>Waldi's Samenschleuder</Original>
+        </Key>
         <Key ID="STR_MAR_Civilian_Shops">
             <Original>Geschäft für Zivilisten</Original>
         </Key>
@@ -3069,9 +3081,6 @@
         </Key>
         <Key ID="STR_MAR_Market">
             <Original>Markt</Original>
-        </Key>
-		 <Key ID="STR_MAR_farmMarket">
-            <Original>Farm Markt</Original>
         </Key>
         <Key ID="STR_MAR_Air_Service">
             <Original>Werkstatt für Luftfahrzeuge</Original>

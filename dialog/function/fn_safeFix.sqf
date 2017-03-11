@@ -6,10 +6,17 @@
     Description:
     Piece of functionality for the cops to close the safe (lock it)
 */
-private "_vault";
+private "_vault","_bankindex";
 _vault = _this select 0;
 if (!(_vault getVariable ["safe_open",false])) exitWith {hint localize "STR_Cop_VaultLocked"};
-
+_banks = [];
+for "_i" from 1 to 3 do {
+	_banks pushback (getmarkerpos format["fed_bank_nr_%1",_i]);
+};
+{
+	if(((getpos player) distance _x) < 15) exitwith {_bankindex	= _forEachIndex +1;}; 
+} foreach _banks;
+if (isNil "_bankindex") exitwith {};
 life_action_inUse = true;
 
 //Setup the progress bar
@@ -51,7 +58,15 @@ player playActionNow "stop";
 if (!alive player) exitWith {life_action_inUse = false;};
 if (life_interrupted) exitWith {life_interrupted = false; titleText[localize "STR_NOTF_ActionCancel","PLAIN"]; life_action_inUse = false;};
 
+if (_bankindex isEqualTo 1) then {
+	fed_bank_1 setVariable ["safe_open",false,true];
+};
+if (_bankindex isEqualTo 2) then {
+	fed_bank_2 setVariable ["safe_open",false,true];
+};
+if (_bankindex isEqualTo 3) then {
+	fed_bank_3 setVariable ["safe_open",false,true];
+};
 life_action_inUse = false;
-
-_vault setVariable ["safe_open",false,true];
+//_vault setVariable ["safe_open",false,true];
 hint localize "STR_Cop_VaultRepaired";

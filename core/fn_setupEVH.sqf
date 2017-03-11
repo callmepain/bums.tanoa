@@ -16,3 +16,10 @@ player addEventHandler["InventoryOpened", {_this call life_fnc_inventoryOpened}]
 player addEventHandler["GetInMan", {_this spawn life_fnc_autosafe;}];
 player addEventHandler["GetOutMan", {life_autosafe = true}];
 player addEventHandler["Killed", {life_autosafe = true}];
+player addEventHandler ["AnimStateChanged", {
+    if (_this select 1 == "incapacitated") then {
+        player allowDamage false;
+        player setPosWorld getPosWorld player;
+        player allowDamage true;
+    };
+}];
