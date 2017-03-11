@@ -160,10 +160,17 @@ if !(isDedicated) then {
 			"Land_Lampa_sidl_3" createVehicle (getMarkerPos (_x select 0 select _i));
 		};
 	}forEach life_marker_gather;
+	{
+		_mines = (_x select 0);
+		for "_i" from 0 to ((count _mines) - 1) do {
+			"Land_Lampa_sidl_3" createVehicle (getMarkerPos (_x select 0 select _i));
+		};
+	}forEach life_marker_farming;
 };
 life_wood = ["t_ficus_medium_f.p3d","t_cocosnucifera3s_tall_f.p3d","t_ficus_small_f.p3d","t_cyathea_f.p3d","t_inocarpus_f.p3d",
 "t_palaquium_f.p3d","d_treestump_natural_large_f.p3d","t_leucaena_f.p3d","t_albizia_f.p3d","t_agathis_wide_f.p3d",
-"t_cocosnucifera2s_small_f.p3d","t_ficus_big_f.p3d"];
+"t_cocosnucifera2s_small_f.p3d","t_ficus_big_f.p3d","t_agathis_tall_f.p3d","b_cestrum_f.p3d","b_leucaena_f.p3d",
+""];
 /*
     Master Array of items?
 */

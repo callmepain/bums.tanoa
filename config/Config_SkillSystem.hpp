@@ -21,7 +21,7 @@ class profession {
 		baseEXPgain = 5; 
 		icon = "icons\skillsystem\ico_ernten.paa";
 		side[] = {"civ"};
-		Resource = "Resources";
+		Resource[] = {"Resources","Farming"};
 	};
 
 	class Rohstoffabbau {
@@ -30,7 +30,7 @@ class profession {
 		baseEXPgain = 5;
 		icon = "icons\skillsystem\ico_rohstoff.paa";
 		side[] = {"civ"};
-		Resource = "Minerals";
+		Resource[] = {"Minerals"};
 	};
 
 	class PKW {

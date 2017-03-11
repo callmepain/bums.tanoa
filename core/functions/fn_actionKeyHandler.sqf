@@ -88,7 +88,7 @@ life_action_inUse = true;
         };
     };
 };*/
-if (typeOf _curObject IN ["A3L_Wheat","A3L_Corn","A3L_Beans","A3L_Cannabis","A3L_Cotton","Ficus_Bush_1","A3L_Pumpkin","A3L_Sunflower","Oleander2"]) then {
+if (typeOf _curObject IN ["A3L_Wheat","A3L_Corn","A3L_Beans","A3L_Cannabis","A3L_Cotton","koprivy","A3L_Sunflower"]) then {
 	// It's a plant!
 	
 	[] call life_fnc_harvest;

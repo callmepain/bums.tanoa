@@ -20,12 +20,12 @@ class CfgGather {
 			level = 1;
         };
 
-        class heroin_unprocessed {
+        /*class heroin_unprocessed {
             amount = 2;
             zones[] = { "heroin_1" };
 			displayName = "STR_MAR_Heroin_Field";
             item = "";
-			mined[] = {"heroin_processed"};
+			mined[] = {"heroin_unprocessed"};
             zoneSize = 30;
 			level = 5;
         };
@@ -35,7 +35,7 @@ class CfgGather {
             zones[] = { "cocaine_1" };
 			displayName = "STR_MAR_Cocaine_Field";
             item = "";
-			mined[] = {"cocaine_processed"};
+			mined[] = {"cocaine_unprocessed"};
             zoneSize = 30;
 			level = 4;
         };
@@ -48,14 +48,14 @@ class CfgGather {
 			mined[] = {"cannabis"};
             zoneSize = 30;
 			level = 3;
-        };
+        };*/
 		
 		 class lsd_unprocessed {
             amount = 2;
             zones[] = { "aga_1" };
 			displayName = "STR_MAR_Aga_Field";
             item = "";
-			mined[] = {"lsd_processed"};
+			mined[] = {"lsd_unprocessed"};
             zoneSize = 30;
 			level = 6;
         };		
@@ -75,7 +75,9 @@ class CfgGather {
 	class Farming {
 		
 		class Weizen {
-            amount = 2;
+			classname = "A3L_Wheat";
+			extra = 1;
+            amount = 1;
             zones[] = { "wheat_1" };
 			displayName = "STR_MAR_wheat_Field";
             item = "wheatseeds";
@@ -85,7 +87,9 @@ class CfgGather {
         };
 		
 		class Korn {
-            amount = 2;
+			classname = "A3L_Corn";
+			extra = 2;
+            amount = 1;
             zones[] = { "corn_1" };
 			displayName = "STR_MAR_corn_Field";
             item = "cornseeds";
@@ -95,7 +99,9 @@ class CfgGather {
         };
 		
 		class Baumwolle {
-            amount = 2;
+			classname = "A3L_Cotton";
+			extra = 3;
+            amount = 1;
             zones[] = { "cotton_1" };
 			displayName = "STR_MAR_cotton_Field";
             item = "cottonseeds";
@@ -105,7 +111,9 @@ class CfgGather {
         };
 		
 		class Bohnen {
-            amount = 2;
+			classname = "A3L_Beans";
+			extra = 3;
+            amount = 1;
             zones[] = { "bean_1" };
 			displayName = "STR_MAR_bean_Field";
             item = "beanseeds";
@@ -115,7 +123,9 @@ class CfgGather {
         };
 		
 		class Sonnenblumen {
-            amount = 2;
+			classname = "A3L_Sunflower";
+			extra = 1;
+            amount = 1;
             zones[] = { "sunflower_1" };
 			displayName = "STR_MAR_sunflower_Field";
             item = "sunflowerseeds";
@@ -125,11 +135,37 @@ class CfgGather {
         };
 		
 		class Cannabis {
-            amount = 2;
-            zones[] = { "cannabis_1" };
-			displayName = "STR_MAR_cannabis_Field";
+			classname = "A3L_Cannabis";
+			extra = 2;
+            amount = 1;
+            zones[] = { "weed_1" };
+			displayName = "STR_MAR_Weed_Field";
             item = "cannabisseeds";
 			mined[] = {"cannabis"};
+            zoneSize = 30;
+			level = 3;
+        };
+		
+		class Heroin {
+			classname = "koprivy";
+			extra = 2;
+            amount = 1;
+            zones[] = { "heroin_1" };
+			displayName = "STR_MAR_heroin_Field";
+            item = "heroinseeds";
+			mined[] = {"heroin_unprocessed"};
+            zoneSize = 30;
+			level = 3;
+        };
+		
+		class Kokain {
+			classname = "koprivy";
+			extra = 2;
+            amount = 1;
+            zones[] = { "cocaine_1" };
+			displayName = "STR_MAR_cocaine_Field";
+            item = "cocaineseeds";
+			mined[] = {"cocaine_unprocessed"};
             zoneSize = 30;
 			level = 3;
         };
@@ -255,7 +291,7 @@ Example 2:
 
 		class wood {
             amount = 2;
-            zones[] = { "wood_mine_1", "wood_mine_2", "wood_mine_3" };
+            zones[] = { };
 			displayName = "STR_MAR_Wood_Mine";
 			processor = "wood_processing";
 			processorname = "STR_MAR_Wood_processing";

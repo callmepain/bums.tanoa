@@ -269,6 +269,7 @@ class Life_Client_Core {
         class vehicleGarage {};
         class wireTransfer {};    
 		class admin_level {};
+		
 		};
 	
     class Functions {
@@ -321,6 +322,7 @@ class Life_Client_Core {
         class teleport {};
         class whereAmI {};
 		class woodcutting {};
+		class ragdoll {};
     };
 	
 	class Market

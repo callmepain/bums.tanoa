@@ -1,5 +1,7 @@
 ﻿_handle = []spawn {
 	disableSerialization;
+	if (life_bj_inUse) exitWith{};
+	life_bj_inUse = true; 
 	bj_karten = [];
 	bj_meine_karte = [];
 	bj_dealer_karte = [];

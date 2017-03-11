@@ -2,6 +2,7 @@
 
 if(!createDialog "Life_Black_Jack") exitWith {[(format [localize "STR_MISC_DialogError"]),"Hinweis","Yellow"] call MSG_fnc_handle;}; //Couldn't create the menu?
 disableSerialization;
+life_bj_inUse = false; 
 _kohle_array = [100,500,1000,5000,10000,50000,100000];
 call life_fnc_bj_clear;
 _punkte_dealer = ((findDisplay 2300) displayCtrl 1100);
