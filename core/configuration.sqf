@@ -100,10 +100,12 @@ for "_i" from 1 to 50 do
 life_markers = false;
 life_marker_mine = [];
 life_marker_gather = [];
+life_marker_farming = [];
 life_marker_process = [];
 life_marker_trader = [];
 _resourceCfg = missionConfigFile >> "CfgGather" >> "Minerals";
 _gatherCfg = missionConfigFile >> "CfgGather" >> "Resources";
+_farmingCfg = missionConfigFile >> "CfgGather" >> "Farming";
 _processorCfg = missionConfigFile >> "CfgGather" >> "Processing";
 _traderCfg = missionConfigFile >> "CfgGather" >> "Shops";
 for "_i" from 0 to count(_resourceCfg)-1 do {
@@ -121,6 +123,14 @@ for "_i" from 0 to count(_gatherCfg)-1 do {
 	_gatherLevel = getNumber(_curConfig4 >> "level");
 	_zonesize = getNumber(_curConfig4 >> "zoneSize");
 	life_marker_gather pushback [_gatherZones,_gatherName,_gatherLevel,_zonesize];
+};
+for "_i" from 0 to count(_farmingCfg)-1 do {
+    _curConfig5 = _farmingCfg select _i;
+    _farmZones = getArray(_curConfig5 >> "zones");
+	_farmName = getText(_curConfig5 >> "displayName");
+	_farmLevel = getNumber(_curConfig5 >> "level");
+	_zonesize = getNumber(_curConfig5 >> "zoneSize");
+	life_marker_farming pushback [_farmZones,_farmName,_farmLevel,_zonesize];
 };
 for "_i" from 0 to count(_processorCfg)-1 do {
     _curConfig2 = _processorCfg select _i;
@@ -151,7 +161,9 @@ if !(isDedicated) then {
 		};
 	}forEach life_marker_gather;
 };
-
+life_wood = ["t_ficus_medium_f.p3d","t_cocosnucifera3s_tall_f.p3d","t_ficus_small_f.p3d","t_cyathea_f.p3d","t_inocarpus_f.p3d",
+"t_palaquium_f.p3d","d_treestump_natural_large_f.p3d","t_leucaena_f.p3d","t_albizia_f.p3d","t_agathis_wide_f.p3d",
+"t_cocosnucifera2s_small_f.p3d","t_ficus_big_f.p3d"];
 /*
     Master Array of items?
 */

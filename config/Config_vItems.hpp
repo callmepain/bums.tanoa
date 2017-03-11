@@ -13,7 +13,14 @@ class VirtualShops {
         name = "STR_Shops_Market";
         side = "civ";
         conditions = "";
-        items[] = { "cannabisseeds","sunflowerseeds","cornseeds","beanseeds","cottonseeds","wheatseeds","fuelFB5L","fuelFD25L","fuelFK50L","waterBottle", "rabbit", "apple", "redgull", "tbacon", "lockpick","axe","pickaxe", "shovel", "jackhammer", "toolkit", "peach", "rabbit_raw", "hen_raw", "rooster_raw", "sheep_raw", "goat_raw" };
+        items[] = { "fuelFB5L","fuelFD25L","fuelFK50L","waterBottle", "rabbit", "apple", "redgull", "tbacon", "lockpick","axe","pickaxe", "shovel", "toolkit", "peach", "rabbit_raw", "hen_raw", "rooster_raw", "sheep_raw", "goat_raw" };
+    };
+	
+	class farmmarket {
+        name = "STR_Shops_Market";
+        side = "civ";
+        conditions = "";
+        items[] = { "cannabisseeds","sunflowerseeds","cornseeds","beanseeds","cottonseeds","wheatseeds", "wheat", "cotton", "sunflower", "corn", "bean"};
     };
 
     class med_market {
@@ -86,33 +93,12 @@ class VirtualShops {
         items[] = { "salema_raw", "salema", "ornate_raw", "ornate", "mackerel_raw", "mackerel", "tuna_raw", "tuna", "mullet_raw", "mullet", "catshark_raw", "catshark" };
     };
 
-/*    class glass {
-        name = "STR_Shops_Glass";
-        side = "civ";
-        conditions = "";
-        items[] = { "glass" };
-    };*/
-
     class iron  {
         name = "STR_Shops_Minerals";
         side = "civ";
         conditions = "";
         items[] = { "coal_refined","iron_refined", "copper_refined","stahlbarren_refined","platinbarren_refined","golderz_refined","silver_refined" };
     };
-
-   /* class diamond {
-        name = "STR_Shops_Diamond";
-        side = "civ";
-        conditions = "";
-        items[] = { "diamond_uncut", "diamond_cut" };
-    };*/
-
-  /*  class salt {
-        name = "STR_Shops_Salt";
-        side = "civ";
-        conditions = "";
-        items[] = { "salt_refined" };
-    };*/
 	
 	class baustoffe {
         name = "STR_Shops_baustoffe";
@@ -121,33 +107,12 @@ class VirtualShops {
         items[] = { "salt_refined","wood_refined","cement", "glass"};
     };
 	
-/*	class coal {
-        name = "STR_Shops_Coal";
-        side = "civ";
-        conditions = "";
-        items[] = { "coal_refined" };
-    };*/
-	
-/*	class wood {
-        name = "STR_Shops_Wood";
-        side = "civ";
-        conditions = "";
-        items[] = { "wood_refined" };
-    };*/
-	
 	class silberschmuck {
         name = "STR_Shops_jewels";
         side = "civ";
         conditions = "";
         items[] = { "diamond_uncut", "diamond_cut","silberschmuck_refined","goldschmuck_refined","brilliantschmuck_refined" };
     };
-
- /*   class cement {
-        name = "STR_Shops_Cement";
-        side = "civ";
-        conditions = "";
-        items[] = { "cement" };
-    };*/
 
     class gold {
         name = "STR_Shops_Gold";
@@ -183,122 +148,122 @@ class VirtualItems {
 	class wheatseeds {
         variable = "wheatseeds";
         displayName = "STR_Item_wheatseeds";
-        weight = 2;
-        buyPrice = 120;
-        sellPrice = 48;
+        weight = 1;
+        buyPrice = 10;
+        sellPrice = 5;
         illegal = false;
         edible = -1;
-        icon = "icons\items\wheatseeds.paa";
+        icon = "icons\items\ico_seed.paa";
     };
 	
 	class wheat {
         variable = "wheat";
         displayName = "STR_Item_wheat";
         weight = 2;
-        buyPrice = 120;
-        sellPrice = 48;
+        buyPrice = -1;
+        sellPrice = 75;
         illegal = false;
         edible = -1;
-        icon = "icons\items\wheat.paa";
+        icon = "icons\items\ico_wheat.paa";
     };
 	
 	class cottonseeds {
         variable = "cottonseeds";
         displayName = "STR_Item_cottonseeds";
-        weight = 2;
-        buyPrice = 120;
-        sellPrice = 48;
+        weight = 1;
+        buyPrice = 10;
+        sellPrice = 5;
         illegal = false;
         edible = -1;
-        icon = "icons\items\cottonseeds.paa";
+        icon = "icons\items\ico_seed.paa";
     };
 	
 	class cotton {
         variable = "cotton";
         displayName = "STR_Item_cotton";
         weight = 2;
-        buyPrice = 120;
-        sellPrice = 48;
+        buyPrice = -1;
+        sellPrice = 120;
         illegal = false;
         edible = -1;
-        icon = "icons\items\cotton.paa";
+        icon = "icons\items\ico_cotton.paa";
     };
 	
 	class sunflowerseeds {
         variable = "sunflowerseeds";
         displayName = "STR_Item_sunflowerseeds";
-        weight = 2;
-        buyPrice = 120;
-        sellPrice = 48;
+        weight = 1;
+        buyPrice = 10;
+        sellPrice = 5;
         illegal = false;
         edible = -1;
-        icon = "icons\items\sunflowerseeds.paa";
+        icon = "icons\items\ico_seed.paa";
     };
 	
 	class sunflower {
         variable = "sunflower";
         displayName = "STR_Item_sunflower";
         weight = 2;
-        buyPrice = 120;
-        sellPrice = 48;
+        buyPrice = -1;
+        sellPrice = 80;
         illegal = false;
         edible = -1;
-        icon = "icons\items\sunflower.paa";
+        icon = "icons\items\ico_sunflower.paa";
     };
 	
 	class cornseeds {
         variable = "cornseeds";
         displayName = "STR_Item_cornseeds";
-        weight = 2;
-        buyPrice = 120;
-        sellPrice = 48;
+        weight = 1;
+        buyPrice = 10;
+        sellPrice = 5;
         illegal = false;
         edible = -1;
-        icon = "icons\items\cornseeds.paa";
+        icon = "icons\items\ico_seed.paa";
     };
 	
 	class corn {
         variable = "corn";
         displayName = "STR_Item_corn";
         weight = 2;
-        buyPrice = 120;
-        sellPrice = 48;
+        buyPrice = -1;
+        sellPrice = 60;
         illegal = false;
         edible = -1;
-        icon = "icons\items\corn.paa";
+        icon = "icons\items\ico_corn.paa";
     };
 	
 	class beanseeds {
         variable = "beanseeds";
         displayName = "STR_Item_beanseeds";
-        weight = 2;
-        buyPrice = 120;
-        sellPrice = 48;
+        weight = 1;
+        buyPrice = 10;
+        sellPrice = 5;
         illegal = false;
         edible = -1;
-        icon = "icons\items\beanseeds.paa";
+        icon = "icons\items\ico_seed.paa";
     };
 	
 	class bean {
         variable = "bean";
         displayName = "STR_Item_bean";
         weight = 2;
-        buyPrice = 120;
-        sellPrice = 48;
+        buyPrice = -1;
+        sellPrice = 50;
         illegal = false;
         edible = -1;
-        icon = "icons\items\bean.paa";
+        icon = "icons\items\ico_bean.paa";
     };
 	
 	class cannabisseeds {
         variable = "cannabisseeds";
         displayName = "STR_Item_cannabisseeds";
-        weight = 2;
+        weight = 1;
         buyPrice = 120;
-        sellPrice = 48;
+        sellPrice = 60;
         illegal = false;
         edible = -1;
-        icon = "icons\items\cannabisseeds.paa";
+        icon = "icons\items\ico_seed.paa";
     };
 	
     class pickaxe {
@@ -306,7 +271,7 @@ class VirtualItems {
         displayName = "STR_Item_Pickaxe";
         weight = 2;
         buyPrice = 120;
-        sellPrice = 48;
+        sellPrice = 60;
         illegal = false;
         edible = -1;
         icon = "icons\items\ico_pickaxe.paa";
@@ -317,7 +282,7 @@ class VirtualItems {
         displayName = "STR_Item_axe";
         weight = 2;
         buyPrice = 120;
-        sellPrice = 48;
+        sellPrice = 60;
         illegal = false;
         edible = -1;
         icon = "icons\items\ico_axe.paa";
@@ -328,7 +293,7 @@ class VirtualItems {
         displayName = "STR_Item_Shovel";
         weight = 2;
         buyPrice = 100;
-        sellPrice = 48;
+        sellPrice = 50;
         illegal = false;
         edible = -1;
         icon = "icons\items\ico_shovel.paa";

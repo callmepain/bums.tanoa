@@ -71,6 +71,70 @@ class CfgGather {
         };
     };
 
+	
+	class Farming {
+		
+		class Weizen {
+            amount = 2;
+            zones[] = { "wheat_1" };
+			displayName = "STR_MAR_wheat_Field";
+            item = "wheatseeds";
+			mined[] = {"wheat"};
+            zoneSize = 30;
+			level = 3;
+        };
+		
+		class Korn {
+            amount = 2;
+            zones[] = { "corn_1" };
+			displayName = "STR_MAR_corn_Field";
+            item = "cornseeds";
+			mined[] = {"corn"};
+            zoneSize = 30;
+			level = 3;
+        };
+		
+		class Baumwolle {
+            amount = 2;
+            zones[] = { "cotton_1" };
+			displayName = "STR_MAR_cotton_Field";
+            item = "cottonseeds";
+			mined[] = {"cotton"};
+            zoneSize = 30;
+			level = 3;
+        };
+		
+		class Bohnen {
+            amount = 2;
+            zones[] = { "bean_1" };
+			displayName = "STR_MAR_bean_Field";
+            item = "beanseeds";
+			mined[] = {"bean"};
+            zoneSize = 30;
+			level = 3;
+        };
+		
+		class Sonnenblumen {
+            amount = 2;
+            zones[] = { "sunflower_1" };
+			displayName = "STR_MAR_sunflower_Field";
+            item = "sunflowerseeds";
+			mined[] = {"sunflower"};
+            zoneSize = 30;
+			level = 3;
+        };
+		
+		class Cannabis {
+            amount = 2;
+            zones[] = { "cannabis_1" };
+			displayName = "STR_MAR_cannabis_Field";
+            item = "cannabisseeds";
+			mined[] = {"cannabis"};
+            zoneSize = 30;
+			level = 3;
+        };
+		
+	};
 /*
 This block can be set using percent,if you want players to mine only one resource ,just leave it as it is.
 Example:
@@ -352,36 +416,6 @@ Example 2:
 			Shops = "baustoffe_trader";
 			Shopsname = "STR_Shops_baustoffe";
         };
-
- /*       class sand {
-			Shops = "glass_trader";
-			Shopsname = "STR_MAR_Glass_Trader";
-			level = 3;
-        };*/
-
- /*       class diamond_uncut {
-			Shops = "diamond_trader";
-			Shopsname = "STR_MAR_Diamond_Trader";
-			level = 6;
-        };*/
-
-/*		class wood {
-			Shops = "Holz_trader";
-			Shopsname = "STR_MAR_Wood_Trader";
-			level = 1;
-        };*/
-		
-/*		class coal {
-			Shops = "Coal_trader";
-			Shopsname = "STR_MAR_Coal_Trader";
-			level = 2;
-        };*/
-		
-/*        class rock {
-			Shops = "cement_trader";
-			Shopsname = "STR_MAR_Cement_Trader";
-			level = 1;
-        };*/
 
         class oil_unprocessed {
 			Shops = "oil_trader";

@@ -14,8 +14,7 @@ _argument = [_this,3,[],[[]]] call BIS_fnc_param;
 _type = (_argument select 0);
 _prof = (_argument select 1);
 //Error check
-"debug_console" callExtension format["_type:%1 #1101",_type];
-"debug_console" callExtension format["_prof:%1 #1101",_prof];
+
 if (isNull _vendor OR _type isEqualTo "" OR (player distance _vendor > 5)) exitWith {};
 life_action_inUse = true;//Lock out other actions during processing.
 if(vehicle player != player) exitwith 
@@ -29,7 +28,7 @@ if (isClass (missionConfigFile >> "ProcessAction" >> _type)) then {
     _noLicenseCost = M_CONFIG(getNumber,"ProcessAction",_type,"NoLicenseCost");
     _text = M_CONFIG(getText,"ProcessAction",_type,"Text");
 } else {_filter = true;};
-"debug_console" callExtension format["_filter:%1 #1101",_filter];
+
 if (_filter) exitWith {life_action_inUse = false;};
 
 _itemInfo = [_materialsRequired,_materialsGiven,_noLicenseCost,(localize format ["%1",_text])];
@@ -60,7 +59,7 @@ if (_vendor in [mari_processor,coke_processor,heroin_processor]) then {
 };
 
 _cost = _cost * (count _oldItem);
-"debug_console" callExtension format["_cost:%1 #1101",_cost];
+
 _minimumConversions = _totalConversions call BIS_fnc_lowestNum;
 _oldItemWeight = 0;
 {

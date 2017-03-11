@@ -12,8 +12,6 @@ if( _prof != "" ) then {
 	MININGMULTI(_mining,(_data select 0));
 	MININGTIME(_time,(_data select 0));
 }; 
-_wood = ["t_ficus_medium_f.p3d","t_cocosnucifera3s_tall_f.p3d","t_ficus_small_f.p3d","t_cyathea_f.p3d","t_inocarpus_f.p3d","t_palaquium_f.p3d","d_treestump_natural_large_f.p3d",
-"t_leucaena_f.p3d","t_albizia_f.p3d","t_agathis_wide_f.p3d","t_cocosnucifera2s_small_f.p3d","t_ficus_big_f.p3d"];
 if (life_action_inUse) exitWith {}; //Action is in use, exit to prevent spamming.
  if (life_inv_axe < 1) exitWith { [(format [localize "STR_NOTF_Axe"]),"Hinweis","Red"] call MSG_fnc_handle; };
 _amount = floor((random(_maxGather)+1)*_mining);
@@ -22,7 +20,7 @@ if (_diff isEqualTo 0) exitWith {
 	[localize "STR_NOTF_InvFull","Hinweis","Red"] call MSG_fnc_handle;
     life_action_inUse = false;
 };
-if (((getModelInfo _curObject) select 0) in _wood) then {
+if (((getModelInfo _curObject) select 0) in life_wood) then {
 	life_action_inUse = true; 
 	[] spawn {
 		for "_i" from 0 to 1 do {
